@@ -1,0 +1,225 @@
+{
+  "name": "Kodjo Engagement Bot",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": ["message"],
+        "additionalFields": {}
+      },
+      "id": "telegram-trigger",
+      "name": "Telegram: on group message",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 200],
+      "webhookId": "telegram-group-listener",
+      "notes": "Listens to every message in the coaching group. Make sure the bot has privacy mode OFF in @BotFather so it can see all messages, not just commands."
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            { "id": "1", "name": "telegram_user_id", "value": "={{ $json.message.from.id }}", "type": "number" },
+            { "id": "2", "name": "telegram_username", "value": "={{ $json.message.from.username }}", "type": "string" },
+            { "id": "3", "name": "first_name", "value": "={{ $json.message.from.first_name }}", "type": "string" },
+            { "id": "4", "name": "message_text", "value": "={{ $json.message.text }}", "type": "string" },
+            { "id": "5", "name": "chat_id", "value": "={{ $json.message.chat.id }}", "type": "string" },
+            { "id": "6", "name": "timestamp", "value": "={{ $now.toISO() }}", "type": "string" }
+          ]
+        },
+        "options": {}
+      },
+      "id": "shape-message",
+      "name": "Shape message data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [480, 200]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": { "__rl": true, "value": "REPLACE_WITH_GOOGLE_SHEET_ID", "mode": "list" },
+        "sheetName": { "__rl": true, "value": "messages", "mode": "list" },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "append-message",
+      "name": "Google Sheets: log message",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [720, 200],
+      "notes": "Paste your Google Sheet ID. Tab must be named 'messages' with columns: timestamp, telegram_user_id, telegram_username, first_name, message_text, chat_id."
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "cronExpression", "expression": "0 9 * * *" }]
+        }
+      },
+      "id": "daily-schedule",
+      "name": "Daily at 09:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 600]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": { "__rl": true, "value": "REPLACE_WITH_GOOGLE_SHEET_ID", "mode": "list" },
+        "sheetName": { "__rl": true, "value": "students", "mode": "list" },
+        "options": {}
+      },
+      "id": "read-students",
+      "name": "Read students",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [480, 600]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": { "__rl": true, "value": "REPLACE_WITH_GOOGLE_SHEET_ID", "mode": "list" },
+        "sheetName": { "__rl": true, "value": "messages", "mode": "list" },
+        "options": {}
+      },
+      "id": "read-messages",
+      "name": "Read messages",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [720, 600]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Check who has been silent for more than 48 hours.\n// We prioritize Telegram DM, fall back to email if the Telegram node fails (see Route by channel node).\n\nconst students = $('Read students').all().map(i => i.json);\nconst messages = $('Read messages').all().map(i => i.json);\nconst thresholdHours = 48;\nconst now = new Date();\n\nconst output = [];\n\nfor (const student of students) {\n  if (String(student.active).toUpperCase() !== 'TRUE') continue;\n\n  const userMsgs = messages.filter(m =>\n    String(m.telegram_user_id) === String(student.telegram_user_id)\n  );\n\n  let lastMsgDate = null;\n  if (userMsgs.length > 0) {\n    lastMsgDate = new Date(\n      Math.max(...userMsgs.map(m => new Date(m.timestamp).getTime()))\n    );\n  }\n\n  const hoursSilent = lastMsgDate\n    ? Math.floor((now - lastMsgDate) / (1000 * 60 * 60))\n    : 9999;\n\n  if (hoursSilent >= thresholdHours) {\n    // Channel cascade: Telegram first (free + personal), email as fallback.\n    // WhatsApp will slot in between these two in v2.\n    const hasTelegramId = student.telegram_user_id && String(student.telegram_user_id).trim() !== '';\n    const primary_channel = hasTelegramId ? 'telegram' : 'email';\n\n    output.push({\n      json: {\n        telegram_user_id: student.telegram_user_id,\n        first_name: student.first_name,\n        email: student.email,\n        primary_channel: primary_channel,\n        hours_silent: hoursSilent,\n        days_silent: Math.floor(hoursSilent / 24),\n        last_message_date: lastMsgDate ? lastMsgDate.toISOString() : 'jamais'\n      }\n    });\n  }\n}\n\nreturn output;"
+      },
+      "id": "compute-inactivity",
+      "name": "Compute inactive students",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [960, 600]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-5\",\n  \"max_tokens\": 400,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Tu ecris un petit message doux et encourageant en francais pour un eleve du programme d'anglais de Kodjo, qui n'a pas ecrit dans le groupe Telegram depuis {{ $json.days_silent }} jours.\\n\\nPrenom de l'eleve : {{ $json.first_name }}\\nDerniere activite : {{ $json.last_message_date }}\\n\\nTon a incarner : coach bienveillant, grand frere ou grande soeur qui prend des nouvelles. La personne doit se sentir vue et accompagnee, jamais jugee ni pressee.\\n\\nRegles strictes :\\n- 2 a 3 phrases maximum.\\n- Commence par le prenom.\\n- Exprime que l'equipe pense a la personne, sincerement.\\n- Rappelle qu'il n'y a pas de pression, que son rythme est ok.\\n- Termine par une question tres ouverte et legere.\\n- Pas de tirets cadratins. Un seul emoji chaleureux maximum.\\n- Signature : L'equipe Kodjo English\\n\\nInterdits absolus :\\n- Ne jamais dire tu n'as pas participe, tu es absent, ou es-tu passe, qu'est-ce qui bloque.\\n- Jamais de tonalite accountability ou culpabilisante.\\n- Pas de relance commerciale.\\n\\nExemples du ton attendu :\\n1. Aminata, on pense a toi ces derniers jours. Prends le temps qu'il te faut, on est la quand tu reviens. Comment tu vas, de ton cote ? L'equipe Kodjo English\\n2. Yao, petit message pour te dire qu'on ne t'oublie pas. Pas de pression, avance a ton rythme. Y a-t-il quelque chose qu'on pourrait faire pour toi aujourd'hui ? L'equipe Kodjo English\\n\\nNe renvoie que le texte du message, sans guillemets ni commentaire.\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "id": "claude-message",
+      "name": "Claude: generate nudge",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 600],
+      "notes": "Calls Anthropic API directly. Create a 'Header Auth' credential in n8n with Name=x-api-key and Value=<your Anthropic API key>. Response text is at $json.content[0].text."
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $('Compute inactive students').item.json.primary_channel }}",
+        "rules": {
+          "values": [
+            { "conditions": { "string": [{ "value1": "={{ $('Compute inactive students').item.json.primary_channel }}", "operation": "equal", "value2": "telegram" }] }, "outputKey": "telegram" },
+            { "conditions": { "string": [{ "value1": "={{ $('Compute inactive students').item.json.primary_channel }}", "operation": "equal", "value2": "email" }] }, "outputKey": "email" }
+          ]
+        },
+        "fallbackOutput": "email"
+      },
+      "id": "channel-switch",
+      "name": "Route by channel",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [1440, 600]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Compute inactive students').item.json.telegram_user_id }}",
+        "text": "={{ $('Claude: generate nudge').item.json.content[0].text }}",
+        "additionalFields": {}
+      },
+      "id": "telegram-dm",
+      "name": "Telegram: send DM",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1680, 480],
+      "continueOnFail": true,
+      "onError": "continueErrorOutput",
+      "notes": "Student must have sent /start to the bot at least once for this to work. If it fails (user didn't /start), the error branch routes to the email node as fallback."
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Compute inactive students').item.json.email }}",
+        "subject": "={{ 'On pense a toi, ' + $('Compute inactive students').item.json.first_name }}",
+        "message": "={{ $('Claude: generate nudge').item.json.content[0].text }}",
+        "options": {}
+      },
+      "id": "gmail-send",
+      "name": "Gmail: send email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1680, 720],
+      "notes": "Or swap for the Resend node if Kodjo prefers Resend."
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": { "__rl": true, "value": "REPLACE_WITH_GOOGLE_SHEET_ID", "mode": "list" },
+        "sheetName": { "__rl": true, "value": "outreach_log", "mode": "list" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "timestamp": "={{ $now.toISO() }}",
+            "telegram_user_id": "={{ $('Compute inactive students').item.json.telegram_user_id }}",
+            "first_name": "={{ $('Compute inactive students').item.json.first_name }}",
+            "channel": "={{ $('Compute inactive students').item.json.preferred_channel }}",
+            "days_silent": "={{ $('Compute inactive students').item.json.days_silent }}",
+            "message_sent": "={{ $('Claude: generate nudge').item.json.content[0].text }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "log-outreach",
+      "name": "Log outreach",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1920, 600]
+    }
+  ],
+  "connections": {
+    "Telegram: on group message": { "main": [[{ "node": "Shape message data", "type": "main", "index": 0 }]] },
+    "Shape message data": { "main": [[{ "node": "Google Sheets: log message", "type": "main", "index": 0 }]] },
+    "Daily at 09:00": { "main": [[{ "node": "Read students", "type": "main", "index": 0 }]] },
+    "Read students": { "main": [[{ "node": "Read messages", "type": "main", "index": 0 }]] },
+    "Read messages": { "main": [[{ "node": "Compute inactive students", "type": "main", "index": 0 }]] },
+    "Compute inactive students": { "main": [[{ "node": "Claude: generate nudge", "type": "main", "index": 0 }]] },
+    "Claude: generate nudge": { "main": [[{ "node": "Route by channel", "type": "main", "index": 0 }]] },
+    "Route by channel": {
+      "main": [
+        [{ "node": "Telegram: send DM", "type": "main", "index": 0 }],
+        [{ "node": "Gmail: send email", "type": "main", "index": 0 }]
+      ]
+    },
+    "Telegram: send DM": {
+      "main": [[{ "node": "Log outreach", "type": "main", "index": 0 }]],
+      "error": [[{ "node": "Gmail: send email", "type": "main", "index": 0 }]]
+    },
+    "Gmail: send email": { "main": [[{ "node": "Log outreach", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": []
+}

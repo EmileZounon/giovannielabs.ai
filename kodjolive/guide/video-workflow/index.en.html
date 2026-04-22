@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-ified Video Editing Workflow · KodjoLive x Emile Zounon</title>
+  <meta name="description" content="How to find clip-worthy moments in any video in 30 seconds using Claude. The workflow Hormozi's team uses to ship 15 videos a day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#1B2A4A;--blue:#037EF3;--blue-hover:#025EC0;--cream:#FAFAF8;--light:#EEF4FF;--ink:#1A1826;--ink-muted:#6B6577;--line:#D4E5FB;--dark:#071525;--gold:#F4B942;--display:'Cormorant Garamond',Georgia,serif;--body:'Outfit',system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+    a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+    a:hover{color:var(--blue-hover)}
+    .topbar{background:var(--navy);color:#fff;padding:10px 0;font-size:13px}
+    .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .topbar .left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .topbar .back{color:var(--gold);text-decoration:none;font-weight:600}
+    .lang-toggle{display:inline-flex;border:1px solid rgba(255,255,255,.25);border-radius:999px;overflow:hidden;font-size:12px}
+    .lang-toggle a{padding:4px 12px;color:rgba(255,255,255,.7);text-decoration:none;font-weight:600}
+    .lang-toggle a.active{background:var(--gold);color:var(--navy)}
+    .hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+    .eyebrow{display:inline-block;letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:700;color:var(--blue);background:var(--light);padding:6px 12px;border-radius:4px;margin-bottom:20px}
+    h1{font-family:var(--display);font-size:clamp(34px,5.5vw,58px);line-height:1.05;letter-spacing:-.02em;color:var(--navy);margin-bottom:18px}
+    .lede{font-size:clamp(16px,1.6vw,19px);color:var(--ink-muted);max-width:680px;margin-bottom:28px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;min-height:44px;cursor:pointer;border:none;font-family:var(--body)}
+    .btn-primary{background:var(--navy);color:#fff}
+    .btn-primary:hover{background:var(--dark);color:#fff;transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,42,74,.25)}
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-blue:hover{background:var(--blue-hover);color:#fff;transform:translateY(-1px)}
+    .btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+    .btn-outline:hover{background:var(--navy);color:#fff}
+    section.block{padding:56px 0;border-top:1px solid var(--line)}
+    section.block h2{font-family:var(--display);font-size:clamp(26px,3vw,36px);color:var(--navy);margin-bottom:20px}
+    section.block h3{font-size:18px;font-weight:700;color:var(--navy);margin:26px 0 8px}
+    .pill{display:inline-block;font-size:12px;font-weight:700;color:var(--navy);background:var(--light);padding:4px 10px;border-radius:999px;border:1px solid var(--line);margin-bottom:10px}
+    .card-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:18px}
+    @media(max-width:960px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.card-grid{grid-template-columns:1fr}}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:transform .2s ease,border-color .2s ease}
+    .card:hover{transform:translateY(-2px);border-color:var(--blue)}
+    .card .step-num{font-family:var(--display);font-size:30px;font-weight:700;color:var(--blue);line-height:1}
+    .card h4{font-family:var(--display);font-size:18px;color:var(--navy);margin:0}
+    .card p{color:var(--ink-muted);font-size:14px;margin:0}
+    .prompt{position:relative;background:#0b1e2f;color:#f4f4f4;border-radius:12px;padding:22px 22px;font-family:'JetBrains Mono',Menlo,monospace;font-size:13.5px;line-height:1.6;white-space:pre-wrap;overflow-x:auto;margin:14px 0}
+    .prompt .copy{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--navy);border:none;padding:6px 12px;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer;font-family:var(--body)}
+    .prompt .copy:hover{background:#e6ab35}
+    .prompt .copy.ok{background:#1f7a57;color:#fff}
+    table{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px}
+    th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+    th{background:var(--light);color:var(--navy);font-weight:700}
+    tr:last-child td{border-bottom:none}
+    .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    @media(max-width:640px){.tool-grid{grid-template-columns:1fr}}
+    .tool{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:4px}
+    .tool h5{color:var(--navy);font-size:15px;margin:0}
+    .tool p{color:var(--ink-muted);font-size:13.5px;margin:0}
+    .tool a{font-size:13px;font-weight:600}
+    .note{background:#fff8e1;border-left:3px solid var(--gold);padding:14px 18px;border-radius:6px;font-size:14px;color:#5a4b1f;margin:16px 0}
+    .note.info{background:var(--light);border-left-color:var(--blue);color:var(--navy)}
+    .clip-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin:12px 0}
+    .clip-card .rank{display:inline-block;font-size:22px;margin-right:8px}
+    .clip-card h4{display:inline;color:var(--navy);font-size:17px}
+    .clip-card .meta{font-size:13px;color:var(--ink-muted);margin:6px 0 10px}
+    .clip-card .quote{font-style:italic;color:var(--ink);border-left:3px solid var(--blue);padding:8px 14px;background:var(--light);border-radius:4px;font-size:14.5px;margin:10px 0}
+    .clip-card .why{font-size:14px;color:var(--ink-muted)}
+    .clip-card .hook{display:inline-block;font-size:13px;background:var(--navy);color:#fff;padding:4px 10px;border-radius:6px;margin-top:8px;font-weight:600}
+    .playground textarea{width:100%;min-height:160px;padding:14px;border:1px solid var(--line);border-radius:10px;font-family:'JetBrains Mono',Menlo,monospace;font-size:13px;background:#fff;color:var(--ink);resize:vertical}
+    .playground .actions{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+    footer{padding:40px 0 32px;border-top:1px solid var(--line);color:var(--ink-muted);font-size:14px}
+    footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media (max-width: 640px){.wrap{padding:0 18px}.btn{width:100%;justify-content:center}section.block{padding:40px 0}.prompt{font-size:12.5px}}
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div class="left">
+        <span><strong>AI Video Editing Workflow</strong> · 6x faster edits</span>
+        <span class="lang-toggle">
+          <a href="index.html">FR</a>
+          <a href="index.en.html" class="active">EN</a>
+        </span>
+      </div>
+      <a class="back" href="https://emilezounon.com/KodjoLive/">← back to KodjoLive</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">The Hormozi method · decoded step by step</span>
+      <h1>Find the best moments in any video. In 30 seconds.</h1>
+      <p class="lede">Alex Hormozi's editors ship 15 videos a day. Yours take 3 days for one. The gap isn't talent. It's a workflow that lets Claude do the watching. Here's the full recipe, ready to run tonight.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#method">The 5-step method</a>
+        <a class="btn btn-blue" href="#playground">Try it now</a>
+        <a class="btn btn-outline" href="#example">See the Hormozi example</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="block" id="method">
+    <div class="wrap">
+      <span class="pill">Overview</span>
+      <h2>The 5-step workflow</h2>
+      <p style="color:var(--ink-muted);max-width:640px">Each step replaces something an editor does manually with a tool or a prompt. End to end, it cuts a 3-hour edit into ~30 minutes.</p>
+
+      <div class="card-grid">
+        <div class="card"><div class="step-num">01</div><h4>Get transcript</h4><p>From YouTube or a local video file. Free tools handle it in seconds.</p></div>
+        <div class="card"><div class="step-num">02</div><h4>Ask Claude</h4><p>Paste the transcript with the master prompt. Claude returns ranked clip candidates.</p></div>
+        <div class="card"><div class="step-num">03</div><h4>Review picks</h4><p>5 timestamped moments with quotes, ratings, and hook text. Pick 3.</p></div>
+        <div class="card"><div class="step-num">04</div><h4>Cut in editor</h4><p>Jump directly to timestamps. No scrubbing. No watching top to bottom.</p></div>
+        <div class="card"><div class="step-num">05</div><h4>Caption and ship</h4><p>Auto-subtitle, apply Claude's suggested hook, schedule across platforms.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 1 -->
+  <section class="block" id="step1" style="background:#fff">
+    <div class="wrap">
+      <span class="pill">Step 1 · 1 minute</span>
+      <h2>Get the transcript with timestamps</h2>
+      <p style="color:var(--ink-muted);max-width:680px">Pick the tool that matches where your video lives. All four options below are free or have a generous free tier.</p>
+
+      <div class="tool-grid">
+        <div class="tool">
+          <h5>🌐 youtubetotranscript.com</h5>
+          <p>Paste a YouTube URL, get the transcript instantly. Zero setup. Best for non-technical editors.</p>
+          <a href="https://youtubetotranscript.com" target="_blank" rel="noopener">Open tool ↗</a>
+        </div>
+        <div class="tool">
+          <h5>🐍 youtube-transcript-api</h5>
+          <p>Python one-liner. Cleanest option if you have Python. See the script below.</p>
+          <a href="https://pypi.org/project/youtube-transcript-api/" target="_blank" rel="noopener">Docs ↗</a>
+        </div>
+        <div class="tool">
+          <h5>🎬 Descript</h5>
+          <p>Upload any video file (.mp4, .mov). Auto-transcribes in a few minutes with timestamps. Free tier: 1 hr/month.</p>
+          <a href="https://descript.com" target="_blank" rel="noopener">Open Descript ↗</a>
+        </div>
+        <div class="tool">
+          <h5>🎙️ Whisper (OpenAI)</h5>
+          <p>For raw audio or videos. Runs locally or via API. Best quality, slight setup.</p>
+          <a href="https://github.com/openai/whisper" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+
+      <h3>The Python one-liner (recommended if you have a terminal)</h3>
+      <p style="color:var(--ink-muted)">Install once: <code style="background:var(--light);padding:2px 6px;border-radius:4px">pip install youtube-transcript-api</code></p>
+
+      <div class="prompt">
+<button class="copy" data-target="s1code">Copy</button>
+<span id="s1code">from youtube_transcript_api import YouTubeTranscriptApi
+
+api = YouTubeTranscriptApi()
+fetched = api.fetch('VIDEO_ID_HERE', languages=['en'])
+
+for s in fetched.snippets:
+    mm, ss = int(s.start//60), int(s.start%60)
+    print(f'[{mm:02d}:{ss:02d}] {s.text}')</span>
+      </div>
+
+      <p style="color:var(--ink-muted)">Save as <code style="background:var(--light);padding:2px 6px;border-radius:4px">transcript.py</code>, then run: <code style="background:var(--light);padding:2px 6px;border-radius:4px">python3 transcript.py &gt; transcript.txt</code></p>
+
+      <div class="note info"><strong>Finding the video ID:</strong> in a URL like <code>youtube.com/watch?v=wKG7QT0rjCo</code>, the ID is everything after <code>v=</code>, so <code>wKG7QT0rjCo</code>.</div>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="block" id="step2">
+    <div class="wrap">
+      <span class="pill">Step 2 · 30 seconds</span>
+      <h2>The master prompt</h2>
+      <p style="color:var(--ink-muted);max-width:680px">This prompt is the intellectual property. Save it, tune it to your brand, reuse it on every video. Paste it into Claude (claude.ai or the app), then paste your transcript right after.</p>
+
+      <div class="prompt">
+<button class="copy" data-target="masterprompt">Copy</button>
+<span id="masterprompt">You are a short-form video editor specialized in YouTube Shorts, TikTok,
+and Instagram Reels.
+
+Here is the transcript of a video, with timestamps:
+
+[PASTE THE TRANSCRIPT HERE]
+
+Analyze it and return the 5 best moments to cut into short clips
+(20 to 60 seconds each).
+
+For each moment, provide:
+1. Start and end timestamp
+2. Duration in seconds
+3. Virality rating out of 5 stars
+4. The exact quote that makes the moment powerful
+5. Why it works (one sentence)
+6. A hook line for the title or caption
+
+Rank them from most clippable to least clippable.
+
+Selection criteria:
+- Standalone insight (no context needed to understand)
+- Narrative tension (hook, suspense, payoff)
+- Emotional moment (vulnerability, surprise, humor)
+- Memorable quote (lines that work as on-screen text)
+- Pattern interrupt (reframe, counter-intuitive, unexpected)
+
+No em-dashes. Clean format with emoji ranks (🥇 🥈 🥉).</span>
+      </div>
+
+      <div class="note"><strong>Pro tip:</strong> add one extra line tuned to your niche. For a coaching channel: <em>"Prioritize moments that teach a single actionable lesson."</em> For a storytelling channel: <em>"Prioritize moments with emotional arc: setup, tension, release."</em></div>
+    </div>
+  </section>
+
+  <!-- PLAYGROUND -->
+  <section class="block" id="playground" style="background:#fff">
+    <div class="wrap">
+      <span class="pill">Try it now</span>
+      <h2>Paste your transcript, get the prompt ready to copy</h2>
+      <p style="color:var(--ink-muted);max-width:680px">Drop any transcript below. The tool builds the full prompt with your content embedded, ready to paste into Claude.</p>
+
+      <div class="playground">
+        <textarea id="userTranscript" placeholder="Paste your transcript here. Each line should start with a timestamp like [01:23]..."></textarea>
+        <div class="actions">
+          <button class="btn btn-primary" id="buildPrompt">Build the full prompt</button>
+          <button class="btn btn-outline" id="clearPrompt">Clear</button>
+        </div>
+
+        <div id="builtPromptWrap" style="display:none;margin-top:16px">
+          <h3>Your ready-to-paste prompt</h3>
+          <div class="prompt">
+<button class="copy" data-target="builtPrompt">Copy</button>
+<span id="builtPrompt"></span>
+          </div>
+          <p style="color:var(--ink-muted);font-size:14px">Copy this, paste into Claude.ai, and watch the ranked clips come back in ~10 seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS 3-5 -->
+  <section class="block" id="step3">
+    <div class="wrap">
+      <span class="pill">Step 3 · 1 minute</span>
+      <h2>Review Claude's picks</h2>
+      <p style="color:var(--ink-muted);max-width:680px">Claude returns 5 moments, ranked, with everything you need to decide. Skim, pick your top 3, archive the rest in a "maybe later" doc.</p>
+
+      <p><strong>What to look for:</strong></p>
+      <ul style="color:var(--ink-muted);margin-left:20px;margin-top:8px">
+        <li>Is the quote strong enough to carry 30 seconds of attention?</li>
+        <li>Does the moment make sense without the rest of the video?</li>
+        <li>Is the hook text punchy enough to stop a scroll?</li>
+      </ul>
+      <p style="color:var(--ink-muted);margin-top:12px">If Claude's top pick doesn't feel right, re-run with: <em>"These picks aren't quite right. The video is about [topic]. Prioritize moments with [X]. Return 5 new picks."</em> Iterate until it clicks.</p>
+    </div>
+  </section>
+
+  <section class="block" id="step4" style="background:#fff">
+    <div class="wrap">
+      <span class="pill">Step 4 · 15 minutes</span>
+      <h2>Cut in your editor</h2>
+      <p style="color:var(--ink-muted);max-width:680px">You have exact timestamps. Open the raw video in your editor, jump straight to each one, trim, export. No watching top to bottom. No scrubbing.</p>
+
+      <div class="tool-grid">
+        <div class="tool"><h5>Descript</h5><p>Best for beginners. You edit by deleting text from the transcript.</p></div>
+        <div class="tool"><h5>CapCut</h5><p>Free, fast, mobile-friendly. Native auto-captioning.</p></div>
+        <div class="tool"><h5>Premiere Pro</h5><p>For editors already in the Adobe ecosystem.</p></div>
+        <div class="tool"><h5>DaVinci Resolve</h5><p>Free pro-grade. Steep learning curve but unmatched color.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="step5">
+    <div class="wrap">
+      <span class="pill">Step 5 · 10 minutes</span>
+      <h2>Caption, hook, ship</h2>
+      <p style="color:var(--ink-muted);max-width:680px">Subtitles are non-negotiable on short-form (80%+ watch muted). Use Claude's hook text as the on-screen title and the caption. Schedule across platforms.</p>
+
+      <div class="tool-grid">
+        <div class="tool"><h5>Submagic</h5><p>Auto-styled subtitles, emoji animation, zero effort. Paid.</p><a href="https://submagic.co" target="_blank" rel="noopener">Open ↗</a></div>
+        <div class="tool"><h5>Captions.ai</h5><p>Similar to Submagic, strong auto-edit features.</p><a href="https://captions.ai" target="_blank" rel="noopener">Open ↗</a></div>
+        <div class="tool"><h5>Buffer</h5><p>Schedule across TikTok, Reels, Shorts from one dashboard. Free tier.</p><a href="https://buffer.com" target="_blank" rel="noopener">Open ↗</a></div>
+        <div class="tool"><h5>Metricool</h5><p>Same as Buffer with better analytics. Free tier.</p><a href="https://metricool.com" target="_blank" rel="noopener">Open ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIME SAVINGS -->
+  <section class="block" style="background:#fff">
+    <div class="wrap">
+      <span class="pill">Time savings</span>
+      <h2>From 3 hours to 30 minutes per video</h2>
+      <table>
+        <thead><tr><th>Step</th><th>Manual (old)</th><th>With this workflow</th><th>Saving</th></tr></thead>
+        <tbody>
+          <tr><td>Find clip moments</td><td>Watch full video 2-3x (~60 min)</td><td>30 seconds</td><td><strong>60 min → 0.5 min</strong></td></tr>
+          <tr><td>Write captions and hooks</td><td>10 min per clip (~50 min)</td><td>Pre-written by Claude</td><td><strong>50 min → 0 min</strong></td></tr>
+          <tr><td>Cut and export</td><td>15 min per clip (~75 min)</td><td>5 min per clip (~25 min)</td><td><strong>75 min → 25 min</strong></td></tr>
+          <tr><td><strong>Total per video</strong></td><td><strong>~3 hours</strong></td><td><strong>~30 min</strong></td><td><strong>6x faster</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="note">The additional gains to reach Hormozi's 45x come from orchestration: n8n pipelines that chain transcription → Claude → file naming → scheduling. That's the v2. This v1 is the fastest first win.</div>
+    </div>
+  </section>
+
+  <!-- WORKED EXAMPLE -->
+  <section class="block" id="example">
+    <div class="wrap">
+      <span class="pill">Worked example</span>
+      <h2>Alex Hormozi advises a Vegas gym owner</h2>
+      <p style="color:var(--ink-muted);max-width:680px">Real video, 6 minutes 38 seconds, analyzed end to end with the workflow above. Time elapsed: under 2 minutes.</p>
+      <p style="margin:12px 0"><a href="https://www.youtube.com/watch?v=wKG7QT0rjCo" target="_blank" rel="noopener">▶ Watch the source video on YouTube</a></p>
+
+      <div class="clip-card">
+        <span class="rank">🥇</span><h4>The Regret Minimization Framework</h4>
+        <div class="meta"><strong>03:02 – 03:47</strong> · 45 sec · ⭐⭐⭐⭐⭐</div>
+        <div class="quote">"The framework I would use is the regret minimization framework: looking at 85-year-old me coming back to the present and saying, 'Would I be okay with failing at this business and torpedoing the one that was working, so that I could say I had a shot?'"</div>
+        <div class="why"><strong>Why it works:</strong> Standalone insight, no context needed. Bezos-style framework with Hormozi's spin.</div>
+        <span class="hook">Hook: "Ask your 85-year-old self this before every big decision."</span>
+      </div>
+
+      <div class="clip-card">
+        <span class="rank">🥈</span><h4>The real risk isn't the money, it's the focus</h4>
+        <div class="meta"><strong>04:42 – 05:22</strong> · 40 sec · ⭐⭐⭐⭐⭐</div>
+        <div class="quote">"You can use your own money or other people's money. That's not the risk. The risk is that you already have something that's good, and you're going to probably lose it. Just because you're going to be split."</div>
+        <div class="why"><strong>Why it works:</strong> Pattern interrupt. Flips "risk = money" to "risk = focus." Deeply quotable.</div>
+        <span class="hook">Hook: "The biggest risk of starting a new business isn't what you think."</span>
+      </div>
+
+      <div class="clip-card">
+        <span class="rank">🥉</span><h4>"Either the team or we're divorcing"</h4>
+        <div class="meta"><strong>01:09 – 01:20</strong> · 11 sec · ⭐⭐⭐⭐⭐</div>
+        <div class="quote">"Four years in, my wife told me: it's either the team or we're divorcing. I'm still with her. 28 years."</div>
+        <div class="why"><strong>Why it works:</strong> Human moment. Vulnerability + stakes + payoff in 11 seconds.</div>
+        <span class="hook">Hook: "My wife gave me an ultimatum 4 years in."</span>
+      </div>
+
+      <div class="clip-card">
+        <span class="rank">4️⃣</span><h4>Worst-case scenario gut check</h4>
+        <div class="meta"><strong>03:56 – 04:10</strong> · 14 sec · ⭐⭐⭐⭐</div>
+        <div class="quote">"Look at the worst-case scenario. Am I okay with that worst-case scenario? If I'm okay, I take the swing. If I'm not okay, I don't."</div>
+        <div class="why"><strong>Why it works:</strong> Ultra-actionable. Works as a standalone "pin this" tip.</div>
+        <span class="hook">Hook: "The one question before every risky business move."</span>
+      </div>
+
+      <div class="clip-card">
+        <span class="rank">5️⃣</span><h4>Go all in, or don't go at all</h4>
+        <div class="meta"><strong>05:04 – 05:26</strong> · 22 sec · ⭐⭐⭐⭐</div>
+        <div class="quote">"If you were to do it, I would say go all in. Accept that you're forgoing a really comfortable lifestyle. Because the likelihood that you make it work while split is low."</div>
+        <div class="why"><strong>Why it works:</strong> Closes the decision framework with a punch. Pairs perfectly with #1 or #2.</div>
+        <span class="hook">Hook: "The split-focus trap that kills side businesses."</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <strong>AI Video Editing Workflow</strong><br>
+        Built by Emile Zounon. Part of the KodjoLive kit. 2026-04-19.
+      </div>
+      <div>
+        <a href="https://emilezounon.com/KodjoLive/">KodjoLive</a> ·
+        <a href="https://emilezounon.com/KodjoLive/engagement-bot/">Engagement bot</a> ·
+        <a href="https://emilezounon.com/">emilezounon.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Copy buttons
+    document.querySelectorAll('.copy').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const target = document.getElementById(btn.dataset.target);
+        if (!target) return;
+        try {
+          await navigator.clipboard.writeText(target.innerText);
+          const orig = btn.textContent;
+          btn.textContent = 'Copied!';
+          btn.classList.add('ok');
+          setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 1600);
+        } catch (e) {
+          alert('Could not copy automatically. Select the text manually.');
+        }
+      });
+    });
+
+    // Playground: build prompt with user transcript
+    const ta = document.getElementById('userTranscript');
+    const wrap = document.getElementById('builtPromptWrap');
+    const out = document.getElementById('builtPrompt');
+
+    document.getElementById('buildPrompt').addEventListener('click', () => {
+      const t = ta.value.trim();
+      if (!t) { alert('Paste a transcript first.'); return; }
+      out.textContent = `You are a short-form video editor specialized in YouTube Shorts, TikTok, and Instagram Reels.
+
+Here is the transcript of a video, with timestamps:
+
+${t}
+
+Analyze it and return the 5 best moments to cut into short clips (20 to 60 seconds each).
+
+For each moment, provide:
+1. Start and end timestamp
+2. Duration in seconds
+3. Virality rating out of 5 stars
+4. The exact quote that makes the moment powerful
+5. Why it works (one sentence)
+6. A hook line for the title or caption
+
+Rank them from most clippable to least clippable.
+
+Selection criteria:
+- Standalone insight (no context needed to understand)
+- Narrative tension (hook, suspense, payoff)
+- Emotional moment (vulnerability, surprise, humor)
+- Memorable quote (lines that work as on-screen text)
+- Pattern interrupt (reframe, counter-intuitive, unexpected)
+
+No em-dashes. Clean format with emoji ranks (🥇 🥈 🥉).`;
+      wrap.style.display = 'block';
+      wrap.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+
+    document.getElementById('clearPrompt').addEventListener('click', () => {
+      ta.value = ''; out.textContent = ''; wrap.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

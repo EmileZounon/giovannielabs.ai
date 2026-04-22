@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deployment and Testing Guide · KodjoEnglish Engagement Bot</title>
+  <meta name="description" content="Step-by-step guide to deploy and test the KodjoEnglish engagement bot in n8n Cloud.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#1B2A4A;--blue:#037EF3;--blue-hover:#025EC0;--cream:#FAFAF8;--light:#EEF4FF;--ink:#1A1826;--ink-muted:#6B6577;--line:#D4E5FB;--dark:#071525;--display:'Cormorant Garamond',Georgia,serif;--body:'Outfit',system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+    a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+    a:hover{color:var(--blue-hover)}
+    .topbar{background:var(--navy);color:#fff;padding:10px 0;font-size:13px}
+    .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .topbar .left{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .topbar .back{color:#F4B942;text-decoration:none;font-weight:600}
+    .lang-toggle{display:inline-flex;border:1px solid rgba(255,255,255,.25);border-radius:999px;overflow:hidden;font-size:12px}
+    .lang-toggle a{padding:4px 12px;color:rgba(255,255,255,.7);text-decoration:none;font-weight:600}
+    .lang-toggle a.active{background:#F4B942;color:var(--navy)}
+    .hero{padding:60px 0 36px;border-bottom:1px solid var(--line)}
+    .eyebrow{display:inline-block;letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:700;color:var(--blue);background:var(--light);padding:6px 12px;border-radius:4px;margin-bottom:18px}
+    h1{font-family:var(--display);font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-.02em;color:var(--navy);margin-bottom:16px}
+    .lede{font-size:clamp(16px,1.6vw,19px);color:var(--ink-muted);max-width:680px;margin-bottom:24px}
+    .meta{display:flex;gap:14px;font-size:14px;color:var(--ink-muted);flex-wrap:wrap}
+    .meta strong{color:var(--navy)}
+    section.block{padding:48px 0;border-top:1px solid var(--line)}
+    section.block h2{font-family:var(--display);font-size:clamp(26px,3vw,36px);color:var(--navy);margin-bottom:16px}
+    section.block h3{font-size:17px;font-weight:700;color:var(--navy);margin:24px 0 8px}
+    .pill{display:inline-block;font-size:12px;font-weight:700;color:var(--navy);background:var(--light);padding:4px 10px;border-radius:999px;border:1px solid var(--line);margin-bottom:10px}
+    .phase-intro{color:var(--ink-muted);margin-bottom:18px;max-width:680px}
+    .step-list{counter-reset:step;list-style:none;padding:0;margin-top:14px}
+    .step-list > li{counter-increment:step;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px 20px 76px;margin-bottom:12px;position:relative}
+    .step-list > li::before{content:counter(step);position:absolute;left:18px;top:16px;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:18px}
+    .step-list > li h4{color:var(--navy);font-size:16px;margin-bottom:6px}
+    .step-list > li p{color:var(--ink-muted);font-size:14.5px;margin:0 0 6px}
+    .step-list > li p + p{margin-top:6px}
+    .step-list code{background:var(--light);color:var(--navy);padding:1px 6px;border-radius:3px;font-family:'JetBrains Mono',Menlo,monospace;font-size:.85em;font-weight:500}
+    .substeps{list-style:disc;padding-left:20px;margin-top:8px;color:var(--ink-muted);font-size:14.5px}
+    .substeps li{margin:4px 0}
+    .note{background:#fff8e1;border-left:3px solid #F4B942;padding:14px 18px;border-radius:6px;font-size:14px;color:#5a4b1f;margin:14px 0}
+    .note.info{background:var(--light);border-left-color:var(--blue);color:var(--navy)}
+    .note.warn{background:#ffe8e8;border-left-color:#d64545;color:#7a1f1f}
+    table{width:100%;border-collapse:collapse;margin:16px 0;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px}
+    th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+    th{background:var(--light);color:var(--navy);font-weight:700}
+    tr:last-child td{border-bottom:none}
+    .check{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin-top:10px}
+    .check-title{font-weight:700;color:var(--navy);margin-bottom:8px}
+    .check ul{list-style:none;padding:0}
+    .check li{padding:6px 0 6px 30px;position:relative;font-size:14.5px}
+    .check li::before{content:"";position:absolute;left:0;top:10px;width:16px;height:16px;border:2px solid var(--navy);border-radius:4px;background:#fff}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:8px;font-weight:600;font-size:14.5px;text-decoration:none;min-height:44px}
+    .btn-primary{background:var(--navy);color:#fff}
+    .btn-primary:hover{background:var(--dark);color:#fff}
+    .btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+    .btn-outline:hover{background:var(--navy);color:#fff}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .toc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-top:20px}
+    .toc h3{color:var(--navy);font-size:14px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+    .toc ol{list-style:none;padding:0;counter-reset:toc;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px}
+    @media(max-width:640px){.toc ol{grid-template-columns:1fr}}
+    .toc li{counter-increment:toc;font-size:14.5px}
+    .toc li::before{content:counter(toc) ". ";color:var(--blue);font-weight:700}
+    .toc a{text-decoration:none;color:var(--ink)}
+    .toc a:hover{color:var(--blue)}
+    footer{padding:40px 0 32px;border-top:1px solid var(--line);color:var(--ink-muted);font-size:14px}
+    footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media (max-width: 640px){.wrap{padding:0 18px}.btn{width:100%;justify-content:center}section.block{padding:36px 0}.step-list > li{padding:18px 18px 18px 66px}.step-list > li::before{width:34px;height:34px;left:14px;top:14px;font-size:16px}table{font-size:13px}th,td{padding:8px 10px}}
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div class="left">
+        <span><strong>Deployment & Testing Guide</strong> · Engagement Bot</span>
+        <span class="lang-toggle">
+          <a href="deployment.html">FR</a>
+          <a href="deployment.en.html" class="active">EN</a>
+        </span>
+      </div>
+      <a class="back" href="index.en.html">← back to the kit</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">n8n deployment · 45 minutes</span>
+      <h1>Deploy and test the bot, step by step.</h1>
+      <p class="lede">Follow these 6 phases in order. In 45 minutes flat, your bot listens to the Telegram group, detects silent students, and sends personalized messages written by Claude.</p>
+      <div class="meta"><span><strong>Level:</strong> guided beginner</span><span><strong>Duration:</strong> ~45 min</span><span><strong>Cost:</strong> ~$5/month</span></div>
+      <div class="toc">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#phase-0">Account preparation</a></li>
+          <li><a href="#phase-1">Import the workflow</a></li>
+          <li><a href="#phase-2">Test the capture flow</a></li>
+          <li><a href="#phase-3">Test the nudge flow</a></li>
+          <li><a href="#phase-4">Test edge cases</a></li>
+          <li><a href="#phase-5">Activate the cron</a></li>
+        </ol>
+      </div>
+    </div>
+  </header>
+
+  <!-- PHASE 0 -->
+  <section class="block" id="phase-0">
+    <div class="wrap">
+      <span class="pill">Phase 0 · 20 minutes</span>
+      <h2>Prepare accounts and API keys</h2>
+      <p class="phase-intro">Do these 6 things in order. Write every token and ID into a temporary text file — you'll need them in phase 1.</p>
+
+      <ol class="step-list">
+        <li>
+          <h4>Create the Telegram bot</h4>
+          <p>On Telegram, find <strong>@BotFather</strong> and send <code>/newbot</code>. Give it a name and a username (must end in <code>bot</code>). Copy the token it returns.</p>
+          <p><strong>Critical:</strong> then send <code>/setprivacy</code> → select your bot → <strong>Disable</strong>. Without this, the bot will only see commands, not regular messages.</p>
+        </li>
+        <li>
+          <h4>Create a test Telegram group</h4>
+          <p>Create a new Telegram group "Test KodjoBot" with yourself + a friend. Add the bot as an <strong>administrator</strong> (Settings → Administrators → Add). Send a test message to verify.</p>
+        </li>
+        <li>
+          <h4>Create the Google Sheet</h4>
+          <p>Create a new Google Sheet named <code>kodjo-engagement-test</code> with 3 tabs named exactly: <code>students</code>, <code>messages</code>, <code>outreach_log</code>.</p>
+          <p>Import the 3 CSV templates to get the headers right:</p>
+          <div class="cta-row">
+            <a class="btn btn-outline" href="templates/students.csv" download>students.csv</a>
+            <a class="btn btn-outline" href="templates/messages.csv" download>messages.csv</a>
+            <a class="btn btn-outline" href="templates/outreach_log.csv" download>outreach_log.csv</a>
+          </div>
+          <p style="margin-top:8px">Copy the <strong>Sheet ID</strong> from the URL: <code>docs.google.com/spreadsheets/d/<span style="color:var(--blue)">THIS_IS_THE_ID</span>/edit</code></p>
+        </li>
+        <li>
+          <h4>Get your own telegram_user_id</h4>
+          <p>On Telegram, find <strong>@userinfobot</strong> and send it any message. It returns your <code>user id</code> (a number like <code>123456789</code>). Copy it — you'll use it to add yourself as a test student.</p>
+        </li>
+        <li>
+          <h4>Get an Anthropic API key</h4>
+          <p>Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a> → API Keys → Create Key. Copy the key immediately, it's only shown once. It starts with <code>sk-ant-...</code>.</p>
+        </li>
+        <li>
+          <h4>Prepare a Gmail account</h4>
+          <p>The bot will send fallback emails from this account. Use a dedicated one if possible (e.g., <code>bot@kodjoenglish.com</code>). Enable 2FA and create an app password if needed.</p>
+          <div class="note">Recap: save these 4 values in your temp file — <strong>TELEGRAM_BOT_TOKEN</strong>, <strong>GOOGLE_SHEET_ID</strong>, <strong>MY_TELEGRAM_USER_ID</strong>, <strong>ANTHROPIC_API_KEY</strong>.</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PHASE 1 -->
+  <section class="block" id="phase-1" style="background:#fff">
+    <div class="wrap">
+      <span class="pill">Phase 1 · 10 minutes</span>
+      <h2>Import the workflow and connect credentials</h2>
+      <p class="phase-intro">The JSON file contains the 12 nodes already wired together. All that's left is connecting the accounts.</p>
+
+      <ol class="step-list">
+        <li>
+          <h4>Import the file into n8n Cloud</h4>
+          <p>Open n8n Cloud → <strong>Workflows</strong> → <strong>"..."</strong> menu top-right → <strong>"Import from File"</strong>. Choose <a href="kodjo-engagement-bot.json" download><code>kodjo-engagement-bot.json</code></a>. The workflow opens with 12 nodes visible.</p>
+        </li>
+        <li>
+          <h4>Create the Telegram credential</h4>
+          <p>Click on <strong>Telegram: on group message</strong> → choose <em>Create New Credential</em> → paste your <code>TELEGRAM_BOT_TOKEN</code>. Save. This same credential will be reused by the <strong>Telegram: send DM</strong> node.</p>
+        </li>
+        <li>
+          <h4>Create the Google Sheets credential</h4>
+          <p>Click any of the 4 Google Sheets nodes → <em>Create New Credential</em> → choose <strong>OAuth2</strong> → <em>Sign in with Google</em>. Accept the permissions. This credential is automatically shared across all 4 nodes.</p>
+        </li>
+        <li>
+          <h4>Create the Anthropic credential (Header Auth)</h4>
+          <p>The <strong>Claude: generate nudge</strong> node is an HTTP Request. It uses a <strong>Header Auth</strong> credential, not a dedicated Anthropic credential.</p>
+          <ul class="substeps">
+            <li>Click on the <strong>Claude: generate nudge</strong> node.</li>
+            <li>Under <em>Authentication</em>, choose <strong>Generic Credential Type</strong>.</li>
+            <li>Under <em>Generic Auth Type</em>, choose <strong>Header Auth</strong>.</li>
+            <li>Click <em>Create New Credential</em>:
+              <ul class="substeps">
+                <li><strong>Name</strong>: Anthropic API Key (any label)</li>
+                <li><strong>Header Name</strong>: <code>x-api-key</code> (exactly)</li>
+                <li><strong>Header Value</strong>: your <code>sk-ant-...</code> key</li>
+              </ul>
+            </li>
+            <li>Save. The node now shows the credential in green.</li>
+          </ul>
+          <div class="note info"><strong>Why Header Auth and not "Anthropic"?</strong> Some versions of n8n Cloud don't include the native Anthropic node. HTTP Request + Header Auth works everywhere, no dependency.</div>
+        </li>
+        <li>
+          <h4>Create the Gmail credential</h4>
+          <p>Click on <strong>Gmail: send email</strong> → <em>Create New Credential</em> → <strong>OAuth2</strong> → <em>Sign in with Google</em>. Use the Gmail account you prepared in phase 0.</p>
+        </li>
+        <li>
+          <h4>Replace the Google Sheet ID</h4>
+          <p>In each of the 4 Google Sheets nodes (<code>log message</code>, <code>Read students</code>, <code>Read messages</code>, <code>Log outreach</code>), replace <code>REPLACE_WITH_GOOGLE_SHEET_ID</code> with your actual Sheet ID. Select the correct tab from the dropdown.</p>
+        </li>
+        <li>
+          <h4>Save</h4>
+          <p>Click the disk icon in the top right. All red warning triangles on the nodes should disappear.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PHASE 2 -->
+  <section class="block" id="phase-2">
+    <div class="wrap">
+      <span class="pill">Phase 2 · 5 minutes</span>
+      <h2>Test Flow 1 (message capture)</h2>
+      <p class="phase-intro">Goal: verify the bot listens to the group and fills the <code>messages</code> tab.</p>
+
+      <ol class="step-list">
+        <li>
+          <h4>Activate the workflow</h4>
+          <p>Flip the toggle in the top right to <strong>Active</strong> (green). The Telegram Trigger goes live and listens to your group.</p>
+        </li>
+        <li>
+          <h4>Send a test message</h4>
+          <p>In your test Telegram group, send the message <code>this is a test</code>.</p>
+        </li>
+        <li>
+          <h4>Verify in n8n</h4>
+          <p>Back in n8n → <strong>Executions</strong> tab in the left sidebar. You should see a new execution with a green <strong>Success</strong> status.</p>
+        </li>
+        <li>
+          <h4>Verify in Google Sheets</h4>
+          <p>Open your Sheet → <code>messages</code> tab. A new row should appear with your message and your <code>telegram_user_id</code>.</p>
+        </li>
+      </ol>
+
+      <div class="note warn"><strong>If it doesn't work:</strong>
+        <ul class="substeps" style="color:inherit">
+          <li>Check that the toggle is Active.</li>
+          <li>Check that privacy mode is <strong>Disable</strong> in BotFather.</li>
+          <li>Check that the bot is an admin of the group.</li>
+          <li>Open the "Telegram: on group message" node → <em>Test with trigger data</em>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASE 3 -->
+  <section class="block" id="phase-3" style="background:#fff">
+    <div class="wrap">
+      <span class="pill">Phase 3 · 10 minutes</span>
+      <h2>Test Flow 2 (nudge silent students)</h2>
+      <p class="phase-intro">Goal: simulate a 4-day silence and verify that Claude generates a soft message that goes out via Telegram DM, then falls back to email.</p>
+
+      <ol class="step-list">
+        <li>
+          <h4>Add yourself as a test student</h4>
+          <p>In the <code>students</code> tab, add a row with your real info:</p>
+          <table>
+            <thead><tr><th>telegram_user_id</th><th>first_name</th><th>email</th><th>active</th></tr></thead>
+            <tbody><tr><td>YOUR_ID</td><td>Emile</td><td>your@email.com</td><td>TRUE</td></tr></tbody>
+          </table>
+        </li>
+        <li>
+          <h4>Fake an old message</h4>
+          <p>In the <code>messages</code> tab, add a row with your user_id and a <strong>past timestamp</strong>, for example 4 days before today. This tricks the bot into thinking you haven't written in 4 days.</p>
+          <div class="note info">Tip: in Google Sheets, type <code>=NOW()-4</code> in the timestamp cell to get a date 4 days in the past, then copy/paste the value.</div>
+        </li>
+        <li>
+          <h4>Send /start to the bot in DM</h4>
+          <p>Open a direct chat with your bot (search its username in Telegram). Send <code>/start</code>. The bot won't reply, but it now "exists" in your chats. Without this step, the DM will fail and the email fallback will kick in (which is also what we want to test).</p>
+        </li>
+        <li>
+          <h4>Execute Flow 2 manually</h4>
+          <p>In n8n, open the workflow. Click the <strong>Daily at 09:00</strong> node, then click <strong>Execute Workflow</strong> (Play). The whole chain runs. Watch each node turn green.</p>
+        </li>
+        <li>
+          <h4>Verify what you receive</h4>
+          <ul class="substeps">
+            <li>Telegram: a DM from your bot, something like <em>"Emile, we've been thinking about you..."</em></li>
+            <li>If you didn't /start: an email instead with the same content.</li>
+            <li><code>outreach_log</code> tab: a new row with the message sent, the channel used, and days silent.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PHASE 4 -->
+  <section class="block" id="phase-4">
+    <div class="wrap">
+      <span class="pill">Phase 4 · 10 minutes</span>
+      <h2>Test edge cases</h2>
+      <p class="phase-intro">Three scenarios that can break in production if you don't verify them.</p>
+
+      <ol class="step-list">
+        <li>
+          <h4>Email fallback (student without /start)</h4>
+          <p>Add a second test student with a valid <code>telegram_user_id</code> but who has <strong>never</strong> done <code>/start</code>. Add an old message for them. Execute Flow 2.</p>
+          <p><strong>Expected:</strong> Telegram DM fails → the Gmail node automatically takes over → email goes out.</p>
+        </li>
+        <li>
+          <h4>Student deactivation</h4>
+          <p>For a test student, set the <code>active</code> column to <code>FALSE</code>. Execute Flow 2.</p>
+          <p><strong>Expected:</strong> no message goes out for this student. Useful for vacation or intentional pauses.</p>
+        </li>
+        <li>
+          <h4>Student without Telegram</h4>
+          <p>Add a student without a <code>telegram_user_id</code>. Note they'll never be flagged as silent: v1 tracks engagement only via Telegram. V2 will add multi-channel detection.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PHASE 5 -->
+  <section class="block" id="phase-5" style="background:#fff">
+    <div class="wrap">
+      <span class="pill">Phase 5 · 1 minute</span>
+      <h2>Activate the daily cron</h2>
+      <p class="phase-intro">Once all tests pass, the workflow is already active and the cron will trigger automatically tomorrow morning. One last check.</p>
+
+      <ol class="step-list">
+        <li>
+          <h4>Verify the cron</h4>
+          <p>In the <strong>Daily at 09:00</strong> node, verify the cron expression is <code>0 9 * * *</code> (every day at 9 AM).</p>
+        </li>
+        <li>
+          <h4>Set the timezone</h4>
+          <p>Click the gear icon at the top of the workflow → <strong>Workflow settings</strong> → <strong>Timezone</strong> → choose <code>Africa/Abidjan</code> (or Kodjo's timezone).</p>
+        </li>
+        <li>
+          <h4>Clean up test data</h4>
+          <p>Delete yourself from <code>students</code>, delete the fake old messages in <code>messages</code>, empty <code>outreach_log</code>. The system is ready for real students.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="block">
+    <div class="wrap">
+      <span class="pill">Final checklist</span>
+      <h2>Before showing the bot to Kodjo</h2>
+      <div class="check">
+        <div class="check-title">Everything must be checked</div>
+        <ul>
+          <li>Flow 1 captures messages in real time into <code>messages</code></li>
+          <li>Flow 2 detects silent students beyond 48h</li>
+          <li>Claude generates messages in the right tone (soft, encouraging)</li>
+          <li>Telegram DM works for students who did /start</li>
+          <li>Email fallback works for the others</li>
+          <li>The <code>outreach_log</code> tab fills correctly</li>
+          <li>The cron is set to the right timezone</li>
+          <li>Test data has been cleaned up</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEBUG -->
+  <section class="block" style="background:#fff">
+    <div class="wrap">
+      <span class="pill">Troubleshooting</span>
+      <h2>If something breaks</h2>
+      <table>
+        <thead><tr><th>Symptom</th><th>Likely cause</th><th>Fix</th></tr></thead>
+        <tbody>
+          <tr><td>Messages not captured</td><td>Privacy mode not disabled</td><td>BotFather → /setprivacy → Disable</td></tr>
+          <tr><td>"Chat not found" on Telegram DM</td><td>Student hasn't done /start</td><td>Expected, email fallback kicks in</td></tr>
+          <tr><td>Claude returns 401 error</td><td>Wrong Header Auth</td><td>Check Header Name is <code>x-api-key</code> and key starts with <code>sk-ant-</code></td></tr>
+          <tr><td>Claude returns 400 error</td><td>Invalid model</td><td>Check the <code>model</code> field in the JSON body: <code>claude-sonnet-4-5</code></td></tr>
+          <tr><td>Google Sheet not written</td><td>OAuth expired</td><td>Reconnect the Google Sheets credential</td></tr>
+          <tr><td>Cron doesn't fire</td><td>Wrong timezone</td><td>Workflow settings → Timezone</td></tr>
+          <tr><td>Route by channel sends everything to email</td><td>Missing <code>primary_channel</code> field</td><td>Check that "Compute inactive students" runs without errors</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section class="block">
+    <div class="wrap">
+      <span class="pill">After validation</span>
+      <h2>Moving to production</h2>
+      <ol class="step-list">
+        <li>
+          <h4>Clean up the test Sheet</h4>
+          <p>Delete all test rows from the 3 tabs.</p>
+        </li>
+        <li>
+          <h4>Duplicate the workflow as a prod version</h4>
+          <p>In n8n: <em>Duplicate workflow</em> → rename to <code>kodjo-engagement-PROD</code>. Keep the test version as a backup.</p>
+        </li>
+        <li>
+          <h4>Add real students to Sheets</h4>
+          <p>Ask Kodjo to fill the <code>students</code> tab with his real learners: telegram_user_id, email, <code>active=TRUE</code>.</p>
+        </li>
+        <li>
+          <h4>Add the bot to the real group</h4>
+          <p>In the real KodjoEnglish group, add the bot as admin. Post the consent message (see the <a href="index.en.html#start">kit's main page</a>).</p>
+        </li>
+        <li>
+          <h4>Let it run for 2-3 weeks</h4>
+          <p>Before adding WhatsApp in v2, observe what works: how many students are reached, how many come back after a nudge, which messages perform best. The <code>outreach_log</code> is your dashboard.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <strong>Deployment Guide · KodjoEnglish Engagement Bot</strong><br>
+        By Emile Zounon. Last update: 2026-04-19.
+      </div>
+      <div>
+        <a href="index.en.html">back to kit</a> ·
+        <a href="https://emilezounon.com/KodjoLive/">KodjoLive</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

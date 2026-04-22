@@ -1,0 +1,4 @@
+telegram_user_id,telegram_username,first_name,email,active
+123456789,@aminata_d,Aminata,aminata@example.com,TRUE
+987654321,@yao_k,Yao,yao@example.com,TRUE
+111222333,@delphine_n,Delphine,delphine@example.com,TRUE
