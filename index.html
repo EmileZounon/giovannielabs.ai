@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giovannie Labs</title>
+  <meta name="description" content="Giovannie Labs builds AI and software products for education, culture, and business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #0a0a0f;
+      color: #e8e8ea;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 64px 32px; }
+    header { margin-bottom: 96px; }
+    .brand {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .brand .dot { color: #7c6cff; }
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 24px;
+      color: #fff;
+    }
+    h1 .accent { color: #7c6cff; }
+    .lede {
+      font-size: 20px;
+      color: #a8a8b3;
+      max-width: 620px;
+      margin: 0 0 48px;
+    }
+    .section-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #7c6cff;
+      margin: 96px 0 24px;
+      font-weight: 600;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      display: block;
+      padding: 28px;
+      border: 1px solid #1f1f2a;
+      border-radius: 16px;
+      background: #12121a;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+    .card:hover {
+      border-color: #7c6cff;
+      background: #16161f;
+      transform: translateY(-2px);
+    }
+    .card .name {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      margin: 0 0 8px;
+    }
+    .card .desc {
+      color: #a8a8b3;
+      font-size: 15px;
+      margin: 0 0 16px;
+    }
+    .card .arrow {
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      color: #7c6cff;
+      font-weight: 600;
+    }
+    footer {
+      margin-top: 128px;
+      padding-top: 32px;
+      border-top: 1px solid #1f1f2a;
+      color: #6b6b78;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a { color: #a8a8b3; text-decoration: none; }
+    footer a:hover { color: #7c6cff; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Giovannie Labs<span class="dot">.</span></div>
+    </header>
+
+    <main>
+      <h1>We build tools at the edge of <span class="accent">learning and intelligence</span>.</h1>
+      <p class="lede">An independent lab crafting AI and software for education, culture, and business. Shipped products, real users, measurable outcomes.</p>
+
+      <div class="section-label">Products</div>
+      <div class="projects">
+        <a class="card" href="/absi/">
+          <div class="name">ABSI</div>
+          <div class="desc">AI pathway and career guidance for students, built in partnership with Alpha Beta Education Centres.</div>
+          <div class="arrow">Open product &rarr;</div>
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <div>&copy; <span id="year"></span> Giovannie Labs</div>
+      <div><a href="mailto:emile.giovannie@gmail.com">emile.giovannie@gmail.com</a></div>
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
