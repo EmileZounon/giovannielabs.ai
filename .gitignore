@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Nested projects with their own repos and deploys
+# (kept in this folder for organization only; not served by GitHub Pages)
+/naomi/
