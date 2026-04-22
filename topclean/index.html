@@ -27,7 +27,7 @@
         <div class="breadcrumb"><a href="/">Giovannie Labs</a> / Work / TopClean+</div>
         <div class="hero-eyebrow">SaaS &middot; Operations</div>
         <h1>TopClean+</h1>
-        <p class="tagline">A cash flow and operations app for service businesses. Built for a cleaning business in Benin that was bleeding cash, now a template for any small business whose books don't match the bank.</p>
+        <p class="tagline">A cash flow and operations tool for small service businesses, where the everyday reality of handling money in person rarely lines up with what eventually makes it to the books. First deployed at a cleaning and laundry operation in Benin, the approach generalizes to any business that depends on a single person to both take payment and record it.</p>
         <div class="meta">
           <div><strong>Status</strong><br>Live, in production</div>
           <div><strong>Stack</strong><br>React, Vite, PWA, localStorage</div>
@@ -47,8 +47,8 @@
           <p>Two years of quiet cash leakage</p>
         </div>
         <div class="prose">
-          <p>A cleaning and laundry business in Benin, 21 employees, around 10 million FCFA a month in revenue on a good month. One receptionist handled the money AND recorded the transactions. No independent verification. No photo trail. No end-of-day reconciliation.</p>
-          <p><strong>For two years, cash walked out the door.</strong> The owner knew it was happening. He couldn't prove it. He couldn't stop it without firing people he wasn't sure were guilty.</p>
+          <p>Consider a cleaning and laundry business in Benin with twenty-one employees and monthly revenue in the neighborhood of ten million CFA francs on a good month. At the front desk, a single receptionist takes payment from customers and, in the same motion, records that payment in the ledger. There is no second pair of eyes. There is no photograph. There is no end-of-day reconciliation.</p>
+          <p><strong>Over the course of two years, the owner began to notice a widening gap</strong> between what the business was earning on paper and what appeared in his accounts. He could feel that cash was leaving the system. He could not prove where, when, or by whom. Firing the receptionist would not necessarily solve the underlying vulnerability. The problem was not the person running the front desk. The problem was the design of the front desk itself.</p>
         </div>
       </div>
     </section>
@@ -62,27 +62,27 @@
         <div class="features">
           <div class="feature">
             <h4>Transaction entry</h4>
-            <p>Every ticket has a client, service, amount, advance payment, payment mode, and an optional photo. The receptionist can't silently skim because every transaction has a paper trail.</p>
+            <p>Each transaction is recorded with the client's name, the service rendered, the amount owed, the payment method, and an optional photograph. The paper trail is created at the moment of sale, rather than reconstructed afterward from memory.</p>
           </div>
           <div class="feature">
             <h4>Expense tracking</h4>
-            <p>Every expense requires a mandatory photo of the receipt. No more phantom expenses.</p>
+            <p>Every expense logged in the system requires a photograph of the receipt. Phantom expenses, which used to account for a meaningful share of unexplained outflows, simply cannot be entered.</p>
           </div>
           <div class="feature">
             <h4>Daily closing</h4>
-            <p>End-of-day cash count plus mobile money reconciliation. The app auto-flags discrepancies between reported and counted amounts.</p>
+            <p>At the end of each working day, the system walks the staff through a count of the physical cash on hand and a reconciliation of mobile money received. Any gap between the reported total and the counted total is flagged immediately, rather than discovered weeks later.</p>
           </div>
           <div class="feature">
             <h4>Owner dashboard</h4>
-            <p>Live stats, payment method splits, pending approvals, service-by-service progress bars. The owner sees the whole business on one screen.</p>
+            <p>The owner sees the business on a single screen: live revenue, a breakdown by payment method, pending approvals, and progress against each service line. Decisions that used to require a Sunday afternoon with a spreadsheet can now be made at a glance.</p>
           </div>
           <div class="feature">
             <h4>French chat assistant</h4>
-            <p>Natural language in French. Staff can create tickets or expenses just by typing. No training required.</p>
+            <p>Staff members can create tickets or log expenses by typing in plain French, as if they were texting. This matters because training time is a hidden cost of any new system, and typing is a skill most employees already have.</p>
           </div>
           <div class="feature">
             <h4>Weekly Excel export</h4>
-            <p>Four sheets: Tickets, Depenses, Bilan Hebdo, Clotures. For the accountant, the bank, or the tax filing.</p>
+            <p>Every week, the app can export a four-sheet spreadsheet summarizing tickets, expenses, the weekly balance, and each day's closing. The format travels naturally to an accountant, a bank, or a tax authority.</p>
           </div>
         </div>
       </div>
@@ -95,8 +95,8 @@
           <p>A design decision, not just a feature list</p>
         </div>
         <div class="prose">
-          <p>TopClean+ doesn't catch thieves. It removes the opportunity to steal without leaving a trace. Every cash-touching action requires a photo, a timestamp, or a reconciliation step. The receptionist still handles the money, but the accountability trail lives outside of their hands.</p>
-          <p><strong>Built intentionally lightweight.</strong> localStorage, PWA, no backend, no login drama. Two roles: Patron (owner) and Personnel (staff). Four-digit PIN auth. Works offline. Installs on any phone.</p>
+          <p>The design principle behind TopClean+ is subtle but important. The app does not try to catch a thief in the act. It removes the opportunity to steal without leaving a trace. Every action that touches cash requires either a photograph, a timestamp, or a reconciliation step. The receptionist still handles the money. What changes is that the accountability trail no longer lives in their hands alone.</p>
+          <p><strong>The implementation is deliberately lightweight.</strong> Data lives in the browser's local storage, wrapped in a progressive web app that installs on any phone and works without an internet connection. There are only two roles, the owner and the staff, each protected by a four-digit PIN. The whole system is designed to fail gracefully in a region where bandwidth, power, and infrastructure are not always reliable.</p>
         </div>
         <div class="btn-row" style="margin-top: 2rem;">
           <a href="https://topclean-app.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Launch app <span class="arrow">&rarr;</span></a>

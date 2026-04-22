@@ -27,7 +27,7 @@
         <div class="breadcrumb"><a href="/">Giovannie Labs</a> / Work / ResLife</div>
         <div class="hero-eyebrow">SaaS &middot; Education</div>
         <h1>ResLife</h1>
-        <p class="tagline">A housing management platform for small colleges and boarding schools. Built to replace the spreadsheets that every dean, RA, and housing officer secretly dreads.</p>
+        <p class="tagline">A housing platform designed for the specific conditions of small colleges and boarding schools, where the dean, the housing officer, and the most organized resident assistant often turn out to be the same overworked person.</p>
         <div class="meta">
           <div><strong>Status</strong><br>Live demo</div>
           <div><strong>Stack</strong><br>Next.js 16, Firebase, Tailwind</div>
@@ -47,8 +47,8 @@
           <p>Everything housing touches, in one place</p>
         </div>
         <div class="prose">
-          <p>Small colleges and boarding schools run housing on email threads, printed rosters, and brittle spreadsheets that one person maintains. When that person leaves, institutional memory goes with them.</p>
-          <p><strong>ResLife replaces that whole stack.</strong> Students log in to see their room and request changes. RAs file incident reports from their phone. The principal opens or closes the room selection window with a single toggle. Everyone, from the dean to the new freshman, works against the same source of truth.</p>
+          <p>In most small residential institutions, housing is still run through a mixture of email threads, printed rosters, and brittle spreadsheets that a single administrator quietly maintains. The arrangement works well enough, until that administrator takes a leave of absence, moves on, or simply forgets to update a column. When the institutional memory lives in one head and one file, every transition becomes a small crisis.</p>
+          <p><strong>ResLife was built to move that memory out of the spreadsheet and into a shared workspace that belongs to the institution itself.</strong> Students log in to see their room assignment and request a change if the arrangement is not working. Resident assistants file incident reports from their phones, in the moment rather than at the end of a shift. The principal can open or close the room selection window with a single toggle, adjusting the level of student agency as the year progresses. Everyone, from the dean to the newest freshman, works against the same source of truth.</p>
         </div>
       </div>
     </section>
@@ -62,27 +62,27 @@
         <div class="features">
           <div class="feature">
             <h4>Student self-selection</h4>
-            <p>Students browse available rooms and pick their own, or the admin keeps selection closed and assigns manually. A single toggle decides.</p>
+            <p>Students can browse the available rooms and choose their own, or the administrator can keep selection closed and handle assignments by hand. A single toggle decides which mode the institution is in, and it can change mid-year without disrupting existing assignments.</p>
           </div>
           <div class="feature">
             <h4>Room change requests</h4>
-            <p>Students propose moves. Principal and staff review, approve, or deny. On approval, the system ends the old assignment and creates the new one automatically.</p>
+            <p>When a student wants to move, they submit a request naming the room they would prefer. Staff and administrators review it and either approve or explain why not. On approval, the system closes the old assignment and opens the new one, without the paperwork that usually accompanies a move.</p>
           </div>
           <div class="feature">
-            <h4>Bulk CSV upload</h4>
-            <p>Import buildings, rooms, and student rosters from a spreadsheet in minutes. No more manual data entry on day one.</p>
+            <h4>Bulk roster import</h4>
+            <p>Buildings, rooms, and student rosters can be imported from a spreadsheet in a single upload. The first day of a new school year, historically a day of typing, becomes a matter of minutes.</p>
           </div>
           <div class="feature">
             <h4>Occupancy dashboard</h4>
-            <p>Live view of which rooms are filled, which beds are open, and which buildings are over or under capacity.</p>
+            <p>A live view of which rooms are filled, which beds remain open, and which buildings are running over or under capacity. The information that previously required a meeting is now visible on a single page.</p>
           </div>
           <div class="feature">
             <h4>Incident reports</h4>
-            <p>RAs log incidents from their phone. Reports are searchable and tied to students, rooms, and shifts.</p>
+            <p>Resident assistants can file incidents from their phones, tied to specific students, rooms, and shifts. Because the reports are searchable, patterns that would otherwise go unnoticed tend to surface on their own.</p>
           </div>
           <div class="feature">
             <h4>Role-based access</h4>
-            <p>Student, RA, staff, and admin roles. Firebase Auth with email/password and Google SSO. API routes verify tokens server-side.</p>
+            <p>Students, RAs, staff, and administrators each see what their role requires and nothing more. Authentication runs through Firebase and supports both email sign-in and Google sign-in, with tokens verified on the server for every request.</p>
           </div>
         </div>
       </div>
@@ -95,8 +95,8 @@
           <p>Institutions that have outgrown spreadsheets but can't afford enterprise housing software</p>
         </div>
         <div class="prose">
-          <p>Small private colleges, boarding schools, residential programs, international academies. Schools with 100 to 2,000 students where a single administrator still owns the housing process in their head.</p>
-          <p>Already in use as a live demo at one school (Uchenna's). Ready to onboard the next.</p>
+          <p>ResLife is designed for institutions that have outgrown their spreadsheets but cannot justify enterprise housing software: small private colleges, boarding schools, residential academic programs, international academies. Institutions with somewhere between one hundred and two thousand students, where a single capable administrator still carries the housing operation in their head.</p>
+          <p>A live demo is running today at one such school. The platform is ready to onboard the next.</p>
         </div>
         <div class="btn-row" style="margin-top: 2rem;">
           <a href="https://reslife-red.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Launch demo <span class="arrow">&rarr;</span></a>
