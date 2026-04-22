@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResLife | Housing Management for Schools &middot; Giovannie Labs</title>
+  <meta name="description" content="ResLife is a web-based housing management platform for small colleges and boarding schools. Room self-selection, incident reports, maintenance, and occupancy dashboards." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/giovannielabs.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Giovannie Labs<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="/#work" class="nav-link">Work</a></li>
+        <li><a href="mailto:emile.giovannie@gmail.com" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="product-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Giovannie Labs</a> / Work / ResLife</div>
+        <div class="hero-eyebrow">SaaS &middot; Education</div>
+        <h1>ResLife</h1>
+        <p class="tagline">A housing management platform for small colleges and boarding schools. Built to replace the spreadsheets that every dean, RA, and housing officer secretly dreads.</p>
+        <div class="meta">
+          <div><strong>Status</strong><br>Live demo</div>
+          <div><strong>Stack</strong><br>Next.js 16, Firebase, Tailwind</div>
+          <div><strong>First client</strong><br>Uchenna's school</div>
+        </div>
+        <div class="btn-row">
+          <a href="https://reslife-red.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Launch demo <span class="arrow">&rarr;</span></a>
+          <a href="mailto:emile.giovannie@gmail.com?subject=ResLife%20for%20my%20school" class="btn btn-secondary">Request a walkthrough</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>What it does</h2>
+          <p>Everything housing touches, in one place</p>
+        </div>
+        <div class="prose">
+          <p>Small colleges and boarding schools run housing on email threads, printed rosters, and brittle spreadsheets that one person maintains. When that person leaves, institutional memory goes with them.</p>
+          <p><strong>ResLife replaces that whole stack.</strong> Students log in to see their room and request changes. RAs file incident reports from their phone. The principal opens or closes the room selection window with a single toggle. Everyone, from the dean to the new freshman, works against the same source of truth.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Core features</h2>
+          <p>Built with real administrators in the loop</p>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <h4>Student self-selection</h4>
+            <p>Students browse available rooms and pick their own, or the admin keeps selection closed and assigns manually. A single toggle decides.</p>
+          </div>
+          <div class="feature">
+            <h4>Room change requests</h4>
+            <p>Students propose moves. Principal and staff review, approve, or deny. On approval, the system ends the old assignment and creates the new one automatically.</p>
+          </div>
+          <div class="feature">
+            <h4>Bulk CSV upload</h4>
+            <p>Import buildings, rooms, and student rosters from a spreadsheet in minutes. No more manual data entry on day one.</p>
+          </div>
+          <div class="feature">
+            <h4>Occupancy dashboard</h4>
+            <p>Live view of which rooms are filled, which beds are open, and which buildings are over or under capacity.</p>
+          </div>
+          <div class="feature">
+            <h4>Incident reports</h4>
+            <p>RAs log incidents from their phone. Reports are searchable and tied to students, rooms, and shifts.</p>
+          </div>
+          <div class="feature">
+            <h4>Role-based access</h4>
+            <p>Student, RA, staff, and admin roles. Firebase Auth with email/password and Google SSO. API routes verify tokens server-side.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>For whom</h2>
+          <p>Institutions that have outgrown spreadsheets but can't afford enterprise housing software</p>
+        </div>
+        <div class="prose">
+          <p>Small private colleges, boarding schools, residential programs, international academies. Schools with 100 to 2,000 students where a single administrator still owns the housing process in their head.</p>
+          <p>Already in use as a live demo at one school (Uchenna's). Ready to onboard the next.</p>
+        </div>
+        <div class="btn-row" style="margin-top: 2rem;">
+          <a href="https://reslife-red.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Launch demo <span class="arrow">&rarr;</span></a>
+          <a href="mailto:emile.giovannie@gmail.com?subject=ResLife%20partnership" class="btn btn-secondary">Talk to the team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">Giovannie Labs<span>.</span></div>
+        <div><a href="mailto:emile.giovannie@gmail.com">emile.giovannie@gmail.com</a></div>
+      </div>
+      <div class="footer-copy">&copy; <span id="year"></span> Giovannie Labs. ResLife is a product of Giovannie Labs.</div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

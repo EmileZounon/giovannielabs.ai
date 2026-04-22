@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TopClean+ | Cash Flow App for Service Businesses &middot; Giovannie Labs</title>
+  <meta name="description" content="TopClean+ is a cash flow and operations app for service businesses. Transaction tracking, daily closings with photo receipts, Excel exports, and a French chat assistant." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/giovannielabs.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Giovannie Labs<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="/#work" class="nav-link">Work</a></li>
+        <li><a href="mailto:emile.giovannie@gmail.com" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="product-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Giovannie Labs</a> / Work / TopClean+</div>
+        <div class="hero-eyebrow">SaaS &middot; Operations</div>
+        <h1>TopClean+</h1>
+        <p class="tagline">A cash flow and operations app for service businesses. Built for a cleaning business in Benin that was bleeding cash, now a template for any small business whose books don't match the bank.</p>
+        <div class="meta">
+          <div><strong>Status</strong><br>Live, in production</div>
+          <div><strong>Stack</strong><br>React, Vite, PWA, localStorage</div>
+          <div><strong>Where it runs</strong><br>Benin, West Africa</div>
+        </div>
+        <div class="btn-row">
+          <a href="https://topclean-app.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Launch app <span class="arrow">&rarr;</span></a>
+          <a href="mailto:emile.giovannie@gmail.com?subject=TopClean%20for%20my%20business" class="btn btn-secondary">Use it for your business</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>The problem</h2>
+          <p>Two years of quiet cash leakage</p>
+        </div>
+        <div class="prose">
+          <p>A cleaning and laundry business in Benin, 21 employees, around 10 million FCFA a month in revenue on a good month. One receptionist handled the money AND recorded the transactions. No independent verification. No photo trail. No end-of-day reconciliation.</p>
+          <p><strong>For two years, cash walked out the door.</strong> The owner knew it was happening. He couldn't prove it. He couldn't stop it without firing people he wasn't sure were guilty.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>What it does</h2>
+          <p>Separates who touches cash from who records it, by design</p>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <h4>Transaction entry</h4>
+            <p>Every ticket has a client, service, amount, advance payment, payment mode, and an optional photo. The receptionist can't silently skim because every transaction has a paper trail.</p>
+          </div>
+          <div class="feature">
+            <h4>Expense tracking</h4>
+            <p>Every expense requires a mandatory photo of the receipt. No more phantom expenses.</p>
+          </div>
+          <div class="feature">
+            <h4>Daily closing</h4>
+            <p>End-of-day cash count plus mobile money reconciliation. The app auto-flags discrepancies between reported and counted amounts.</p>
+          </div>
+          <div class="feature">
+            <h4>Owner dashboard</h4>
+            <p>Live stats, payment method splits, pending approvals, service-by-service progress bars. The owner sees the whole business on one screen.</p>
+          </div>
+          <div class="feature">
+            <h4>French chat assistant</h4>
+            <p>Natural language in French. Staff can create tickets or expenses just by typing. No training required.</p>
+          </div>
+          <div class="feature">
+            <h4>Weekly Excel export</h4>
+            <p>Four sheets: Tickets, Depenses, Bilan Hebdo, Clotures. For the accountant, the bank, or the tax filing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why it works</h2>
+          <p>A design decision, not just a feature list</p>
+        </div>
+        <div class="prose">
+          <p>TopClean+ doesn't catch thieves. It removes the opportunity to steal without leaving a trace. Every cash-touching action requires a photo, a timestamp, or a reconciliation step. The receptionist still handles the money, but the accountability trail lives outside of their hands.</p>
+          <p><strong>Built intentionally lightweight.</strong> localStorage, PWA, no backend, no login drama. Two roles: Patron (owner) and Personnel (staff). Four-digit PIN auth. Works offline. Installs on any phone.</p>
+        </div>
+        <div class="btn-row" style="margin-top: 2rem;">
+          <a href="https://topclean-app.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Launch app <span class="arrow">&rarr;</span></a>
+          <a href="mailto:emile.giovannie@gmail.com?subject=TopClean%20partnership" class="btn btn-secondary">Talk to the team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">Giovannie Labs<span>.</span></div>
+        <div><a href="mailto:emile.giovannie@gmail.com">emile.giovannie@gmail.com</a></div>
+      </div>
+      <div class="footer-copy">&copy; <span id="year"></span> Giovannie Labs. TopClean+ is a product of Giovannie Labs.</div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

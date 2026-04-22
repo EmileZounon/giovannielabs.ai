@@ -1,0 +1,228 @@
+/* Giovannie Labs shared design system
+   Based on EGZ (emilezounon.com) brand tokens
+   Cormorant Garamond + Outfit, navy/blue palette */
+
+:root {
+  --primary: #1B2A4A;
+  --accent: #037EF3;
+  --accent-hover: #025EC0;
+  --dark: #071525;
+  --dark-surface: #0B1E35;
+  --light: #EEF4FF;
+  --surface: #FFFFFF;
+  --border: #D4E5FB;
+  --text: #1A1826;
+  --text-light: #6B6577;
+  --white: #FAFAF8;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --max-width: 1200px;
+  --radius: 6px;
+  --radius-lg: 10px;
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.14);
+  --transition: 0.3s ease;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; transition: color var(--transition); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; color: var(--text); }
+img { max-width: 100%; height: auto; display: block; }
+
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+
+/* Navbar */
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  padding: 1.25rem 0; background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-container {
+  max-width: var(--max-width); margin: 0 auto; padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.4rem;
+  color: var(--primary); letter-spacing: 0.01em;
+}
+.nav-logo span { color: var(--accent); }
+.nav-menu { display: flex; gap: 2rem; list-style: none; }
+.nav-link { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+.nav-link:hover { color: var(--accent); }
+
+/* Hero (landing) */
+.hero {
+  min-height: 92vh; display: flex; align-items: center;
+  padding: 8rem 0 5rem; position: relative; overflow: hidden;
+  background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
+}
+.hero-watermark {
+  position: absolute; right: -2rem; bottom: -3rem;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(10rem, 22vw, 22rem);
+  color: var(--primary); opacity: 0.04; line-height: 1;
+  pointer-events: none; user-select: none;
+}
+.hero-eyebrow {
+  font-family: var(--font-body); font-weight: 500;
+  font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--accent); margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.75rem, 6.5vw, 5rem);
+  line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 1.25rem;
+  color: var(--primary);
+}
+.hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+.hero-rule { width: 56px; height: 2px; background: var(--accent); margin: 1.75rem 0; }
+.hero-tagline {
+  font-size: 1.25rem; color: var(--text-light); max-width: 640px;
+  margin-bottom: 2.5rem; font-weight: 400;
+}
+
+/* Product hero (shorter, for /reslife/, /topclean/, etc.) */
+.product-hero {
+  padding: 9rem 0 4rem; position: relative;
+  background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
+}
+.product-hero .breadcrumb {
+  font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;
+}
+.product-hero .breadcrumb a { color: var(--accent); }
+.product-hero .breadcrumb a:hover { color: var(--accent-hover); }
+.product-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 600; letter-spacing: -0.01em;
+  color: var(--primary); margin-bottom: 1rem;
+}
+.product-hero .tagline {
+  font-size: 1.25rem; color: var(--text-light); max-width: 680px;
+  margin-bottom: 2rem;
+}
+.product-hero .meta {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+  margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-light);
+}
+.product-hero .meta strong { color: var(--primary); font-weight: 600; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.95rem 1.8rem; border-radius: var(--radius);
+  font-family: var(--font-body); font-weight: 500; font-size: 0.95rem;
+  transition: all var(--transition); cursor: pointer; border: none;
+}
+.btn-primary { background: var(--primary); color: var(--white); }
+.btn-primary:hover { background: var(--accent); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-primary .arrow { transition: transform var(--transition); }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+.btn-secondary { background: transparent; color: var(--primary); border: 1px solid var(--border); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* Section */
+.section { padding: 5.5rem 0; }
+.section.alt { background: var(--light); }
+.section-title { margin-bottom: 3rem; }
+.section-title h2 {
+  font-size: 2.5rem; font-weight: 600; position: relative;
+  padding-top: 1.25rem; margin-bottom: 0.4rem; color: var(--primary);
+}
+.section-title h2::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 28px; height: 2px; background: var(--accent);
+}
+.section-title p { color: var(--text-light); font-size: 1rem; }
+
+/* Cards (landing grid) */
+.card-grid {
+  display: grid; gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 2rem;
+  transition: all var(--transition); display: block; color: inherit;
+}
+.card:hover {
+  border-color: var(--accent); transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.card-type {
+  display: inline-block; font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--accent); margin-bottom: 0.85rem;
+}
+.card h3 { font-size: 1.65rem; margin-bottom: 0.5rem; color: var(--primary); }
+.card-desc { color: var(--text-light); font-size: 0.98rem; margin-bottom: 1.25rem; }
+.card-link {
+  font-size: 0.9rem; font-weight: 500; color: var(--accent);
+  display: inline-flex; align-items: center; gap: 0.4rem;
+}
+.card:hover .card-link .arrow { transform: translateX(3px); }
+.card-link .arrow { transition: transform var(--transition); display: inline-block; }
+
+/* Feature list (for product detail pages) */
+.features {
+  display: grid; gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.feature {
+  padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.feature h4 {
+  font-family: var(--font-body); font-weight: 600; font-size: 1.05rem;
+  color: var(--primary); margin-bottom: 0.5rem;
+}
+.feature p { color: var(--text-light); font-size: 0.95rem; margin: 0; }
+
+/* Prose block (for body copy on detail pages) */
+.prose { max-width: 760px; font-size: 1.05rem; color: var(--text); }
+.prose p { margin-bottom: 1.25rem; }
+.prose p strong { color: var(--primary); font-weight: 600; }
+
+/* Stat row */
+.stats { display: flex; gap: 3rem; flex-wrap: wrap; margin: 2rem 0; }
+.stat .num {
+  font-family: var(--font-display); font-weight: 600; color: var(--accent);
+  font-size: 2.5rem; line-height: 1;
+}
+.stat .label {
+  display: block; font-size: 0.85rem; color: var(--text-light);
+  text-transform: uppercase; letter-spacing: 0.12em; margin-top: 0.35rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--dark); color: var(--light);
+  padding: 3rem 0 2rem; margin-top: 2rem;
+}
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-brand { font-family: var(--font-display); font-size: 1.3rem; }
+.footer-brand span { color: var(--accent); }
+.footer a { color: var(--light); opacity: 0.8; font-size: 0.92rem; }
+.footer a:hover { color: var(--accent); opacity: 1; }
+.footer-copy { font-size: 0.85rem; opacity: 0.6; margin-top: 1rem; width: 100%; }
+
+@media (max-width: 720px) {
+  .nav-menu { display: none; }
+  .hero { padding-top: 6rem; min-height: auto; }
+  .product-hero { padding-top: 7rem; }
+  .section { padding: 4rem 0; }
+}
