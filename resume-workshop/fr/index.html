@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créez votre CV avec l'IA en 30 minutes | Atelier Giovannie Labs</title>
+  <meta name="description" content="Le guide officiel, étape par étape, pour créer un CV taillé sur mesure avec Claude. Un atelier en direct par Giovannie Labs.">
+  <link rel="canonical" href="https://giovannielabs.ai/resume-workshop/fr/">
+  <link rel="alternate" hreflang="en" href="https://giovannielabs.ai/resume-workshop/" />
+  <link rel="alternate" hreflang="fr" href="https://giovannielabs.ai/resume-workshop/fr/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://giovannielabs.ai/resume-workshop/fr/" />
+  <meta property="og:title" content="Créez votre CV avec l'IA en 30 minutes | Atelier Giovannie Labs" />
+  <meta property="og:description" content="Le guide officiel, étape par étape, pour créer un CV taillé sur mesure avec Claude. Une production Giovannie Labs." />
+  <meta property="og:image" content="https://giovannielabs.ai/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Créez votre CV avec l'IA en 30 minutes" />
+  <meta name="twitter:description" content="Un guide d'atelier en direct par Giovannie Labs." />
+  <meta name="twitter:image" content="https://giovannielabs.ai/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#1B2A4A;
+      --gold:#037EF3;
+      --gold-hover:#025EC0;
+      --cream:#FAFAF8;
+      --light:#EEF4FF;
+      --ink:#1A1826;
+      --ink-muted:#6B6577;
+      --line:#D4E5FB;
+      --dark:#071525;
+      --green:#1f7a57;
+      --purple:#6b4ce6;
+      --font-display:'Cormorant Garamond',Georgia,serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --font-mono:'JetBrains Mono','Menlo',monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--font-body);
+      color:var(--ink);
+      background:var(--cream);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+    a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+    a:hover{color:var(--gold)}
+
+    #progress{
+      position:fixed;top:0;left:0;height:3px;width:0%;
+      background:var(--gold);z-index:9999;transition:width .1s linear;
+    }
+
+    .topbar{
+      background:var(--navy);color:#fff;padding:10px 0;font-size:13px;
+      position:sticky;top:0;z-index:100;
+    }
+    .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .topbar a{color:var(--gold);text-decoration:none;font-weight:600}
+    .topbar a:hover{color:#fff}
+    .topbar .lang{display:inline-flex;gap:8px;align-items:center}
+    .topbar .lang a{padding:3px 8px;border-radius:4px;border:1px solid transparent}
+    .topbar .lang a.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+    .hero{padding:80px 0 60px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+    .hero::before{
+      content:"";position:absolute;top:-120px;right:-120px;
+      width:380px;height:380px;border-radius:50%;
+      background:radial-gradient(circle,rgba(3,126,243,.10) 0%,rgba(3,126,243,0) 70%);
+      pointer-events:none;
+    }
+    .eyebrow{
+      display:inline-block;letter-spacing:.18em;text-transform:uppercase;
+      font-size:12px;font-weight:700;color:var(--gold);
+      background:var(--light);padding:6px 12px;border-radius:4px;margin-bottom:20px;
+    }
+    h1{
+      font-family:var(--font-display);
+      font-size:clamp(36px,6vw,68px);
+      line-height:1.05;
+      letter-spacing:-.02em;
+      color:var(--navy);
+      margin-bottom:20px;
+      max-width:900px;
+    }
+    .lede{font-size:clamp(17px,1.6vw,20px);color:var(--ink-muted);max-width:680px;margin-bottom:28px}
+    .author{font-size:14px;color:var(--ink-muted);margin-bottom:28px}
+    .author strong{color:var(--navy);font-weight:600}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:14px 24px;border-radius:8px;font-weight:600;font-size:15px;
+      text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;
+      min-height:44px;
+    }
+    .btn-primary{background:var(--navy);color:#fff}
+    .btn-primary:hover{background:var(--dark);color:#fff;transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,42,74,.25)}
+    .btn-gold{background:var(--gold);color:#fff}
+    .btn-gold:hover{background:var(--gold-hover);color:#fff;transform:translateY(-1px)}
+    .btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+    .btn-outline:hover{background:var(--navy);color:#fff;transform:translateY(-1px)}
+
+    .intro{padding:60px 0;background:#fff;border-bottom:1px solid var(--line)}
+    .intro p{font-size:clamp(17px,1.5vw,19px);color:var(--ink);max-width:720px;line-height:1.7}
+    .intro p .accent{color:var(--gold);font-weight:600}
+
+    .phase{padding:70px 0 30px}
+    .phase-tag{
+      display:inline-block;font-family:var(--font-display);font-style:italic;
+      font-size:18px;color:var(--gold);letter-spacing:.04em;margin-bottom:8px;
+    }
+    .phase h2{
+      font-family:var(--font-display);font-size:clamp(30px,4vw,46px);
+      color:var(--navy);line-height:1.1;margin-bottom:14px;letter-spacing:-.01em;
+    }
+    .phase .sub{color:var(--ink-muted);max-width:680px;font-size:17px}
+
+    .steps{display:grid;gap:28px;margin-top:40px}
+    .step{
+      position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;
+      padding:42px 38px 36px 38px;overflow:hidden;
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      opacity:0;transform:translateY(24px);
+    }
+    .step.visible{opacity:1;transform:translateY(0)}
+    .step:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(27,42,74,.08);border-color:var(--gold)}
+    .step .bignum{
+      position:absolute;top:-18px;right:18px;
+      font-family:var(--font-display);font-weight:700;
+      font-size:clamp(120px,16vw,180px);line-height:1;
+      color:var(--gold);opacity:.10;pointer-events:none;user-select:none;
+    }
+    .step-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+    .step-num{
+      width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;
+      font-family:var(--font-display);flex-shrink:0;
+    }
+    .step h3{
+      font-family:var(--font-display);font-size:clamp(24px,2.6vw,32px);
+      color:var(--navy);line-height:1.15;letter-spacing:-.01em;
+    }
+    .step p{color:var(--ink);font-size:15.5px;margin:10px 0;max-width:780px;line-height:1.7}
+    .step p.muted{color:var(--ink-muted)}
+    .step ul{margin:12px 0 12px 22px;color:var(--ink);font-size:15.5px}
+    .step ul li{margin:6px 0;line-height:1.65}
+    .step ol{margin:12px 0 12px 22px;color:var(--ink);font-size:15.5px}
+    .step ol li{margin:6px 0;line-height:1.65}
+    .step strong{color:var(--navy)}
+    .step h4{
+      font-family:var(--font-body);font-weight:700;color:var(--navy);
+      font-size:15px;margin:20px 0 6px;text-transform:uppercase;letter-spacing:.08em;
+    }
+    .step code{
+      background:#0b1e2f;color:#f4f4f4;padding:2px 7px;border-radius:4px;
+      font-family:var(--font-mono);font-size:.88em;
+    }
+
+    .prompt{
+      position:relative;background:#0b1e2f;color:#f4f4f4;border-radius:12px;
+      padding:48px 22px 22px 22px;
+      font-family:var(--font-mono);font-size:13.5px;line-height:1.65;
+      white-space:pre-wrap;overflow-x:auto;margin:18px 0;
+    }
+    .prompt .copy{
+      position:absolute;top:12px;right:12px;
+      background:var(--gold);color:#fff;border:none;
+      padding:7px 14px;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer;
+      font-family:var(--font-body);letter-spacing:.04em;
+      transition:background .15s ease;
+    }
+    .prompt .copy:hover{background:var(--gold-hover)}
+    .prompt .copy.ok{background:var(--green)}
+
+    .note{
+      background:#fff8e1;border-left:3px solid var(--gold);
+      padding:16px 20px;border-radius:6px;font-size:14.5px;color:#5a4b1f;
+      margin:18px 0;line-height:1.65;
+    }
+    .note strong{color:#3d3210}
+
+    .divider{padding:30px 0;text-align:center}
+    .divider::before{
+      content:"";display:inline-block;width:60px;height:2px;background:var(--gold);opacity:.5;
+    }
+
+    .closing{
+      padding:90px 0;background:var(--navy);color:#fff;margin-top:60px;
+      position:relative;overflow:hidden;
+    }
+    .closing::before{
+      content:"";position:absolute;bottom:-160px;left:-160px;
+      width:420px;height:420px;border-radius:50%;
+      background:radial-gradient(circle,rgba(3,126,243,.30) 0%,rgba(3,126,243,0) 70%);
+      pointer-events:none;
+    }
+    .closing h2{
+      font-family:var(--font-display);font-size:clamp(32px,5vw,52px);
+      line-height:1.1;letter-spacing:-.01em;margin-bottom:20px;max-width:760px;
+    }
+    .closing p{font-size:17px;color:#cdd7e8;max-width:640px;line-height:1.75;margin-bottom:28px}
+    .closing .btn-gold:hover{background:#fff;color:var(--navy)}
+
+    footer{padding:50px 0 40px;border-top:1px solid var(--line);color:var(--ink-muted);font-size:14px;background:#fff}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    footer a{color:var(--navy)}
+    footer .links{display:flex;gap:20px;flex-wrap:wrap}
+    footer .credit strong{color:var(--navy);font-weight:600}
+
+    @media print {
+      #progress, .topbar, .cta-row, .closing .btn-gold { display:none !important; }
+      .step { opacity:1 !important; transform:none !important; box-shadow:none !important; border:1px solid #ccc !important; page-break-inside:avoid; }
+      .step .bignum { display:none; }
+      .closing { background:#fff !important; color:var(--navy) !important; }
+      .closing p { color:var(--ink) !important; }
+      .prompt { background:#f0f0f0 !important; color:#000 !important; border:1px solid #ccc; }
+      .prompt .copy { display:none; }
+      body { background:#fff; }
+      a { color:var(--navy) !important; text-decoration:none; }
+    }
+
+    @media (max-width: 820px){
+      .hero{padding:56px 0 40px}
+      .phase{padding:48px 0 20px}
+      .step{padding:32px 26px 28px 26px}
+      .step .bignum{font-size:120px;top:-10px;right:10px}
+      .closing{padding:64px 0}
+      footer .wrap{flex-direction:column;align-items:flex-start}
+    }
+
+    @media (max-width: 640px){
+      .wrap{padding:0 18px}
+      .topbar{font-size:12px;padding:8px 0}
+      .topbar .wrap{gap:10px}
+      .hero{padding:40px 0 32px}
+      h1{font-size:clamp(30px,8vw,42px);line-height:1.1}
+      .lede{font-size:16px}
+      .eyebrow{font-size:11px;letter-spacing:.14em;padding:5px 10px}
+      .cta-row{gap:10px}
+      .btn{width:100%;justify-content:center;padding:13px 18px;font-size:14.5px}
+      .intro{padding:40px 0}
+      .intro p{font-size:16px}
+      .phase{padding:40px 0 16px}
+      .phase h2{font-size:26px}
+      .step{padding:26px 20px 22px 20px;border-radius:14px}
+      .step .bignum{font-size:90px;top:-6px;right:6px}
+      .step h3{font-size:21px}
+      .step p, .step ul, .step ol{font-size:14.5px}
+      .prompt{padding:42px 16px 18px;font-size:12.5px;line-height:1.55}
+      .prompt .copy{top:8px;right:8px;font-size:11px;padding:6px 10px}
+      .closing{padding:54px 0}
+      .closing p{font-size:15.5px}
+      .note{font-size:13.5px;padding:13px 16px}
+    }
+
+    @media (max-width: 380px){
+      .wrap{padding:0 14px}
+      h1{font-size:28px}
+      .step{padding:22px 16px 20px 16px}
+      .step h3{font-size:19px}
+      .prompt{font-size:11.5px}
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span><strong>Giovannie Labs</strong> · Guide d'atelier en direct</span>
+      <span class="lang">
+        <a href="/resume-workshop/">EN</a>
+        <a href="/resume-workshop/fr/" class="active">FR</a>
+      </span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Guide d'atelier en direct</span>
+      <h1>Créez et personnalisez votre CV avec l'IA en moins de 30 minutes.</h1>
+      <p class="lede">Un guide pas à pas pour bâtir un CV taillé sur mesure, prêt à postuler, avec Claude. Pas de templates. Pas de baratin. Juste un système qui marche.</p>
+      <p class="author">Par <strong>Giovannie Zounon</strong> · Une production Giovannie Labs</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#phase-1">Commencer le guide</a>
+        <a class="btn btn-gold" href="#phase-2">Construire le système</a>
+        <a class="btn btn-outline" href="https://claude.ai" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          Ouvrir Claude
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="wrap">
+      <p>La plupart des gens envoient le même CV à chaque offre et se demandent pourquoi ils n'obtiennent jamais de réponse. <span class="accent">Le problème, ce n'est pas votre expérience.</span> C'est que votre CV ne parle pas le langage de l'offre d'emploi. Ce guide vous montre comment bâtir un CV de base avec Claude, puis comment mettre en place un système qui l'adapte à n'importe quel poste en quelques minutes. Vous le faites une fois, et vous l'utilisez à vie.</p>
+    </div>
+  </section>
+
+  <!-- PHASE 1 -->
+  <section class="phase" id="phase-1">
+    <div class="wrap">
+      <span class="phase-tag">Phase 1</span>
+      <h2>Bâtissez votre CV de base.</h2>
+      <p class="sub">La copie maitresse à partir de laquelle tout le reste sera construit. Investissez du temps ici. La précision se cumule.</p>
+
+      <div class="steps">
+
+        <article class="step">
+          <span class="bignum">01</span>
+          <div class="step-head">
+            <span class="step-num">1</span>
+            <h3>Rassemblez votre matière première</h3>
+          </div>
+          <p>Avant d'ouvrir Claude, prenez 10 minutes pour réunir :</p>
+          <ul>
+            <li>Votre CV actuel ou votre profil LinkedIn, même s'il est dépassé</li>
+            <li>2 à 3 offres d'emploi pour des postes que vous voudriez réellement</li>
+            <li>Une liste de vos meilleures réalisations avec des chiffres : utilisateurs touchés, revenus générés, projets livrés, personnes formées</li>
+          </ul>
+          <p class="muted"><strong>Pourquoi c'est important :</strong> Claude est puissant, mais il ne peut pas inventer votre carrière. Plus votre matière première est solide, plus votre CV sera précis. Pensez-y comme à la cuisine. Claude est le chef. Vous apportez les ingrédients.</p>
+        </article>
+
+        <article class="step">
+          <span class="bignum">02</span>
+          <div class="step-head">
+            <span class="step-num">2</span>
+            <h3>Démarrez une conversation avec Claude</h3>
+          </div>
+          <p>Allez sur <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> et ouvrez une nouvelle conversation. Ne dites pas simplement "écris-moi un CV". Donnez du contexte à Claude.</p>
+          <h4>Exemple de prompt</h4>
+          <div class="prompt">
+<button class="copy" data-target="p1">Copier</button>
+<span id="p1">Je veux créer un CV d'une page ciblant [type de poste, ex. "rôles corporate en IA / Tech"]. Voici mon parcours :
+
+- Poste actuel : [Votre titre] chez [Entreprise]
+- Poste précédent : [Titre] chez [Entreprise] où j'ai [2 à 3 réalisations principales]
+- Compétences : [Listez vos compétences techniques et stratégiques]
+- Formation : [Diplôme, école]
+- Langues : [Si applicable]
+- Projets parallèles ou leadership : [Tout élément notable]
+
+Crée un CV propre, d'une page, avec ces sections : Résumé professionnel, Expérience professionnelle (avec des puces commençant par des verbes d'action), Compétences techniques, Leadership et impact, Formation. Quantifie l'impact partout où c'est possible.</span></div>
+          <div class="note"><strong>Astuce.</strong> Si vous avez votre CV en fichier, importez-le directement et dites : "Utilise-le comme base et améliore-le pour [type de poste cible]."</div>
+        </article>
+
+        <article class="step">
+          <span class="bignum">03</span>
+          <div class="step-head">
+            <span class="step-num">3</span>
+            <h3>Itérez jusqu'à ce que ce soit tranchant</h3>
+          </div>
+          <p>Votre premier jet ne sera pas parfait. C'est normal. Poussez Claude à faire mieux :</p>
+          <ul>
+            <li>"Rends le résumé plus spécifique aux rôles en gouvernance de l'IA."</li>
+            <li>"Les puces chez IBM sont trop génériques. Ajoute des chiffres et des résultats."</li>
+            <li>"Réorganise la section Compétences pour mettre en avant ce qui est le plus pertinent pour l'IA en entreprise."</li>
+            <li>"Le CV fait deux pages. Réduis-le à une seule sans perdre d'impact."</li>
+          </ul>
+          <p class="muted"><strong>L'objectif :</strong> un CV qui passe le test du "et alors ?". Chaque puce doit répondre à la question : "Et alors, qu'est-ce que ça a accompli ?"</p>
+        </article>
+
+        <article class="step">
+          <span class="bignum">04</span>
+          <div class="step-head">
+            <span class="step-num">4</span>
+            <h3>Exportez en document Word</h3>
+          </div>
+          <p>Une fois satisfait du contenu, demandez à Claude de générer un fichier <code>.docx</code> :</p>
+          <div class="prompt">
+<button class="copy" data-target="p2">Copier</button>
+<span id="p2">Crée ce CV au format Word. Design propre, minimaliste. Une seule page. Mise en page professionnelle avec des titres de section clairs et un formatage cohérent.</span></div>
+          <p>Claude génère un <code>.docx</code> téléchargeable que vous pouvez sauvegarder et modifier. Ce fichier devient votre <strong>CV de base</strong> : la copie maitresse à partir de laquelle tout le reste sera construit.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PHASE 2 -->
+  <section class="phase" id="phase-2">
+    <div class="wrap">
+      <span class="phase-tag">Phase 2</span>
+      <h2>Mettez en place votre système d'adaptation de CV.</h2>
+      <p class="sub">Le moment où ça cesse d'être un simple chat et devient votre stratège CV personnel disponible à la demande.</p>
+
+      <div class="steps">
+
+        <article class="step">
+          <span class="bignum">05</span>
+          <div class="step-head">
+            <span class="step-num">5</span>
+            <h3>Créez un Projet Claude</h3>
+          </div>
+          <p>Un Projet Claude vous permet de sauvegarder des instructions et des fichiers qui restent disponibles dans toutes vos nouvelles conversations. Voyez-le comme votre propre assistant IA personnalisé.</p>
+          <h4>Marche à suivre</h4>
+          <ol>
+            <li>Allez sur <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> sur ordinateur. Les Projets ne sont pas disponibles sur mobile.</li>
+            <li>Cliquez sur <strong>Projets</strong> dans la barre latérale gauche.</li>
+            <li>Cliquez sur <strong>Créer un projet</strong>.</li>
+            <li>Nommez-le <em>"Tailleur de CV"</em>, par exemple.</li>
+          </ol>
+        </article>
+
+        <article class="step">
+          <span class="bignum">06</span>
+          <div class="step-head">
+            <span class="step-num">6</span>
+            <h3>Importez votre CV de base</h3>
+          </div>
+          <p>Dans votre nouveau projet :</p>
+          <ol>
+            <li>Cliquez sur <strong>Ajouter des connaissances</strong> ou sur la zone d'import de fichier.</li>
+            <li>Importez le <code>.docx</code> que vous avez créé à l'étape 4.</li>
+            <li>Ce fichier est désormais accessible dans toutes les conversations de ce projet.</li>
+          </ol>
+        </article>
+
+        <article class="step">
+          <span class="bignum">07</span>
+          <div class="step-head">
+            <span class="step-num">7</span>
+            <h3>Ajoutez les instructions du projet</h3>
+          </div>
+          <p>C'est le cerveau de votre système. Cliquez sur <strong>Instructions du projet</strong> et collez un prompt qui dit à Claude exactement comment se comporter. Voici un modèle à personnaliser :</p>
+          <div class="prompt">
+<button class="copy" data-target="p3">Copier</button>
+<span id="p3">## Rôle
+Tu es mon stratège CV personnel. Tu prends une offre d'emploi et tu produis un CV adapté, d'une page, à partir du CV de base que j'ai importé.
+
+## Quand je colle une offre d'emploi
+1. Analyse-la pour identifier les exigences clés, les compétences indispensables et le vocabulaire récurrent
+2. Mets en relation mon expérience et les priorités du poste
+3. Réécris mon CV avec des ajustements ciblés :
+   - Réorganise les puces pour que l'expérience la plus pertinente arrive en premier
+   - Reprends naturellement la terminologie de l'offre
+   - Ajuste le Résumé professionnel pour parler à ce que cet employeur valorise
+   - Garde-le sur UNE seule page
+4. Après le CV, donne-moi une Analyse d'adéquation :
+   - Top 3 forces pour ce poste
+   - Lacunes éventuelles et comment les traiter dans une lettre de motivation
+   - Mots-clés de l'offre désormais présents dans le CV
+
+## Règles
+- Ne jamais inventer une expérience ou une compétence que je n'ai pas
+- Ne jamais dépasser une page
+- Commencer chaque puce par un verbe d'action fort
+- Si l'offre demande quelque chose que je n'ai pas fait, signale-le honnêtement
+- Pas de baratin de mots à la mode ("professionnel orienté résultats", "joueur d'équipe passionné")</span></div>
+        </article>
+
+        <article class="step">
+          <span class="bignum">08</span>
+          <div class="step-head">
+            <span class="step-num">8</span>
+            <h3>Testez avec une vraie offre d'emploi</h3>
+          </div>
+          <p>Ouvrez une nouvelle conversation à l'intérieur de votre projet. Collez une offre d'emploi qui vous intéresse. Regardez le système faire le travail.</p>
+          <p>Si le résultat n'est pas exactement ce que vous voulez, raffinez les instructions du projet. La première version n'est jamais la version finale. Ajustements courants :</p>
+          <ul>
+            <li>"Mets toujours en avant mes capacités bilingues quand le poste est international."</li>
+            <li>"Commence par mon expérience en gouvernance pour les rôles axés conformité."</li>
+            <li>"Si le poste est dans une startup, mets ma pratique de conseil en premier."</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PHASE 3 -->
+  <section class="phase" id="phase-3">
+    <div class="wrap">
+      <span class="phase-tag">Phase 3</span>
+      <h2>Utilisez-le à chaque candidature.</h2>
+      <p class="sub">Désormais, postuler à un emploi est l'affaire de 5 minutes, plus d'un après-midi.</p>
+
+      <div class="steps">
+
+        <article class="step">
+          <span class="bignum">09</span>
+          <div class="step-head">
+            <span class="step-num">9</span>
+            <h3>Le workflow de candidature en 5 minutes</h3>
+          </div>
+          <p>Votre processus pour chaque candidature ressemble à ceci :</p>
+          <ol>
+            <li>Trouvez un poste qui vous intéresse. <em>2 min de lecture de l'offre.</em></li>
+            <li>Ouvrez votre projet <strong>Tailleur de CV</strong> dans Claude.</li>
+            <li>Démarrez une nouvelle conversation, collez l'offre. <em>10 secondes.</em></li>
+            <li>Relisez le CV adapté et l'analyse d'adéquation. <em>2 min.</em></li>
+            <li>Copiez le contenu dans votre modèle Word, ou demandez à Claude un nouveau <code>.docx</code>. <em>1 min.</em></li>
+          </ol>
+          <p class="muted">Vous venez de passer d'un CV générique à une candidature taillée sur mesure en moins de 5 minutes. Faites-le pour 10 offres et vous verrez une vraie différence dans les taux de réponse.</p>
+        </article>
+
+        <article class="step">
+          <span class="bignum">10</span>
+          <div class="step-head">
+            <span class="step-num">10</span>
+            <h3>Tenez votre CV de base à jour</h3>
+          </div>
+          <p>À chaque nouvelle victoire au travail, projet livré, métrique quantifiable, mettez à jour votre CV de base dans les Fichiers de connaissances du projet. Votre système ne vaut que par la qualité de la matière première qu'il utilise.</p>
+          <h4>Exemples à ajouter</h4>
+          <ul>
+            <li>"Lancement d'un cadre de gouvernance IA adopté par 3 départements."</li>
+            <li>"Formation de 150 employés aux outils IA, augmentation de l'adoption de 40 %."</li>
+            <li>"Réduction du temps d'onboarding de 2 semaines via des parcours d'apprentissage automatisés."</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="closing">
+    <div class="wrap">
+      <h2>Arrêtez d'envoyer le même CV à chaque offre.</h2>
+      <p>Ce qui sépare ceux qui obtiennent des entretiens de ceux qu'on ignore, ce n'est généralement pas l'expérience. C'est la capacité du CV à parler à un employeur précis. Ce système prend 30 minutes à mettre en place et vous fait gagner des heures sur chaque candidature à venir. Construisez-le une fois. Utilisez-le à chaque fois.</p>
+      <a class="btn btn-gold" href="https://claude.ai" target="_blank" rel="noopener">Construire le mien →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="credit">Réalisé par <strong>Giovannie Zounon</strong> · Une production <strong>Giovannie Labs</strong></p>
+      <div class="links">
+        <a href="https://emilezounon.com" target="_blank" rel="noopener">emilezounon.com</a>
+        <a href="https://giovannielabs.ai/">giovannielabs.ai</a>
+        <a href="/resume-workshop/">English version</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const progress = document.getElementById('progress');
+    const updateProgress = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+      progress.style.width = (scrolled * 100) + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.step').forEach(s => io.observe(s));
+
+    document.querySelectorAll('.prompt .copy').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const id = btn.getAttribute('data-target');
+        const target = document.getElementById(id);
+        if (!target) return;
+        try {
+          await navigator.clipboard.writeText(target.innerText);
+          const original = btn.textContent;
+          btn.textContent = 'Copié ✓';
+          btn.classList.add('ok');
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.classList.remove('ok');
+          }, 1800);
+        } catch (err) {
+          btn.textContent = 'Faites ⌘C';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
