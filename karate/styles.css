@@ -187,6 +187,33 @@ a { color: inherit; }
 }
 .reset-btn:hover { color: var(--ink); }
 
+/* Big stat above the stage — total count of belts matching active filters.
+   Updates live as filters change. The number itself uses Bebas Neue (same
+   as the H1) so it lives in the same typographic register as the headline. */
+.stat-display {
+  text-align: center;
+  margin: 24px auto 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.stat-number {
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 6rem);
+  line-height: 0.95;
+  color: #F5C518;
+  letter-spacing: 0.02em;
+  transition: color 200ms;
+}
+.stat-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  font-family: var(--sans);
+}
+
 /* Stage = ball playground */
 .stage {
   position: relative;
@@ -500,6 +527,11 @@ a { color: inherit; }
   .filter-row.secondary label { font-size: 0.7rem; }
   .filter-row.secondary select { min-width: 100%; padding: 8px 10px; font-size: 0.95rem; }
   .reset-btn { align-self: stretch; padding: 10px; }
+
+  /* Stat display: smaller on mobile so it doesn't dominate. */
+  .stat-display { margin: 16px auto 4px; }
+  .stat-number { font-size: clamp(3rem, 12vw, 4.5rem); }
+  .stat-label { font-size: 0.7rem; letter-spacing: 0.18em; }
 
   /* Stage: shorter so it doesn't push the modal trigger off-screen. */
   .stage { height: 56vh; min-height: 380px; }

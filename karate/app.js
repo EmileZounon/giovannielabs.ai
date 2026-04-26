@@ -4,6 +4,8 @@
 (() => {
   const stage = document.getElementById('stage');
   const legend = document.getElementById('legend');
+  const statNumber = document.getElementById('stat-number');
+  const statLabel = document.getElementById('stat-label');
   const orgFilters = document.getElementById('org-filters');
   const yearSel = document.getElementById('filter-year');
   const rankSel = document.getElementById('filter-rank');
@@ -313,12 +315,13 @@
     updateLegend(visible);
   }
 
-  // Live status line under the stage. Reflects active filters with the count
-  // of currently visible black belts.
+  // Live status. Updates two places at once:
+  //   - The big stat above the stage (number + label)
+  //   - The hint legend below the stage
   function updateLegend(visibleCount) {
     const total = BLACK_BELTS.length;
     const count = (typeof visibleCount === 'number') ? visibleCount : total;
-    const noun = count === 1 ? 'black belt' : 'black belts';
+    const noun = count === 1 ? 'Black Belt' : 'Black Belts';
 
     const filters = [];
     if (state.activeOrg && state.activeOrg !== 'all') filters.push(ORGANIZATIONS[state.activeOrg].name);
@@ -327,9 +330,15 @@
     if (state.country)    filters.push(state.country);
     if (state.university) filters.push(state.university);
 
-    const suffix = filters.length ? ` matching ${filters.join(' · ')}` : '';
-    const hint = count > 0 ? ' Hover to nudge them.' : '';
-    legend.textContent = `${count} ${noun}${suffix}.${hint}`;
+    // Big stat: number on its own, label says what it represents.
+    statNumber.textContent = count;
+    statLabel.textContent = filters.length
+      ? `${noun} · ${filters.join(' · ')}`
+      : noun;
+
+    // Below-stage hint stays interactive-focused.
+    const hint = count > 0 ? 'Hover to nudge them.' : 'No belts match these filters.';
+    legend.textContent = hint;
   }
 
   /* ---------- modal ---------- */
