@@ -216,6 +216,42 @@ const BLACK_BELTS = [
     country: 'Taiwan',
     flag: '🇹🇼',
     photo: 'photos/bruce.jpg',
+    photoFocus: 'center 18%',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'emile',
+    name: 'Emile Zounon',
+    universities: ['Harvard University'],
+    country: 'Benin',
+    flag: '🇧🇯',
+    photo: 'photos/emile.jpg',
+    photoFocus: '72% 22%',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'ricardo',
+    name: 'Ricardo Harripaul',
+    universities: [],
+    country: 'Trinidad and Tobago',
+    flag: '🇹🇹',
+    photo: 'photos/ricardo.png',
+    photoFocus: 'center 22%',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'munawwar',
+    name: 'Munawwar',
+    universities: [],
+    country: 'Australia',
+    flag: '🇦🇺',
+    photo: 'photos/munawwar.jpg',
     photoFocus: 'center 22%',
     ranks: [
       { rank: 'Shodan', year: 2026, org: 'hdki' },
