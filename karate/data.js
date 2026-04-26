@@ -329,7 +329,8 @@ const BLACK_BELTS = [
     universities: ['Lesley University'],
     country: 'Hong Kong',
     flag: '🇭🇰',
-    photo: 'photos/angel.jpg',
+    photo: 'photos/angel.png',
+    photoFocus: 'center 28%',
     ranks: [
       { rank: 'Nidan',  year: null, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
