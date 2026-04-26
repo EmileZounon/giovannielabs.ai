@@ -250,7 +250,8 @@ const BLACK_BELTS = [
     universities: ['Wellesley College'],
     country: null,
     flag: '',
-    photo: null,
+    photo: 'photos/hanamei.jpeg',
+    photoFocus: 'center 30%',
     ranks: [
       { rank: 'Shodan', year: null, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
