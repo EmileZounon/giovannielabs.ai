@@ -402,13 +402,14 @@ const BLACK_BELTS = [
   {
     id: 'emile',
     name: 'Emile Zounon',
+    title: 'The son of Funakoshi',
     universities: ['Harvard University'],
     country: 'Benin',
     flag: '🇧🇯',
     photo: 'photos/emile.png',
     photoFocus: 'center 22%',
     ranks: [
-      { rank: 'Shodan', year: null, org: 'jka'  },
+      { rank: 'Shodan', year: 2025, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
       { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],

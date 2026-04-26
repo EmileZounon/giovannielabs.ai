@@ -213,11 +213,12 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, JUKF
 
 ### 25. Emile Zounon
+*The son of Funakoshi*
 - **Country:** Benin 🇧🇯
 - **University:** Harvard University
 - **Photo:** photos/emile.png
 - **Ranks:**
-  - Shodan, JKA
+  - Shodan, JKA (2025)
   - Shodan, HDKI (2026)
   - Shodan, JUKF (2024)
 

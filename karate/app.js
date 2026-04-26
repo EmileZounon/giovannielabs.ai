@@ -17,6 +17,7 @@
   const modalClose = document.getElementById('modal-close');
   const modalPhoto = document.getElementById('modal-photo');
   const modalName = document.getElementById('modal-name');
+  const modalEpithet = document.getElementById('modal-epithet');
   const modalUniversity = document.getElementById('modal-university');
   const modalCountry = document.getElementById('modal-country');
   const modalRanks = document.getElementById('modal-ranks');
@@ -357,6 +358,14 @@
     modalPhoto.style.setProperty('--ring-gradient', `conic-gradient(${rc} 0deg 360deg)`);
     modalPhoto.style.setProperty('--ring-glow', hexToRgba(rc, 0.5));
     modalName.textContent = person.name;
+
+    // Optional epithet — italic subtitle, e.g. "The son of Funakoshi".
+    if (person.title) {
+      modalEpithet.textContent = person.title;
+      modalEpithet.hidden = false;
+    } else {
+      modalEpithet.hidden = true;
+    }
 
     // Universities: render every school the person has attended, each with
     // its logo when available. Hide the row entirely if they have none.
