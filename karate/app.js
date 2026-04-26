@@ -304,11 +304,21 @@
     modalPhoto.style.setProperty('--ring-glow', hexToRgba(rc, 0.5));
     modalName.textContent = person.name;
 
-    // University: logo + name when we have a logo, name only otherwise.
-    const u = universityInfo(person.university);
-    modalUniversity.innerHTML = u && u.logo
-      ? `<img class="uni-logo" src="${u.logo}" alt="${person.university}"><span>${person.university}</span>`
-      : `<span>${person.university}</span>`;
+    // University: logo + name when we have a logo, name only otherwise. When
+    // a person has no university recorded, hide the row entirely so the
+    // modal doesn't show an empty field.
+    const uniDt = modalUniversity.previousElementSibling;
+    if (person.university) {
+      const u = universityInfo(person.university);
+      modalUniversity.innerHTML = u && u.logo
+        ? `<img class="uni-logo" src="${u.logo}" alt="${person.university}"><span>${person.university}</span>`
+        : `<span>${person.university}</span>`;
+      modalUniversity.style.display = '';
+      if (uniDt) uniDt.style.display = '';
+    } else {
+      modalUniversity.style.display = 'none';
+      if (uniDt) uniDt.style.display = 'none';
+    }
     modalCountry.textContent = `${person.flag} ${person.country}`;
 
     // Render the full rank ladder. Each row uses a two-line layout so the

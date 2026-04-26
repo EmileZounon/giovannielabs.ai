@@ -57,14 +57,16 @@ const COUNTRIES = [
   { name: 'Hong Kong',   flag: '🇭🇰' },
   { name: 'India',       flag: '🇮🇳' },
   { name: 'Indonesia',   flag: '🇮🇩' },
-  { name: 'Mexico',      flag: '🇲🇽' },
-  { name: 'Russia',      flag: '🇷🇺' },
-  { name: 'Serbia',      flag: '🇷🇸' },
-  { name: 'Spain',       flag: '🇪🇸' },
-  { name: 'Taiwan',      flag: '🇹🇼' },
-  { name: 'Ukraine',     flag: '🇺🇦' },
-  { name: 'USA',         flag: '🇺🇸' },
-  { name: 'Uzbekistan',  flag: '🇺🇿' },
+  { name: 'Mexico',                flag: '🇲🇽' },
+  { name: 'Poland',                flag: '🇵🇱' },
+  { name: 'Russia',                flag: '🇷🇺' },
+  { name: 'Serbia',                flag: '🇷🇸' },
+  { name: 'Spain',                 flag: '🇪🇸' },
+  { name: 'Taiwan',                flag: '🇹🇼' },
+  { name: 'Trinidad and Tobago',   flag: '🇹🇹' },
+  { name: 'Ukraine',               flag: '🇺🇦' },
+  { name: 'USA',                   flag: '🇺🇸' },
+  { name: 'Uzbekistan',            flag: '🇺🇿' },
 ];
 
 // Dan ranks in canonical order (Shodan = 1st dan, Judan = 10th dan).
@@ -131,6 +133,85 @@ const BLACK_BELTS = [
     photoFocus: 'center 38%',
     ranks: [
       { rank: 'Shodan', year: 2018, org: 'tabata' },
+    ],
+  },
+
+  // 2026 HDKI test class — universities to be filled in later by Emile.
+  {
+    id: 'amandine',
+    name: 'Amandine Fromont',
+    university: null,
+    country: 'France',
+    flag: '🇫🇷',
+    photo: 'photos/amandine.jpg',
+    ranks: [
+      { rank: 'Nidan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'iyit',
+    name: 'Iyit Benusia',
+    university: null,
+    country: 'Indonesia',
+    flag: '🇮🇩',
+    photo: 'photos/iyit.jpg',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'peiqi',
+    name: 'Peiqi Chen',
+    university: null,
+    country: 'China',
+    flag: '🇨🇳',
+    photo: 'photos/peiqi.jpg',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'angel',
+    name: 'Angel Chan',
+    university: null,
+    country: 'Hong Kong',
+    flag: '🇭🇰',
+    photo: 'photos/angel.jpg',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'varak',
+    name: 'Varak Mouradian',
+    university: null,
+    country: 'Armenia',
+    flag: '🇦🇲',
+    photo: 'photos/varak.jpg',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'ewa',
+    name: 'Ewa Sitarska',
+    university: null,
+    country: 'Poland',
+    flag: '🇵🇱',
+    photo: 'photos/ewa.jpg',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
+    ],
+  },
+  {
+    id: 'bruce',
+    name: 'Bruce Chang-Hung Hou',
+    university: null,
+    country: 'Taiwan',
+    flag: '🇹🇼',
+    photo: 'photos/bruce.jpg',
+    ranks: [
+      { rank: 'Shodan', year: 2026, org: 'hdki' },
     ],
   },
 ];
