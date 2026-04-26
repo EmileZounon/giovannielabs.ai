@@ -238,6 +238,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 ### 27. Renata Costa
 - **Country:** Brazil 🇧🇷
+- **Photo:** photos/renata.png
 - **Ranks:**
   - Shodan, JUKF (2024)
 
@@ -282,5 +283,5 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - Years for older ranks across the roster (most non-2026 entries are year-null).
 - Countries for the 18 non-photo entries.
 - ISKF logo file.
-- Photos for: Steven, Anna, Yi, Amy, Ann, Ayusha, Nikita, Garen, Hiro, Zeng, Alina, Renata.
+- Photos for: Steven, Anna, Yi, Amy, Ann, Ayusha, Nikita, Garen, Hiro, Zeng, Alina.
 - "Other" Shodan rank from Sasiru's row in the database (org unspecified).
