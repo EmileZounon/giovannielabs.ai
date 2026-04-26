@@ -176,7 +176,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Nidan, JKA
   - Shodan, HDKI (2026)
-  - Shodan, JUKF
+  - Shodan, JUKF (2024)
 
 ### 20. Iyit Benusia
 - **Country:** Indonesia 🇮🇩
@@ -197,13 +197,13 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/munawwar.jpg
 - **Ranks:**
   - Shodan, JKA
-  - Shodan, JUKF
+  - Shodan, JUKF (2024)
 
 ### 23. Julia Van
 - **University:** Boston University
 - **Ranks:**
-  - Shodan, JKA
-  - Shodan, JUKF
+  - Shodan, JKA (2024)
+  - Shodan, JUKF (2024)
 
 ### 24. Sasiru Pathiranage
 - **University:** Boston University
@@ -229,12 +229,12 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/bruce.jpg
 - **Ranks:**
   - Shodan, HDKI (2026)
-  - Shodan, JUKF
+  - Shodan, JUKF (2024)
 
 ### 27. Renata Costa
 - **Country:** Brazil 🇧🇷
 - **Ranks:**
-  - Shodan, JUKF
+  - Shodan, JUKF (2024)
 
 ### 28. Carol Cuesta
 - **University:** Harvard University
