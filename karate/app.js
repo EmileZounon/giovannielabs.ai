@@ -319,7 +319,12 @@
     if (state.activeOrg !== 'all' && !person.ranks.some(r => r.org === state.activeOrg)) return false;
     if (state.year && !person.ranks.some(r => String(r.year) === state.year)) return false;
     if (state.rank && !person.ranks.some(r => r.rank === state.rank)) return false;
-    if (state.country && person.country !== state.country) return false;
+    if (state.country) {
+      const personCountries = person.countries
+        ? person.countries.map(c => c.name)
+        : (person.country ? [person.country] : []);
+      if (!personCountries.includes(state.country)) return false;
+    }
     if (state.university && !(person.universities || []).includes(state.university)) return false;
     if (state.name && person.name !== state.name) return false;
     return true;
@@ -405,9 +410,13 @@
       if (uniDt) uniDt.style.display = 'none';
     }
     // Country: hide the row entirely when the person has no country yet.
+    // Supports either single (country/flag) or multiple (countries array).
     const countryDt = modalCountry.previousElementSibling;
-    if (person.country) {
-      modalCountry.textContent = `${person.flag || ''} ${person.country}`.trim();
+    const countryParts = person.countries
+      ? person.countries.map(c => `${c.flag || ''} ${c.name}`.trim()).filter(Boolean)
+      : (person.country ? [`${person.flag || ''} ${person.country}`.trim()] : []);
+    if (countryParts.length) {
+      modalCountry.textContent = countryParts.join(' · ');
       modalCountry.style.display = '';
       if (countryDt) countryDt.style.display = '';
     } else {

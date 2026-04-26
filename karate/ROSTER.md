@@ -35,9 +35,9 @@ Snapshot of every black belt in the Tabata Sensei lineage and connected federati
 
 Boston University · Columbia University · Georgetown University · Harvard University · Johns Hopkins University · Lesley University · MIT · NYU · UConn · UMass Amherst · University of Texas · Wellesley College · Yale University
 
-## Countries (20)
+## Countries (23)
 
-Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · China · France · Hong Kong · India · Indonesia · Mexico · Poland · Russia · Serbia · Spain · Taiwan · Trinidad and Tobago · Ukraine · USA · Uzbekistan
+Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · China · East Turkistan · France · Hong Kong · India · Indonesia · Mexico · Poland · Russia · Serbia · Spain · Taiwan · Trinidad and Tobago · Ukraine · USA · Uzbekistan
 
 ## Year Range
 
@@ -196,7 +196,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, JKA
 
 ### 22. Munawwar Abdulla
-- **Country:** Australia 🇦🇺
+- **Countries:** Australia 🇦🇺, East Turkistan
 - **University:** Harvard University
 - **Photo:** photos/munawwar.jpg
 - **Ranks:**

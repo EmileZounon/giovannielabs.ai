@@ -105,7 +105,7 @@ a { color: inherit; }
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.18rem;
   line-height: 1.6;
-  color: var(--ink-dim);
+  color: #ffffff;
   margin: 0;
 }
 

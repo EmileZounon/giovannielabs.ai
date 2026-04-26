@@ -58,6 +58,7 @@ const COUNTRIES = [
   { name: 'Brazil',      flag: '🇧🇷' },
   { name: 'Canada',      flag: '🇨🇦' },
   { name: 'China',       flag: '🇨🇳' },
+  { name: 'East Turkistan', flag: '' },
   { name: 'France',      flag: '🇫🇷' },
   { name: 'Hong Kong',   flag: '🇭🇰' },
   { name: 'India',       flag: '🇮🇳' },
@@ -372,6 +373,10 @@ const BLACK_BELTS = [
     id: 'munawwar',
     name: 'Munawwar Abdulla',
     universities: ['Harvard University'],
+    countries: [
+      { name: 'Australia',      flag: '🇦🇺' },
+      { name: 'East Turkistan', flag: '' },
+    ],
     country: 'Australia',
     flag: '🇦🇺',
     photo: 'photos/munawwar.jpg',
