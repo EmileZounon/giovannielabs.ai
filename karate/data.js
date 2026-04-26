@@ -403,8 +403,8 @@ const BLACK_BELTS = [
     universities: ['Harvard University'],
     country: 'Benin',
     flag: '🇧🇯',
-    photo: 'photos/emile.jpg',
-    photoFocus: '72% 22%',
+    photo: 'photos/emile.png',
+    photoFocus: 'center 22%',
     ranks: [
       { rank: 'Shodan', year: null, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
