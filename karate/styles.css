@@ -435,11 +435,51 @@ a { color: inherit; }
 
 /* Mobile */
 @media (max-width: 640px) {
-  .hero { padding: 36px 20px 20px; }
-  .ball { width: 76px; height: 76px; }
-  .stage { height: 60vh; }
-  .filter-row.secondary { flex-direction: column; align-items: stretch; }
-  .filter-row.secondary select { min-width: 100%; }
-  .modal { padding: 24px; }
+  /* Hide the nav menu on mobile — the logo plus a working back button is
+     enough; "Home / Work" links would compete with the logo at 390px. */
+  .nav-menu { display: none; }
+  .nav-container { padding: 14px 18px; }
+
+  /* Hero: smaller padding, smaller H1 floor so "BLACK BELT LINEAGE" doesn't
+     overflow on a 390px viewport. */
+  .hero { padding: 40px 20px 32px; }
+  .hero h1 { font-size: clamp(2.25rem, 11vw, 3.5rem); letter-spacing: 0.02em; }
+  .subtitle { font-size: 0.95rem; }
+  .hero-belt { width: clamp(60px, 30vw, 120px); }
+
+  /* Filter chips: tighter gaps, smaller logos, room for serif Tabata text. */
+  .filters { padding: 16px 18px 6px; gap: 14px; }
+  .filter-row { gap: 8px; }
+  .chip { min-height: 36px; padding: 4px 10px; }
+  .chip-logo { height: 24px; max-width: 50px; }
+  .chip.chip-text { padding: 6px 12px; font-size: 0.92rem; }
+  .filter-label { font-size: 0.65rem; letter-spacing: 0.16em; }
+
+  /* Secondary filters stack into a vertical column. */
+  .filter-row.secondary {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    gap: 10px;
+  }
+  .filter-row.secondary label { font-size: 0.7rem; }
+  .filter-row.secondary select { min-width: 100%; padding: 8px 10px; font-size: 0.95rem; }
+  .reset-btn { align-self: stretch; padding: 10px; }
+
+  /* Stage: shorter so it doesn't push the modal trigger off-screen. */
+  .stage { height: 56vh; min-height: 380px; }
+  .ball { width: 72px; height: 72px; }
+
+  /* Modal: tighter padding, allow grid columns to shrink so long
+     university names like "Boston University" don't blow out. */
+  .modal { padding: 22px; }
+  .modal h2 { font-size: 1.6rem; }
   .modal-photo { width: 110px; height: 110px; }
+  .modal-details { grid-template-columns: minmax(0, max-content) minmax(0, 1fr); gap: 8px 14px; font-size: 0.95rem; }
+  .modal-details dt { font-size: 0.65rem; }
+  .modal-ranks li { padding: 12px 14px; gap: 12px; }
+  .rank-logo, .rank-crest { width: 38px; height: 38px; }
+  .rank-headline { font-size: 1.1rem; gap: 8px; }
+  .rank-meta { font-size: 0.8rem; }
+  .uni-logo { height: 20px; max-width: 60px; }
 }
