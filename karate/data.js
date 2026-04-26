@@ -262,6 +262,7 @@ const BLACK_BELTS = [
     photo: null,
     ranks: [
       { rank: 'Nidan',  year: 2024, org: 'jka'  },
+      { rank: 'Shodan', year: 2023, org: 'jka'  }, // earlier JKA progression
       { rank: 'Shodan', year: null, org: 'jukf' },
     ],
   },
