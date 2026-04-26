@@ -465,6 +465,7 @@ const BLACK_BELTS = [
     country: 'Armenia',
     flag: '🇦🇲',
     photo: 'photos/varak.jpg',
+    photoFocus: 'center 15%',
     ranks: [
       { rank: 'Shodan', year: 2026, org: 'hdki' },
     ],
