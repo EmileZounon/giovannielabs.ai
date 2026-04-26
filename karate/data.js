@@ -155,7 +155,7 @@ const BLACK_BELTS = [
     photo: 'photos/amandine.jpg',
     photoFocus: '72% 30%',
     ranks: [
-      { rank: 'Sandan', year: null, org: 'jka'    },
+      { rank: 'Sandan', year: 2025, org: 'jka'    },
       { rank: 'Nidan',  year: 2026, org: 'hdki'   },
       { rank: 'Nidan',  year: null, org: 'jukf'   },
     ],

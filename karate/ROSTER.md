@@ -84,7 +84,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Universities:** Wellesley College, Georgetown University
 - **Photo:** photos/amandine.jpg
 - **Ranks:**
-  - Sandan, JKA
+  - Sandan, JKA (2025)
   - Nidan, HDKI (2026)
   - Nidan, JUKF
 
