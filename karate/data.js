@@ -447,7 +447,7 @@ const BLACK_BELTS = [
     country: 'Brazil',
     flag: '🇧🇷',
     photo: 'photos/renata.png',
-    photoFocus: 'center 35%',
+    photoFocus: 'center 40%',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],
