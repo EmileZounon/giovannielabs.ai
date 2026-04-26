@@ -21,6 +21,7 @@ const UNIVERSITIES = [
   { name: 'Columbia University',  logo: null },
   { name: 'Georgetown University', logo: null },
   { name: 'Harvard University',   logo: 'logos/harvard.jpg' },
+  { name: 'Johns Hopkins University', logo: null },
   { name: 'Lesley University',    logo: null },
   { name: 'MIT',                  logo: 'logos/mit.jpg' },
   { name: 'NYU',                  logo: null },
@@ -28,6 +29,7 @@ const UNIVERSITIES = [
   { name: 'UMass Amherst',        logo: null },
   { name: 'University of Texas',  logo: null },
   { name: 'Wellesley College',    logo: null },
+  { name: 'Yale University',      logo: null },
 ];
 
 // Lookup helper: find university metadata by display name.
@@ -210,7 +212,7 @@ const BLACK_BELTS = [
   {
     id: 'amy',
     name: 'Amy Liu',
-    universities: ['Wellesley College'],
+    universities: ['Wellesley College', 'Johns Hopkins University'],
     country: null,
     flag: '',
     photo: null,
@@ -233,7 +235,7 @@ const BLACK_BELTS = [
   {
     id: 'ayusha',
     name: 'Ayusha Ariana',
-    universities: ['Wellesley College'],
+    universities: ['Wellesley College', 'Yale University'],
     country: null,
     flag: '',
     photo: null,
@@ -304,7 +306,7 @@ const BLACK_BELTS = [
   {
     id: 'ricardo',
     name: 'Ricardo Harripaul',
-    universities: ['MIT'],
+    universities: ['MIT', 'Harvard University'],
     country: 'Trinidad and Tobago',
     flag: '🇹🇹',
     photo: 'photos/ricardo.png',

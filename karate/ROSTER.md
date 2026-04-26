@@ -31,9 +31,9 @@ Snapshot of every black belt in the Tabata Sensei lineage and connected federati
 | 9 | Kudan | bronze `#D97706` |
 | 10 | Judan | gold `#F5C518` |
 
-## Universities (10)
+## Universities (12)
 
-Boston University · Columbia University · Georgetown University · Harvard University · Lesley University · MIT · NYU · UConn · UMass Amherst · University of Texas · Wellesley College
+Boston University · Columbia University · Georgetown University · Harvard University · Johns Hopkins University · Lesley University · MIT · NYU · UConn · UMass Amherst · University of Texas · Wellesley College · Yale University
 
 ## Countries (20)
 
@@ -112,7 +112,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, JUKF
 
 ### 9. Amy Liu
-- **University:** Wellesley College
+- **Universities:** Wellesley College, Johns Hopkins University
 - **Ranks:**
   - Shodan, HDKI (2026)
   - Shodan, JUKF
@@ -123,7 +123,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, HDKI (2026)
 
 ### 11. Ayusha Ariana
-- **University:** Wellesley College
+- **Universities:** Wellesley College, Yale University
 - **Ranks:**
   - Shodan, HDKI (2026)
 
@@ -159,7 +159,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 ### 17. Ricardo Harripaul
 - **Country:** Trinidad and Tobago 🇹🇹
-- **University:** MIT
+- **Universities:** MIT, Harvard University
 - **Photo:** photos/ricardo.png
 - **Ranks:**
   - Shodan, HDKI (2026)
