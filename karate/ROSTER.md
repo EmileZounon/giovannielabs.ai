@@ -52,7 +52,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** MIT
 - **Photo:** photos/vazrik.jpeg
 - **Ranks:**
-  - Yondan, JKA
+  - Yondan, JKA (2025)
   - Sandan, HDKI
   - Sandan, JUKF
   - Nidan, ISKF

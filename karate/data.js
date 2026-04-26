@@ -109,7 +109,7 @@ const BLACK_BELTS = [
     photo: 'photos/vazrik.jpeg',
     photoFocus: 'center 22%',
     ranks: [
-      { rank: 'Yondan', year: null, org: 'jka'    },
+      { rank: 'Yondan', year: 2025, org: 'jka'    },
       { rank: 'Sandan', year: null, org: 'hdki'   },
       { rank: 'Sandan', year: null, org: 'jukf'   },
       { rank: 'Nidan',  year: null, org: 'iskf'   },
