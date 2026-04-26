@@ -203,7 +203,8 @@ const BLACK_BELTS = [
     universities: ['Boston University', 'Columbia University'],
     country: null,
     flag: '',
-    photo: null,
+    photo: 'photos/qiu.jpeg',
+    photoFocus: 'center 30%',
     ranks: [
       { rank: 'Nidan',  year: null, org: 'jka'  },
       { rank: 'Shodan', year: null, org: 'jukf' },
@@ -275,7 +276,8 @@ const BLACK_BELTS = [
     universities: ['Boston University', 'Columbia University'],
     country: null,
     flag: '',
-    photo: null,
+    photo: 'photos/savannah.jpeg',
+    photoFocus: 'center 35%',
     ranks: [
       { rank: 'Shodan', year: null, org: 'jukf' },
     ],
@@ -379,12 +381,13 @@ const BLACK_BELTS = [
     ],
   },
   {
-    id: 'julia',
-    name: 'Julia Van',
+    id: 'jules',
+    name: 'Jules Van',
     universities: ['Boston University'],
     country: null,
     flag: '',
-    photo: null,
+    photo: 'photos/jules.jpeg',
+    photoFocus: 'center 30%',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jka'  },
       { rank: 'Shodan', year: 2024, org: 'jukf' },

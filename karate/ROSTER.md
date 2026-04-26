@@ -107,6 +107,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 ### 8. Qiu Yu Hong Lu
 - **Universities:** Boston University, Columbia University
+- **Photo:** photos/qiu.jpeg
 - **Ranks:**
   - Nidan, JKA
   - Shodan, JUKF
@@ -143,6 +144,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 ### 14. Savannah Wu
 - **Universities:** Boston University, Columbia University
+- **Photo:** photos/savannah.jpeg
 - **Ranks:**
   - Shodan, JUKF
 
@@ -200,8 +202,9 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, JKA (2024)
   - Shodan, JUKF (2024)
 
-### 23. Julia Van
+### 23. Jules Van
 - **University:** Boston University
+- **Photo:** photos/jules.jpeg
 - **Ranks:**
   - Shodan, JKA (2024)
   - Shodan, JUKF (2024)
@@ -278,5 +281,5 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - Years for older ranks across the roster (most non-2026 entries are year-null).
 - Countries for the 18 non-photo entries.
 - ISKF logo file.
-- Photos for: Steven, Anna, Yi, Qiu Yu Hong, Amy, Ann, Ayusha, Hanamei, Nikita, Savannah, Garen, Hiro, Zeng, Alina, Julia, Renata.
+- Photos for: Steven, Anna, Yi, Amy, Ann, Ayusha, Hanamei, Nikita, Garen, Hiro, Zeng, Alina, Renata.
 - "Other" Shodan rank from Sasiru's row in the database (org unspecified).
