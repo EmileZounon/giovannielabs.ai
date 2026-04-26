@@ -117,7 +117,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Universities:** Wellesley College, Johns Hopkins University
 - **Ranks:**
   - Shodan, HDKI (2022)
-  - Shodan, JUKF
+  - Shodan, JUKF (2022)
 
 ### 10. Ann Xu
 - **University:** Wellesley College
