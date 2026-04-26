@@ -63,9 +63,10 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** Harvard University
 - **Photo:** photos/cassiano.jpeg
 - **Ranks:**
-  - Nidan, JUKF
+  - Nidan, JUKF (2022)
+  - Shodan, JUKF (2021)
   - Shodan, JKA
-  - Shodan, HDKI
+  - Shodan, HDKI (2022)
   - Shodan, Tabata Sensei (2018)
 
 ### 3. Lorraine Sin
@@ -93,7 +94,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** Boston University
 - **Ranks:**
   - Nidan, JKA
-  - Shodan, HDKI (2026)
+  - Shodan, HDKI (2022)
 
 ### 6. Anna Barnacka
 - **University:** Harvard University

@@ -128,9 +128,10 @@ const BLACK_BELTS = [
     photo: 'photos/cassiano.jpeg',
     photoFocus: 'center 38%',
     ranks: [
-      { rank: 'Nidan',  year: null, org: 'jukf'   },
+      { rank: 'Nidan',  year: 2022, org: 'jukf'   },
+      { rank: 'Shodan', year: 2021, org: 'jukf'   },
       { rank: 'Shodan', year: null, org: 'jka'    },
-      { rank: 'Shodan', year: 2026, org: 'hdki'   },
+      { rank: 'Shodan', year: 2022, org: 'hdki'   },
       { rank: 'Shodan', year: 2018, org: 'tabata' },
     ],
   },
@@ -173,7 +174,7 @@ const BLACK_BELTS = [
     photo: null,
     ranks: [
       { rank: 'Nidan',  year: null, org: 'jka'  },
-      { rank: 'Shodan', year: 2026, org: 'hdki' },
+      { rank: 'Shodan', year: 2022, org: 'hdki' },
     ],
   },
   {
