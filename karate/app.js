@@ -3,6 +3,7 @@
 
 (() => {
   const stage = document.getElementById('stage');
+  const legend = document.getElementById('legend');
   const orgFilters = document.getElementById('org-filters');
   const yearSel = document.getElementById('filter-year');
   const rankSel = document.getElementById('filter-rank');
@@ -284,15 +285,37 @@
     if (state.year && !person.ranks.some(r => String(r.year) === state.year)) return false;
     if (state.rank && !person.ranks.some(r => r.rank === state.rank)) return false;
     if (state.country && person.country !== state.country) return false;
-    if (state.university && person.university !== state.university) return false;
+    if (state.university && !(person.universities || []).includes(state.university)) return false;
     return true;
   }
 
   function applyFilters() {
+    let visible = 0;
     balls.forEach(b => {
       const match = matchesFilters(b.person);
       b.el.classList.toggle('dimmed', !match);
+      if (match) visible++;
     });
+    updateLegend(visible);
+  }
+
+  // Live status line under the stage. Reflects active filters with the count
+  // of currently visible black belts.
+  function updateLegend(visibleCount) {
+    const total = BLACK_BELTS.length;
+    const count = (typeof visibleCount === 'number') ? visibleCount : total;
+    const noun = count === 1 ? 'black belt' : 'black belts';
+
+    const filters = [];
+    if (state.activeOrg && state.activeOrg !== 'all') filters.push(ORGANIZATIONS[state.activeOrg].name);
+    if (state.rank)       filters.push(state.rank);
+    if (state.year)       filters.push(state.year);
+    if (state.country)    filters.push(state.country);
+    if (state.university) filters.push(state.university);
+
+    const suffix = filters.length ? ` matching ${filters.join(' · ')}` : '';
+    const hint = count > 0 ? ' Hover to nudge them.' : '';
+    legend.textContent = `${count} ${noun}${suffix}.${hint}`;
   }
 
   /* ---------- modal ---------- */
@@ -304,15 +327,17 @@
     modalPhoto.style.setProperty('--ring-glow', hexToRgba(rc, 0.5));
     modalName.textContent = person.name;
 
-    // University: logo + name when we have a logo, name only otherwise. When
-    // a person has no university recorded, hide the row entirely so the
-    // modal doesn't show an empty field.
+    // Universities: render every school the person has attended, each with
+    // its logo when available. Hide the row entirely if they have none.
     const uniDt = modalUniversity.previousElementSibling;
-    if (person.university) {
-      const u = universityInfo(person.university);
-      modalUniversity.innerHTML = u && u.logo
-        ? `<img class="uni-logo" src="${u.logo}" alt="${person.university}"><span>${person.university}</span>`
-        : `<span>${person.university}</span>`;
+    const unis = person.universities || [];
+    if (unis.length) {
+      modalUniversity.innerHTML = unis.map(name => {
+        const u = universityInfo(name);
+        return u && u.logo
+          ? `<span class="uni-item"><img class="uni-logo" src="${u.logo}" alt="${name}"><span>${name}</span></span>`
+          : `<span class="uni-item"><span>${name}</span></span>`;
+      }).join('');
       modalUniversity.style.display = '';
       if (uniDt) uniDt.style.display = '';
     } else {
@@ -380,5 +405,6 @@
   buildOrgChips();
   buildSecondaryFilters();
   createBalls();
+  updateLegend(); // initial count
   requestAnimationFrame(tick);
 })();

@@ -404,12 +404,19 @@ a { color: inherit; }
   letter-spacing: 0.02em;
 }
 
-/* University logo inline with the modal university field. */
-.uni-row,
+/* University logos inline with the modal university field. A person can
+   have multiple universities, so each one is wrapped in .uni-item and
+   rendered as logo + name; multiple items wrap on small screens. */
 #modal-university {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+.uni-item {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 .uni-logo {
   height: 22px;

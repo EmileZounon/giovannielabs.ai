@@ -100,7 +100,7 @@ const BLACK_BELTS = [
   {
     id: 'vazrik',
     name: 'Vazrik Chiloyan',
-    university: 'MIT',
+    universities: ['MIT'],
     country: 'Armenia',
     flag: '🇦🇲',
     photo: 'photos/vazrik.jpeg',
@@ -115,7 +115,7 @@ const BLACK_BELTS = [
   {
     id: 'lorraine',
     name: 'Lorraine Sin',
-    university: 'Lesley University',
+    universities: ['Lesley University'],
     country: 'Hong Kong',
     flag: '🇭🇰',
     photo: 'photos/lorraine.jpeg',
@@ -126,12 +126,15 @@ const BLACK_BELTS = [
   {
     id: 'cassiano',
     name: 'Anselmo Cassiano',
-    university: 'Harvard University',
+    universities: ['Harvard University'],
     country: 'Brazil',
     flag: '🇧🇷',
     photo: 'photos/cassiano.jpeg',
     photoFocus: 'center 38%',
     ranks: [
+      { rank: 'Nidan',  year: null, org: 'jukf'   },
+      { rank: 'Shodan', year: null, org: 'jka'    },
+      { rank: 'Shodan', year: null, org: 'hdki'   },
       { rank: 'Shodan', year: 2018, org: 'tabata' },
     ],
   },
@@ -140,7 +143,7 @@ const BLACK_BELTS = [
   {
     id: 'amandine',
     name: 'Amandine Fromont',
-    university: 'Georgetown University',
+    universities: ['Georgetown University', 'Wellesley College'],
     country: 'France',
     flag: '🇫🇷',
     photo: 'photos/amandine.jpg',
@@ -152,7 +155,7 @@ const BLACK_BELTS = [
   {
     id: 'iyit',
     name: 'Iyit Benusia',
-    university: 'Lesley University',
+    universities: ['Lesley University'],
     country: 'Indonesia',
     flag: '🇮🇩',
     photo: 'photos/iyit.jpg',
@@ -164,7 +167,7 @@ const BLACK_BELTS = [
   {
     id: 'peiqi',
     name: 'Peiqi Chen',
-    university: 'Boston University',
+    universities: ['Boston University'],
     country: 'China',
     flag: '🇨🇳',
     photo: 'photos/peiqi.jpg',
@@ -175,7 +178,7 @@ const BLACK_BELTS = [
   {
     id: 'angel',
     name: 'Angel Chan',
-    university: null,
+    universities: [],
     country: 'Hong Kong',
     flag: '🇭🇰',
     photo: 'photos/angel.jpg',
@@ -186,7 +189,7 @@ const BLACK_BELTS = [
   {
     id: 'varak',
     name: 'Varak Mouradian',
-    university: 'UMass Amherst',
+    universities: ['UMass Amherst'],
     country: 'Armenia',
     flag: '🇦🇲',
     photo: 'photos/varak.jpg',
@@ -197,7 +200,7 @@ const BLACK_BELTS = [
   {
     id: 'ewa',
     name: 'Ewa Sitarska',
-    university: 'Harvard University',
+    universities: ['Harvard University'],
     country: 'Poland',
     flag: '🇵🇱',
     photo: 'photos/ewa.jpg',
@@ -209,7 +212,7 @@ const BLACK_BELTS = [
   {
     id: 'bruce',
     name: 'Bruce Chang-Hung Hou',
-    university: 'Boston University',
+    universities: ['Boston University'],
     country: 'Taiwan',
     flag: '🇹🇼',
     photo: 'photos/bruce.jpg',
