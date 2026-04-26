@@ -371,7 +371,7 @@ const BLACK_BELTS = [
     photo: 'photos/munawwar.jpg',
     photoFocus: 'center 22%',
     ranks: [
-      { rank: 'Shodan', year: null, org: 'jka'  },
+      { rank: 'Shodan', year: 2024, org: 'jka'  },
       { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],
   },

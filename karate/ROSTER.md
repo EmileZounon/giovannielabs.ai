@@ -196,7 +196,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** Harvard University
 - **Photo:** photos/munawwar.jpg
 - **Ranks:**
-  - Shodan, JKA
+  - Shodan, JKA (2024)
   - Shodan, JUKF (2024)
 
 ### 23. Julia Van
