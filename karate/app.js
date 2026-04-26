@@ -22,6 +22,8 @@
   const modalUniversity = document.getElementById('modal-university');
   const modalCountry = document.getElementById('modal-country');
   const modalRanks = document.getElementById('modal-ranks');
+  const modalOtherStyles = document.getElementById('modal-other-styles');
+  const modalOtherStylesSection = document.getElementById('modal-other-styles-section');
 
   const state = {
     activeOrg: 'all',
@@ -458,6 +460,29 @@
       })
       .join('');
     modalRanks.innerHTML = rows;
+
+    // Other styles (e.g. Kyokushin) — shown separately so they don't influence
+    // the ball ring color or the org filter (this page is Shotokan-first).
+    if (person.otherStyles && person.otherStyles.length) {
+      modalOtherStyles.innerHTML = person.otherStyles
+        .map(s => {
+          const ri = rankInfo(s.rank);
+          const yearStr = s.year ? ` · ${s.year}` : '';
+          const danBadge = ri ? `<span class="rank-dan" style="color:${ri.color}">${ri.dan}・段</span>` : '';
+          return `
+            <li style="border-left-color:${ri ? ri.color : '#888'}">
+              <div class="rank-text" style="margin-left:0">
+                <span class="rank-headline">${s.rank}${danBadge}</span>
+                <span class="rank-meta">${s.style}${yearStr}</span>
+              </div>
+            </li>`;
+        })
+        .join('');
+      modalOtherStylesSection.hidden = false;
+    } else {
+      modalOtherStyles.innerHTML = '';
+      modalOtherStylesSection.hidden = true;
+    }
 
     modalBackdrop.hidden = false;
   }

@@ -385,6 +385,9 @@ const BLACK_BELTS = [
       { rank: 'Shodan', year: 2024, org: 'jka'  },
       { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],
+    otherStyles: [
+      { style: 'Kyokushin', rank: 'Nidan', year: null },
+    ],
   },
   {
     id: 'jules',

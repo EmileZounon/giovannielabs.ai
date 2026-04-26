@@ -202,6 +202,8 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Shodan, JKA (2024)
   - Shodan, JUKF (2024)
+- **Other styles:**
+  - Nidan, Kyokushin
 
 ### 23. Jules Van
 - **University:** Boston University
