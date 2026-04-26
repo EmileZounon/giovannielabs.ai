@@ -330,7 +330,7 @@ const BLACK_BELTS = [
     country: 'Hong Kong',
     flag: '🇭🇰',
     photo: 'photos/angel.png',
-    photoFocus: 'center 28%',
+    photoFocus: 'center 32%',
     ranks: [
       { rank: 'Nidan',  year: null, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
