@@ -47,6 +47,7 @@ const YEARS = (() => {
 const COUNTRIES = [
   { name: 'Algeria',     flag: '🇩🇿' },
   { name: 'Armenia',     flag: '🇦🇲' },
+  { name: 'Australia',   flag: '🇦🇺' },
   { name: 'Bangladesh',  flag: '🇧🇩' },
   { name: 'Benin',       flag: '🇧🇯' },
   { name: 'Brazil',      flag: '🇧🇷' },
@@ -61,7 +62,9 @@ const COUNTRIES = [
   { name: 'Serbia',      flag: '🇷🇸' },
   { name: 'Spain',       flag: '🇪🇸' },
   { name: 'Taiwan',      flag: '🇹🇼' },
+  { name: 'Ukraine',     flag: '🇺🇦' },
   { name: 'USA',         flag: '🇺🇸' },
+  { name: 'Uzbekistan',  flag: '🇺🇿' },
 ];
 
 // Dan ranks in canonical order (Shodan = 1st dan, Judan = 10th dan).
