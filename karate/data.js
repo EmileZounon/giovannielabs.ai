@@ -128,7 +128,7 @@ const BLACK_BELTS = [
     country: 'Brazil',
     flag: '🇧🇷',
     photo: 'photos/cassiano.jpeg',
-    photoFocus: 'center 28%',
+    photoFocus: 'center 38%',
     ranks: [
       { rank: 'Shodan', year: 2018, org: 'tabata' },
     ],
