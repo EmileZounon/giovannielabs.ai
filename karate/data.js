@@ -144,6 +144,7 @@ const BLACK_BELTS = [
     country: 'France',
     flag: '🇫🇷',
     photo: 'photos/amandine.jpg',
+    photoFocus: '72% 30%',
     ranks: [
       { rank: 'Nidan', year: 2026, org: 'hdki' },
     ],
