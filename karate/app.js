@@ -11,6 +11,7 @@
   const rankSel = document.getElementById('filter-rank');
   const countrySel = document.getElementById('filter-country');
   const uniSel = document.getElementById('filter-university');
+  const nameSel = document.getElementById('filter-name');
   const resetBtn = document.getElementById('reset-filters');
 
   const modalBackdrop = document.getElementById('modal-backdrop');
@@ -28,6 +29,7 @@
     rank: '',
     country: '',
     university: '',
+    name: '',
     mouse: { x: -9999, y: -9999, active: false },
   };
 
@@ -142,6 +144,12 @@
     // Universities come from the master list, not just universities with belts.
     fillDropdown(uniSel, UNIVERSITIES.map(u => u.name));
 
+    // Names dropdown — sorted alphabetically. Picking a name jumps straight
+    // to that person's modal (the most useful mobile shortcut), and also
+    // applies the name as a filter so their ball stays lit when modal closes.
+    const allNames = BLACK_BELTS.map(p => p.name).slice().sort();
+    fillDropdown(nameSel, allNames);
+
     [yearSel, rankSel, countrySel, uniSel].forEach(sel => {
       sel.addEventListener('change', () => {
         state.year = yearSel.value;
@@ -152,12 +160,22 @@
       });
     });
 
+    nameSel.addEventListener('change', () => {
+      state.name = nameSel.value;
+      applyFilters();
+      if (state.name) {
+        const person = BLACK_BELTS.find(p => p.name === state.name);
+        if (person) openModal(person);
+      }
+    });
+
     resetBtn.addEventListener('click', () => {
       yearSel.value = '';
       rankSel.value = '';
       countrySel.value = '';
       uniSel.value = '';
-      state.year = state.rank = state.country = state.university = '';
+      nameSel.value = '';
+      state.year = state.rank = state.country = state.university = state.name = '';
       // Clear the org chip too — no chip active means "show every org".
       state.activeOrg = 'all';
       document.querySelectorAll('#org-filters .chip').forEach(el => {
@@ -303,6 +321,7 @@
     if (state.rank && !person.ranks.some(r => r.rank === state.rank)) return false;
     if (state.country && person.country !== state.country) return false;
     if (state.university && !(person.universities || []).includes(state.university)) return false;
+    if (state.name && person.name !== state.name) return false;
     return true;
   }
 
@@ -330,6 +349,7 @@
     if (state.year)       filters.push(state.year);
     if (state.country)    filters.push(state.country);
     if (state.university) filters.push(state.university);
+    if (state.name)       filters.push(state.name);
 
     // Big stat: number on its own, label says what it represents.
     statNumber.textContent = count;
