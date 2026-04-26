@@ -238,8 +238,9 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 ### 28. Carol Cuesta
 - **University:** Harvard University
+- **Photo:** photos/carol.png
 - **Ranks:**
-  - Shodan, JKA
+  - Shodan, JKA (2025)
 
 ### 29. Ewa Sitarska
 - **Country:** Poland 🇵🇱
@@ -276,5 +277,5 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - Years for older ranks across the roster (most non-2026 entries are year-null).
 - Countries for the 18 non-photo entries.
 - ISKF logo file.
-- Photos for: Steven, Anna, Yi, Qiu Yu Hong, Amy, Ann, Ayusha, Hanamei, Nikita, Savannah, Garen, Hiro, Zeng, Alina, Julia, Renata, Carol.
+- Photos for: Steven, Anna, Yi, Qiu Yu Hong, Amy, Ann, Ayusha, Hanamei, Nikita, Savannah, Garen, Hiro, Zeng, Alina, Julia, Renata.
 - "Other" Shodan rank from Sasiru's row in the database (org unspecified).

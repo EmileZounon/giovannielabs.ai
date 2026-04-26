@@ -445,9 +445,10 @@ const BLACK_BELTS = [
     universities: ['Harvard University'],
     country: null,
     flag: '',
-    photo: null,
+    photo: 'photos/carol.png',
+    photoFocus: 'center 35%',
     ranks: [
-      { rank: 'Shodan', year: null, org: 'jka' },
+      { rank: 'Shodan', year: 2025, org: 'jka' },
     ],
   },
   {
