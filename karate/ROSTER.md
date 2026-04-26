@@ -115,25 +115,25 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 9. Amy Liu
 - **Universities:** Wellesley College, Johns Hopkins University
 - **Ranks:**
-  - Shodan, HDKI (2026)
+  - Shodan, HDKI (2022)
   - Shodan, JUKF
 
 ### 10. Ann Xu
 - **University:** Wellesley College
 - **Ranks:**
-  - Shodan, HDKI (2026)
+  - Shodan, HDKI (2022)
 
 ### 11. Ayusha Ariana
 - **Universities:** Wellesley College, Yale University
 - **Ranks:**
-  - Shodan, HDKI (2026)
+  - Shodan, HDKI (2022)
 
 ### 12. Hanamei Shao
 - **University:** Wellesley College
 - **Photo:** photos/hanamei.jpeg
 - **Ranks:**
   - Shodan, JKA
-  - Shodan, HDKI (2026)
+  - Shodan, HDKI (2022)
   - Shodan, JUKF
 
 ### 13. Nikita Patil
@@ -193,7 +193,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 21. Alina Zheng
 - **University:** Wellesley College
 - **Ranks:**
-  - Shodan, JKA
+  - Shodan, JKA (2024)
 
 ### 22. Munawwar Abdulla
 - **Countries:** Australia 🇦🇺, East Turkistan
