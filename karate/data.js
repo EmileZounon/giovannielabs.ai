@@ -139,7 +139,7 @@ const BLACK_BELTS = [
     flag: '🇭🇰',
     photo: 'photos/lorraine.jpeg',
     ranks: [
-      { rank: 'Nidan',  year: null, org: 'jka'    },
+      { rank: 'Nidan',  year: 2023, org: 'jka'    },
       { rank: 'Nidan',  year: null, org: 'hdki'   },
       { rank: 'Nidan',  year: null, org: 'jukf'   },
       { rank: 'Shodan', year: 2017, org: 'tabata' },
@@ -261,7 +261,7 @@ const BLACK_BELTS = [
     flag: '',
     photo: null,
     ranks: [
-      { rank: 'Nidan',  year: null, org: 'jka'  },
+      { rank: 'Nidan',  year: 2024, org: 'jka'  },
       { rank: 'Shodan', year: null, org: 'jukf' },
     ],
   },
@@ -295,7 +295,7 @@ const BLACK_BELTS = [
     flag: '',
     photo: null,
     ranks: [
-      { rank: 'Shodan', year: null, org: 'jka'  },
+      { rank: 'Shodan', year: 2023, org: 'jka'  },
       { rank: 'Shodan', year: null, org: 'iskf' },
     ],
   },
@@ -409,7 +409,7 @@ const BLACK_BELTS = [
     ranks: [
       { rank: 'Shodan', year: null, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
-      { rank: 'Shodan', year: null, org: 'jukf' },
+      { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],
   },
   {
