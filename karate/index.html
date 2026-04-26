@@ -82,9 +82,10 @@
   </div>
 
   <footer class="page-footer">
-    <p>Giovannie Labs · <a href="/">giovannielabs.ai</a></p>
+    <p>&copy; <span id="footer-year"></span> Giovannie Labs. All rights reserved. &middot; <a href="/">giovannielabs.ai</a></p>
   </footer>
 
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
