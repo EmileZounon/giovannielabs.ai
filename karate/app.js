@@ -397,11 +397,19 @@
 
     // Render the full rank ladder. Each row uses a two-line layout so the
     // rank name reads as the headline and the org/year sits quietly under it.
+    // Sort: highest rank first, then within the same rank tier, oldest year
+    // first (so a person's Shodan history reads chronologically).
+    // Null years sort last within their tier.
     const rows = person.ranks
       .slice()
-      .sort((a, b) =>
-        RANKS.findIndex(r => r.name === b.rank) - RANKS.findIndex(r => r.name === a.rank)
-      )
+      .sort((a, b) => {
+        const rankDiff = RANKS.findIndex(r => r.name === b.rank) - RANKS.findIndex(r => r.name === a.rank);
+        if (rankDiff !== 0) return rankDiff;
+        if (a.year == null && b.year == null) return 0;
+        if (a.year == null) return 1;
+        if (b.year == null) return -1;
+        return a.year - b.year;
+      })
       .map(r => {
         const o = ORGANIZATIONS[r.org];
         const ri = rankInfo(r.rank);
