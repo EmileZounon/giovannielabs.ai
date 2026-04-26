@@ -163,7 +163,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 17. Ricardo Harripaul
 - **Country:** Trinidad and Tobago 🇹🇹
 - **Universities:** MIT, Harvard University
-- **Photo:** photos/ricardo.png
+- **Photo:** photos/ricardo.jpg
 - **Ranks:**
   - Shodan, HDKI (2026)
   - Shodan, JUKF

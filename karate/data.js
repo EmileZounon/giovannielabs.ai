@@ -313,8 +313,8 @@ const BLACK_BELTS = [
     universities: ['MIT', 'Harvard University'],
     country: 'Trinidad and Tobago',
     flag: '🇹🇹',
-    photo: 'photos/ricardo.png',
-    photoFocus: 'center 22%',
+    photo: 'photos/ricardo.jpg',
+    photoFocus: 'center 25%',
     ranks: [
       { rank: 'Shodan', year: 2026, org: 'hdki' },
       { rank: 'Shodan', year: null, org: 'jukf' },
