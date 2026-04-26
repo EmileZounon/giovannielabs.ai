@@ -23,7 +23,7 @@ const UNIVERSITIES = [
   { name: 'Lesley University',    logo: null },
   { name: 'MIT',                  logo: 'logos/mit.jpg' },
   { name: 'NYU',                  logo: null },
-  { name: 'UMass',                logo: null },
+  { name: 'UMass Amherst',        logo: null },
   { name: 'Wellesley College',    logo: null },
 ];
 
@@ -115,7 +115,7 @@ const BLACK_BELTS = [
   {
     id: 'lorraine',
     name: 'Lorraine Sin',
-    university: 'Boston University',
+    university: 'Lesley University',
     country: 'Hong Kong',
     flag: '🇭🇰',
     photo: 'photos/lorraine.jpeg',
@@ -140,7 +140,7 @@ const BLACK_BELTS = [
   {
     id: 'amandine',
     name: 'Amandine Fromont',
-    university: null,
+    university: 'Georgetown University',
     country: 'France',
     flag: '🇫🇷',
     photo: 'photos/amandine.jpg',
@@ -151,7 +151,7 @@ const BLACK_BELTS = [
   {
     id: 'iyit',
     name: 'Iyit Benusia',
-    university: null,
+    university: 'Lesley University',
     country: 'Indonesia',
     flag: '🇮🇩',
     photo: 'photos/iyit.jpg',
@@ -163,7 +163,7 @@ const BLACK_BELTS = [
   {
     id: 'peiqi',
     name: 'Peiqi Chen',
-    university: null,
+    university: 'Boston University',
     country: 'China',
     flag: '🇨🇳',
     photo: 'photos/peiqi.jpg',
@@ -185,7 +185,7 @@ const BLACK_BELTS = [
   {
     id: 'varak',
     name: 'Varak Mouradian',
-    university: null,
+    university: 'UMass Amherst',
     country: 'Armenia',
     flag: '🇦🇲',
     photo: 'photos/varak.jpg',
@@ -196,7 +196,7 @@ const BLACK_BELTS = [
   {
     id: 'ewa',
     name: 'Ewa Sitarska',
-    university: null,
+    university: 'Harvard University',
     country: 'Poland',
     flag: '🇵🇱',
     photo: 'photos/ewa.jpg',
@@ -208,7 +208,7 @@ const BLACK_BELTS = [
   {
     id: 'bruce',
     name: 'Bruce Chang-Hung Hou',
-    university: null,
+    university: 'Boston University',
     country: 'Taiwan',
     flag: '🇹🇼',
     photo: 'photos/bruce.jpg',
