@@ -209,8 +209,9 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** Boston University
 - **Photo:** photos/sasiru.jpg
 - **Ranks:**
-  - Nidan, JKA
-  - Shodan, JUKF
+  - Nidan, JKA (2025)
+  - Shodan, JKA (2024)
+  - Shodan, JUKF (2024)
 
 ### 25. Emile Zounon
 *The son of Funakoshi*

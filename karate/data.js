@@ -395,8 +395,9 @@ const BLACK_BELTS = [
     flag: '',
     photo: 'photos/sasiru.jpg',
     ranks: [
-      { rank: 'Nidan',  year: null, org: 'jka'  },
-      { rank: 'Shodan', year: null, org: 'jukf' },
+      { rank: 'Nidan',  year: 2025, org: 'jka'  },
+      { rank: 'Shodan', year: 2024, org: 'jka'  }, // earlier JKA progression
+      { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],
   },
   {
