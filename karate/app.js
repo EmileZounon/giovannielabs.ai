@@ -58,47 +58,42 @@
 
   /* ---------- build filter chips + dropdowns ---------- */
   function buildOrgChips() {
-    // Show every organization, even those with no belts yet (they appear empty
-    // when filtered, which is fine — it tells the story of where the lineage
-    // is going to grow).
-    const allOrgKeys = Object.keys(ORGANIZATIONS);
-    const chips = [{ key: 'all', label: 'All', color: '#F5F1E8' }]
-      .concat(allOrgKeys.map(k => ({ key: k, label: ORGANIZATIONS[k].name, color: ORGANIZATIONS[k].color })));
+    // One chip per organization. There is no "All" chip — clicking an
+    // already-active chip clears the filter instead. Default state: no
+    // chip active, so every org shows.
+    const orgKeys = Object.keys(ORGANIZATIONS);
 
-    chips.forEach(c => {
+    orgKeys.forEach(k => {
+      const orgDef = ORGANIZATIONS[k];
       const btn = document.createElement('button');
-      btn.className = 'chip' + (c.key === 'all' ? ' active' : '');
-      btn.dataset.org = c.key;
-      btn.style.setProperty('--chip-color', c.color);
-      btn.title = c.label;
-      // If the org has a logo, show that instead of plain text. Tabata Sensei
-      // has no formal logo, so we render a crest-style serif label.
-      const orgDef = ORGANIZATIONS[c.key];
-      if (orgDef && orgDef.logo) {
+      btn.className = 'chip';
+      btn.dataset.org = k;
+      btn.style.setProperty('--chip-color', orgDef.color);
+      btn.title = orgDef.name;
+
+      if (orgDef.logo) {
         const img = document.createElement('img');
         img.src = orgDef.logo;
-        img.alt = c.label;
+        img.alt = orgDef.name;
         img.className = 'chip-logo';
         btn.appendChild(img);
       } else {
         btn.classList.add('chip-text');
-        btn.textContent = c.label;
+        btn.textContent = orgDef.name;
       }
+
       btn.addEventListener('click', () => {
-        state.activeOrg = c.key;
-        document.querySelectorAll('.chip').forEach(el => {
-          const isActive = el.dataset.org === c.key;
+        // Clicking the active chip clears the filter (toggle off).
+        const wasActive = state.activeOrg === k;
+        state.activeOrg = wasActive ? 'all' : k;
+        document.querySelectorAll('#org-filters .chip').forEach(el => {
+          const isActive = !wasActive && el.dataset.org === k;
           el.classList.toggle('active', isActive);
-          if (isActive) {
-            el.style.background = c.color;
-          } else {
-            el.style.background = '';
-          }
+          el.style.background = isActive ? orgDef.color : '';
         });
         applyFilters();
       });
-      // initial active background for "All"
-      if (c.key === 'all') btn.style.background = c.color;
+
       orgFilters.appendChild(btn);
     });
   }
@@ -151,12 +146,11 @@
       countrySel.value = '';
       uniSel.value = '';
       state.year = state.rank = state.country = state.university = '';
-      // also reset org chip to All
+      // Clear the org chip too — no chip active means "show every org".
       state.activeOrg = 'all';
-      document.querySelectorAll('.chip').forEach(el => {
-        const isAll = el.dataset.org === 'all';
-        el.classList.toggle('active', isAll);
-        el.style.background = isAll ? '#F5F1E8' : '';
+      document.querySelectorAll('#org-filters .chip').forEach(el => {
+        el.classList.remove('active');
+        el.style.background = '';
       });
       applyFilters();
     });

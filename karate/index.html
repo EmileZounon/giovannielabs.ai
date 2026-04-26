@@ -35,27 +35,27 @@
   </header>
 
   <section class="filters" aria-label="Filters">
-    <div class="filter-row" id="org-filters" role="tablist" aria-label="Organization">
-      <!-- chips injected by app.js -->
-    </div>
-    <details class="more-filters">
-      <summary>More filters</summary>
-      <div class="filter-row secondary">
-        <label>Year
-          <select id="filter-year"><option value="">All</option></select>
-        </label>
-        <label>Rank
-          <select id="filter-rank"><option value="">All</option></select>
-        </label>
-        <label>Country
-          <select id="filter-country"><option value="">All</option></select>
-        </label>
-        <label>University
-          <select id="filter-university"><option value="">All</option></select>
-        </label>
-        <button class="reset-btn" id="reset-filters" type="button">Reset</button>
+    <div class="filter-block">
+      <span class="filter-label">Organization</span>
+      <div class="filter-row" id="org-filters" role="tablist" aria-label="Organization">
+        <!-- chips injected by app.js -->
       </div>
-    </details>
+    </div>
+    <div class="filter-row secondary">
+      <label>Year
+        <select id="filter-year"><option value="">All</option></select>
+      </label>
+      <label>Rank
+        <select id="filter-rank"><option value="">All</option></select>
+      </label>
+      <label>Country
+        <select id="filter-country"><option value="">All</option></select>
+      </label>
+      <label>University
+        <select id="filter-university"><option value="">All</option></select>
+      </label>
+      <button class="reset-btn" id="reset-filters" type="button">Reset</button>
+    </div>
   </section>
 
   <main class="stage" id="stage" aria-label="Black belts">

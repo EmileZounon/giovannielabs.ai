@@ -98,6 +98,20 @@ a { color: inherit; }
 .filters {
   max-width: 1280px; margin: 0 auto;
   padding: 20px 24px 8px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+}
+.filter-block {
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.filter-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  font-family: var(--sans);
 }
 .filter-row {
   display: flex; flex-wrap: wrap; gap: 10px;
@@ -144,18 +158,8 @@ a { color: inherit; }
 }
 .chip.active .chip-logo { filter: none; }
 
-.more-filters {
-  margin-top: 14px;
-  text-align: center;
-}
-.more-filters summary {
-  cursor: pointer; font-size: 0.85rem;
-  color: var(--ink-dim); list-style: none;
-}
-.more-filters summary::after { content: ' ▾'; }
-.more-filters[open] summary::after { content: ' ▴'; }
 .filter-row.secondary {
-  margin-top: 14px; padding: 14px;
+  padding: 14px 16px;
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--line);
   border-radius: 12px;
