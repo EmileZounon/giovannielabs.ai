@@ -238,6 +238,34 @@ a { color: inherit; }
 .ball.dimmed { opacity: 0.12; cursor: default; }
 .ball.dimmed:hover { transform: none; }
 
+/* Placeholder orb shown when a person has no photo yet — initials in serif
+   on a deep dojo gradient. Same ring + glow as a photo orb, so it reads as
+   "person known, photo pending" rather than "broken image". */
+.ball-placeholder {
+  background: linear-gradient(135deg, #1d2535 0%, #0a0e14 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: rgba(245, 241, 232, 0.85);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.modal-photo.placeholder {
+  background: linear-gradient(135deg, #1d2535 0%, #0a0e14 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 2.6rem;
+  color: rgba(245, 241, 232, 0.85);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .legend {
   text-align: center;
   font-size: 0.78rem;

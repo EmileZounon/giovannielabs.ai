@@ -57,6 +57,14 @@
     return info ? info.color : '#F5C518';
   }
 
+  // Initials for the placeholder ball when a person's photo isn't available
+  // yet. "Anselmo Cassiano Alves" → "AA", "Yi Yang" → "YY".
+  function personInitials(person) {
+    const parts = person.name.trim().split(/\s+/);
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+
   /* ---------- build filter chips + dropdowns ---------- */
   function buildOrgChips() {
     // One chip per organization. There is no "All" chip — clicking an
@@ -169,8 +177,14 @@
       const el = document.createElement('div');
       el.className = 'ball';
       el.dataset.id = person.id;
-      el.style.backgroundImage = `url("${person.photo}")`;
-      el.style.backgroundPosition = person.photoFocus || 'center';
+      // Photo background, or initials placeholder when photo is missing.
+      if (person.photo) {
+        el.style.backgroundImage = `url("${person.photo}")`;
+        el.style.backgroundPosition = person.photoFocus || 'center';
+      } else {
+        el.classList.add('ball-placeholder');
+        el.textContent = personInitials(person);
+      }
       // Solid color ring keyed to the person's highest rank. The glow uses
       // the same color so the entire orb reads as one rank "tier".
       const rc = rankColorFor(person);
@@ -320,8 +334,16 @@
 
   /* ---------- modal ---------- */
   function openModal(person) {
-    modalPhoto.style.backgroundImage = `url("${person.photo}")`;
-    modalPhoto.style.backgroundPosition = person.photoFocus || 'center';
+    if (person.photo) {
+      modalPhoto.classList.remove('placeholder');
+      modalPhoto.textContent = '';
+      modalPhoto.style.backgroundImage = `url("${person.photo}")`;
+      modalPhoto.style.backgroundPosition = person.photoFocus || 'center';
+    } else {
+      modalPhoto.classList.add('placeholder');
+      modalPhoto.textContent = personInitials(person);
+      modalPhoto.style.backgroundImage = '';
+    }
     const rc = rankColorFor(person);
     modalPhoto.style.setProperty('--ring-gradient', `conic-gradient(${rc} 0deg 360deg)`);
     modalPhoto.style.setProperty('--ring-glow', hexToRgba(rc, 0.5));
@@ -344,7 +366,16 @@
       modalUniversity.style.display = 'none';
       if (uniDt) uniDt.style.display = 'none';
     }
-    modalCountry.textContent = `${person.flag} ${person.country}`;
+    // Country: hide the row entirely when the person has no country yet.
+    const countryDt = modalCountry.previousElementSibling;
+    if (person.country) {
+      modalCountry.textContent = `${person.flag || ''} ${person.country}`.trim();
+      modalCountry.style.display = '';
+      if (countryDt) countryDt.style.display = '';
+    } else {
+      modalCountry.style.display = 'none';
+      if (countryDt) countryDt.style.display = 'none';
+    }
 
     // Render the full rank ladder. Each row uses a two-line layout so the
     // rank name reads as the headline and the org/year sits quietly under it.
