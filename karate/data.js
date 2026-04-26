@@ -345,7 +345,7 @@ const BLACK_BELTS = [
     country: 'Indonesia',
     flag: '🇮🇩',
     photo: 'photos/iyit.jpg',
-    photoFocus: 'center 28%',
+    photoFocus: 'center 25%',
     ranks: [
       { rank: 'Nidan',  year: null, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
