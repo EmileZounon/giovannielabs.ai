@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Belt Lineage | Giovannie Labs</title>
+  <meta name="description" content="An interactive map of black belts trained under Tabata Sensei and other karate masters. Click any belt to see their story." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://giovannielabs.ai/karate/" />
+  <meta property="og:title" content="Black Belt Lineage" />
+  <meta property="og:description" content="An interactive map of black belts. Click any belt to see their story." />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Giovannie Labs<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/#work" class="nav-link">Work</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Black Belt Lineage</h1>
+      <p class="subtitle">Click a face to read their story. Filter by organization to see the lineage of a single school.</p>
+    </div>
+    <div class="hero-belt" aria-hidden="true"></div>
+  </header>
+
+  <section class="filters" aria-label="Filters">
+    <div class="filter-row" id="org-filters" role="tablist" aria-label="Organization">
+      <!-- chips injected by app.js -->
+    </div>
+    <details class="more-filters">
+      <summary>More filters</summary>
+      <div class="filter-row secondary">
+        <label>Year
+          <select id="filter-year"><option value="">All</option></select>
+        </label>
+        <label>Rank
+          <select id="filter-rank"><option value="">All</option></select>
+        </label>
+        <label>Country
+          <select id="filter-country"><option value="">All</option></select>
+        </label>
+        <label>University
+          <select id="filter-university"><option value="">All</option></select>
+        </label>
+        <button class="reset-btn" id="reset-filters" type="button">Reset</button>
+      </div>
+    </details>
+  </section>
+
+  <main class="stage" id="stage" aria-label="Black belts">
+    <!-- balls injected by app.js -->
+  </main>
+
+  <p class="legend" id="legend">Drag-free. Balls drift on their own. Move your cursor to nudge them.</p>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <div class="modal" role="dialog" aria-labelledby="modal-name" aria-modal="true">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <div class="modal-photo" id="modal-photo"></div>
+      <h2 id="modal-name"></h2>
+      <dl class="modal-details">
+        <dt>University</dt><dd id="modal-university"></dd>
+        <dt>Country</dt><dd id="modal-country"></dd>
+      </dl>
+      <div class="modal-section">
+        <h3 class="modal-section-title">Ranks</h3>
+        <ul class="modal-ranks" id="modal-ranks"></ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <p>Giovannie Labs · <a href="/">giovannielabs.ai</a></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
