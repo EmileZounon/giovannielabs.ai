@@ -86,6 +86,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Sandan, JKA (2025)
   - Nidan, HDKI (2026)
+  - Shodan, HDKI (2021)
   - Nidan, JUKF
 
 ### 5. Steven Chen
