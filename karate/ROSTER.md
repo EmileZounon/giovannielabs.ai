@@ -99,7 +99,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 6. Anna Barnacka
 - **University:** Harvard University
 - **Ranks:**
-  - Shodan, JKA
+  - Shodan, JKA (2022)
 
 ### 7. Yi Yang
 - **University:** Harvard University
