@@ -256,6 +256,8 @@ a { color: inherit; }
   box-shadow: 0 0 26px 2px var(--ring-glow, rgba(245, 197, 24, 0.55));
   transition: opacity 400ms, transform 200ms;
   will-change: transform;
+  /* Stop the page from scrolling when a finger drags a ball */
+  touch-action: none;
 }
 .ball::before {
   /* Conic-gradient ring. The mask uses `closest-side` so 100% maps to the
@@ -279,6 +281,15 @@ a { color: inherit; }
 .ball:hover { transform: scale(1.06); }
 .ball.dimmed { opacity: 0.12; cursor: default; }
 .ball.dimmed:hover { transform: none; }
+/* Lifted feel while dragging — the ball is glued to the finger, the
+   transition is killed so motion is 1:1, and the glow swells a hair. */
+.ball.dragging {
+  cursor: grabbing;
+  transition: none;
+  z-index: 5;
+  filter: brightness(1.05);
+  box-shadow: 0 0 36px 4px var(--ring-glow, rgba(245, 197, 24, 0.65));
+}
 
 /* Placeholder orb shown when a person has no photo yet — initials in serif
    on a deep dojo gradient. Same ring + glow as a photo orb, so it reads as

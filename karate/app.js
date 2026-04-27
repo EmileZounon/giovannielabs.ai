@@ -260,10 +260,74 @@
       ball.x = Math.max(r, Math.min(width - r, ball.x));
       ball.y = Math.max(r, Math.min(height - r, ball.y));
 
-      el.addEventListener('click', () => {
+      // Pointer interactions: small movement = tap (open modal), larger
+      // movement = drag (nudge the ball). Works on touch and mouse alike.
+      // Other balls keep drifting so the "alive" feel is preserved.
+      const DRAG_THRESHOLD = 8; // px before a press becomes a drag
+      let pointerStart = null;
+      let lastMove = null;
+
+      el.addEventListener('pointerdown', (e) => {
         if (el.classList.contains('dimmed')) return;
-        openModal(person);
+        const rect = stage.getBoundingClientRect();
+        pointerStart = {
+          id: e.pointerId,
+          clientX: e.clientX,
+          clientY: e.clientY,
+          stageX: e.clientX - rect.left,
+          stageY: e.clientY - rect.top,
+          time: performance.now(),
+        };
+        lastMove = { x: pointerStart.stageX, y: pointerStart.stageY, t: pointerStart.time };
+        try { el.setPointerCapture(e.pointerId); } catch (_) {}
       });
+
+      el.addEventListener('pointermove', (e) => {
+        if (!pointerStart || e.pointerId !== pointerStart.id) return;
+        const rect = stage.getBoundingClientRect();
+        const stageX = e.clientX - rect.left;
+        const stageY = e.clientY - rect.top;
+        const dx = e.clientX - pointerStart.clientX;
+        const dy = e.clientY - pointerStart.clientY;
+        if (!ball.dragging && Math.hypot(dx, dy) > DRAG_THRESHOLD) {
+          ball.dragging = true;
+          el.classList.add('dragging');
+        }
+        if (ball.dragging) {
+          e.preventDefault();
+          ball.x = Math.max(ball.r, Math.min(rect.width  - ball.r, stageX));
+          ball.y = Math.max(ball.r, Math.min(rect.height - ball.r, stageY));
+          ball.vx = 0;
+          ball.vy = 0;
+          lastMove = { x: stageX, y: stageY, t: performance.now() };
+        }
+      });
+
+      function endDrag(e) {
+        if (!pointerStart || e.pointerId !== pointerStart.id) return;
+        const wasDragging = ball.dragging;
+        if (wasDragging && lastMove) {
+          // Throw the ball with a touch of velocity from the recent motion
+          // so the release feels physical, then it drifts with everyone else.
+          const rect = stage.getBoundingClientRect();
+          const stageX = e.clientX - rect.left;
+          const stageY = e.clientY - rect.top;
+          const dt = Math.max(16, performance.now() - lastMove.t);
+          ball.vx = Math.max(-3, Math.min(3, (stageX - lastMove.x) / dt * 16));
+          ball.vy = Math.max(-3, Math.min(3, (stageY - lastMove.y) / dt * 16));
+        }
+        ball.dragging = false;
+        el.classList.remove('dragging');
+        try { el.releasePointerCapture(pointerStart.id); } catch (_) {}
+        pointerStart = null;
+        lastMove = null;
+        if (!wasDragging && !el.classList.contains('dimmed')) {
+          openModal(person);
+        }
+      }
+      el.addEventListener('pointerup', endDrag);
+      el.addEventListener('pointercancel', endDrag);
+
       el.addEventListener('keydown', (e) => {
         if ((e.key === 'Enter' || e.key === ' ') && !el.classList.contains('dimmed')) {
           e.preventDefault();
@@ -283,6 +347,12 @@
     const H = rect.height;
 
     balls.forEach(b => {
+      // A ball being dragged follows the pointer directly — skip physics so
+      // it stays glued to the finger/mouse without fighting the integrator.
+      if (b.dragging) {
+        b.el.style.transform = `translate(${b.x - b.r}px, ${b.y - b.r}px)`;
+        return;
+      }
       // mouse repulsion
       if (state.mouse.active) {
         const mx = state.mouse.x - rect.left;
@@ -391,7 +461,7 @@
       : noun;
 
     // Below-stage hint stays interactive-focused.
-    const hint = count > 0 ? 'Hover to nudge them.' : 'No belts match these filters.';
+    const hint = count > 0 ? 'Tap a face to read · drag to nudge a ball free.' : 'No belts match these filters.';
     legend.textContent = hint;
   }
 
