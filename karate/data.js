@@ -346,7 +346,7 @@ const BLACK_BELTS = [
     photo: 'photos/angel.png',
     photoFocus: 'center 32%',
     ranks: [
-      { rank: 'Nidan',  year: null, org: 'jka'  },
+      { rank: 'Nidan',  year: 2025, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
       { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],

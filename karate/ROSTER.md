@@ -194,7 +194,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** Lesley University
 - **Photo:** photos/angel.png
 - **Ranks:**
-  - Nidan, JKA
+  - Nidan, JKA (2025)
   - Shodan, HDKI (2026)
   - Shodan, JUKF (2024)
 
