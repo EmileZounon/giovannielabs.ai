@@ -95,13 +95,12 @@ a { color: inherit; }
   max-width: 1100px;
   margin: 14px auto 0;
   padding: 0 16px 24px;
-  display: flex; flex-direction: column; gap: 18px;
-  min-height: calc(100vh - 280px);
+  display: flex; flex-direction: column; gap: 14px;
 }
 .pool {
   position: relative;
-  flex: 1 1 auto;
-  min-height: 360px;
+  flex: 0 0 auto;
+  height: 360px;
   border-radius: 24px;
   background:
     radial-gradient(ellipse at 30% 10%, rgba(245,197,24,0.10), transparent 50%),
@@ -306,12 +305,19 @@ a { color: inherit; }
 .page-footer a:hover { text-decoration: underline; }
 
 @media (max-width: 540px) {
-  .game-hero { padding: 18px 16px 4px; }
-  .hud-value { font-size: 1.5rem; }
-  .pool { min-height: 320px; }
-  .bubble { width: 64px; height: 64px; font-size: 0.85rem; }
-  .bubble.in-tube { width: 50px; height: 50px; font-size: 0.75rem; }
-  .tube { height: 80px; }
-  .tube-slot { height: 60px; }
-  .bubble-name { font-size: 0.66rem; bottom: -18px; }
+  .game-hero { padding: 14px 16px 2px; }
+  .game-hero h1 { font-size: clamp(1.9rem, 8vw, 2.6rem); margin-bottom: 4px; }
+  .game-hero .subtitle { font-size: 0.92rem; line-height: 1.4; }
+  .hud { margin-top: 8px; padding: 10px 14px; }
+  .hud-value { font-size: 1.4rem; }
+  .hud-restart { padding: 6px 12px; font-size: 0.78rem; }
+  .game-stage { gap: 10px; padding: 0 12px 16px; margin-top: 8px; }
+  /* Cap the pool height so the tube always lives above the fold. */
+  .pool { height: 44vh; min-height: 240px; max-height: 360px; }
+  .bubble { width: 58px; height: 58px; font-size: 0.8rem; border-width: 1.5px; }
+  .bubble.in-tube { width: 46px; height: 46px; font-size: 0.7rem; }
+  .tube { height: 72px; padding: 0 10px; }
+  .tube-slot { height: 54px; }
+  .bubble-name { font-size: 0.62rem; bottom: -16px; }
+  .hint { font-size: 0.78rem; margin-bottom: 18px; }
 }

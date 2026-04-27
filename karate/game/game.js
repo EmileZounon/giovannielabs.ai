@@ -98,7 +98,12 @@
       nameTag.textContent = firstName(person);
       el.appendChild(nameTag);
 
-      const r = 38;
+      // Use the actual rendered bubble size so the physics boundary matches
+      // what the user sees (mobile bubbles are smaller than desktop ones).
+      pool.appendChild(el);
+      const measured = el.getBoundingClientRect();
+      pool.removeChild(el);
+      const r = Math.max(20, Math.round(measured.width / 2));
       const b = {
         person, el,
         x: r + Math.random() * Math.max(1, W - 2 * r),
