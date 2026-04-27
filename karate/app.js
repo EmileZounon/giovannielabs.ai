@@ -320,7 +320,18 @@
   function matchesFilters(person) {
     if (state.activeOrg !== 'all' && !person.ranks.some(r => r.org === state.activeOrg)) return false;
     if (state.year && !person.ranks.some(r => String(r.year) === state.year)) return false;
-    if (state.rank && !person.ranks.some(r => r.rank === state.rank)) return false;
+    // Rank filter compares against the person's HIGHEST rank in the active org
+    // (or overall if no org chip is active). This prevents double-counting:
+    // someone who is Shodan AND Nidan in JKA only appears under "Nidan".
+    if (state.rank) {
+      const relevantRanks = state.activeOrg !== 'all'
+        ? person.ranks.filter(r => r.org === state.activeOrg)
+        : person.ranks;
+      if (!relevantRanks.length) return false;
+      const highestIdx = Math.max(...relevantRanks.map(r => RANKS.findIndex(x => x.name === r.rank)));
+      const highestRank = RANKS[highestIdx]?.name;
+      if (highestRank !== state.rank) return false;
+    }
     if (state.country) {
       const personCountries = person.countries
         ? person.countries.map(c => c.name)
