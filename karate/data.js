@@ -28,6 +28,7 @@ const UNIVERSITIES = [
   { name: 'UConn',                logo: null },
   { name: 'UMass Amherst',        logo: null },
   { name: 'University of Texas',  logo: null },
+  { name: 'University of Toronto', logo: null },
   { name: 'Wellesley College',    logo: null },
   { name: 'Yale University',      logo: null },
 ];
@@ -311,7 +312,11 @@ const BLACK_BELTS = [
   {
     id: 'ricardo',
     name: 'Ricardo Harripaul',
-    universities: ['MIT', 'Harvard University'],
+    universities: ['MIT', 'Harvard University', 'University of Toronto'],
+    countries: [
+      { name: 'Trinidad and Tobago', flag: '🇹🇹' },
+      { name: 'Canada',              flag: '🇨🇦' },
+    ],
     country: 'Trinidad and Tobago',
     flag: '🇹🇹',
     photo: 'photos/ricardo.jpg',
