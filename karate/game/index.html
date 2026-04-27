@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alphabet Tube · MHKH Game</title>
-  <meta name="description" content="A 30-second relaxed game. Slide MHKH black belts into alphabetical order inside the tube." />
+  <title>Bubble Tube · MHKH Game</title>
+  <meta name="description" content="A 30-second relaxed game. Drag drifting black-belt bubbles into the tube in alphabetical order before time runs out." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -23,8 +23,8 @@
   </nav>
 
   <header class="game-hero">
-    <h1>Alphabet Tube</h1>
-    <p class="subtitle">Tap two boxes to swap them. Order all the names alphabetically before the sand runs out.</p>
+    <h1>Bubble Tube</h1>
+    <p class="subtitle">Drag the floating black belts into the tube. Drop them in alphabetical order before the sand runs out.</p>
   </header>
 
   <section class="hud" aria-label="Game status">
@@ -33,21 +33,31 @@
       <span class="hud-value" id="timer">30</span>
     </div>
     <div class="hud-cell">
+      <span class="hud-label">In tube</span>
+      <span class="hud-value" id="filled">0/7</span>
+    </div>
+    <div class="hud-cell">
       <span class="hud-label">Streak</span>
       <span class="hud-value" id="streak">0</span>
     </div>
     <button class="hud-restart" id="restart" type="button">New Round</button>
   </section>
 
-  <main class="game-stage">
+  <main class="game-stage" id="game-stage" aria-label="Bubble pool and tube">
+    <!-- Floating drift area -->
+    <div class="pool" id="pool" aria-label="Floating black belts"></div>
+
+    <!-- The tube -->
     <div class="tube" id="tube" aria-label="Alphabet tube">
-      <div class="tube-cap tube-cap-top" aria-hidden="true"></div>
-      <ul class="tube-track" id="tube-track" role="listbox" aria-label="Names to order"></ul>
-      <div class="tube-cap tube-cap-bottom" aria-hidden="true"></div>
+      <div class="tube-cap tube-cap-left" aria-hidden="true"></div>
+      <div class="tube-track" id="tube-track"></div>
+      <div class="tube-cap tube-cap-right" aria-hidden="true"></div>
+      <span class="tube-letter tube-letter-left" aria-hidden="true">A</span>
+      <span class="tube-letter tube-letter-right" aria-hidden="true">Z</span>
     </div>
   </main>
 
-  <p class="hint" id="hint">Hai! Each round, seven random black belts. Tap one, tap another, they swap.</p>
+  <p class="hint" id="hint">Press a bubble, drag it down, drop it inside the tube. Drop them A → Z to win.</p>
 
   <div class="overlay" id="overlay" hidden>
     <div class="overlay-card">
