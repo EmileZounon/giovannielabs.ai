@@ -31,9 +31,9 @@ Snapshot of every black belt in the Tabata Sensei lineage and connected federati
 | 9 | Kudan | bronze `#D97706` |
 | 10 | Judan | gold `#F5C518` |
 
-## Universities (14)
+## Universities (13)
 
-Boston University · Columbia University · Georgetown University · Harvard University · Johns Hopkins University · Lesley University · MIT · NYU · UConn · UMass Amherst · University of Texas · University of Toronto · Wellesley College · Yale University
+Harvard University · MIT · Boston University · Columbia University · Georgetown University · Johns Hopkins University · Lesley University · UConn · UMass Amherst · University of Texas · University of Toronto · Wellesley College · Yale University
 
 ## Countries (21)
 
