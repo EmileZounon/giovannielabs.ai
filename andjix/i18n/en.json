@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "title": "Andjix Consulting Inc. — Administrative, tax, and professional support in Ottawa",
+    "description": "Andjix Consulting helps individuals, newcomers, and small businesses in Ottawa with administrative, tax, and professional matters. Bilingual, available 24/7, real human expertise."
+  },
+  "nav": {
+    "services": "Services",
+    "how": "How it works",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Talk to Andjix AI"
+  },
+  "hero": {
+    "eyebrow": "Administrative support · Ottawa",
+    "title": "Successful integration is <span class=\"accent\">your real win.</span>",
+    "lede": "The hardest part of immigration is not getting the visa. It is settling in and integrating. Andjix puts André Djomamessi's expertise at your service to walk you through admin, tax, employment, and life in Canada, step by step.",
+    "cta_primary": "Talk to Andjix AI now",
+    "cta_secondary": "See our services",
+    "trust": "Bilingual EN/FR · Ottawa · 19 years across law, tax, and federal administration"
+  },
+  "intro": {
+    "eyebrow": "The real challenge",
+    "title": "Landing in Canada is just the start.",
+    "lede": "Finding a family doctor. Decoding the CRA. Building credit. Enrolling kids in school. Reading an Ontario lease. Every step counts, and few people are there to guide you concretely, in your language.",
+    "stat1_label": "newcomers per year in Ontario",
+    "stat1_desc": "A meaningful share settles in Ottawa, with no accessible bilingual administrative support.",
+    "stat2_label": "of triple expertise",
+    "stat2_desc": "Business law, tax, and federal public administration. André knows the system from the inside.",
+    "stat3_label": "online availability",
+    "stat3_desc": "Andjix answers your questions any time, in English or French, and bridges to André when your file needs a human.",
+    "callout": "The problem isn't your file. It's navigation, accurate information, and a trusted human walking with you."
+  },
+  "services": {
+    "eyebrow": "Our service lines",
+    "title": "Six concrete ways we help.",
+    "subtitle": "Free first diagnosis online. Human follow-through with André when your file deserves it.",
+    "s1_title": "Tax filing",
+    "s1_desc": "Individuals (T1), self-employed (T2125, Uber drivers), corporations (T2). Slip collection, credits, CRA filing, and follow-up on the notice of assessment.",
+    "s1_price": "$75 to $300 per file",
+    "s2_title": "Newcomer onboarding",
+    "s2_desc": "SIN, OHIP, banking, Ontario driver's licence, language classes (LINC, IALP), school enrolment, tenant rights, government benefits (CCB, dental).",
+    "s2_price": "$80 to $150 per session",
+    "s3_title": "Staffing and placement",
+    "s3_desc": "Canadian-standard CV, interview coaching, employer-candidate matching, work eligibility checks, 30-day post-placement follow-up.",
+    "s3_price": "$500 to $2,000 per placement",
+    "s4_title": "Administrative consulting",
+    "s4_desc": "Incorporation (NUANS, Corporations Canada, Ontario Business Registry), GST/HST, payroll source deductions, simple contracts, SME compliance.",
+    "s4_price": "$100 to $250 per hour",
+    "s5_title": "3-to-6-month support packages",
+    "s5_desc": "Month 1: settling in and urgent admin. Month 2: stabilization, language, job search. Month 3: independence, tax filing, professional integration. Structured monthly reviews.",
+    "s5_price": "$300 to $800 per package",
+    "s6_title": "Automation solutions for SMEs",
+    "s6_desc": "Customer-facing automated tools, simplified document collection, Airtable CRM, integrated workflows. For Ottawa SMEs that want to double capacity without hiring.",
+    "s6_price": "$500 to $3,000 per project"
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "A simple path, in three steps.",
+    "subtitle": "Andjix runs the first diagnosis. André steps in when your file deserves it.",
+    "step1_title": "Describe your situation",
+    "step1_desc": "Chat with Andjix in English or French, any time. You get pointed to the right resources, and we flag what needs a human.",
+    "step2_title": "Free diagnosis",
+    "step2_desc": "You get a clear email summary of your situation, what you can do yourself, and where Andjix can step in.",
+    "step3_title": "Meet with André",
+    "step3_desc": "For paid files, you book a consultation with André directly. Follow-through, delivery, and peace of mind."
+  },
+  "band": {
+    "title": "Start your diagnosis, free.",
+    "lede": "A few questions, clear direction, and a human follow-up when it matters.",
+    "cta": "Launch Andjix AI"
+  },
+  "about": {
+    "eyebrow": "The founder",
+    "title": "André Djomamessi, founder.",
+    "lede": "Bilingual, Ottawan, and one of the few people who combines three rare expertises in a single profile.",
+    "p1_title": "Business law",
+    "p1_desc": "Master's in business law (Yaoundé II) and 13 years of active entrepreneurship in Cameroon. He founded and led two companies, owning the administrative, financial, and legal management himself.",
+    "p2_title": "Tax",
+    "p2_desc": "Postgraduate diploma in tax (D.E.S.S., Yaoundé II) plus Canadian training in business administration (La Cité Collégiale, Ottawa). He decodes the CRA and Canadian tax obligations.",
+    "p3_title": "Federal administration",
+    "p3_desc": "Programs Advisor at Service Canada since 2022, in the Integrated Workload and Workforce Directorate. He knows the institutions from the inside.",
+    "quote": "\"My goal isn't to replace accountants or lawyers. It's to be the bilingual, francophone, human bridge between Ottawa newcomers and the Canadian system.\" André Djomamessi"
+  },
+  "audience": {
+    "eyebrow": "Who it's for",
+    "title": "Built for individuals. Useful for SMEs.",
+    "p1": "Andjix first serves newcomers, self-employed workers, and individuals in Ottawa who want clear, affordable, bilingual support.",
+    "p2": "And for local SMEs that want to modernize without building a tech team, Andjix offers turnkey automation solutions.",
+    "c1": "Newcomers, refugees, international students",
+    "c2": "Self-employed workers and Uber drivers",
+    "c3": "Mid-income individuals and families",
+    "c4": "Ottawa SMEs, nonprofits, and associations"
+  },
+  "contact": {
+    "eyebrow": "Book a session",
+    "title": "Your next step starts with a conversation.",
+    "lede": "Ask your questions online, or book a call with André directly. Available 7 days a week.",
+    "cta_primary": "Talk to Andjix AI",
+    "cta_secondary": "Book a call",
+    "hours": "7 days a week, 24/7 online"
+  },
+  "footer": {
+    "tag": "Successful integration for Ottawa newcomers and SMEs.",
+    "h_services": "Services",
+    "h_contact": "Contact",
+    "l_taxes": "Tax filing",
+    "l_arrival": "Newcomer onboarding",
+    "l_placement": "Staffing and placement",
+    "l_admin": "Administrative consulting",
+    "l_packages": "Support packages",
+    "l_ai": "Automation solutions for SMEs",
+    "l_bot": "Andjix AI",
+    "l_book": "Book a session",
+    "rights": "All rights reserved.",
+    "built": "Built by <a href=\"https://giovannielabs.ai\" target=\"_blank\" rel=\"noopener\" style=\"color: inherit; font-weight: 600;\">Giovannie Labs</a>"
+  }
+}

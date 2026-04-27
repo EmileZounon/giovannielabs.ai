@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "title": "Andjix Consulting Inc. — Accompagnement administratif, fiscal et professionnel à Ottawa",
+    "description": "Andjix Consulting accompagne les particuliers, nouveaux arrivants et petites entreprises à Ottawa dans leurs démarches administratives, fiscales et professionnelles. Bilingue, disponible 24/7, expertise humaine."
+  },
+  "nav": {
+    "services": "Services",
+    "how": "Comment ça marche",
+    "about": "À propos",
+    "contact": "Contact",
+    "cta": "Parler à Andjix IA"
+  },
+  "hero": {
+    "eyebrow": "Accompagnement administratif · Ottawa",
+    "title": "L'intégration réussie, <span class=\"accent\">votre vraie victoire.</span>",
+    "lede": "La phase la plus importante de l'immigration n'est pas l'obtention des visas. C'est l'établissement et l'intégration. Andjix met l'expertise d'André Djomamessi à votre service pour vous accompagner pas à pas dans l'administration, la fiscalité, le placement et la vie au Canada.",
+    "cta_primary": "Parler à Andjix IA maintenant",
+    "cta_secondary": "Voir nos services",
+    "trust": "Bilingue FR/EN · Ottawa · 19 ans d'expérience droit, fiscalité et administration fédérale"
+  },
+  "intro": {
+    "eyebrow": "Le vrai défi",
+    "title": "Arriver au Canada n'est que le début.",
+    "lede": "Trouver un médecin de famille. Comprendre l'ARC. Bâtir un crédit. Inscrire les enfants à l'école. Décoder un bail ontarien. Chaque démarche compte, mais peu de personnes sont là pour vous guider concrètement et dans votre langue.",
+    "stat1_label": "nouveaux arrivants par an en Ontario",
+    "stat1_desc": "Une part importante s'installe à Ottawa, sans accompagnement administratif bilingue accessible.",
+    "stat2_label": "d'expérience triple",
+    "stat2_desc": "Droit des affaires, fiscalité et administration publique fédérale. André connaît le système de l'intérieur.",
+    "stat3_label": "disponibilité en ligne",
+    "stat3_desc": "Andjix répond à vos questions à toute heure, en français comme en anglais, et fait le pont vers André pour les dossiers qui demandent un humain.",
+    "callout": "Le problème n'est pas votre dossier. C'est la navigation, l'information juste, et un humain de confiance pour vous accompagner."
+  },
+  "services": {
+    "eyebrow": "Nos lignes de services",
+    "title": "Six manières concrètes de vous aider.",
+    "subtitle": "Premier diagnostic gratuit en ligne. Suivi humain par André pour les dossiers qui le méritent.",
+    "s1_title": "Déclaration d'impôts",
+    "s1_desc": "Particuliers (T1), travailleurs autonomes (T2125, chauffeurs Uber), sociétés (T2). Collecte des feuillets, calcul des crédits, transmission ARC, suivi de l'avis de cotisation.",
+    "s1_price": "75 $ à 300 $ par dossier",
+    "s2_title": "Accueil nouveaux arrivants",
+    "s2_desc": "NAS, OHIP, banque, permis Ontario, cours de langue (CLIC, IALP), inscription des enfants à l'école, droits du locataire, prestations gouvernementales (ACE, soins dentaires).",
+    "s2_price": "80 $ à 150 $ par séance",
+    "s3_title": "Placement de personnel",
+    "s3_desc": "CV au standard canadien, coaching d'entretien, mise en relation employeur/candidat, vérification de l'admissibilité au travail, suivi à 30 jours.",
+    "s3_price": "500 $ à 2 000 $ par placement",
+    "s4_title": "Conseil administratif",
+    "s4_desc": "Constitution d'entreprise (NUANS, Corporations Canada, Ontario Business Registry), TPS/TVH, retenues à la source, contrats simples, conformité PME.",
+    "s4_price": "100 $ à 250 $ de l'heure",
+    "s5_title": "Forfaits accompagnement 3 à 6 mois",
+    "s5_desc": "Mois 1 : installation et urgences. Mois 2 : stabilisation, langue, recherche d'emploi. Mois 3 : autonomie, déclaration d'impôts, insertion professionnelle. Suivi mensuel structuré.",
+    "s5_price": "300 $ à 800 $ par forfait",
+    "s6_title": "Solutions d'automatisation pour PME",
+    "s6_desc": "Outils d'accueil clients automatisés, collecte de documents simplifiée, CRM Airtable, flux de travail intégrés. Pour les PME d'Ottawa qui veulent doubler de capacité sans embaucher.",
+    "s6_price": "500 $ à 3 000 $ par projet"
+  },
+  "how": {
+    "eyebrow": "Comment ça marche",
+    "title": "Un parcours simple, en trois étapes.",
+    "subtitle": "Andjix fait le premier diagnostic. André prend le relais quand votre dossier le mérite.",
+    "step1_title": "Décrivez votre situation",
+    "step1_desc": "Discutez avec Andjix en français ou en anglais, à toute heure. Vous êtes orienté vers les bonnes ressources et nous identifions ce qui demande un humain.",
+    "step2_title": "Diagnostic gratuit",
+    "step2_desc": "Vous recevez par courriel un résumé clair de votre situation, des démarches à faire vous-même, et de celles où Andjix peut intervenir.",
+    "step3_title": "Rendez-vous avec André",
+    "step3_desc": "Pour les dossiers payants, vous réservez directement une consultation avec André. Suivi, livraison, et tranquillité."
+  },
+  "band": {
+    "title": "Commencez votre diagnostic, gratuitement.",
+    "lede": "Quelques questions, une orientation claire, et un suivi humain quand c'est nécessaire.",
+    "cta": "Lancer Andjix IA"
+  },
+  "about": {
+    "eyebrow": "Le promoteur",
+    "title": "André Djomamessi, fondateur.",
+    "lede": "Bilingue, Ottavien, et l'une des rares personnes à réunir trois expertises rares dans un même profil.",
+    "p1_title": "Droit des affaires",
+    "p1_desc": "Maîtrise en droit des affaires (Yaoundé II) et 13 ans d'entrepreneuriat actif au Cameroun. Il a fondé et dirigé deux entreprises, en assumant la gestion administrative, budgétaire et juridique.",
+    "p2_title": "Fiscalité",
+    "p2_desc": "D.E.S.S. en fiscalité (Yaoundé II) et formation canadienne en techniques d'administration des affaires (La Cité Collégiale, Ottawa). Il décode l'ARC et les obligations fiscales canadiennes.",
+    "p3_title": "Administration fédérale",
+    "p3_desc": "Conseiller de Programmes à Service Canada depuis 2022, au sein de la Direction de la charge de travail et des effectifs intégrés. Il connaît les institutions de l'intérieur.",
+    "quote": "« Mon objectif n'est pas de remplacer les comptables ni les avocats. C'est d'être le pont francophone, bilingue et humain entre les nouveaux arrivants d'Ottawa et le système canadien. » André Djomamessi"
+  },
+  "audience": {
+    "eyebrow": "Pour qui",
+    "title": "Conçu pour les particuliers. Utile aux PME.",
+    "p1": "Andjix sert d'abord les nouveaux arrivants, les travailleurs autonomes, et les particuliers d'Ottawa qui veulent un accompagnement clair, abordable et bilingue.",
+    "p2": "Et pour les PME locales qui veulent moderniser leur opération sans monter une équipe tech, Andjix offre des solutions d'automatisation clé en main.",
+    "c1": "Nouveaux arrivants, réfugiés, étudiants étrangers",
+    "c2": "Travailleurs autonomes et chauffeurs Uber",
+    "c3": "Particuliers et familles à revenu moyen",
+    "c4": "PME, OBNL et associations d'Ottawa"
+  },
+  "contact": {
+    "eyebrow": "Prendre rendez-vous",
+    "title": "Votre prochaine étape commence par une conversation.",
+    "lede": "Posez vos questions en ligne, ou réservez directement un appel avec André. Disponible 7 jours sur 7.",
+    "cta_primary": "Parler à Andjix IA",
+    "cta_secondary": "Réserver un appel",
+    "hours": "7j/7, 24h/24 en ligne"
+  },
+  "footer": {
+    "tag": "L'intégration réussie pour les nouveaux arrivants et les PME d'Ottawa.",
+    "h_services": "Services",
+    "h_contact": "Contact",
+    "l_taxes": "Déclaration d'impôts",
+    "l_arrival": "Accueil nouveaux arrivants",
+    "l_placement": "Placement de personnel",
+    "l_admin": "Conseil administratif",
+    "l_packages": "Forfaits accompagnement",
+    "l_ai": "Solutions d'automatisation pour PME",
+    "l_bot": "Andjix IA",
+    "l_book": "Prendre rendez-vous",
+    "rights": "Tous droits réservés.",
+    "built": "Conçu par <a href=\"https://giovannielabs.ai\" target=\"_blank\" rel=\"noopener\" style=\"color: inherit; font-weight: 600;\">Giovannie Labs</a>"
+  }
+}
