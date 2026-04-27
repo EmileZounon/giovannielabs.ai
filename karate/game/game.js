@@ -151,7 +151,7 @@
       bubble.el.style.transform = `translate(${bubble.x - bubble.r}px, ${bubble.y - bubble.r}px)`;
 
       // Visual feedback: highlight the tube while finger is over it
-      const overTube = pointInRect(e.clientX, e.clientY, tube.getBoundingClientRect());
+      const overTube = pointInRect(e.clientX, e.clientY, tube.getBoundingClientRect(), TUBE_DROP_PAD);
       tube.classList.toggle('drop-active', overTube);
     });
 
@@ -163,7 +163,7 @@
       pointerStart = null;
       tube.classList.remove('drop-active');
 
-      const overTube = pointInRect(e.clientX, e.clientY, tube.getBoundingClientRect());
+      const overTube = pointInRect(e.clientX, e.clientY, tube.getBoundingClientRect(), TUBE_DROP_PAD);
       if (overTube) tryPlaceInTube(bubble);
       else clampToPool(bubble);
     }
@@ -171,9 +171,13 @@
     bubble.el.addEventListener('pointercancel', endDrag);
   }
 
-  function pointInRect(x, y, rect) {
-    return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
+  function pointInRect(x, y, rect, pad = 0) {
+    return x >= rect.left - pad && x <= rect.right + pad
+        && y >= rect.top  - pad && y <= rect.bottom + pad;
   }
+  // Extra-forgiving hit zone for the tube — accept drops a finger-width
+  // outside the rim so a small overshoot still counts as "in the tube".
+  const TUBE_DROP_PAD = 32;
 
   function clampToPool(bubble) {
     const rect = pool.getBoundingClientRect();

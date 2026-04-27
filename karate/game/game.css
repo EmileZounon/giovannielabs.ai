@@ -107,7 +107,9 @@ a { color: inherit; }
     radial-gradient(ellipse at 70% 90%, rgba(245,197,24,0.06), transparent 60%),
     rgba(255,255,255,0.02);
   border: 1px solid rgba(245,241,232,0.06);
-  overflow: hidden;
+  /* No overflow:hidden — a dragged bubble must remain visible as it
+     crosses the gap between the pool and the tube. Physics still clamps
+     free bubbles inside the box, so they don't escape on their own. */
   touch-action: none;
 }
 
