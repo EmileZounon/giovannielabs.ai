@@ -123,6 +123,11 @@ const BLACK_BELTS = [
   {
     id: 'cassiano',
     name: 'Anselmo Cassiano Alves',
+    title: [
+      'The Blah Blah Blah Master',
+      'The Negotiator and Diplomat',
+      'The Master Sailor',
+    ],
     universities: ['Harvard University'],
     country: 'Brazil',
     flag: '🇧🇷',

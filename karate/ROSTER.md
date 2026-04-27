@@ -59,6 +59,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, Tabata Sensei (2011)
 
 ### 2. Anselmo Cassiano Alves
+*The Blah Blah Blah Master · The Negotiator and Diplomat · The Master Sailor*
 - **Country:** Brazil 🇧🇷
 - **University:** Harvard University
 - **Photo:** photos/cassiano.jpeg

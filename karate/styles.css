@@ -410,6 +410,10 @@ a { color: inherit; }
   letter-spacing: 0.02em;
 }
 .modal-epithet[hidden] { display: none; }
+.modal-epithet-line {
+  display: block;
+  line-height: 1.35;
+}
 .modal-subtitle {
   text-align: center;
   color: var(--ink-dim);

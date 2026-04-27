@@ -557,8 +557,13 @@
     modalName.textContent = person.name;
 
     // Optional epithet — italic subtitle, e.g. "The son of Funakoshi".
+    // Accepts a single string OR an array of titles, each rendered on its
+    // own line so a person can carry multiple honorifics.
     if (person.title) {
-      modalEpithet.textContent = person.title;
+      const titles = Array.isArray(person.title) ? person.title : [person.title];
+      modalEpithet.innerHTML = titles
+        .map(t => `<span class="modal-epithet-line">${t}</span>`)
+        .join('');
       modalEpithet.hidden = false;
     } else {
       modalEpithet.hidden = true;
