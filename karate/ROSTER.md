@@ -150,6 +150,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 13. Nikita Patil
 - **Country:** India 🇮🇳
 - **Universities:** Boston University, University of Texas
+- **Photo:** photos/nikita.jpg
 - **Ranks:**
   - Nidan, JKA (2024)
   - Shodan, JKA (2023)
@@ -307,5 +308,5 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - Years for some older ranks (a few entries still year-null).
 - ISKF logo file (placeholder text-only chip for now).
 - University logos: real seals for Wellesley, Columbia, Yale, Lesley, Georgetown, Johns Hopkins, UMass Amherst, University of Texas, University of Toronto. Currently rendered as monogram SVGs in school colors.
-- Photos for: Steven, Anna, Yi, Amy, Ann, Ayusha, Nikita, Garen, Hiro, Zeng, Alina.
+- Photos for: Steven, Anna, Yi, Amy, Ann, Ayusha, Garen, Hiro, Zeng, Alina.
 - "Other" Shodan rank from Sasiru's row in the database (org unspecified).

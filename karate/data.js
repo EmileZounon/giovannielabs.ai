@@ -273,7 +273,8 @@ const BLACK_BELTS = [
     universities: ['Boston University', 'University of Texas'],
     country: 'India',
     flag: '🇮🇳',
-    photo: null,
+    photo: 'photos/nikita.jpg',
+    photoFocus: 'center 30%',
     ranks: [
       { rank: 'Nidan',  year: 2024, org: 'jka'  },
       { rank: 'Shodan', year: 2023, org: 'jka'  }, // earlier JKA progression
