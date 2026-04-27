@@ -25,7 +25,7 @@ const UNIVERSITIES = [
   { name: 'Boston University',        logo: 'logos/boston-university.jpg' },
   { name: 'Columbia University',      logo: 'logos/columbia.svg' },
   { name: 'Georgetown University',    logo: 'logos/georgetown.svg' },
-  { name: 'Johns Hopkins University', logo: 'logos/johns-hopkins.svg' },
+  { name: 'Johns Hopkins University', logo: 'logos/johns-hopkins.png' },
   { name: 'Lesley University',        logo: 'logos/lesley-university.png' },
   { name: 'UConn',                    logo: null },
   { name: 'UMass Amherst',            logo: 'logos/umass-amherst.svg' },
