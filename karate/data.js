@@ -501,6 +501,7 @@ const BLACK_BELTS = [
   {
     id: 'peiqi',
     name: 'Peiqi Chen',
+    title: 'The Dragon of Zhuhai',
     universities: ['Boston University'],
     country: 'China',
     flag: '🇨🇳',
