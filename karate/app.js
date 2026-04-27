@@ -167,12 +167,20 @@
     const allNames = BLACK_BELTS.map(p => p.name).slice().sort();
     fillDropdown(nameSel, allNames);
 
+    const countryFlagPreview = document.getElementById('country-flag-preview');
+    function updateCountryFlagPreview() {
+      if (!countryFlagPreview) return;
+      const c = COUNTRIES.find(x => x.name === countrySel.value);
+      countryFlagPreview.innerHTML = c ? flagHTML(c.flag) : '';
+    }
+
     [yearSel, rankSel, countrySel, uniSel].forEach(sel => {
       sel.addEventListener('change', () => {
         state.year = yearSel.value;
         state.rank = rankSel.value;
         state.country = countrySel.value;
         state.university = uniSel.value;
+        if (sel === countrySel) updateCountryFlagPreview();
         applyFilters();
       });
     });
@@ -193,6 +201,7 @@
       uniSel.value = '';
       nameSel.value = '';
       state.year = state.rank = state.country = state.university = state.name = '';
+      updateCountryFlagPreview();
       // Clear the org chip too — no chip active means "show every org".
       state.activeOrg = 'all';
       document.querySelectorAll('#org-filters .chip').forEach(el => {

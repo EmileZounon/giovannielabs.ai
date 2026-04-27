@@ -443,6 +443,19 @@ a { color: inherit; }
   object-fit: cover;
   margin-right: 0.15em;
 }
+/* Country filter has a flag preview tucked next to the dropdown so the
+   image-based East Turkistan flag (no Unicode emoji exists) is visible
+   alongside the standard emoji flags. */
+.country-input { display: inline-flex; align-items: center; gap: 6px; }
+.country-flag-preview {
+  min-width: 22px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.05rem;
+}
+.country-flag-preview .country-flag-img {
+  width: 22px; height: 14px;
+}
+.country-flag-preview:empty { display: none; }
 
 /* Ranks list inside the modal */
 .modal-section { margin-top: 8px; }
