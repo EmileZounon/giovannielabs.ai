@@ -76,7 +76,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Nidan, JKA (2023)
   - Nidan, HDKI
-  - Nidan, JUKF
+  - Nidan, JUKF (2022)
   - Shodan, Tabata Sensei (2017)
   - Shodan, ISKF
 
