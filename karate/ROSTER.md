@@ -88,7 +88,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Sandan, JKA (2025)
   - Nidan, HDKI (2026)
   - Shodan, HDKI (2021)
-  - Nidan, JUKF
+  - Nidan, JUKF (2022)
 
 ### 5. Steven Chen
 - **Country:** Taiwan 🇹🇼
