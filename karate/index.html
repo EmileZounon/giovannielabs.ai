@@ -54,10 +54,14 @@
         <select id="filter-rank"><option value="">All</option></select>
       </label>
       <label>Country
-        <span class="country-input">
-          <span class="country-flag-preview" id="country-flag-preview" aria-hidden="true"></span>
-          <select id="filter-country"><option value="">All</option></select>
-        </span>
+        <div class="cs" id="cs-country">
+          <button type="button" class="cs-trigger" id="cs-country-trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="cs-flag" id="cs-country-flag" aria-hidden="true"></span>
+            <span class="cs-label" id="cs-country-label">All</span>
+            <span class="cs-chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="cs-panel" id="cs-country-panel" role="listbox" tabindex="-1" hidden></ul>
+        </div>
       </label>
       <label>University
         <select id="filter-university"><option value="">All</option></select>

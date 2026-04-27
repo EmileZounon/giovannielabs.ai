@@ -9,7 +9,77 @@
   const orgFilters = document.getElementById('org-filters');
   const yearSel = document.getElementById('filter-year');
   const rankSel = document.getElementById('filter-rank');
-  const countrySel = document.getElementById('filter-country');
+  // Custom country dropdown (native <select> can't render image flags like
+  // East Turkistan's). The wrapper exposes .value, .addEventListener('change')
+  // semantics, so the rest of the code keeps working unchanged.
+  const countrySel = createCountryDropdown();
+  function createCountryDropdown() {
+    const root    = document.getElementById('cs-country');
+    const trigger = document.getElementById('cs-country-trigger');
+    const flagEl  = document.getElementById('cs-country-flag');
+    const labelEl = document.getElementById('cs-country-label');
+    const panel   = document.getElementById('cs-country-panel');
+    if (!root) return { value: '', addEventListener: () => {} };
+
+    const listeners = [];
+    let value = '';
+
+    function setValue(v) {
+      value = v || '';
+      const c = COUNTRIES.find(x => x.name === value);
+      flagEl.innerHTML = c ? flagHTML(c.flag) : '';
+      labelEl.textContent = value || 'All';
+      panel.querySelectorAll('li').forEach(li => {
+        li.setAttribute('aria-selected', li.dataset.value === value ? 'true' : 'false');
+      });
+    }
+    function fire() { listeners.forEach(fn => fn()); }
+    function open() {
+      panel.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+      document.addEventListener('click', outsideHandler, { capture: true });
+    }
+    function close() {
+      panel.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('click', outsideHandler, { capture: true });
+    }
+    function outsideHandler(e) { if (!root.contains(e.target)) close(); }
+
+    trigger.addEventListener('click', () => panel.hidden ? open() : close());
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+        e.preventDefault(); open();
+      }
+    });
+
+    return {
+      get value() { return value; },
+      set value(v) { setValue(v); },
+      addEventListener(evt, fn) { if (evt === 'change') listeners.push(fn); },
+      _root: root,
+      _renderOptions(list) {
+        // list[0] is always the "All" option (empty value)
+        panel.innerHTML = list.map(item => {
+          const flag = item.value
+            ? (COUNTRIES.find(c => c.name === item.value) || {}).flag
+            : '';
+          return `
+            <li role="option" data-value="${item.value}" aria-selected="${item.value === value ? 'true' : 'false'}">
+              <span class="cs-flag">${flagHTML(flag)}</span>
+              <span class="cs-label">${item.label}</span>
+            </li>`;
+        }).join('');
+        panel.querySelectorAll('li').forEach(li => {
+          li.addEventListener('click', () => {
+            setValue(li.dataset.value);
+            close();
+            fire();
+          });
+        });
+      },
+    };
+  }
   const uniSel = document.getElementById('filter-university');
   const nameSel = document.getElementById('filter-name');
   const resetBtn = document.getElementById('reset-filters');
@@ -149,15 +219,12 @@
       rankSel.appendChild(opt);
     });
     // Countries come from the COUNTRIES master list so the dropdown shows
-    // the dojo's full reach, not only countries with belts entered.
-    COUNTRIES.forEach(c => {
-      const opt = document.createElement('option');
-      opt.value = c.name;
-      // Dropdowns can't render HTML, so image-based flags fall back to text only.
-      const flagText = isImageFlag(c.flag) ? '' : c.flag;
-      opt.textContent = `${flagText} ${c.name}`.trim();
-      countrySel.appendChild(opt);
-    });
+    // the dojo's full reach, not only countries with belts entered. The
+    // custom-select renders both emoji flags and image flags inline.
+    countrySel._renderOptions([
+      { value: '', label: 'All' },
+      ...COUNTRIES.map(c => ({ value: c.name, label: c.name })),
+    ]);
     // Universities come from the master list, not just universities with belts.
     fillDropdown(uniSel, UNIVERSITIES.map(u => u.name));
 
@@ -167,20 +234,12 @@
     const allNames = BLACK_BELTS.map(p => p.name).slice().sort();
     fillDropdown(nameSel, allNames);
 
-    const countryFlagPreview = document.getElementById('country-flag-preview');
-    function updateCountryFlagPreview() {
-      if (!countryFlagPreview) return;
-      const c = COUNTRIES.find(x => x.name === countrySel.value);
-      countryFlagPreview.innerHTML = c ? flagHTML(c.flag) : '';
-    }
-
     [yearSel, rankSel, countrySel, uniSel].forEach(sel => {
       sel.addEventListener('change', () => {
         state.year = yearSel.value;
         state.rank = rankSel.value;
         state.country = countrySel.value;
         state.university = uniSel.value;
-        if (sel === countrySel) updateCountryFlagPreview();
         applyFilters();
       });
     });
@@ -201,7 +260,6 @@
       uniSel.value = '';
       nameSel.value = '';
       state.year = state.rank = state.country = state.university = state.name = '';
-      updateCountryFlagPreview();
       // Clear the org chip too — no chip active means "show every org".
       state.activeOrg = 'all';
       document.querySelectorAll('#org-filters .chip').forEach(el => {

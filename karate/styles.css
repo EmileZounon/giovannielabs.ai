@@ -443,19 +443,56 @@ a { color: inherit; }
   object-fit: cover;
   margin-right: 0.15em;
 }
-/* Country filter has a flag preview tucked next to the dropdown so the
-   image-based East Turkistan flag (no Unicode emoji exists) is visible
-   alongside the standard emoji flags. */
-.country-input { display: inline-flex; align-items: center; gap: 6px; }
-.country-flag-preview {
-  min-width: 22px;
+/* Custom country dropdown — replaces native <select> so image-based flags
+   (East Turkistan SVG) can render alongside emoji flags in the option list. */
+.cs { position: relative; display: inline-block; min-width: 160px; }
+.cs-trigger {
+  display: inline-flex; align-items: center; gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.04);
+  color: var(--ink);
+  border: 1px solid rgba(245,241,232,0.18);
+  border-radius: 8px;
+  font-family: inherit; font-size: 0.92rem;
+  cursor: pointer;
+  transition: border-color 200ms, background 200ms;
+}
+.cs-trigger:hover { border-color: rgba(245,197,24,0.45); }
+.cs-trigger[aria-expanded="true"] { border-color: var(--gold); }
+.cs-flag {
   display: inline-flex; align-items: center; justify-content: center;
-  font-size: 1.05rem;
+  min-width: 22px;
+  font-size: 1rem;
 }
-.country-flag-preview .country-flag-img {
-  width: 22px; height: 14px;
+.cs-flag .country-flag-img { width: 22px; height: 14px; }
+.cs-label { flex: 1; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cs-chevron { font-size: 0.7rem; color: var(--ink-dim); }
+.cs-panel {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  z-index: 30;
+  margin: 0; padding: 4px;
+  list-style: none;
+  max-height: 300px; overflow-y: auto;
+  background: rgba(20,20,22,0.98);
+  border: 1px solid rgba(245,241,232,0.18);
+  border-radius: 10px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  min-width: 220px;
 }
-.country-flag-preview:empty { display: none; }
+.cs-panel[hidden] { display: none; }
+.cs-panel li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.92rem;
+}
+.cs-panel li:hover { background: rgba(245,197,24,0.10); }
+.cs-panel li[aria-selected="true"] {
+  background: rgba(245,197,24,0.16);
+  color: var(--gold);
+}
 
 /* Ranks list inside the modal */
 .modal-section { margin-top: 8px; }
