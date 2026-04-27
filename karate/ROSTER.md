@@ -31,13 +31,13 @@ Snapshot of every black belt in the Tabata Sensei lineage and connected federati
 | 9 | Kudan | bronze `#D97706` |
 | 10 | Judan | gold `#F5C518` |
 
-## Universities (13)
+## Universities (14)
 
 Boston University · Columbia University · Georgetown University · Harvard University · Johns Hopkins University · Lesley University · MIT · NYU · UConn · UMass Amherst · University of Texas · University of Toronto · Wellesley College · Yale University
 
-## Countries (23)
+## Countries (21)
 
-Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · China · East Turkistan · France · Hong Kong · India · Indonesia · Mexico · Poland · Russia · Serbia · Spain · Taiwan · Trinidad and Tobago · Ukraine · USA · Uzbekistan
+Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · China · East Turkistan · France · Hong Kong · India · Indonesia · Poland · Russia · Singapore · Spain · Sri Lanka · Taiwan · Trinidad and Tobago · USA
 
 ## Year Range
 
@@ -53,10 +53,10 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/vazrik.jpeg
 - **Ranks:**
   - Yondan, JKA (2025)
-  - Sandan, HDKI
-  - Sandan, JUKF
-  - Nidan, ISKF
-  - Shodan, Tabata Sensei (2016)
+  - Sandan, HDKI (2022)
+  - Sandan, JUKF (2022)
+  - Nidan, ISKF (2019)
+  - Shodan, Tabata Sensei (2011)
 
 ### 2. Anselmo Cassiano Alves
 - **Country:** Brazil 🇧🇷
@@ -75,10 +75,10 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/lorraine.jpeg
 - **Ranks:**
   - Nidan, JKA (2023)
-  - Nidan, HDKI
+  - Nidan, HDKI (2022)
   - Nidan, JUKF (2022)
   - Shodan, Tabata Sensei (2017)
-  - Shodan, ISKF
+  - Shodan, ISKF (2019)
 
 ### 4. Amandine Fromont
 - **Country:** France 🇫🇷
@@ -91,53 +91,64 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Nidan, JUKF
 
 ### 5. Steven Chen
+- **Country:** Taiwan 🇹🇼
 - **University:** Boston University
 - **Ranks:**
-  - Nidan, JKA
+  - Nidan, JKA (2024)
+  - Shodan, JKA (2022)
   - Shodan, HDKI (2022)
 
 ### 6. Anna Barnacka
+- **Country:** Poland 🇵🇱
 - **University:** Harvard University
 - **Ranks:**
   - Shodan, JKA (2022)
 
 ### 7. Yi Yang
+- **Country:** USA 🇺🇸
 - **University:** Harvard University
 - **Ranks:**
-  - Shodan, JKA
+  - Shodan, JKA (2022)
 
 ### 8. Qiu Yu Hong Lu
+- **Country:** China 🇨🇳
 - **Universities:** Boston University, Columbia University
 - **Photo:** photos/qiu.jpeg
 - **Ranks:**
-  - Nidan, JKA
-  - Shodan, JUKF
+  - Nidan, JKA (2025)
+  - Shodan, JKA (2022)
+  - Shodan, JUKF (2022)
 
 ### 9. Amy Liu
+- **Country:** USA 🇺🇸
 - **Universities:** Wellesley College, Johns Hopkins University
 - **Ranks:**
   - Shodan, HDKI (2022)
   - Shodan, JUKF (2022)
 
 ### 10. Ann Xu
+- **Country:** USA 🇺🇸
 - **University:** Wellesley College
 - **Ranks:**
   - Shodan, HDKI (2022)
 
 ### 11. Ayusha Ariana
+- **Country:** Bangladesh 🇧🇩
 - **Universities:** Wellesley College, Yale University
 - **Ranks:**
   - Shodan, HDKI (2022)
 
 ### 12. Hanamei Shao
+- **Country:** USA 🇺🇸
 - **University:** Wellesley College
 - **Photo:** photos/hanamei.jpeg
 - **Ranks:**
-  - Shodan, JKA
+  - Shodan, JKA (2022)
   - Shodan, HDKI (2022)
-  - Shodan, JUKF
+  - Shodan, JUKF (2022)
 
 ### 13. Nikita Patil
+- **Country:** India 🇮🇳
 - **Universities:** Boston University, University of Texas
 - **Ranks:**
   - Nidan, JKA (2024)
@@ -145,21 +156,24 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, JUKF
 
 ### 14. Savannah Wu
+- **Country:** USA 🇺🇸
 - **Universities:** Boston University, Columbia University
 - **Photo:** photos/savannah.jpeg
 - **Ranks:**
-  - Shodan, JUKF
+  - Shodan, JUKF (2022)
 
 ### 15. Garen Chiloyan
+- **Country:** Armenia 🇦🇲
 - **University:** UConn
 - **Ranks:**
   - Shodan, JKA
 
 ### 16. Hiro Fujii
+- **Country:** USA 🇺🇸
 - **University:** Boston University
 - **Ranks:**
   - Shodan, JKA (2023)
-  - Shodan, ISKF
+  - Shodan, ISKF (2019)
 
 ### 17. Ricardo Harripaul
 - **Countries:** Trinidad and Tobago 🇹🇹, Canada 🇨🇦
@@ -167,12 +181,13 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/ricardo.jpg
 - **Ranks:**
   - Shodan, HDKI (2026)
-  - Shodan, JUKF
+  - Shodan, JUKF (2023)
 
 ### 18. Zeng Wing Tan
+- **Country:** Singapore 🇸🇬
 - **University:** Boston University
 - **Ranks:**
-  - Shodan, JUKF
+  - Shodan, JUKF (2023)
 
 ### 19. Angel Chan
 - **Country:** Hong Kong 🇭🇰
@@ -188,10 +203,12 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** Lesley University
 - **Photo:** photos/iyit.jpg
 - **Ranks:**
-  - Nidan, JKA
+  - Nidan, JKA (2025)
+  - Shodan, JKA (2024)
   - Shodan, HDKI (2026)
 
 ### 21. Alina Zheng
+- **Country:** USA 🇺🇸
 - **University:** Wellesley College
 - **Ranks:**
   - Shodan, JKA (2024)
@@ -207,6 +224,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Nidan, Kyokushin
 
 ### 23. Jules Van
+- **Country:** Russia 🇷🇺
 - **University:** Boston University
 - **Photo:** photos/jules.jpeg
 - **Ranks:**
@@ -214,6 +232,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, JUKF (2024)
 
 ### 24. Sasiru Pathiranage
+- **Country:** Sri Lanka 🇱🇰
 - **University:** Boston University
 - **Photo:** photos/sasiru.jpg
 - **Ranks:**
@@ -245,7 +264,8 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Shodan, JUKF (2024)
 
-### 28. Carol Cuesta
+### 28. Carolina Cuesta
+- **Country:** Spain 🇪🇸
 - **University:** Harvard University
 - **Photo:** photos/carol.png
 - **Ranks:**
@@ -283,8 +303,8 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 ## Pending data
 
-- Years for older ranks across the roster (most non-2026 entries are year-null).
-- Countries for the 18 non-photo entries.
-- ISKF logo file.
+- Years for some older ranks (a few entries still year-null).
+- ISKF logo file (placeholder text-only chip for now).
+- University logos: real seals for Wellesley, Columbia, Yale, Lesley, Georgetown, Johns Hopkins, UMass Amherst, University of Texas, University of Toronto. Currently rendered as monogram SVGs in school colors.
 - Photos for: Steven, Anna, Yi, Amy, Ann, Ayusha, Nikita, Garen, Hiro, Zeng, Alina.
 - "Other" Shodan rank from Sasiru's row in the database (org unspecified).
