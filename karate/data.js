@@ -135,9 +135,8 @@ const BLACK_BELTS = [
     photoFocus: 'center 38%',
     ranks: [
       { rank: 'Nidan',  year: 2022, org: 'jukf'   },
-      { rank: 'Shodan', year: 2021, org: 'jukf'   },
-      { rank: 'Shodan', year: 2021, org: 'jka'    },
       { rank: 'Shodan', year: 2022, org: 'hdki'   },
+      { rank: 'Shodan', year: 2021, org: 'jka'    },
       { rank: 'Shodan', year: 2018, org: 'tabata' },
     ],
   },

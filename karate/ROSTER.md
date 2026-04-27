@@ -65,9 +65,8 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/cassiano.jpeg
 - **Ranks:**
   - Nidan, JUKF (2022)
-  - Shodan, JUKF (2021)
-  - Shodan, JKA (2021)
   - Shodan, HDKI (2022)
+  - Shodan, JKA (2021)
   - Shodan, Tabata Sensei (2018)
 
 ### 3. Lorraine Sin
