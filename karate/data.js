@@ -59,7 +59,7 @@ const COUNTRIES = [
   { name: 'Brazil',      flag: '🇧🇷' },
   { name: 'Canada',      flag: '🇨🇦' },
   { name: 'China',       flag: '🇨🇳' },
-  { name: 'East Turkistan', flag: '' },
+  { name: 'East Turkistan', flag: 'logos/east-turkistan.svg' },
   { name: 'France',      flag: '🇫🇷' },
   { name: 'Hong Kong',   flag: '🇭🇰' },
   { name: 'India',       flag: '🇮🇳' },
@@ -381,7 +381,7 @@ const BLACK_BELTS = [
     universities: ['Harvard University'],
     countries: [
       { name: 'Australia',      flag: '🇦🇺' },
-      { name: 'East Turkistan', flag: '' },
+      { name: 'East Turkistan', flag: 'logos/east-turkistan.svg' },
     ],
     country: 'Australia',
     flag: '🇦🇺',

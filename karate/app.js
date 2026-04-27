@@ -64,6 +64,19 @@
     return info ? info.color : '#F5C518';
   }
 
+  // Detects image-based flag values (e.g. SVG path for East Turkistan) so we
+  // can render an <img> instead of treating the path like an emoji glyph.
+  function isImageFlag(flag) {
+    return typeof flag === 'string' && /\.(svg|png|jpe?g|webp)$/i.test(flag);
+  }
+
+  // HTML for a flag — emoji unchanged, image flags rendered as a small <img>.
+  function flagHTML(flag) {
+    if (!flag) return '';
+    if (isImageFlag(flag)) return `<img class="country-flag-img" src="${flag}" alt="">`;
+    return flag;
+  }
+
   // Initials for the placeholder ball when a person's photo isn't available
   // yet. "Anselmo Cassiano Alves" → "AA", "Yi Yang" → "YY".
   function personInitials(person) {
@@ -140,7 +153,9 @@
     COUNTRIES.forEach(c => {
       const opt = document.createElement('option');
       opt.value = c.name;
-      opt.textContent = `${c.flag} ${c.name}`;
+      // Dropdowns can't render HTML, so image-based flags fall back to text only.
+      const flagText = isImageFlag(c.flag) ? '' : c.flag;
+      opt.textContent = `${flagText} ${c.name}`.trim();
       countrySel.appendChild(opt);
     });
     // Universities come from the master list, not just universities with belts.
@@ -426,10 +441,10 @@
     // Supports either single (country/flag) or multiple (countries array).
     const countryDt = modalCountry.previousElementSibling;
     const countryParts = person.countries
-      ? person.countries.map(c => `${c.flag || ''} ${c.name}`.trim()).filter(Boolean)
-      : (person.country ? [`${person.flag || ''} ${person.country}`.trim()] : []);
+      ? person.countries.map(c => `${flagHTML(c.flag)} ${c.name}`.trim()).filter(Boolean)
+      : (person.country ? [`${flagHTML(person.flag)} ${person.country}`.trim()] : []);
     if (countryParts.length) {
-      modalCountry.textContent = countryParts.join(' · ');
+      modalCountry.innerHTML = countryParts.join(' · ');
       modalCountry.style.display = '';
       if (countryDt) countryDt.style.display = '';
     } else {

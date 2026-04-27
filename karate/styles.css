@@ -409,6 +409,15 @@ a { color: inherit; }
   margin: 0;
   font-size: 1rem;
 }
+.country-flag-img {
+  display: inline-block;
+  width: 1.2em;
+  height: 0.85em;
+  vertical-align: -0.12em;
+  border-radius: 1px;
+  object-fit: cover;
+  margin-right: 0.15em;
+}
 
 /* Ranks list inside the modal */
 .modal-section { margin-top: 8px; }

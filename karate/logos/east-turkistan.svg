@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Flag of East Turkistan">
+  <rect width="900" height="600" fill="#3CACE0"/>
+  <!-- Crescent: large white circle with sky-blue overlay offset to form crescent -->
+  <circle cx="335" cy="300" r="135" fill="#ffffff"/>
+  <circle cx="370" cy="290" r="115" fill="#3CACE0"/>
+  <!-- 5-pointed star -->
+  <polygon
+    fill="#ffffff"
+    points="510,300 543.6,259.5 510.5,217.6 559.4,233.7 593,193 593.4,244.9 642.4,260.4 593.7,277 593.4,328.6 559.7,287.7"
+    transform="translate(-30 0)"
+  />
+</svg>
