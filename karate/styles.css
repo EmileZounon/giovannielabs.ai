@@ -558,9 +558,15 @@ a { color: inherit; }
 
 /* Mobile */
 @media (max-width: 640px) {
-  /* Hide the nav menu on mobile — the logo plus a working back button is
-     enough; "Home / Work" links would compete with the logo at 390px. */
-  .nav-menu { display: none; }
+  /* On mobile keep the nav row but only show the Game pill — Home/Work
+     links would compete with the logo at 390px. The pill itself is the
+     entry point to the game subpage. */
+  .nav-menu { display: flex; gap: 0; }
+  /* Hide all nav items by default on mobile, then re-show only the one
+     containing the Game pill. Avoids depending on :has() support. */
+  .nav-menu li { display: none; }
+  .nav-menu li:nth-last-child(1) { display: list-item; }
+  .nav-link.nav-game { padding: 6px 10px; font-size: 0.82rem; }
   .nav-container { padding: 14px 18px; }
 
   /* Hero: smaller padding, smaller H1 floor so "BLACK BELT LINEAGE" doesn't
