@@ -64,7 +64,14 @@
         </div>
       </label>
       <label>University
-        <select id="filter-university"><option value="">All</option></select>
+        <div class="cs" id="cs-university">
+          <button type="button" class="cs-trigger" id="cs-university-trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="cs-flag" id="cs-university-logo" aria-hidden="true"></span>
+            <span class="cs-label" id="cs-university-label">All</span>
+            <span class="cs-chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="cs-panel" id="cs-university-panel" role="listbox" tabindex="-1" hidden></ul>
+        </div>
       </label>
       <label>Name
         <select id="filter-name"><option value="">All</option></select>

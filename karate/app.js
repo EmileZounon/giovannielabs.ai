@@ -9,16 +9,18 @@
   const orgFilters = document.getElementById('org-filters');
   const yearSel = document.getElementById('filter-year');
   const rankSel = document.getElementById('filter-rank');
-  // Custom country dropdown (native <select> can't render image flags like
-  // East Turkistan's). The wrapper exposes .value, .addEventListener('change')
-  // semantics, so the rest of the code keeps working unchanged.
-  const countrySel = createCountryDropdown();
-  function createCountryDropdown() {
-    const root    = document.getElementById('cs-country');
-    const trigger = document.getElementById('cs-country-trigger');
-    const flagEl  = document.getElementById('cs-country-flag');
-    const labelEl = document.getElementById('cs-country-label');
-    const panel   = document.getElementById('cs-country-panel');
+  // Custom dropdown factory — native <select> can't render image flags
+  // (East Turkistan) or university logos. The wrapper exposes .value and
+  // .addEventListener('change') so the rest of the code keeps working
+  // unchanged. resolveBadge(value) returns HTML for the leading icon
+  // (flag or logo) shown in the trigger and each option.
+  function createCustomDropdown(prefix, resolveBadge) {
+    const root    = document.getElementById(`cs-${prefix}`);
+    const trigger = document.getElementById(`cs-${prefix}-trigger`);
+    const badgeEl = document.getElementById(`cs-${prefix}-flag`)
+                 || document.getElementById(`cs-${prefix}-logo`);
+    const labelEl = document.getElementById(`cs-${prefix}-label`);
+    const panel   = document.getElementById(`cs-${prefix}-panel`);
     if (!root) return { value: '', addEventListener: () => {} };
 
     const listeners = [];
@@ -26,9 +28,8 @@
 
     function setValue(v) {
       value = v || '';
-      const c = COUNTRIES.find(x => x.name === value);
-      flagEl.innerHTML = c ? flagHTML(c.flag) : '';
-      labelEl.textContent = value || 'All';
+      if (badgeEl) badgeEl.innerHTML = value ? resolveBadge(value) : '';
+      if (labelEl) labelEl.textContent = value || 'All';
       panel.querySelectorAll('li').forEach(li => {
         li.setAttribute('aria-selected', li.dataset.value === value ? 'true' : 'false');
       });
@@ -59,17 +60,11 @@
       addEventListener(evt, fn) { if (evt === 'change') listeners.push(fn); },
       _root: root,
       _renderOptions(list) {
-        // list[0] is always the "All" option (empty value)
-        panel.innerHTML = list.map(item => {
-          const flag = item.value
-            ? (COUNTRIES.find(c => c.name === item.value) || {}).flag
-            : '';
-          return `
-            <li role="option" data-value="${item.value}" aria-selected="${item.value === value ? 'true' : 'false'}">
-              <span class="cs-flag">${flagHTML(flag)}</span>
-              <span class="cs-label">${item.label}</span>
-            </li>`;
-        }).join('');
+        panel.innerHTML = list.map(item => `
+          <li role="option" data-value="${item.value}" aria-selected="${item.value === value ? 'true' : 'false'}">
+            <span class="cs-flag">${item.value ? resolveBadge(item.value) : ''}</span>
+            <span class="cs-label">${item.label}</span>
+          </li>`).join('');
         panel.querySelectorAll('li').forEach(li => {
           li.addEventListener('click', () => {
             setValue(li.dataset.value);
@@ -80,7 +75,16 @@
       },
     };
   }
-  const uniSel = document.getElementById('filter-university');
+
+  const countrySel = createCustomDropdown('country', (v) => {
+    const c = COUNTRIES.find(x => x.name === v);
+    return c ? flagHTML(c.flag) : '';
+  });
+  const uniSel = createCustomDropdown('university', (v) => {
+    const u = UNIVERSITIES.find(x => x.name === v);
+    if (!u || !u.logo) return '';
+    return `<img class="university-logo-img" src="${u.logo}" alt="">`;
+  });
   const nameSel = document.getElementById('filter-name');
   const resetBtn = document.getElementById('reset-filters');
 
@@ -226,7 +230,10 @@
       ...COUNTRIES.map(c => ({ value: c.name, label: c.name })),
     ]);
     // Universities come from the master list, not just universities with belts.
-    fillDropdown(uniSel, UNIVERSITIES.map(u => u.name));
+    uniSel._renderOptions([
+      { value: '', label: 'All' },
+      ...UNIVERSITIES.map(u => ({ value: u.name, label: u.name })),
+    ]);
 
     // Names dropdown — sorted alphabetically. Picking a name jumps straight
     // to that person's modal (the most useful mobile shortcut), and also

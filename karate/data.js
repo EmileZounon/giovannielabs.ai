@@ -16,14 +16,17 @@ const ORGANIZATIONS = {
 // must match the `university` field on a person to filter correctly.
 // `logo` is optional — when present, the modal displays it next to the
 // university name. More logos to be added as Emile provides them.
+// Order matters in this list — it drives the dropdown order. Harvard and
+// MIT lead because they're the dojo's most-recognized affiliations; the
+// rest follow alphabetically.
 const UNIVERSITIES = [
+  { name: 'Harvard University',       logo: 'logos/harvard.jpg' },
+  { name: 'MIT',                      logo: 'logos/mit.jpg' },
   { name: 'Boston University',        logo: 'logos/boston-university.jpg' },
   { name: 'Columbia University',      logo: 'logos/columbia.svg' },
   { name: 'Georgetown University',    logo: 'logos/georgetown.svg' },
-  { name: 'Harvard University',       logo: 'logos/harvard.jpg' },
   { name: 'Johns Hopkins University', logo: 'logos/johns-hopkins.svg' },
   { name: 'Lesley University',        logo: 'logos/lesley-university.png' },
-  { name: 'MIT',                      logo: 'logos/mit.jpg' },
   { name: 'NYU',                      logo: null },
   { name: 'UConn',                    logo: null },
   { name: 'UMass Amherst',            logo: 'logos/umass-amherst.svg' },
