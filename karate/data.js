@@ -329,7 +329,7 @@ const BLACK_BELTS = [
     country: 'Trinidad and Tobago',
     flag: '🇹🇹',
     photo: 'photos/ricardo.jpg',
-    photoFocus: 'center center',
+    photoFocus: 'center 30%',
     ranks: [
       { rank: 'Shodan', year: 2026, org: 'hdki' },
       { rank: 'Shodan', year: 2023, org: 'jukf' },
@@ -353,7 +353,8 @@ const BLACK_BELTS = [
     country: 'Hong Kong',
     flag: '🇭🇰',
     photo: 'photos/angel.png',
-    photoFocus: 'center 42%',
+    photoFocus: 'center',
+    photoFit: 'contain',
     ranks: [
       { rank: 'Nidan',  year: 2025, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
@@ -466,7 +467,8 @@ const BLACK_BELTS = [
     country: 'Brazil',
     flag: '🇧🇷',
     photo: 'photos/renata.jpeg',
-    photoFocus: 'center center',
+    photoFocus: 'center',
+    photoFit: 'contain',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],

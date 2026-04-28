@@ -293,6 +293,11 @@
       if (person.photo) {
         el.style.backgroundImage = `url("${person.photo}")`;
         el.style.backgroundPosition = person.photoFocus || 'center';
+        if (person.photoFit === 'contain') {
+          el.style.backgroundSize = 'contain';
+          el.style.backgroundRepeat = 'no-repeat';
+          el.style.backgroundColor = '#1a1a1a';
+        }
       } else {
         el.classList.add('ball-placeholder');
         el.textContent = personInitials(person);
@@ -546,6 +551,15 @@
       modalPhoto.textContent = '';
       modalPhoto.style.backgroundImage = `url("${person.photo}")`;
       modalPhoto.style.backgroundPosition = person.photoFocus || 'center';
+      if (person.photoFit === 'contain') {
+        modalPhoto.style.backgroundSize = 'contain';
+        modalPhoto.style.backgroundRepeat = 'no-repeat';
+        modalPhoto.style.backgroundColor = '#1a1a1a';
+      } else {
+        modalPhoto.style.backgroundSize = '';
+        modalPhoto.style.backgroundRepeat = '';
+        modalPhoto.style.backgroundColor = '';
+      }
     } else {
       modalPhoto.classList.add('placeholder');
       modalPhoto.textContent = personInitials(person);
