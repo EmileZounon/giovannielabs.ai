@@ -329,7 +329,7 @@ const BLACK_BELTS = [
     country: 'Trinidad and Tobago',
     flag: '🇹🇹',
     photo: 'photos/ricardo.jpg',
-    photoFocus: 'center 35%',
+    photoFocus: 'center center',
     ranks: [
       { rank: 'Shodan', year: 2026, org: 'hdki' },
       { rank: 'Shodan', year: 2023, org: 'jukf' },
@@ -466,7 +466,7 @@ const BLACK_BELTS = [
     country: 'Brazil',
     flag: '🇧🇷',
     photo: 'photos/renata.jpeg',
-    photoFocus: '42% center',
+    photoFocus: 'center center',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],
