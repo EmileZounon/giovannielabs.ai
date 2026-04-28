@@ -160,7 +160,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Nidan, JKA (2024)
   - Shodan, JKA (2023)
-  - Shodan, JUKF
+  - Shodan, JUKF (2022)
 
 ### 14. Savannah Wu
 - **Country:** USA 🇺🇸

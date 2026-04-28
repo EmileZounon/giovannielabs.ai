@@ -278,7 +278,7 @@ const BLACK_BELTS = [
     ranks: [
       { rank: 'Nidan',  year: 2024, org: 'jka'  },
       { rank: 'Shodan', year: 2023, org: 'jka'  }, // earlier JKA progression
-      { rank: 'Shodan', year: null, org: 'jukf' },
+      { rank: 'Shodan', year: 2022, org: 'jukf' },
     ],
   },
   {
