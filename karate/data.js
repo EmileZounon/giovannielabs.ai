@@ -176,7 +176,7 @@ const BLACK_BELTS = [
     universities: ['Boston University'],
     country: 'Taiwan',
     flag: '🇹🇼',
-    photo: null,
+    photo: 'photos/steven.jpeg',
     ranks: [
       { rank: 'Nidan',  year: 2024, org: 'jka'  },
       { rank: 'Shodan', year: 2022, org: 'jka'  },
@@ -189,7 +189,7 @@ const BLACK_BELTS = [
     universities: ['Harvard University'],
     country: 'Poland',
     flag: '🇵🇱',
-    photo: null,
+    photo: 'photos/anna.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2022, org: 'jka' },
     ],
@@ -200,7 +200,7 @@ const BLACK_BELTS = [
     universities: ['Harvard University'],
     country: 'USA',
     flag: '🇺🇸',
-    photo: null,
+    photo: 'photos/yi-yang.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2022, org: 'jka' },
     ],
@@ -225,7 +225,7 @@ const BLACK_BELTS = [
     universities: ['Wellesley College', 'Johns Hopkins University'],
     country: 'USA',
     flag: '🇺🇸',
-    photo: null,
+    photo: 'photos/amy.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2022, org: 'hdki' },
       { rank: 'Shodan', year: 2022, org: 'jukf' },
@@ -237,7 +237,7 @@ const BLACK_BELTS = [
     universities: ['Wellesley College'],
     country: 'USA',
     flag: '🇺🇸',
-    photo: null,
+    photo: 'photos/ann.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2022, org: 'hdki' },
     ],
@@ -248,7 +248,7 @@ const BLACK_BELTS = [
     universities: ['Wellesley College', 'Yale University'],
     country: 'Bangladesh',
     flag: '🇧🇩',
-    photo: null,
+    photo: 'photos/ayusha.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2022, org: 'hdki' },
     ],
@@ -339,7 +339,7 @@ const BLACK_BELTS = [
     universities: ['Boston University'],
     country: 'Singapore',
     flag: '🇸🇬',
-    photo: null,
+    photo: 'photos/zeng.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2023, org: 'jukf' },
     ],
@@ -463,7 +463,7 @@ const BLACK_BELTS = [
     universities: [],
     country: 'Brazil',
     flag: '🇧🇷',
-    photo: 'photos/renata.png',
+    photo: 'photos/renata.jpeg',
     photoFocus: '42% center',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jukf' },
@@ -475,7 +475,7 @@ const BLACK_BELTS = [
     universities: ['Harvard University'],
     country: 'Spain',
     flag: '🇪🇸',
-    photo: 'photos/carol.png',
+    photo: 'photos/carol.jpeg',
     photoFocus: 'center 35%',
     ranks: [
       { rank: 'Shodan', year: 2025, org: 'jka' },

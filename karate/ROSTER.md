@@ -93,6 +93,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 5. Steven Chen
 - **Country:** Taiwan 🇹🇼
 - **University:** Boston University
+- **Photo:** photos/steven.jpeg
 - **Ranks:**
   - Nidan, JKA (2024)
   - Shodan, JKA (2022)
@@ -101,12 +102,14 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 6. Anna Barnacka
 - **Country:** Poland 🇵🇱
 - **University:** Harvard University
+- **Photo:** photos/anna.jpeg
 - **Ranks:**
   - Shodan, JKA (2022)
 
 ### 7. Yi Yang
 - **Country:** USA 🇺🇸
 - **University:** Harvard University
+- **Photo:** photos/yi-yang.jpeg
 - **Ranks:**
   - Shodan, JKA (2022)
 
@@ -122,6 +125,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 9. Amy Liu
 - **Country:** USA 🇺🇸
 - **Universities:** Wellesley College, Johns Hopkins University
+- **Photo:** photos/amy.jpeg
 - **Ranks:**
   - Shodan, HDKI (2022)
   - Shodan, JUKF (2022)
@@ -129,12 +133,14 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 10. Ann Xu
 - **Country:** USA 🇺🇸
 - **University:** Wellesley College
+- **Photo:** photos/ann.jpeg
 - **Ranks:**
   - Shodan, HDKI (2022)
 
 ### 11. Ayusha Ariana
 - **Country:** Bangladesh 🇧🇩
 - **Universities:** Wellesley College, Yale University
+- **Photo:** photos/ayusha.jpeg
 - **Ranks:**
   - Shodan, HDKI (2022)
 
@@ -187,6 +193,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 18. Zeng Wing Tan
 - **Country:** Singapore 🇸🇬
 - **University:** Boston University
+- **Photo:** photos/zeng.jpeg
 - **Ranks:**
   - Shodan, JUKF (2023)
 
@@ -261,14 +268,14 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 ### 27. Renata Costa
 - **Country:** Brazil 🇧🇷
-- **Photo:** photos/renata.png
+- **Photo:** photos/renata.jpeg
 - **Ranks:**
   - Shodan, JUKF (2024)
 
 ### 28. Carolina Cuesta
 - **Country:** Spain 🇪🇸
 - **University:** Harvard University
-- **Photo:** photos/carol.png
+- **Photo:** photos/carol.jpeg
 - **Ranks:**
   - Shodan, JKA (2025)
 
@@ -308,5 +315,5 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - Years for some older ranks (a few entries still year-null).
 - ISKF logo file (placeholder text-only chip for now).
 - University logos: real seals for Wellesley, Columbia, Yale, Lesley, Georgetown, Johns Hopkins, UMass Amherst, University of Texas, University of Toronto. Currently rendered as monogram SVGs in school colors.
-- Photos for: Steven, Anna, Yi, Amy, Ann, Ayusha, Garen, Hiro, Zeng, Alina.
+- Photos for: Garen, Hiro, Alina.
 - "Other" Shodan rank from Sasiru's row in the database (org unspecified).
