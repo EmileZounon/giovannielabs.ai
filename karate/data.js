@@ -353,8 +353,7 @@ const BLACK_BELTS = [
     country: 'Hong Kong',
     flag: '🇭🇰',
     photo: 'photos/angel.png',
-    photoFocus: 'center',
-    photoFit: 'contain',
+    photoFocus: 'center 20%',
     ranks: [
       { rank: 'Nidan',  year: 2025, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
@@ -467,8 +466,7 @@ const BLACK_BELTS = [
     country: 'Brazil',
     flag: '🇧🇷',
     photo: 'photos/renata.jpeg',
-    photoFocus: 'center',
-    photoFit: 'contain',
+    photoFocus: '68% 30%',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jukf' },
     ],
