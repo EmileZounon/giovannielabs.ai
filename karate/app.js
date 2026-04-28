@@ -603,9 +603,11 @@
     // Country: hide the row entirely when the person has no country yet.
     // Supports either single (country/flag) or multiple (countries array).
     const countryDt = modalCountry.previousElementSibling;
+    const wrapCountry = (flag, name) =>
+      `<span class="country-chip">${flagHTML(flag)}&nbsp;${name}</span>`;
     const countryParts = person.countries
-      ? person.countries.map(c => `${flagHTML(c.flag)} ${c.name}`.trim()).filter(Boolean)
-      : (person.country ? [`${flagHTML(person.flag)} ${person.country}`.trim()] : []);
+      ? person.countries.map(c => wrapCountry(c.flag, c.name)).filter(Boolean)
+      : (person.country ? [wrapCountry(person.flag, person.country)] : []);
     if (countryParts.length) {
       modalCountry.innerHTML = countryParts.join(' · ');
       modalCountry.style.display = '';

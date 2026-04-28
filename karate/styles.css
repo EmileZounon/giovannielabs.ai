@@ -447,6 +447,10 @@ a { color: inherit; }
   object-fit: cover;
   margin-right: 0.15em;
 }
+.country-chip {
+  display: inline-block;
+  white-space: nowrap;
+}
 /* Custom country dropdown — replaces native <select> so image-based flags
    (East Turkistan SVG) can render alongside emoji flags in the option list. */
 .cs { position: relative; display: inline-block; min-width: 160px; }
