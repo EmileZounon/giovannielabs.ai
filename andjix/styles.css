@@ -1466,3 +1466,38 @@ footer {
   .legal-doc { padding: 0 20px; }
   .legal-doc .legal-header { padding: 28px 24px; }
 }
+
+/* ===== Mobile polish ===== */
+html, body { overflow-x: hidden; }
+
+@media (max-width: 768px) {
+  .svc-anchor-nav-inner {
+    padding: 0 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .svc-anchor-nav-inner::-webkit-scrollbar { display: none; }
+  .svc-anchor-nav { top: 64px; padding: 10px 0; }
+  .svc-section { padding: 64px 0; }
+  .subhero-photo { aspect-ratio: 4 / 3; max-width: 100%; }
+  .subhero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .stats-row { gap: 24px; }
+  .stat-card { padding: 24px; }
+  .compare-row { padding: 14px 18px; font-size: 0.95rem; }
+}
+
+@media (max-width: 520px) {
+  section, .intro, .how-it-works, .audience, .rupture { padding: 56px 0; }
+  .hero { padding: 40px 0 56px; }
+  .hero h1 { font-size: clamp(2rem, 8vw, 2.5rem); }
+  .hero-lede { font-size: 1rem; }
+  h2 { font-size: clamp(1.625rem, 6vw, 2rem); }
+  .intro p.lede { font-size: 1.0625rem; }
+  .stat-number { font-size: clamp(2.25rem, 9vw, 2.75rem); }
+  .imgcard-body { padding: 24px; }
+  .partner-card { padding: 48px 24px; }
+  .guidance-band { margin: 0 12px; padding: 40px 24px; }
+  .container, .container-narrow { padding: 0 18px; }
+  .svc-anchor-nav a { padding: 8px 14px; font-size: 0.8125rem; }
+  .svc-anchor-nav-label { display: none; }
+}

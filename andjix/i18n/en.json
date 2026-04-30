@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "title": "Andjix Consulting Inc. — Administrative, tax, and professional support in Ottawa",
+    "title": "Andjix Consulting Inc. : Administrative, tax, and professional support in Ottawa",
     "description": "Andjix supports newcomers, individuals, and SMEs in Ottawa. Bilingual, available 24/7, with expertise in business law, tax, and Canadian administration."
   },
   "nav": {
@@ -15,7 +15,7 @@
   "hero": {
     "eyebrow": "Administrative support · Ottawa",
     "title": "Successful integration is <span class=\"accent\">your real win.</span>",
-    "lede": "The hardest part of immigration isn't the visa. It's settling in and integrating. Andjix brings together a bilingual team trained in business law, tax, and Canadian administration to walk with you, step by step.",
+    "lede": "The hardest part of immigration isn't the visa. It's integrating. Andjix walks with you in business law, tax, and Canadian administration.",
     "cta_individuals": "I'm an individual",
     "cta_sme": "I'm an SME",
     "trust": "Bilingual EN/FR · Ottawa · Business law · Tax · Federal administration"
@@ -29,13 +29,13 @@
     "stat2_label": "areas of expertise",
     "stat2_desc": "Business law, tax, and public administration. Our team knows the system from the inside.",
     "stat3_label": "online availability",
-    "stat3_desc": "Andjix AI answers any time, in English or French, and bridges to a human when your file deserves it.",
+    "stat3_desc": "Andjix AI answers any time in English or French, and hands off to a human when your file deserves it.",
     "callout": "The problem is navigation, accurate information and a human."
   },
   "rupture": {
     "eyebrow": "The Andjix difference",
     "title": "Where classic support stops, Andjix begins.",
-    "lede": "Traditional welcome services do precious work. But their hours, capacity, and administrative scope limit what they can offer. Here's what changes with Andjix.",
+    "lede": "Traditional welcome services do precious work, but their hours and scope limit what they can offer. Here's what changes.",
     "h_classic": "Classic support",
     "h_andjix": "Andjix Consulting",
     "row1_classic": "Available during business hours, by extended appointment.",
@@ -55,7 +55,7 @@
     "p1_desc": "Refugees, economic immigrants, international students. You're arriving this week, this month, this quarter, and every step counts.",
     "p1_link": "See the newcomer path",
     "p2_title": "Self-employed",
-    "p2_desc": "Drivers, couriers, freelancers, consultants. You file T2125, manage your own taxes, and no one explains the system clearly.",
+    "p2_desc": "Drivers, couriers, freelancers, consultants. T2125, taxes, installments: no one explains the system.",
     "p2_link": "See the self-employed path",
     "p3_title": "Small and medium businesses",
     "p3_desc": "SMEs, nonprofits, associations in Ottawa. You want to modernize your operation without building a tech team.",
@@ -64,7 +64,7 @@
   "ia_band": {
     "eyebrow": "Our edge",
     "title": "A real AI, not a basic chatbot.",
-    "lede": "Andjix AI asks the right questions, understands your situation, and builds a concrete plan. See it in action.",
+    "lede": "Andjix AI asks the right questions, understands your situation, and builds a clear plan. See it in action.",
     "cta": "Discover Andjix AI",
     "feature1": "Diagnosis in 5 minutes",
     "feature2": "Bilingual, 24/7",
@@ -78,7 +78,7 @@
   "about_teaser": {
     "eyebrow": "About",
     "title": "Born from necessity, built for impact.",
-    "lede": "A bilingual team, trained in business law and tax, established in Ottawa for several years. We close the gap between classic welcome services and individualized support.",
+    "lede": "Bilingual team, trained in business law and tax, established in Ottawa. We close the gap between classic welcome services and individualized support.",
     "cta": "Discover our approach"
   },
   "footer": {
@@ -105,8 +105,8 @@
     "hero_title": "Born from necessity, built for impact.",
     "hero_lede": "Andjix Consulting Inc. is an administrative, tax, and professional support firm based in Ottawa.",
     "section1_title": "A bilingual team, trained for the Canadian system.",
-    "section1_p1": "Andjix Consulting Inc. was founded by bilingual professionals based in Ottawa, with academic training in business law and taxation acquired in francophone Africa, complemented by Canadian training in business administration. They have over a decade of private-sector activity that sharpened their experience in business management, tax compliance, and legal obligations.",
-    "section1_p2": "Established in Canada for several years, they have developed a deep working knowledge of the Canadian administrative system, federal institutions, and the real needs of newcomers.",
+    "section1_p1": "Andjix Consulting Inc. was founded by bilingual professionals based in Ottawa. Academic training in business law and taxation acquired in francophone Africa, completed in Canada in business administration. Over a decade of private-sector activity: business management, tax compliance, legal obligations.",
+    "section1_p2": "Established in Canada for several years, they have a deep working knowledge of the administrative system, federal institutions, and the real needs of newcomers.",
     "pillars_title": "Three complementary areas of expertise.",
     "p1_title": "Business law",
     "p1_desc": "Master's degree and advanced training in business law. More than ten years of active entrepreneurship and legal management of companies.",
@@ -174,7 +174,7 @@
   "pme": {
     "hero_eyebrow": "SME services",
     "hero_title": "Modernize without hiring.",
-    "hero_lede": "For Ottawa SMEs, nonprofits, and associations who want to double capacity without building a tech team. Andjix delivers tailored tools and incorporation support.",
+    "hero_lede": "For Ottawa SMEs, nonprofits, and associations who want to double capacity without building a tech team. Tailored tools, incorporation support.",
     "s1_title": "Automation solutions",
     "s1_lede": "Your client onboarding, document collection, and follow-up automated. You keep the human relationship; the AI handles the rest.",
     "s1_b1": "Automated client onboarding tools (smart forms, qualification, scheduling)",
@@ -202,7 +202,7 @@
   "ia_page": {
     "hero_eyebrow": "Andjix AI",
     "hero_title": "A real AI for integrating into Canada.",
-    "hero_lede": "Andjix AI isn't a scripted chatbot. It's an intelligent assistant trained on Canadian business law, CRA tax matters, and arrival procedures in Ottawa. It asks the right questions and points you forward.",
+    "hero_lede": "Not a scripted chatbot. An intelligent assistant trained in Canadian business law, CRA tax matters, and arrival procedures in Ottawa. It asks the right questions and points you forward.",
     "hero_cta": "Launch Andjix AI",
     "how_title": "How it works",
     "how_step1_title": "You describe your situation",
@@ -213,7 +213,7 @@
     "how_step3_desc": "A clear summary of what you can do alone, and what deserves a human. With links, deadlines, and dollar amounts.",
     "demo_eyebrow": "Demo",
     "demo_title": "A real Andjix AI conversation.",
-    "demo_lede": "Here's a real example of a diagnosis run by our assistant. Reconstructed from typical cases.",
+    "demo_lede": "A real example of a diagnosis. Reconstructed from typical cases.",
     "demo_caption": "Ready to try? Launch Andjix AI and start your own diagnosis.",
     "compare_eyebrow": "Comparison",
     "compare_title": "Andjix AI vs. classic community center.",
@@ -250,24 +250,24 @@
     "stat2_label": "average post-engagement satisfaction",
     "stat3_number": "< 48 h",
     "stat3_label": "average time to a first human session",
-    "case1_eyebrow": "Case 1 — Refugee family",
+    "case1_eyebrow": "Case 1: Refugee family",
     "case1_title": "Four people, ninety days, full independence.",
     "case1_p": "Family of four arriving from francophone Africa to Ottawa. SIN, OHIP, banking, school for both kids, language classes for the parents, a first job for the head of household, first-month tax filing. All delivered in 90 days, on a sliding-scale package.",
-    "case2_eyebrow": "Case 2 — Self-employed",
+    "case2_eyebrow": "Case 2: Self-employed",
     "case2_title": "An Uber driver who hadn't filed in years.",
     "case2_p": "Uber driver in Ottawa for three years, never filed his income taxes. Three-year CRA backfile cleared, payment plan negotiated, monthly installment tracking set up. Estimated savings: $4,200 in penalties avoided.",
-    "case3_eyebrow": "Case 3 — Growing SME",
+    "case3_eyebrow": "Case 3: Growing SME",
     "case3_title": "A consultancy doubled in capacity, no hires.",
     "case3_p": "HR consulting firm in Ottawa, three-person team at full load. Automated client intake set up: lead qualification, scheduling, document collection. Capacity doubled, no hires, ROI in less than four months.",
     "voices_title": "What clients say",
     "v1_quote": "\"They walked us through everything from the SIN to my husband's first job. It was the first time we felt heard in French.\"",
-    "v1_author": "Client — refugee family, Ottawa",
+    "v1_author": "Client, refugee family, Ottawa",
     "v2_quote": "\"Andjix cleared three years of CRA backlog in a few weeks. I'm not stressed about April 30 anymore.\"",
-    "v2_author": "Client — self-employed",
+    "v2_author": "Client, self-employed",
     "v3_quote": "\"The automated intake system they built saved us two days a week.\"",
-    "v3_author": "Client — SME, Ottawa",
+    "v3_author": "Client, SME, Ottawa",
     "cta_title": "Your case could be the next one.",
-    "cta_lede": "Start with a free diagnosis. Let's see what Andjix can do for you.",
+    "cta_lede": "Free diagnosis. Let's see what Andjix can do for you.",
     "cta_primary": "Launch Andjix AI",
     "cta_secondary": "Book a session"
   },
@@ -297,7 +297,7 @@
   "contact": {
     "hero_eyebrow": "Contact and booking",
     "hero_title": "Pick the right entry point.",
-    "hero_lede": "Three ways to reach us. No credit card required to start.",
+    "hero_lede": "Three ways to reach us. No credit card required.",
     "card1_title": "Andjix AI",
     "card1_desc": "The fastest option. Free diagnosis in under 5 minutes, 24/7, in EN or FR.",
     "card1_cta": "Launch now",
