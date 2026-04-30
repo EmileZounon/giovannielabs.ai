@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact et rendez-vous — Andjix Consulting Inc.</title>
+<meta name="description" content="Contact, rendez-vous et formulaire pour Andjix Consulting. Disponible 24/7 en ligne, sur rendez-vous du lundi au vendredi." />
+<meta name="theme-color" content="#1E88E5" />
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div data-include="nav"></div>
+
+<header class="subhero">
+  <div class="container">
+    <div class="subhero-grid">
+      <div class="reveal">
+        <div class="breadcrumbs">
+          <a href="index.html">Accueil</a><span>/</span><span data-i18n="nav.contact">Contact</span>
+        </div>
+        <span class="hero-eyebrow" data-i18n="contact.hero_eyebrow">Contact et rendez-vous</span>
+        <h1 data-i18n="contact.hero_title">Choisissez le bon point d'entrée.</h1>
+        <p class="hero-lede" data-i18n="contact.hero_lede">Vous avez trois manières de nous joindre. Aucune carte de crédit requise pour démarrer.</p>
+      </div>
+      <div class="subhero-photo reveal">
+        <img src="assets/photos/modern-office.jpg" alt="Bureau Andjix Consulting à Ottawa" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="contact-options">
+      <div class="contact-option reveal">
+        <div class="contact-option-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 data-i18n="contact.card1_title">Andjix IA</h3>
+        <p data-i18n="contact.card1_desc">L'option la plus rapide. Diagnostic gratuit en moins de 5 minutes, 24/7, en FR ou EN.</p>
+        <a href="https://andjix-ai.giovannielabs.ai" target="_blank" rel="noopener" class="btn btn-primary">
+          <span data-i18n="contact.card1_cta">Lancer maintenant</span>
+        </a>
+      </div>
+      <div class="contact-option reveal" id="rdv">
+        <div class="contact-option-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 data-i18n="contact.card2_title">Rendez-vous humain</h3>
+        <p data-i18n="contact.card2_desc">Pour les dossiers complexes ou si vous préférez parler à quelqu'un. Premier appel de découverte gratuit.</p>
+        <a href="#" data-calendly-link class="btn btn-ghost">
+          <span data-i18n="contact.card2_cta">Réserver un appel</span>
+        </a>
+      </div>
+      <div class="contact-option reveal">
+        <div class="contact-option-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3 data-i18n="contact.card3_title">Courriel ou téléphone</h3>
+        <p data-i18n="contact.card3_desc">Pour les questions courtes, les demandes administratives ou les transmissions de documents.</p>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.9375rem;">
+          <a href="mailto:info@andjix.ca" style="font-weight: 500;">info@andjix.ca</a>
+          <a href="tel:+16132768401" style="font-weight: 500;">+1 613 276 8401</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <div class="form-side">
+        <h2 data-i18n="contact.form_title">Écrivez-nous directement</h2>
+        <p data-i18n="contact.form_lede">Choisissez votre profil pour qu'on oriente votre message à la bonne personne.</p>
+        <ul>
+          <li data-i18n="contact.hours_in_person">Sur rendez-vous, du lundi au vendredi, 9h à 18h</li>
+          <li data-i18n="contact.hours_online">Andjix IA disponible 24/7, 7 jours sur 7</li>
+          <li data-i18n="contact.hours_languages">Service offert en français et en anglais</li>
+        </ul>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Merci ! Votre message sera bientôt routé. Pour l\'instant, écrivez à info@andjix.ca.');">
+        <label data-i18n="contact.form_label_profile">Vous êtes</label>
+        <select required>
+          <option value="" disabled selected>—</option>
+          <option data-i18n="contact.form_opt1">Un nouveau arrivant</option>
+          <option data-i18n="contact.form_opt2">Un travailleur autonome</option>
+          <option data-i18n="contact.form_opt3">Un particulier</option>
+          <option data-i18n="contact.form_opt4">Une PME ou OBNL</option>
+        </select>
+        <label data-i18n="contact.form_label_name">Votre nom</label>
+        <input type="text" required />
+        <label data-i18n="contact.form_label_email">Votre courriel</label>
+        <input type="email" required />
+        <label data-i18n="contact.form_label_message">Votre message</label>
+        <textarea required></textarea>
+        <div class="checkbox-row">
+          <input type="checkbox" required id="consent" />
+          <label for="consent" data-i18n-html="contact.form_consent" style="margin: 0;">J'accepte que mes données soient traitées selon la <a href="confidentialite.html">politique de confidentialité</a>.</label>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <span data-i18n="contact.form_submit">Envoyer le message</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="hours-panel reveal">
+      <h3 data-i18n="contact.hours_title">Disponibilité</h3>
+      <ul>
+        <li data-i18n="contact.hours_in_person">Sur rendez-vous, du lundi au vendredi, 9h à 18h</li>
+        <li data-i18n="contact.hours_online">Andjix IA disponible 24/7, 7 jours sur 7</li>
+        <li data-i18n="contact.hours_languages">Service offert en français et en anglais</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div data-include="footer"></div>
+
+<script src="partials.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

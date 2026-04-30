@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ressources — Andjix Consulting Inc.</title>
+<meta name="description" content="Guides pratiques et fiches gratuites pour comprendre les démarches canadiennes : impôts, locataires, T2125, constitution d'entreprise." />
+<meta name="theme-color" content="#1E88E5" />
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div data-include="nav"></div>
+
+<header class="subhero">
+  <div class="container">
+    <div class="subhero-grid">
+      <div class="reveal">
+        <div class="breadcrumbs">
+          <a href="index.html">Accueil</a><span>/</span><span data-i18n="nav.resources">Ressources</span>
+        </div>
+        <span class="hero-eyebrow" data-i18n="ressources.hero_eyebrow">Ressources</span>
+        <h1 data-i18n="ressources.hero_title">Guides pratiques pour avancer seul, ou avec nous.</h1>
+        <p class="hero-lede" data-i18n="ressources.hero_lede">Articles, guides et fiches pratiques pour comprendre les démarches canadiennes. Tous gratuits, en français et en anglais.</p>
+      </div>
+      <div class="subhero-photo reveal">
+        <img src="assets/photos/desk-documents.jpg" alt="Bureau avec documents et guides" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="blog-grid">
+      <article class="blog-card reveal">
+        <div class="blog-card-cover"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag" data-i18n="ressources.soon_label">À venir</span>
+          <h3 data-i18n="ressources.card1_title">Comprendre votre première déclaration T1</h3>
+          <p data-i18n="ressources.card1_desc">Tout ce qu'un nouveau arrivant doit savoir avant le 30 avril : feuillets, crédits, dates clés.</p>
+        </div>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-card-cover"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag" data-i18n="ressources.soon_label">À venir</span>
+          <h3 data-i18n="ressources.card2_title">Droits du locataire en Ontario</h3>
+          <p data-i18n="ressources.card2_desc">Bail, dépôt de garantie, augmentation de loyer, expulsion. Ce que la loi ontarienne dit vraiment.</p>
+        </div>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-card-cover"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag" data-i18n="ressources.soon_label">À venir</span>
+          <h3 data-i18n="ressources.card3_title">T2125 pour chauffeurs Uber et livreurs</h3>
+          <p data-i18n="ressources.card3_desc">Quelles dépenses déduire, comment calculer le kilométrage, quand payer les acomptes.</p>
+        </div>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-card-cover"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag" data-i18n="ressources.soon_label">À venir</span>
+          <h3 data-i18n="ressources.card4_title">Constituer sa société : fédéral ou provincial ?</h3>
+          <p data-i18n="ressources.card4_desc">Tableau comparatif des deux options, avec coûts, délais, et obligations annuelles.</p>
+        </div>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-card-cover"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag" data-i18n="ressources.soon_label">À venir</span>
+          <h3 data-i18n="ressources.card5_title">ACE, soins dentaires, prestations canadiennes</h3>
+          <p data-i18n="ressources.card5_desc">Les programmes auxquels vous avez droit comme nouveau résident, et comment en faire la demande.</p>
+        </div>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-card-cover"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag" data-i18n="ressources.soon_label">À venir</span>
+          <h3 data-i18n="ressources.card6_title">Inscrire son enfant à l'école à Ottawa</h3>
+          <p data-i18n="ressources.card6_desc">École publique francophone, anglophone, catholique : comment choisir et faire l'inscription.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="newsletter reveal">
+      <h2 data-i18n="ressources.newsletter_title">Une ressource publiée chaque mois.</h2>
+      <p data-i18n="ressources.newsletter_lede">Inscrivez-vous pour recevoir nos guides dès leur publication. Un courriel par mois, désinscription en un clic.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci ! La fonction sera activée prochainement.');">
+        <input type="email" required placeholder="votre@adresse.com" data-i18n-attr-placeholder="ressources.newsletter_placeholder" />
+        <button type="submit" class="btn btn-primary">
+          <span data-i18n="ressources.newsletter_cta">S'inscrire</span>
+        </button>
+      </form>
+      <p class="newsletter-note" data-i18n-html="ressources.newsletter_note">Nous respectons votre vie privée. <a href="confidentialite.html">Voir notre politique de confidentialité</a>.</p>
+    </div>
+  </div>
+</section>
+
+<div data-include="footer"></div>
+
+<script src="partials.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
