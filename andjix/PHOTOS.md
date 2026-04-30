@@ -30,7 +30,7 @@ Local preview: `python3 -m http.server 8765` from the andjix folder, then open `
 | `#nouveaux-arrivants` | `migrants-airport.jpg` |
 | `#emploi` | `women-studying.jpg` |
 | `#conseil` | `group-consulting.jpg` |
-| `#forfaits` | `family-paperwork.jpg` |
+| `#forfaits` | `pexels-kindelmedia-6775115.jpg` (3 people around a laptop, coworking) |
 
 ### `services-pme.html`
 
@@ -54,7 +54,6 @@ Local preview: `python3 -m http.server 8765` from the andjix folder, then open `
 
 - `pexels-cedric-fauntleroy-7220862.jpg`
 - `pexels-helenalopes-27178153.jpg`
-- `pexels-kindelmedia-6775115.jpg`
 - `canada airport.jpg` (note the space in filename)
 - `entrepreneur-laptop.jpg`
 - `newcomer-family.jpg`
@@ -75,6 +74,7 @@ These are kept on disk in case we want to revert or reuse.
 - **New audience cards on `/`**: Air Canada Rouge plane (newcomers), Aberto/Open shop owner (self-employed), modern coworking team (PME).
 - **New services-particuliers hero**: Ottawa glass building reflecting Parliament + Canadian flag (`pexels-eric-prouzet-...`).
 - **New services-pme hero**: same coworking team picture used on `/` audience card 03.
+- **New services-particuliers `#forfaits` photo**: 3 people around a laptop in a coworking space (`pexels-kindelmedia-6775115.jpg`) — better fit for "accompagnement sur 3 à 6 mois".
 - **Copy shortened** on intro callout (FR + EN, used in `index.html` line ~84 and `i18n/{fr,en}.json` `intro.callout`):
   - FR: "Le problème c'est la navigation, l'information juste et un humain."
   - EN: "The problem is navigation, accurate information and a human."
