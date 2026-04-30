@@ -80,7 +80,6 @@
     </div>
     <div class="footer-bottom">
       <div>© <span id="year"></span> Andjix Consulting Inc. <span data-i18n="footer.rights">Tous droits réservés.</span></div>
-      <div data-i18n-html="footer.built">Conçu par <a href="https://giovannielabs.ai" target="_blank" rel="noopener" style="color: inherit; font-weight: 600;">Giovannie Labs</a></div>
     </div>
   </div>
 </footer>`;
