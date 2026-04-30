@@ -317,5 +317,5 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 - Years for some older ranks (a few entries still year-null).
 - ISKF logo file (placeholder text-only chip for now).
-- University logos: real seals for Wellesley, Yale, UMass Amherst, UConn, University of Texas, University of Toronto. Currently rendered as monogram SVGs in school colors.
+- University logos: real seals for Wellesley, Yale, UMass Amherst, University of Texas. Currently rendered as monogram SVGs in school colors.
 - "Other" Shodan rank from Sasiru's row in the database (org unspecified).
