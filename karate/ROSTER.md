@@ -172,12 +172,14 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 15. Garen Chiloyan
 - **Country:** Armenia 🇦🇲
 - **University:** UConn
+- **Photo:** photos/garen.jpeg
 - **Ranks:**
   - Shodan, JKA
 
 ### 16. Hiro Fujii
 - **Country:** USA 🇺🇸
 - **University:** Boston University
+- **Photo:** photos/hiro.jpeg
 - **Ranks:**
   - Shodan, JKA (2023)
   - Shodan, ISKF (2019)
@@ -218,6 +220,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 ### 21. Alina Zheng
 - **Country:** USA 🇺🇸
 - **University:** Wellesley College
+- **Photo:** photos/alina.jpeg
 - **Ranks:**
   - Shodan, JKA (2024)
 
@@ -314,6 +317,5 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 
 - Years for some older ranks (a few entries still year-null).
 - ISKF logo file (placeholder text-only chip for now).
-- University logos: real seals for Wellesley, Columbia, Yale, Lesley, Georgetown, Johns Hopkins, UMass Amherst, University of Texas, University of Toronto. Currently rendered as monogram SVGs in school colors.
-- Photos for: Garen, Hiro, Alina.
+- University logos: real seals for Wellesley, Yale, UMass Amherst, UConn, University of Texas, University of Toronto. Currently rendered as monogram SVGs in school colors.
 - "Other" Shodan rank from Sasiru's row in the database (org unspecified).

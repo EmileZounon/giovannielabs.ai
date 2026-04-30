@@ -27,7 +27,7 @@ const UNIVERSITIES = [
   { name: 'Georgetown University',    logo: 'logos/georgetown.png' },
   { name: 'Johns Hopkins University', logo: 'logos/johns-hopkins.png' },
   { name: 'Lesley University',        logo: 'logos/lesley-university.png' },
-  { name: 'UConn',                    logo: null },
+  { name: 'UConn',                    logo: 'logos/uconn.svg' },
   { name: 'UMass Amherst',            logo: 'logos/umass-amherst.svg' },
   { name: 'University of Texas',      logo: 'logos/university-of-texas.svg' },
   { name: 'University of Toronto',    logo: 'logos/university-of-toronto.svg' },
@@ -301,7 +301,7 @@ const BLACK_BELTS = [
     universities: ['UConn'],
     country: 'Armenia',
     flag: '🇦🇲',
-    photo: null,
+    photo: 'photos/garen.jpeg',
     ranks: [
       { rank: 'Shodan', year: null, org: 'jka' },
     ],
@@ -312,7 +312,7 @@ const BLACK_BELTS = [
     universities: ['Boston University'],
     country: 'USA',
     flag: '🇺🇸',
-    photo: null,
+    photo: 'photos/hiro.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2023, org: 'jka'  },
       { rank: 'Shodan', year: 2019, org: 'iskf' },
@@ -380,7 +380,7 @@ const BLACK_BELTS = [
     universities: ['Wellesley College'],
     country: 'USA',
     flag: '🇺🇸',
-    photo: null,
+    photo: 'photos/alina.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jka' },
     ],
