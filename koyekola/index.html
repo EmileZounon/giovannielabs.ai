@@ -552,14 +552,26 @@
         <p class="mt-4 text-white/80 text-lg" data-i18n="community.body">Forum modéré, célébration des victoires, classements, et tirage au sort hebdomadaire. Chaque action compte.</p>
 
         <div class="mt-8 grid grid-cols-2 gap-4">
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
-            <div class="text-xs uppercase tracking-wide text-white/60" data-i18n="community.stat1.label">Cette semaine</div>
-            <div class="display text-3xl font-extrabold mt-1">128</div>
+          <div class="lift rounded-2xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 transition-colors">
+            <div class="flex items-center gap-2 text-xs uppercase tracking-wide text-white/60">
+              <span class="relative inline-flex h-2 w-2">
+                <span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-60"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+              </span>
+              <span data-i18n="community.stat1.label">Cette semaine</span>
+            </div>
+            <div class="display text-3xl font-extrabold mt-1" data-counter="128" data-suffix="">0</div>
             <div class="text-sm text-white/70" data-i18n="community.stat1.body">contributions au forum</div>
           </div>
-          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
-            <div class="text-xs uppercase tracking-wide text-white/60" data-i18n="community.stat2.label">En direct</div>
-            <div class="display text-3xl font-extrabold mt-1">14</div>
+          <div class="lift rounded-2xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 transition-colors">
+            <div class="flex items-center gap-2 text-xs uppercase tracking-wide text-white/60">
+              <span class="relative inline-flex h-2 w-2">
+                <span class="absolute inset-0 rounded-full bg-accent animate-ping opacity-70"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+              </span>
+              <span data-i18n="community.stat2.label">En direct</span>
+            </div>
+            <div class="display text-3xl font-extrabold mt-1" data-counter="14" data-suffix="">0</div>
             <div class="text-sm text-white/70" data-i18n="community.stat2.body">enseignants connectés</div>
           </div>
         </div>
@@ -699,26 +711,29 @@
     </div>
 
     <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="rounded-2xl bg-white p-7 border border-slate-100 shadow-card">
+      <div class="lift stat-card rounded-2xl bg-white p-7 border border-slate-100 shadow-card hover:border-brand transition-colors">
         <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="pricing.p1.label">Cours individuel</div>
         <div class="mt-3 display text-3xl font-extrabold text-brand-deep">10 à 20 $</div>
         <div class="mt-1 text-sm text-slate-500" data-i18n="pricing.p1.unit">par enseignant</div>
         <p class="mt-4 text-sm text-slate-600" data-i18n="pricing.p1.body">Cycle de 3 semaines complet, certificat numérique inclus.</p>
       </div>
-      <div class="rounded-2xl bg-brand text-white p-7 shadow-card relative">
-        <span class="absolute -top-3 right-5 chip bg-accent text-white" data-i18n="pricing.p2.popular">Le plus choisi</span>
-        <div class="text-xs uppercase tracking-wide text-white/70" data-i18n="pricing.p2.label">Formation directeurs</div>
-        <div class="mt-3 display text-3xl font-extrabold">600 $</div>
-        <div class="mt-1 text-sm text-white/70" data-i18n="pricing.p2.unit">par directeur</div>
-        <p class="mt-4 text-sm text-white/85" data-i18n="pricing.p2.body">2 sessions + 3 sessions de coaching individuel.</p>
+      <div class="lift rounded-2xl bg-brand text-white p-7 shadow-card relative overflow-hidden hover:shadow-glow transition-shadow">
+        <div class="absolute -top-16 -right-16 h-40 w-40 rounded-full bg-accent/30 blur-2xl"></div>
+        <span class="absolute -top-3 right-5 chip bg-accent text-white cta-pulse" data-i18n="pricing.p2.popular">Le plus choisi</span>
+        <div class="relative">
+          <div class="text-xs uppercase tracking-wide text-white/70" data-i18n="pricing.p2.label">Formation directeurs</div>
+          <div class="mt-3 display text-3xl font-extrabold">600 $</div>
+          <div class="mt-1 text-sm text-white/70" data-i18n="pricing.p2.unit">par directeur</div>
+          <p class="mt-4 text-sm text-white/85" data-i18n="pricing.p2.body">2 sessions + 3 sessions de coaching individuel.</p>
+        </div>
       </div>
-      <div class="rounded-2xl bg-white p-7 border border-slate-100 shadow-card">
+      <div class="lift stat-card rounded-2xl bg-white p-7 border border-slate-100 shadow-card hover:border-accent transition-colors">
         <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="pricing.p3.label">Diagnostic école</div>
         <div class="mt-3 display text-3xl font-extrabold text-brand-deep" data-i18n="schools.priceValue">Gratuit</div>
         <div class="mt-1 text-sm text-slate-500" data-i18n="pricing.p3.unit">par établissement</div>
         <p class="mt-4 text-sm text-slate-600" data-i18n="pricing.p3.body">Évaluation complète des élèves, enseignants, infrastructure.</p>
       </div>
-      <div class="rounded-2xl bg-white p-7 border border-slate-100 shadow-card">
+      <div class="lift stat-card rounded-2xl bg-white p-7 border border-slate-100 shadow-card hover:border-brand transition-colors">
         <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="pricing.p4.label">Coaching K1 et K2</div>
         <div class="mt-3 display text-3xl font-extrabold text-brand-deep">2 500 à 4 000 $</div>
         <div class="mt-1 text-sm text-slate-500" data-i18n="pricing.p4.unit">par école / an</div>
