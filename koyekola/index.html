@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Koyekola Academy : développement professionnel des enseignants en RDC. Formations pratiques, communauté, et reconnaissance professionnelle." />
+<title>Koyekola Academy : Développement professionnel des enseignants</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/photos/teacher-alphabet-liberia.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#1F2937',
+          paper: '#F8FAFC',
+          brand: {
+            DEFAULT: '#1E3A8A',
+            deep: '#152C66',
+            soft: '#3B5BB5',
+          },
+          accent: {
+            DEFAULT: '#DC143C',
+            deep: '#B5102F',
+          },
+        },
+        fontFamily: {
+          display: ['Poppins', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'system-ui', 'sans-serif'],
+        },
+        boxShadow: {
+          card: '0 1px 2px rgba(15,23,42,.04), 0 8px 24px rgba(15,23,42,.06)',
+          glow: '0 12px 30px rgba(220,20,60,.25)',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: #1F2937; }
+  h1, h2, h3, h4, .display { font-family: 'Poppins', system-ui, sans-serif; }
+  .container-x { max-width: 1200px; margin-left:auto; margin-right:auto; padding-left:1.25rem; padding-right:1.25rem; }
+  .grain { background-image: radial-gradient(rgba(30,58,138,.06) 1px, transparent 1px); background-size: 14px 14px; }
+  .lift { transition: transform .25s ease, box-shadow .25s ease; }
+  .lift:hover { transform: translateY(-3px); }
+  .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border-radius:9999px; font-size:.78rem; font-weight:500; }
+  .btn-primary { background:#DC143C; color:#fff; }
+  .btn-primary:hover { background:#B5102F; }
+  .btn-outline { border:1.5px solid #1E3A8A; color:#1E3A8A; }
+  .btn-outline:hover { background:#1E3A8A; color:#fff; }
+  details > summary { list-style:none; cursor:pointer; }
+  details > summary::-webkit-details-marker { display:none; }
+  .reveal { opacity:0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in, .no-js .reveal { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+  /* Language switcher */
+  .lang-pill { display:inline-flex; align-items:center; gap:.35rem; font-size:.72rem; font-weight:600; padding:.3rem .55rem; border-radius:9999px; color:#475569; cursor:pointer; transition: all .2s ease; }
+  .lang-pill[aria-pressed="true"] { background:#1E3A8A; color:#fff; }
+  .lang-pill:hover:not([aria-pressed="true"]) { background:#F1F5F9; color:#1E3A8A; }
+
+  /* Tactile button feedback */
+  a, button { -webkit-tap-highlight-color: transparent; }
+  .btn-primary, .btn-outline, .lift, [role="button"], button { transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .btn-primary:active, .btn-outline:active { transform: scale(.97); }
+
+  /* Live ticker */
+  @keyframes ticker-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ticker-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-8px); } }
+  .ticker-enter { animation: ticker-in .45s ease forwards; }
+  .ticker-exit { animation: ticker-out .35s ease forwards; }
+
+  /* Image fade-in once loaded */
+  img { background-color: #F1F5F9; }
+  img.loaded { background-color: transparent; }
+
+  /* Subtle hover lift on cards */
+  .lift { will-change: transform; }
+  .lift:hover { box-shadow: 0 10px 30px rgba(15,23,42,.08); }
+
+  /* Click-friendly larger tap zones on mobile */
+  @media (max-width: 640px) {
+    .chip { padding: .5rem .85rem; }
+  }
+</style>
+</head>
+<body class="bg-white antialiased">
+
+<!-- ===== Top bar ===== -->
+<header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-slate-100">
+  <div class="container-x flex items-center justify-between py-3">
+    <a href="#top" class="flex items-center gap-3">
+      <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white shadow-card">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H3z"/><path d="M21 5.5a2 2 0 0 0-2-2h-5a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7z"/></svg>
+      </span>
+      <span class="display font-extrabold text-brand text-xl tracking-tight">Koyekola</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+      <a href="#cours" class="hover:text-brand" data-i18n="nav.courses">Cours</a>
+      <a href="#cycle" class="hover:text-brand" data-i18n="nav.method">Notre méthode</a>
+      <a href="#fondatrice" class="hover:text-brand" data-i18n="nav.founder">Fondatrice</a>
+      <a href="#directeurs" class="hover:text-brand" data-i18n="nav.directors">Directeurs</a>
+      <a href="#ecoles" class="hover:text-brand" data-i18n="nav.schools">Écoles</a>
+      <a href="#tarifs" class="hover:text-brand" data-i18n="nav.pricing">Tarifs</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <!-- Language switcher -->
+      <div class="hidden sm:flex items-center gap-1 rounded-full border border-slate-200 p-1" role="group" aria-label="Langue">
+        <button class="lang-pill" data-lang="fr" aria-pressed="true" title="Français">FR</button>
+        <button class="lang-pill" data-lang="ln" aria-pressed="false" title="Lingala">LN</button>
+        <button class="lang-pill" data-lang="en" aria-pressed="false" title="English">EN</button>
+      </div>
+      <a href="#inscription" class="inline-flex items-center rounded-full btn-primary px-5 py-2 text-sm font-semibold shadow-glow active:scale-95 transition" data-i18n="nav.signup">S'inscrire</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section id="top" class="relative overflow-hidden">
+  <div class="absolute inset-0 grain pointer-events-none"></div>
+  <div class="absolute -top-32 -right-24 h-[420px] w-[420px] rounded-full bg-brand/10 blur-3xl"></div>
+  <div class="absolute -bottom-40 -left-24 h-[420px] w-[420px] rounded-full bg-accent/10 blur-3xl"></div>
+
+  <div class="container-x relative pt-14 pb-20 md:pt-20 md:pb-28">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <span class="chip bg-brand/10 text-brand">
+          <span class="h-2 w-2 rounded-full bg-accent"></span>
+          <span data-i18n="hero.chip">Plateforme professionnelle pour enseignants en RDC</span>
+        </span>
+        <h1 class="mt-5 display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-brand-deep" data-i18n-html="hero.h1">
+          L'apprentissage <span class="text-accent">se passe ici.</span>
+        </h1>
+        <p class="mt-5 max-w-xl text-lg text-slate-600" data-i18n="hero.subtitle">
+          Koyekola Academy forme les enseignants et les directeurs d'école au Congo à travers des cours pratiques, une communauté active, et une reconnaissance professionnelle réelle.
+        </p>
+
+        <!-- Audience selector -->
+        <div class="mt-8 grid sm:grid-cols-3 gap-3">
+          <a href="#cours" class="group lift rounded-2xl border border-slate-200 bg-white p-5 shadow-card hover:border-brand">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand/10 text-brand">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2zM8 7h8M8 11h8M8 15h5"/></svg>
+              </span>
+              <div>
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wide" data-i18n="hero.aud.teacher.role">Enseignant</div>
+                <div class="display text-base font-semibold text-brand-deep" data-i18n="hero.aud.teacher.cta">Explorer les cours</div>
+              </div>
+            </div>
+          </a>
+          <a href="#directeurs" class="group lift rounded-2xl border border-slate-200 bg-white p-5 shadow-card hover:border-brand">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand/10 text-brand">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l9-6 9 6v12M9 21v-7h6v7"/></svg>
+              </span>
+              <div>
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wide" data-i18n="hero.aud.director.role">Directeur</div>
+                <div class="display text-base font-semibold text-brand-deep" data-i18n="hero.aud.director.cta">Formation leadership</div>
+              </div>
+            </div>
+          </a>
+          <a href="#ecoles" class="group lift rounded-2xl border border-slate-200 bg-white p-5 shadow-card hover:border-accent">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>
+              </span>
+              <div>
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wide" data-i18n="hero.aud.school.role">École</div>
+                <div class="display text-base font-semibold text-brand-deep" data-i18n="hero.aud.school.cta">Diagnostic gratuit</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500">
+          <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> <span data-i18n="hero.trust.1">35+ enseignants déjà formés</span></span>
+          <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> <span data-i18n="hero.trust.2">Français, Lingala, Anglais</span></span>
+          <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> <span data-i18n="hero.trust.3">Mobile Money accepté</span></span>
+        </div>
+      </div>
+
+      <!-- Hero photo + floating cohort card -->
+      <div class="lg:col-span-5">
+        <div class="relative">
+          <div class="rounded-3xl overflow-hidden shadow-card ring-1 ring-slate-100">
+            <img src="assets/photos/teacher-alphabet-liberia.jpg"
+                 alt="Une enseignante africaine montre l'alphabet écrit au tableau noir à ses élèves en classe"
+                 loading="eager" decoding="async" fetchpriority="high"
+                 width="800" height="600"
+                 class="w-full h-[460px] sm:h-[520px] object-cover" />
+          </div>
+
+          <!-- Floating cohort card -->
+          <div class="absolute -bottom-6 left-4 right-4 sm:-bottom-8 sm:left-6 sm:right-12 rounded-2xl bg-brand-deep text-white p-5 sm:p-6 shadow-card overflow-hidden">
+            <div class="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-accent/30 blur-2xl"></div>
+            <div class="relative">
+              <div class="flex items-center justify-between">
+                <span class="chip bg-white/10 text-white" data-i18n="hero.cohort.label">Prochaine cohorte</span>
+                <span class="text-xs text-white/70" data-i18n="hero.cohort.cycle">Cycle de 3 semaines</span>
+              </div>
+              <h3 class="display text-lg sm:text-xl font-bold mt-3 leading-snug" data-i18n="hero.cohort.title">K1 · Planification de leçons assistée par l'IA</h3>
+              <div class="mt-4 flex items-center justify-between gap-4">
+                <div class="grid grid-cols-3 gap-2 text-center text-xs flex-1">
+                  <div class="rounded-lg bg-white/10 py-2"><div class="display font-bold">S1</div><div class="text-white/70 text-[10px]" data-i18n="cycle.w1.title">Apprendre</div></div>
+                  <div class="rounded-lg bg-white/10 py-2"><div class="display font-bold">S2</div><div class="text-white/70 text-[10px]" data-i18n="cycle.w2.title">Appliquer</div></div>
+                  <div class="rounded-lg bg-white/10 py-2"><div class="display font-bold">S3</div><div class="text-white/70 text-[10px]" data-i18n="cycle.w3.title">Partager</div></div>
+                </div>
+                <a href="#inscription" class="inline-flex items-center gap-1 rounded-full bg-accent hover:bg-accent-deep px-3 py-2 text-xs font-semibold whitespace-nowrap">
+                  <span data-i18n="catalog.signup">S'inscrire</span>
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live activity ticker -->
+        <div class="mt-12 sm:mt-14">
+          <div class="inline-flex items-center gap-3 rounded-full bg-white border border-slate-200 shadow-card px-4 py-2.5 text-sm text-slate-600">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-60"></span>
+              <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+            </span>
+            <div id="activity-ticker" class="overflow-hidden whitespace-nowrap min-w-[260px] sm:min-w-[320px] h-5">
+              <span class="ticker-line block transition-all duration-500 ease-out">Marie de Kinshasa vient de s'inscrire au cours K1.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Mission + stats ===== -->
+<section class="bg-paper py-20" id="mission">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5">
+        <div class="relative">
+          <img decoding="async" src="assets/photos/smiling-children-classroom.jpg"
+               alt="Une jeune élève sourit en classe, un crayon à la main, entourée de ses camarades"
+               loading="lazy"
+               class="rounded-3xl shadow-card w-full h-[440px] object-cover" />
+          <div class="absolute -bottom-5 -right-5 hidden sm:block bg-white rounded-2xl shadow-card p-4 max-w-[220px] border border-slate-100">
+            <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="mission.tagline.label">Pourquoi nous sommes là</div>
+            <p class="mt-1 display font-semibold text-brand-deep text-sm leading-snug" data-i18n="mission.tagline.body">Chaque enfant mérite un enseignant bien formé.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <span class="chip bg-brand/10 text-brand" data-i18n="mission.chip">Notre mission</span>
+        <h2 class="display mt-4 text-3xl sm:text-4xl font-bold text-brand-deep leading-tight" data-i18n="mission.h2">
+          Améliorer l'enseignement de la lecture et des mathématiques dans chaque salle de classe congolaise.
+        </h2>
+        <p class="mt-5 text-slate-600 text-lg" data-i18n="mission.body">
+          Nous accompagnons les enseignants avec des formations pratiques, des outils utilisables dès le lundi matin, et une communauté qui célèbre les progrès. Pas de jargon. Pas de théorie inutile. Juste ce qui fonctionne en classe.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-white p-5 shadow-card border border-slate-100">
+            <div class="display text-3xl font-extrabold text-accent">97%</div>
+            <p class="mt-2 text-sm text-slate-600" data-i18n="mission.stat1">des enfants en RDC ne savent pas lire à 10 ans.</p>
+          </div>
+          <div class="rounded-2xl bg-white p-5 shadow-card border border-slate-100">
+            <div class="display text-3xl font-extrabold text-brand">35+</div>
+            <p class="mt-2 text-sm text-slate-600" data-i18n="mission.stat2">enseignants déjà formés à travers Kinshasa.</p>
+          </div>
+          <div class="rounded-2xl bg-white p-5 shadow-card border border-slate-100">
+            <div class="display text-3xl font-extrabold text-brand">3</div>
+            <p class="mt-2 text-sm text-slate-600" data-i18n="mission.stat3">niveaux : Débutant, Confirmé, Maître enseignant.</p>
+          </div>
+        </div>
+
+        <a href="#cycle" class="mt-7 inline-flex items-center gap-2 text-brand font-semibold hover:text-accent">
+          <span data-i18n="mission.cta">Découvrir notre méthode</span>
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3-Week Cycle ===== -->
+<section id="cycle" class="py-24">
+  <div class="container-x">
+    <div class="max-w-2xl">
+      <span class="chip bg-accent/10 text-accent" data-i18n="cycle.chip">Notre méthode</span>
+      <h2 class="display mt-4 text-3xl sm:text-4xl font-bold text-brand-deep leading-tight" data-i18n="cycle.h2">Le cycle Apprendre · Appliquer · Partager</h2>
+      <p class="mt-4 text-slate-600 text-lg" data-i18n="cycle.body">Chaque cours dure trois semaines. Vous n'absorbez pas seulement de la théorie : vous l'essayez en classe et vous partagez ce que vous avez appris avec vos pairs.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <article class="lift rounded-2xl bg-white border border-slate-100 shadow-card p-7 relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-24 w-24 bg-brand/5 rounded-bl-[80px]"></div>
+        <div class="display text-xs font-bold text-brand tracking-widest" data-i18n="cycle.w1.label">SEMAINE 1</div>
+        <h3 class="display mt-1 text-2xl font-bold text-brand-deep" data-i18n="cycle.w1.title">Apprendre</h3>
+        <p class="mt-3 text-slate-600" data-i18n="cycle.w1.body">Une session live ou enregistrée. Une vidéo courte. Un modèle téléchargeable. Un quiz pour vérifier votre compréhension.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-600">
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w1.b1">Session interactive avec facilitateur</span></li>
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w1.b2">Modèle de planification téléchargeable</span></li>
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w1.b3">Quiz de réflexion (5 minutes)</span></li>
+        </ul>
+      </article>
+
+      <article class="lift rounded-2xl bg-white border border-slate-100 shadow-card p-7 relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-24 w-24 bg-accent/10 rounded-bl-[80px]"></div>
+        <div class="display text-xs font-bold text-accent tracking-widest" data-i18n="cycle.w2.label">SEMAINE 2</div>
+        <h3 class="display mt-1 text-2xl font-bold text-brand-deep" data-i18n="cycle.w2.title">Appliquer</h3>
+        <p class="mt-3 text-slate-600" data-i18n="cycle.w2.body">Vous utilisez la technique avec vos vrais élèves cette semaine. Vous documentez ce qui fonctionne et ce qui résiste.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-600">
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w2.b1">Application concrète en classe</span></li>
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w2.b2">Modèle d'observation guidée</span></li>
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w2.b3">Exemples vidéo de salles de classe réelles</span></li>
+        </ul>
+      </article>
+
+      <article class="lift rounded-2xl bg-white border border-slate-100 shadow-card p-7 relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-24 w-24 bg-brand/5 rounded-bl-[80px]"></div>
+        <div class="display text-xs font-bold text-brand tracking-widest" data-i18n="cycle.w3.label">SEMAINE 3</div>
+        <h3 class="display mt-1 text-2xl font-bold text-brand-deep" data-i18n="cycle.w3.title">Partager</h3>
+        <p class="mt-3 text-slate-600" data-i18n="cycle.w3.body">Session communautaire de 90 minutes. Vous racontez votre semaine, vous écoutez vos pairs, vous recevez un retour personnalisé.</p>
+        <ul class="mt-5 space-y-2 text-sm text-slate-600">
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w3.b1">Session live de 90 minutes</span></li>
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w3.b2">Retour personnalisé du facilitateur</span></li>
+          <li class="flex gap-2"><span class="text-brand">✓</span> <span data-i18n="cycle.w3.b3">Certificat numérique téléchargeable</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Course catalog ===== -->
+<section id="cours" class="bg-paper py-24">
+  <div class="container-x">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-2xl">
+        <span class="chip bg-brand/10 text-brand" data-i18n="catalog.chip">Catalogue</span>
+        <h2 class="display mt-4 text-3xl sm:text-4xl font-bold text-brand-deep leading-tight" data-i18n="catalog.h2">Cours pour enseignants</h2>
+        <p class="mt-3 text-slate-600 text-lg" data-i18n="catalog.body">Chaque cours suit le cycle de 3 semaines. Vous gagnez des points, des badges, et un certificat numérique reconnu.</p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button class="chip bg-brand text-white" data-i18n="catalog.f.all">Tous</button>
+        <button class="chip bg-white border border-slate-200 text-slate-600 hover:border-brand hover:text-brand" data-i18n="catalog.f.numeracy">Numératie</button>
+        <button class="chip bg-white border border-slate-200 text-slate-600 hover:border-brand hover:text-brand" data-i18n="catalog.f.literacy">Littératie</button>
+        <button class="chip bg-white border border-slate-200 text-slate-600 hover:border-brand hover:text-brand" data-i18n="catalog.f.ai">IA &amp; TIC</button>
+        <button class="chip bg-white border border-slate-200 text-slate-600 hover:border-brand hover:text-brand" data-i18n="catalog.f.leadership">Leadership</button>
+      </div>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Course 1 -->
+      <article class="lift rounded-2xl bg-white border border-slate-100 shadow-card overflow-hidden flex flex-col">
+        <div class="h-44 relative">
+          <img decoding="async" src="assets/photos/ai-chatgpt-laptop.jpg" alt="Mains tapant sur un ordinateur portable affichant l'interface ChatGPT" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-deep/80 via-brand-deep/20 to-transparent"></div>
+          <span class="absolute top-3 left-3 chip bg-white/90 text-brand-deep" data-i18n="catalog.f.ai">IA &amp; TIC</span>
+          <span class="absolute top-3 right-3 chip bg-accent text-white" data-i18n="catalog.k1.popular">Populaire</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="display text-lg font-bold text-brand-deep" data-i18n="catalog.k1.title">K1 · Planification de leçons assistée par l'IA</h3>
+          <p class="mt-2 text-sm text-slate-600 flex-1" data-i18n="catalog.k1.body">Concevez des leçons claires et engageantes en utilisant des outils IA simples sur votre téléphone.</p>
+          <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
+            <span data-i18n="catalog.level1">Niveau 1 · Débutant</span>
+            <span>·</span>
+            <span data-i18n="catalog.duration">3 semaines</span>
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="display text-2xl font-extrabold text-brand-deep">20 $</span>
+            <a href="#inscription" class="inline-flex items-center gap-1.5 rounded-full btn-primary px-3.5 py-1.5 text-sm font-semibold" data-i18n="catalog.signup">S'inscrire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Course 2 -->
+      <article class="lift rounded-2xl bg-white border border-slate-100 shadow-card overflow-hidden flex flex-col">
+        <div class="h-44 relative">
+          <img decoding="async" src="assets/photos/young-students-classroom.jpg" alt="Des enfants en uniforme scolaire écrivent dans leurs cahiers en classe" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-accent-deep/80 via-accent-deep/20 to-transparent"></div>
+          <span class="absolute top-3 left-3 chip bg-white/90 text-brand-deep" data-i18n="catalog.f.literacy">Littératie</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="display text-lg font-bold text-brand-deep" data-i18n="catalog.k2.title">K2 · Enseigner la lecture en contexte RDC</h3>
+          <p class="mt-2 text-sm text-slate-600 flex-1" data-i18n="catalog.k2.body">Phonétique, fluidité, compréhension : des techniques adaptées aux salles de classe à 60+ élèves.</p>
+          <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
+            <span data-i18n="catalog.level1">Niveau 1 · Débutant</span>
+            <span>·</span>
+            <span data-i18n="catalog.duration">3 semaines</span>
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="display text-2xl font-extrabold text-brand-deep">10 $</span>
+            <a href="#inscription" class="inline-flex items-center gap-1.5 rounded-full btn-primary px-3.5 py-1.5 text-sm font-semibold" data-i18n="catalog.signup">S'inscrire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Course 3 -->
+      <article class="lift rounded-2xl bg-white border border-slate-100 shadow-card overflow-hidden flex flex-col">
+        <div class="h-44 relative">
+          <img decoding="async" src="assets/photos/student-at-blackboard.jpg" alt="Un élève écrit des équations mathématiques au tableau noir" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-deep/80 via-brand-deep/20 to-transparent"></div>
+          <span class="absolute top-3 left-3 chip bg-white/90 text-brand-deep" data-i18n="catalog.f.numeracy">Numératie</span>
+          <span class="absolute top-3 right-3 chip bg-emerald-500 text-white" data-i18n="catalog.k3.new">Nouveau</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col">
+          <h3 class="display text-lg font-bold text-brand-deep" data-i18n="catalog.k3.title">K3 · Sens du nombre et calcul mental</h3>
+          <p class="mt-2 text-sm text-slate-600 flex-1" data-i18n="catalog.k3.body">Aidez vos élèves à construire une intuition mathématique solide avant les opérations écrites.</p>
+          <div class="mt-4 flex items-center gap-3 text-xs text-slate-500">
+            <span data-i18n="catalog.level2">Niveau 2 · Confirmé</span>
+            <span>·</span>
+            <span data-i18n="catalog.duration">3 semaines</span>
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <span class="display text-2xl font-extrabold text-brand-deep">20 $</span>
+            <a href="#inscription" class="inline-flex items-center gap-1.5 rounded-full btn-primary px-3.5 py-1.5 text-sm font-semibold" data-i18n="catalog.signup">S'inscrire</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="#" class="inline-flex items-center rounded-full btn-outline px-6 py-2.5 text-sm font-semibold active:scale-95 transition" data-i18n="catalog.viewAll">Voir tout le catalogue</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Self-assessment teaser ===== -->
+<section class="py-24">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-6">
+        <span class="chip bg-brand/10 text-brand" data-i18n="self.chip">Auto-évaluation</span>
+        <h2 class="display mt-4 text-3xl sm:text-4xl font-bold text-brand-deep leading-tight" data-i18n="self.h2">Où en êtes-vous dans votre développement professionnel ?</h2>
+        <p class="mt-4 text-slate-600 text-lg" data-i18n="self.body">Notre cadre de compétences couvre 15 domaines en Connaissance · Valeurs · Pratique. En 10 minutes, obtenez votre profil et un parcours de cours recommandé.</p>
+        <ul class="mt-6 space-y-3 text-slate-700">
+          <li class="flex gap-3"><span class="h-6 w-6 grid place-items-center rounded-full bg-brand/10 text-brand text-sm font-bold">1</span> <span data-i18n="self.s1">Lisez les énoncés et choisissez votre niveau actuel.</span></li>
+          <li class="flex gap-3"><span class="h-6 w-6 grid place-items-center rounded-full bg-brand/10 text-brand text-sm font-bold">2</span> <span data-i18n="self.s2">Recevez un graphique radar de vos 15 compétences.</span></li>
+          <li class="flex gap-3"><span class="h-6 w-6 grid place-items-center rounded-full bg-brand/10 text-brand text-sm font-bold">3</span> <span data-i18n="self.s3">Suivez votre croissance tous les 6 mois.</span></li>
+        </ul>
+        <a href="#" class="mt-7 inline-flex items-center gap-2 rounded-full btn-primary px-5 py-3 text-sm font-semibold shadow-glow">
+          <span data-i18n="self.cta">Faire l'auto-évaluation</span>
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="rounded-3xl bg-paper border border-slate-100 p-6 sm:p-8 shadow-card">
+          <div class="flex items-center justify-between">
+            <h4 class="display font-bold text-brand-deep" data-i18n="self.profileTitle">Votre profil de compétences</h4>
+            <span class="chip bg-emerald-500/10 text-emerald-700" data-i18n="catalog.level1">Niveau 1 · Débutant</span>
+          </div>
+          <div class="mt-5 space-y-3">
+            <div>
+              <div class="flex justify-between text-sm"><span class="text-slate-600" data-i18n="self.skill1">Maîtrise du sujet</span><span class="font-semibold text-brand">2/3</span></div>
+              <div class="h-2 mt-1 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-brand" style="width:66%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span class="text-slate-600" data-i18n="self.skill2">Planification de leçons</span><span class="font-semibold text-brand">1/3</span></div>
+              <div class="h-2 mt-1 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-brand" style="width:33%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span class="text-slate-600" data-i18n="self.skill3">Évaluation formative</span><span class="font-semibold text-accent">1/3</span></div>
+              <div class="h-2 mt-1 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-accent" style="width:33%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span class="text-slate-600" data-i18n="self.skill4">Gestion de classe</span><span class="font-semibold text-brand">2/3</span></div>
+              <div class="h-2 mt-1 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-brand" style="width:66%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span class="text-slate-600" data-i18n="self.skill5">Identité professionnelle</span><span class="font-semibold text-emerald-600">3/3</span></div>
+              <div class="h-2 mt-1 bg-slate-200 rounded-full overflow-hidden"><div class="h-full bg-emerald-500" style="width:100%"></div></div>
+            </div>
+          </div>
+          <div class="mt-6 rounded-xl bg-white p-4 border border-slate-100 text-sm">
+            <span class="font-semibold text-brand-deep" data-i18n="self.recLabel">Cours recommandé</span>
+            <p class="text-slate-600 mt-1" data-i18n="self.recBody">D'après votre profil, nous recommandons K2 (Enseigner la lecture) pour renforcer vos compétences en littératie.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Founder ===== -->
+<section id="fondatrice" class="py-24 bg-paper">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5">
+        <div class="relative max-w-md mx-auto lg:mx-0">
+          <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-brand/15 to-accent/15 -z-10"></div>
+          <div class="rounded-3xl overflow-hidden shadow-card ring-1 ring-slate-100 bg-white">
+            <img decoding="async" src="assets/photos/assina-founder.jpg"
+                 alt="Portrait professionnel d'Assina, fondatrice de Koyekola Academy"
+                 loading="lazy"
+                 class="w-full aspect-square object-cover" />
+          </div>
+          <div class="absolute -bottom-5 -right-5 hidden sm:flex items-center gap-3 bg-white rounded-2xl shadow-card p-4 border border-slate-100">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 4 2 10l10 6 10-6zM6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+            </span>
+            <div>
+              <div class="display font-semibold text-brand-deep text-sm leading-tight">Assina Kahamba, Ed.M.</div>
+              <div class="text-xs text-slate-500" data-i18n="founder.badge">Diplômée de Harvard</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <span class="chip bg-accent/10 text-accent" data-i18n="founder.chip">Notre fondatrice</span>
+        <h2 class="display mt-4 text-3xl sm:text-4xl font-bold text-brand-deep leading-tight" data-i18n="founder.h2">Rencontrez Assina.</h2>
+
+        <div class="mt-5 rounded-2xl bg-white border border-dashed border-slate-300 p-6 text-slate-500">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand text-xs font-bold">i</span>
+            <div>
+              <p class="text-sm"><span class="font-semibold text-brand-deep" data-i18n="founder.bio.label">Bio à venir.</span> <span data-i18n="founder.bio.body">Assina prépare son texte. En attendant, son interview ci-dessous raconte le parcours qui l'a menée de la RDC à Harvard, et pourquoi elle a fondé Koyekola.</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="display font-semibold text-brand-deep" data-i18n="founder.video.title">Son histoire en vidéo</h3>
+            <a href="https://www.youtube.com/watch?v=9dPUjUf9aKM" target="_blank" rel="noopener" class="text-sm text-brand hover:text-accent inline-flex items-center gap-1.5">
+              <span data-i18n="founder.video.cta">Voir sur YouTube</span>
+              <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+          <a href="https://www.youtube.com/watch?v=9dPUjUf9aKM"
+             target="_blank" rel="noopener"
+             aria-label="Regarder l'interview d'Assina sur YouTube"
+             class="group relative block rounded-2xl overflow-hidden shadow-card border border-slate-100 bg-black aspect-video">
+            <img decoding="async" src="assets/photos/assina-youtube-thumb.jpg"
+                 alt="Miniature de l'interview"
+                 loading="lazy"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            <span class="absolute inset-0 flex items-center justify-center">
+              <span class="relative inline-flex h-20 w-20 items-center justify-center rounded-full bg-accent shadow-glow transition-transform duration-300 group-hover:scale-110">
+                <span class="absolute inset-0 rounded-full bg-accent animate-ping opacity-30"></span>
+                <svg class="relative h-9 w-9 text-white translate-x-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </span>
+            <span class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white/90">
+              <span class="inline-flex items-center gap-1.5 bg-black/60 backdrop-blur px-2.5 py-1 rounded-full">
+                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.4a3 3 0 0 0-2-2C19 5 12 5 12 5s-7 0-9 .4a3 3 0 0 0-2 2C.6 9.4.6 12 .6 12s0 2.6.4 4.6a3 3 0 0 0 2 2C5 19 12 19 12 19s7 0 9-.4a3 3 0 0 0 2-2c.4-2 .4-4.6.4-4.6s0-2.6-.4-4.6zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+                Bany Talks
+              </span>
+              <span class="bg-black/60 backdrop-blur px-2.5 py-1 rounded-full" data-i18n="founder.video.play">Lire sur YouTube</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="mt-6 grid sm:grid-cols-3 gap-3 text-sm">
+          <div class="rounded-xl bg-white border border-slate-100 p-4">
+            <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="founder.info.origin.label">Origine</div>
+            <div class="display font-semibold text-brand-deep mt-1" data-i18n="founder.info.origin.body">République Démocratique du Congo</div>
+          </div>
+          <div class="rounded-xl bg-white border border-slate-100 p-4">
+            <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="founder.info.path.label">Parcours</div>
+            <div class="display font-semibold text-brand-deep mt-1" data-i18n="founder.info.path.body">Directrice d'école &rarr; Harvard</div>
+          </div>
+          <div class="rounded-xl bg-white border border-slate-100 p-4">
+            <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="founder.info.mission.label">Mission</div>
+            <div class="display font-semibold text-brand-deep mt-1" data-i18n="founder.info.mission.body">Transformer l'enseignement en RDC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Community + raffle ===== -->
+<section id="communaute" class="py-24 bg-brand-deep text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px); background-size: 18px 18px;"></div>
+  <div class="container-x relative">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <span class="chip bg-white/10 text-white" data-i18n="community.chip">Communauté</span>
+        <h2 class="display mt-4 text-3xl sm:text-4xl font-bold leading-tight" data-i18n="community.h2">Vous n'apprenez pas seul.</h2>
+        <p class="mt-4 text-white/80 text-lg" data-i18n="community.body">Forum modéré, célébration des victoires, classements, et tirage au sort hebdomadaire. Chaque action compte.</p>
+
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="text-xs uppercase tracking-wide text-white/60" data-i18n="community.stat1.label">Cette semaine</div>
+            <div class="display text-3xl font-extrabold mt-1">128</div>
+            <div class="text-sm text-white/70" data-i18n="community.stat1.body">contributions au forum</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="text-xs uppercase tracking-wide text-white/60" data-i18n="community.stat2.label">En direct</div>
+            <div class="display text-3xl font-extrabold mt-1">14</div>
+            <div class="text-sm text-white/70" data-i18n="community.stat2.body">enseignants connectés</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="rounded-3xl bg-gradient-to-br from-accent to-accent-deep p-7 sm:p-8 shadow-glow relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 h-44 w-44 rounded-full bg-white/10 blur-2xl"></div>
+          <div class="relative grid sm:grid-cols-5 gap-6 items-center">
+            <div class="sm:col-span-3">
+              <span class="chip bg-white/15 text-white" data-i18n="community.raffle.chip">Tirage hebdomadaire</span>
+              <h3 class="display mt-3 text-2xl sm:text-3xl font-bold leading-tight" data-i18n="community.raffle.h3">20 $ de crédit téléphonique chaque vendredi.</h3>
+              <p class="mt-3 text-white/85" data-i18n="community.raffle.body">Participez en complétant vos sessions, en partageant vos réflexions et en aidant vos pairs. Jusqu'à 6 entrées par semaine.</p>
+            </div>
+            <div class="sm:col-span-2 grid grid-cols-3 gap-2 text-center">
+              <div class="rounded-xl bg-white/15 p-3"><div class="display font-bold">1×</div><div class="text-xs text-white/80" data-i18n="community.raffle.p1">Grand prix 20 $</div></div>
+              <div class="rounded-xl bg-white/15 p-3"><div class="display font-bold">3×</div><div class="text-xs text-white/80" data-i18n="community.raffle.p2">10 $ chacun</div></div>
+              <div class="rounded-xl bg-white/15 p-3"><div class="display font-bold">5×</div><div class="text-xs text-white/80" data-i18n="community.raffle.p3">50 points</div></div>
+            </div>
+          </div>
+          <div class="relative mt-6 flex items-center justify-between border-t border-white/15 pt-5">
+            <div class="text-sm">
+              <span class="text-white/70" data-i18n="community.raffle.winnerLabel">Dernière gagnante :</span>
+              <span class="font-semibold ml-1">Marie T., École Saint-Joseph</span>
+            </div>
+            <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white text-accent px-4 py-2 text-sm font-semibold hover:bg-white/90">
+              <span data-i18n="community.raffle.rules">Voir les règles</span>
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="flex items-center gap-2 text-xs">
+              <span class="chip bg-white/10 text-white">#<span data-i18n="community.tag.wins">Victoires</span></span>
+              <span class="text-white/60" data-i18n="community.forum1.time">il y a 2h</span>
+            </div>
+            <p class="mt-3 text-white/90" data-i18n="community.forum1.body">« Mes élèves de 3ème ont enfin compris les fractions. La méthode visuelle a tout changé ! »</p>
+            <div class="mt-3 text-sm text-white/70">Aimée K., Kinshasa</div>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <div class="flex items-center gap-2 text-xs">
+              <span class="chip bg-white/10 text-white">#<span data-i18n="catalog.f.literacy">Littératie</span></span>
+              <span class="text-white/60" data-i18n="community.forum2.time">il y a 5h</span>
+            </div>
+            <p class="mt-3 text-white/90" data-i18n="community.forum2.body">« Comment gérer la lecture à voix haute avec 70 élèves ? Quelqu'un a une astuce ? »</p>
+            <div class="mt-3 text-sm text-white/70">Jean P., Goma</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Director + School sections ===== -->
+<section id="directeurs" class="py-24">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-2 gap-8">
+
+      <div class="rounded-3xl border border-slate-200 bg-white shadow-card relative overflow-hidden">
+        <div class="h-56 relative">
+          <img decoding="async" src="assets/photos/teacher-ghana-classroom.jpg" alt="Un enseignant africain en tenue traditionnelle s'adresse à sa classe avec autorité" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-deep/85 via-brand-deep/30 to-transparent"></div>
+          <span class="absolute top-4 left-4 chip bg-white/90 text-brand-deep" data-i18n="directors.chip">Directeurs &amp; Principaux</span>
+        </div>
+        <div class="p-8 sm:p-10 relative">
+        <div class="absolute -top-16 -right-16 h-44 w-44 rounded-full bg-brand/5 blur-2xl"></div>
+        <h2 class="display text-3xl font-bold text-brand-deep" data-i18n="directors.h2">Formation leadership pour directeurs d'école</h2>
+        <p class="mt-3 text-slate-600" data-i18n="directors.body">Deux sessions intensives plus trois sessions de coaching individuel. Repartez avec un plan d'organisation pédagogique pour votre école.</p>
+
+        <div class="mt-6 space-y-3">
+          <div class="rounded-xl border border-slate-100 p-4 flex items-center justify-between">
+            <div>
+              <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="directors.cohort1.label">Cohorte 1</div>
+              <div class="display font-semibold text-brand-deep">15 jan au 15 fév</div>
+            </div>
+            <span class="chip bg-emerald-500/10 text-emerald-700"><span data-i18n="directors.spots20">20</span> <span data-i18n="directors.spots">places</span></span>
+          </div>
+          <div class="rounded-xl border border-slate-100 p-4 flex items-center justify-between">
+            <div>
+              <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="directors.cohort2.label">Cohorte 2</div>
+              <div class="display font-semibold text-brand-deep">20 fév au 20 mar</div>
+            </div>
+            <span class="chip bg-amber-500/10 text-amber-700"><span data-i18n="directors.spots15">15</span> <span data-i18n="directors.spots">places</span></span>
+          </div>
+        </div>
+
+        <div class="mt-7 flex items-center justify-between">
+          <div>
+            <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="directors.investLabel">Investissement</div>
+            <div class="display text-2xl font-extrabold text-brand-deep">600 $ <span class="text-base font-medium text-slate-500" data-i18n="directors.investUnit">/ directeur</span></div>
+          </div>
+          <a href="#inscription" class="inline-flex items-center gap-2 rounded-full btn-primary px-5 py-2.5 text-sm font-semibold shadow-glow" data-i18n="directors.cta">Réserver une place</a>
+        </div>
+        </div>
+      </div>
+
+      <div id="ecoles" class="rounded-3xl bg-paper border border-slate-200 p-8 sm:p-10 shadow-card relative overflow-hidden">
+        <div class="absolute -bottom-16 -right-16 h-44 w-44 rounded-full bg-accent/10 blur-2xl"></div>
+        <span class="chip bg-accent/10 text-accent" data-i18n="schools.chip">Écoles</span>
+        <h2 class="display mt-4 text-3xl font-bold text-brand-deep" data-i18n="schools.h2">Diagnostic gratuit pour votre école</h2>
+        <p class="mt-3 text-slate-600" data-i18n="schools.body">Une évaluation complète : niveau de lecture des élèves, profil pédagogique des enseignants, infrastructure. Vous recevez un rapport et des recommandations.</p>
+
+        <ul class="mt-6 space-y-3 text-slate-700">
+          <li class="flex gap-3"><span class="text-accent font-bold">✓</span> <span data-i18n="schools.b1">Évaluation des élèves en lecture et numératie</span></li>
+          <li class="flex gap-3"><span class="text-accent font-bold">✓</span> <span data-i18n="schools.b2">Profil de compétence des enseignants</span></li>
+          <li class="flex gap-3"><span class="text-accent font-bold">✓</span> <span data-i18n="schools.b3">Comparaison avec d'autres écoles à Kinshasa</span></li>
+          <li class="flex gap-3"><span class="text-accent font-bold">✓</span> <span data-i18n="schools.b4">Plan d'action sur 4 mois (en option)</span></li>
+        </ul>
+
+        <div class="mt-7 flex items-center justify-between">
+          <div>
+            <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="schools.priceLabel">Tarif</div>
+            <div class="display text-2xl font-extrabold text-brand-deep" data-i18n="schools.priceValue">Gratuit</div>
+          </div>
+          <a href="#inscription" class="inline-flex items-center gap-2 rounded-full btn-outline px-5 py-2.5 text-sm font-semibold" data-i18n="schools.cta">Demander un diagnostic</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pricing ===== -->
+<section id="tarifs" class="py-24 bg-paper">
+  <div class="container-x">
+    <div class="max-w-2xl">
+      <span class="chip bg-brand/10 text-brand" data-i18n="pricing.chip">Tarifs</span>
+      <h2 class="display mt-4 text-3xl sm:text-4xl font-bold text-brand-deep leading-tight" data-i18n="pricing.h2">Des prix simples, pensés pour la RDC.</h2>
+      <p class="mt-3 text-slate-600 text-lg" data-i18n="pricing.body">Paiement par Mobile Money (Mpesa, Airtel Money, Moov Africa) ou virement bancaire pour les écoles.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="rounded-2xl bg-white p-7 border border-slate-100 shadow-card">
+        <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="pricing.p1.label">Cours individuel</div>
+        <div class="mt-3 display text-3xl font-extrabold text-brand-deep">10 à 20 $</div>
+        <div class="mt-1 text-sm text-slate-500" data-i18n="pricing.p1.unit">par enseignant</div>
+        <p class="mt-4 text-sm text-slate-600" data-i18n="pricing.p1.body">Cycle de 3 semaines complet, certificat numérique inclus.</p>
+      </div>
+      <div class="rounded-2xl bg-brand text-white p-7 shadow-card relative">
+        <span class="absolute -top-3 right-5 chip bg-accent text-white" data-i18n="pricing.p2.popular">Le plus choisi</span>
+        <div class="text-xs uppercase tracking-wide text-white/70" data-i18n="pricing.p2.label">Formation directeurs</div>
+        <div class="mt-3 display text-3xl font-extrabold">600 $</div>
+        <div class="mt-1 text-sm text-white/70" data-i18n="pricing.p2.unit">par directeur</div>
+        <p class="mt-4 text-sm text-white/85" data-i18n="pricing.p2.body">2 sessions + 3 sessions de coaching individuel.</p>
+      </div>
+      <div class="rounded-2xl bg-white p-7 border border-slate-100 shadow-card">
+        <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="pricing.p3.label">Diagnostic école</div>
+        <div class="mt-3 display text-3xl font-extrabold text-brand-deep" data-i18n="schools.priceValue">Gratuit</div>
+        <div class="mt-1 text-sm text-slate-500" data-i18n="pricing.p3.unit">par établissement</div>
+        <p class="mt-4 text-sm text-slate-600" data-i18n="pricing.p3.body">Évaluation complète des élèves, enseignants, infrastructure.</p>
+      </div>
+      <div class="rounded-2xl bg-white p-7 border border-slate-100 shadow-card">
+        <div class="text-xs uppercase tracking-wide text-slate-500" data-i18n="pricing.p4.label">Coaching K1 et K2</div>
+        <div class="mt-3 display text-3xl font-extrabold text-brand-deep">2 500 à 4 000 $</div>
+        <div class="mt-1 text-sm text-slate-500" data-i18n="pricing.p4.unit">par école / an</div>
+        <p class="mt-4 text-sm text-slate-600" data-i18n="pricing.p4.body">Formation et coaching sur site pendant 4 mois.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-wrap items-center gap-3 text-sm text-slate-600">
+      <span class="font-semibold text-brand-deep" data-i18n="pricing.methodsLabel">Modes de paiement :</span>
+      <span class="chip bg-white border border-slate-200">Mpesa</span>
+      <span class="chip bg-white border border-slate-200">Airtel Money</span>
+      <span class="chip bg-white border border-slate-200">Moov Africa</span>
+      <span class="chip bg-white border border-slate-200" data-i18n="pricing.methodBank">Virement bancaire</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="py-24">
+  <div class="container-x grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <span class="chip bg-brand/10 text-brand" data-i18n="faq.chip">Questions fréquentes</span>
+      <h2 class="display mt-4 text-3xl sm:text-4xl font-bold text-brand-deep leading-tight" data-i18n="faq.h2">Vous avez des questions ?</h2>
+      <p class="mt-3 text-slate-600" data-i18n="faq.body">Notre équipe répond sous 24 heures par WhatsApp ou email.</p>
+      <a href="#contact" class="mt-6 inline-flex items-center gap-2 rounded-full btn-outline px-5 py-2.5 text-sm font-semibold" data-i18n="faq.cta">
+        Contacter le support
+      </a>
+    </div>
+    <div class="lg:col-span-8 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-card">
+      <details class="group p-6">
+        <summary class="flex items-center justify-between">
+          <span class="display font-semibold text-brand-deep" data-i18n="faq.q1">Comment fonctionne le cycle de 3 semaines ?</span>
+          <span class="ml-4 text-brand transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600" data-i18n="faq.a1">Semaine 1 : vous apprenez la technique. Semaine 2 : vous l'appliquez avec vos élèves. Semaine 3 : vous partagez vos observations avec la communauté.</p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex items-center justify-between">
+          <span class="display font-semibold text-brand-deep" data-i18n="faq.q2">Et si je manque une session live ?</span>
+          <span class="ml-4 text-brand transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600" data-i18n="faq.a2">Toutes les sessions sont enregistrées. Vous pouvez les revoir à tout moment, même hors ligne sur votre téléphone.</p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex items-center justify-between">
+          <span class="display font-semibold text-brand-deep" data-i18n="faq.q3">Comment puis-je payer depuis Kinshasa ?</span>
+          <span class="ml-4 text-brand transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600" data-i18n="faq.a3">Mobile Money (Mpesa, Airtel Money, Moov Africa) ou virement bancaire pour les écoles. Le paiement est confirmé instantanément.</p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex items-center justify-between">
+          <span class="display font-semibold text-brand-deep" data-i18n="faq.q4">Comment fonctionne le tirage au sort hebdomadaire ?</span>
+          <span class="ml-4 text-brand transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600" data-i18n="faq.a4">Vous gagnez des entrées en participant : sessions, réflexions, contributions au forum. Tirage chaque vendredi, gagnants annoncés par SMS et WhatsApp.</p>
+      </details>
+      <details class="group p-6">
+        <summary class="flex items-center justify-between">
+          <span class="display font-semibold text-brand-deep" data-i18n="faq.q5">Le certificat est-il reconnu ?</span>
+          <span class="ml-4 text-brand transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-slate-600" data-i18n="faq.a5">Oui. Chaque certificat porte un code QR unique vérifiable sur le site Koyekola. Les inspecteurs et directeurs peuvent vérifier votre progression.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Final CTA ===== -->
+<section id="inscription" class="py-20 bg-gradient-to-br from-brand-deep via-brand to-brand-soft text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-15" style="background-image: radial-gradient(rgba(255,255,255,.3) 1px, transparent 1px); background-size: 18px 18px;"></div>
+  <div class="container-x relative text-center max-w-3xl">
+    <h2 class="display text-3xl sm:text-5xl font-extrabold leading-tight" data-i18n="final.h2">Votre prochaine semaine de classe peut être différente.</h2>
+    <p class="mt-5 text-white/85 text-lg" data-i18n="final.body">Rejoignez la prochaine cohorte et commencez à transformer votre pratique dès lundi matin.</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href="#" class="inline-flex items-center gap-2 rounded-full bg-accent hover:bg-accent-deep px-6 py-3 text-sm font-semibold shadow-glow" data-i18n="final.cta1">
+        S'inscrire à un cours
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 px-6 py-3 text-sm font-semibold" data-i18n="final.cta2">
+        Demander un diagnostic gratuit
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer id="contact" class="bg-slate-900 text-slate-300 pt-16 pb-10">
+  <div class="container-x grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand text-white">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5.5a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H3z"/><path d="M21 5.5a2 2 0 0 0-2-2h-5a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7z"/></svg>
+        </span>
+        <span class="display text-2xl font-extrabold text-white">Koyekola</span>
+      </div>
+      <p class="mt-4 max-w-md text-sm text-slate-400" data-i18n="footer.tagline">Développement professionnel des enseignants en RDC. Formations pratiques, communauté, et reconnaissance professionnelle.</p>
+      <div class="mt-5 flex gap-3">
+        <a href="#" class="h-9 w-9 grid place-items-center rounded-full bg-white/5 hover:bg-white/10" aria-label="WhatsApp"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.4 17l-1.4 5 5.1-1.3a11 11 0 0 0 13.4-17.2zM12 20a8 8 0 0 1-4-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.6.1a6.6 6.6 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.9-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4 5.4 5.4 0 0 0 2.5.5 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg></a>
+        <a href="#" class="h-9 w-9 grid place-items-center rounded-full bg-white/5 hover:bg-white/10" aria-label="Facebook"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7c0-1.1.5-2 2-2h2V1.2A26 26 0 0 0 14 1c-3 0-5 1.8-5 5v3H6v4h3v8z"/></svg></a>
+        <a href="#" class="h-9 w-9 grid place-items-center rounded-full bg-white/5 hover:bg-white/10" aria-label="Email"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9 6 9-6M3 7v10h18V7M3 7l9-4 9 4"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <div class="display text-sm font-semibold text-white" data-i18n="footer.platform">Plateforme</div>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href="#cours" class="hover:text-white" data-i18n="nav.courses">Cours</a></li>
+        <li><a href="#cycle" class="hover:text-white" data-i18n="nav.method">Notre méthode</a></li>
+        <li><a href="#directeurs" class="hover:text-white" data-i18n="footer.linkDirectors">Formation directeurs</a></li>
+        <li><a href="#ecoles" class="hover:text-white" data-i18n="footer.linkSchools">Diagnostic école</a></li>
+        <li><a href="#communaute" class="hover:text-white" data-i18n="community.chip">Communauté</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="display text-sm font-semibold text-white" data-i18n="footer.contact">Contact</div>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li>WhatsApp : +243 XX XXX XX XX</li>
+        <li>Email : hello@koyekola.cd</li>
+        <li data-i18n="footer.location">Kinshasa, RDC</li>
+      </ul>
+      <div class="mt-4 flex gap-2">
+        <button class="lang-pill" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-pill" data-lang="ln" aria-pressed="false">LN</button>
+        <button class="lang-pill" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+  <div class="container-x mt-12 pt-6 border-t border-white/10 flex flex-wrap justify-between gap-3 text-xs text-slate-500">
+    <div data-i18n="footer.copyright">© 2026 Koyekola Academy. Tous droits réservés.</div>
+    <div class="flex gap-5"><a href="#" class="hover:text-white" data-i18n="footer.privacy">Confidentialité</a><a href="#" class="hover:text-white" data-i18n="footer.terms">Conditions</a></div>
+  </div>
+</footer>
+
+<script>
+  // ===== Reveal animation =====
+  const sections = document.querySelectorAll('section');
+  sections.forEach(s => s.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+  sections.forEach(s => io.observe(s));
+  window.addEventListener('load', () => {
+    setTimeout(() => sections.forEach(s => s.classList.add('in')), 800);
+  });
+
+  // ===== i18n =====
+  const i18n = {
+    en: {
+      // nav
+      "nav.courses":"Courses","nav.method":"Our method","nav.founder":"Founder","nav.directors":"Directors","nav.schools":"Schools","nav.pricing":"Pricing","nav.signup":"Sign up",
+      // hero
+      "hero.chip":"Professional platform for teachers in DRC",
+      "hero.h1":'Learning <span class="text-accent">happens here.</span>',
+      "hero.subtitle":"Koyekola Academy trains teachers and school directors in Congo through practical courses, an active community, and real professional recognition.",
+      "hero.aud.teacher.role":"Teacher","hero.aud.teacher.cta":"Browse courses",
+      "hero.aud.director.role":"Director","hero.aud.director.cta":"Leadership training",
+      "hero.aud.school.role":"School","hero.aud.school.cta":"Free diagnostic",
+      "hero.trust.1":"35+ teachers already trained","hero.trust.2":"French, Lingala, English","hero.trust.3":"Mobile Money accepted",
+      "hero.cohort.label":"Next cohort","hero.cohort.cycle":"3-week cycle",
+      "hero.cohort.title":"K1 · AI-Assisted Lesson Planning",
+      "hero.social":"Marie, Jean, Aimée and 32 other teachers joined this cohort.",
+      // cycle
+      "cycle.chip":"Our method","cycle.h2":"The Learn · Apply · Share cycle",
+      "cycle.body":"Each course runs over three weeks. You don't just absorb theory: you try it in your classroom and share what you learned with your peers.",
+      "cycle.w1.label":"WEEK 1","cycle.w1.title":"Learn","cycle.w1.body":"A live or recorded session. A short video. A downloadable template. A quiz to check your understanding.",
+      "cycle.w1.b1":"Interactive session with facilitator","cycle.w1.b2":"Downloadable lesson planning template","cycle.w1.b3":"Reflection quiz (5 minutes)",
+      "cycle.w2.label":"WEEK 2","cycle.w2.title":"Apply","cycle.w2.body":"You use the technique with your real students this week. You document what works and what doesn't.",
+      "cycle.w2.b1":"Concrete classroom application","cycle.w2.b2":"Guided observation template","cycle.w2.b3":"Video examples from real classrooms",
+      "cycle.w3.label":"WEEK 3","cycle.w3.title":"Share","cycle.w3.body":"A 90-minute community session. You share your week, listen to peers, and receive personalized feedback.",
+      "cycle.w3.b1":"Live 90-minute session","cycle.w3.b2":"Personalized facilitator feedback","cycle.w3.b3":"Downloadable digital certificate",
+      // mission
+      "mission.chip":"Our mission",
+      "mission.h2":"Improve reading and math instruction in every Congolese classroom.",
+      "mission.body":"We support teachers with practical training, tools they can use Monday morning, and a community that celebrates progress. No jargon. No useless theory. Just what works in the classroom.",
+      "mission.tagline.label":"Why we're here","mission.tagline.body":"Every child deserves a well-trained teacher.",
+      "mission.stat1":"of children in DRC can't read by age 10.",
+      "mission.stat2":"teachers already trained across Kinshasa.",
+      "mission.stat3":"levels: Beginner, Confirmed, Master Teacher.",
+      "mission.cta":"Discover our method",
+      // catalog
+      "catalog.chip":"Catalog","catalog.h2":"Courses for teachers",
+      "catalog.body":"Each course follows the 3-week cycle. You earn points, badges, and a recognized digital certificate.",
+      "catalog.f.all":"All","catalog.f.numeracy":"Numeracy","catalog.f.literacy":"Literacy","catalog.f.ai":"AI & ICT","catalog.f.leadership":"Leadership",
+      "catalog.k1.title":"K1 · AI-Assisted Lesson Planning",
+      "catalog.k1.body":"Design clear, engaging lessons using simple AI tools on your phone.",
+      "catalog.k1.popular":"Popular",
+      "catalog.k2.title":"K2 · Teaching Reading in DRC Context",
+      "catalog.k2.body":"Phonics, fluency, comprehension: techniques adapted for classrooms with 60+ students.",
+      "catalog.k3.title":"K3 · Number Sense and Mental Math",
+      "catalog.k3.body":"Help your students build solid mathematical intuition before written operations.",
+      "catalog.k3.new":"New",
+      "catalog.level1":"Level 1 · Beginner","catalog.level2":"Level 2 · Confirmed","catalog.duration":"3 weeks",
+      "catalog.signup":"Sign up","catalog.viewAll":"View full catalog",
+      // self
+      "self.chip":"Self-assessment","self.h2":"Where are you in your professional development?",
+      "self.body":"Our competency framework covers 15 areas across Knowledge · Values · Practice. In 10 minutes, get your profile and a recommended course path.",
+      "self.s1":"Read the statements and choose your current level.",
+      "self.s2":"Receive a radar chart of your 15 competencies.",
+      "self.s3":"Track your growth every 6 months.",
+      "self.cta":"Take the self-assessment",
+      "self.profileTitle":"Your competency profile",
+      "self.skill1":"Subject mastery","self.skill2":"Lesson planning","self.skill3":"Formative assessment","self.skill4":"Classroom management","self.skill5":"Professional identity",
+      "self.recLabel":"Recommended course",
+      "self.recBody":"Based on your profile, we recommend K2 (Teaching Reading) to strengthen your literacy skills.",
+      // founder
+      "founder.chip":"Our founder","founder.h2":"Meet Assina.",
+      "founder.bio.label":"Bio coming soon.",
+      "founder.bio.body":"Assina is preparing her text. In the meantime, her interview below tells the story of her journey from DRC to Harvard, and why she founded Koyekola.",
+      "founder.video.title":"Her story on video","founder.video.cta":"Watch on YouTube","founder.video.play":"Play on YouTube",
+      "founder.info.origin.label":"Origin","founder.info.origin.body":"Democratic Republic of the Congo",
+      "founder.info.path.label":"Path","founder.info.path.body":"School director → Harvard",
+      "founder.info.mission.label":"Mission","founder.info.mission.body":"Transform teaching in DRC",
+      "founder.badge":"Harvard graduate",
+      // community
+      "community.chip":"Community","community.h2":"You don't learn alone.",
+      "community.body":"Moderated forum, win celebrations, leaderboards, and a weekly raffle. Every action counts.",
+      "community.stat1.label":"This week","community.stat1.body":"forum contributions",
+      "community.stat2.label":"Live now","community.stat2.body":"teachers connected",
+      "community.raffle.chip":"Weekly raffle","community.raffle.h3":"$20 in airtime credit every Friday.",
+      "community.raffle.body":"Take part by completing your sessions, sharing reflections, and helping peers. Up to 6 entries per week.",
+      "community.raffle.p1":"Grand prize $20","community.raffle.p2":"$10 each","community.raffle.p3":"50 points",
+      "community.raffle.winnerLabel":"Latest winner:","community.raffle.rules":"See the rules",
+      "community.tag.wins":"Wins",
+      "community.forum1.time":"2h ago","community.forum1.body":"“My 3rd-graders finally understood fractions. The visual method changed everything!”",
+      "community.forum2.time":"5h ago","community.forum2.body":"“How do you handle read-aloud with 70 students? Anyone have a tip?”",
+      // directors
+      "directors.chip":"Directors & Principals","directors.h2":"Leadership training for school directors",
+      "directors.body":"Two intensive sessions plus three individual coaching sessions. Walk away with a pedagogical organization plan for your school.",
+      "directors.cohort1.label":"Cohort 1","directors.cohort2.label":"Cohort 2",
+      "directors.spots":"spots","directors.spots20":"20","directors.spots15":"15",
+      "directors.investLabel":"Investment","directors.investUnit":"/ director","directors.cta":"Reserve a spot",
+      // schools
+      "schools.chip":"Schools","schools.h2":"Free diagnostic for your school",
+      "schools.body":"A complete assessment: student reading levels, teacher pedagogical profile, infrastructure. You receive a report and recommendations.",
+      "schools.b1":"Student assessment in reading and numeracy",
+      "schools.b2":"Teacher competency profile",
+      "schools.b3":"Comparison with other schools in Kinshasa",
+      "schools.b4":"4-month action plan (optional)",
+      "schools.priceLabel":"Price","schools.priceValue":"Free","schools.cta":"Request a diagnostic",
+      // pricing
+      "pricing.chip":"Pricing","pricing.h2":"Simple prices, designed for the DRC.",
+      "pricing.body":"Payment by Mobile Money (Mpesa, Airtel Money, Moov Africa) or bank transfer for schools.",
+      "pricing.p1.label":"Individual course","pricing.p1.unit":"per teacher","pricing.p1.body":"Full 3-week cycle, digital certificate included.",
+      "pricing.p2.label":"Director training","pricing.p2.unit":"per director","pricing.p2.body":"2 sessions + 3 individual coaching sessions.","pricing.p2.popular":"Most chosen",
+      "pricing.p3.label":"School diagnostic","pricing.p3.unit":"per school","pricing.p3.body":"Full assessment of students, teachers, infrastructure.",
+      "pricing.p4.label":"Coaching K1 et K2","pricing.p4.unit":"per school / year","pricing.p4.body":"Training and on-site coaching for 4 months.",
+      "pricing.methodsLabel":"Payment methods:","pricing.methodBank":"Bank transfer",
+      // FAQ
+      "faq.chip":"Frequently asked questions","faq.h2":"Got questions?","faq.body":"Our team responds within 24 hours via WhatsApp or email.","faq.cta":"Contact support",
+      "faq.q1":"How does the 3-week cycle work?","faq.a1":"Week 1: you learn the technique. Week 2: you apply it with your students. Week 3: you share your observations with the community.",
+      "faq.q2":"What if I miss a live session?","faq.a2":"All sessions are recorded. You can rewatch them anytime, even offline on your phone.",
+      "faq.q3":"How can I pay from Kinshasa?","faq.a3":"Mobile Money (Mpesa, Airtel Money, Moov Africa) or bank transfer for schools. Payment is confirmed instantly.",
+      "faq.q4":"How does the weekly raffle work?","faq.a4":"You earn entries by participating: sessions, reflections, forum contributions. Drawing every Friday, winners announced via SMS and WhatsApp.",
+      "faq.q5":"Is the certificate recognized?","faq.a5":"Yes. Each certificate has a unique QR code verifiable on the Koyekola website. Inspectors and directors can verify your progress.",
+      // final
+      "final.h2":"Your next week of class can be different.","final.body":"Join the next cohort and start transforming your practice this Monday.",
+      "final.cta1":"Enroll in a course","final.cta2":"Request a free diagnostic",
+      // footer
+      "footer.tagline":"Professional development for teachers in DRC. Practical training, community, and professional recognition.",
+      "footer.platform":"Platform","footer.contact":"Contact","footer.location":"Kinshasa, DRC",
+      "footer.linkDirectors":"Director training","footer.linkSchools":"School diagnostic",
+      "footer.copyright":"© 2026 Koyekola Academy. All rights reserved.","footer.privacy":"Privacy","footer.terms":"Terms",
+    },
+    ln: {
+      // nav
+      "nav.courses":"Mateya","nav.method":"Lolenge na biso","nav.founder":"Mokeli","nav.directors":"Bakonzi","nav.schools":"Bakelasi","nav.pricing":"Mitama","nav.signup":"Komikomisa",
+      // hero
+      "hero.chip":"Esika ya boyekoli ya bateyi na RDC",
+      "hero.h1":'Boyekoli <span class="text-accent">ezali awa.</span>',
+      "hero.subtitle":"Koyekola Academy ezali koteya bateyi mpe bakonzi ya bakelasi na Kongo na nzela ya mateya ya pratique, lisangá ya makasi, mpe bondimi ya solo ya mosala.",
+      "hero.aud.teacher.role":"Moteyi","hero.aud.teacher.cta":"Talá mateya",
+      "hero.aud.director.role":"Mokonzi","hero.aud.director.cta":"Formation ya bokambi",
+      "hero.aud.school.role":"Kelasi","hero.aud.school.cta":"Diagnostic ya ofele",
+      "hero.trust.1":"Bateyi 35+ basi-formé","hero.trust.2":"Lifalanse, Lingála, Lingelesi","hero.trust.3":"Mobile Money endimami",
+      "hero.cohort.label":"Cohorte oyo elandi","hero.cohort.cycle":"Pɔsɔ 3 ya boyekoli",
+      "hero.cohort.title":"K1 · Kobongisa mateya na lisalisi ya IA",
+      "hero.social":"Marie, Jean, Aimée mpe bateyi 32 mosusu basi-bakoti na cohorte oyo.",
+      // cycle
+      "cycle.chip":"Lolenge na biso","cycle.h2":"Cycle ya Koyekola · Kosalela · Kokabola",
+      "cycle.body":"Mateya nyonso ezalaka pɔsɔ 3. Ozali kaka kozwa théorie te : ozali komeka yango na kelasi mpe ozali kokabola na bayekoli mosusu.",
+      "cycle.w1.label":"PƆSƆ 1","cycle.w1.title":"Koyekola","cycle.w1.body":"Session live to enregistrée. Vidéo moko ya mokuse. Modèle ya kozwa. Quiz ya komeka boyebi.",
+      "cycle.w1.b1":"Session interactive na facilitateur","cycle.w1.b2":"Modèle ya planification ya kozwa","cycle.w1.b3":"Quiz ya réflexion (miniti 5)",
+      "cycle.w2.label":"PƆSƆ 2","cycle.w2.title":"Kosalela","cycle.w2.body":"Ozali kosalela technique na bayekoli na yo ya solo na pɔsɔ oyo. Ozali kokoma oyo ezali kosalama mpe oyo ezali pasi.",
+      "cycle.w2.b1":"Application ya solo na kelasi","cycle.w2.b2":"Modèle ya observation","cycle.w2.b3":"Bandakisa ya vidéo ya bakelasi ya solo",
+      "cycle.w3.label":"PƆSƆ 3","cycle.w3.title":"Kokabola","cycle.w3.body":"Liyangani ya lisangá ya miniti 90. Ozali kobeta lisolo ya pɔsɔ na yo, koyoka baninga, mpe kozwa retour ya yo moko.",
+      "cycle.w3.b1":"Session live ya miniti 90","cycle.w3.b2":"Retour ya facilitateur","cycle.w3.b3":"Certificat numérique ya kozwa",
+      // mission
+      "mission.chip":"Mokano na biso",
+      "mission.h2":"Kobongisa boteyi ya botángi mpe ya mathématiques na kelasi nyonso ya Kongo.",
+      "mission.body":"Tozali kosunga bateyi na formations ya pratique, na bisaleli oyo bakoki kosalela kaka mokolo ya mibale, mpe na lisangá oyo ezali kosepelisa boyekoli. Maloba ya minene te. Théorie ya pamba te. Kaka oyo esalaka na kelasi.",
+      "mission.tagline.label":"Mpo na nini tozali awa","mission.tagline.body":"Mwana nyonso abongi na moteyi ya malamu.",
+      "mission.stat1":"ya bana ya RDC bayebi kotanga te tángo bakómi mibu 10.",
+      "mission.stat2":"bateyi basi-formé na Kinshasa.",
+      "mission.stat3":"ba-niveaux : Mobandi, Confirmé, Moteyi monene.",
+      "mission.cta":"Talá lolenge na biso",
+      // catalog
+      "catalog.chip":"Catalogue","catalog.h2":"Mateya mpo na bateyi",
+      "catalog.body":"Mateya nyonso ezali kolanda cycle ya pɔsɔ 3. Ozali kozwa points, badges, mpe certificat numérique ya kondimama.",
+      "catalog.f.all":"Nyonso","catalog.f.numeracy":"Mathématiques","catalog.f.literacy":"Botángi","catalog.f.ai":"IA & TIC","catalog.f.leadership":"Bokambi",
+      "catalog.k1.title":"K1 · Kobongisa mateya na lisalisi ya IA",
+      "catalog.k1.body":"Bongisá mateya ya polele na nzela ya bisaleli ya IA na téléphone na yo.",
+      "catalog.k1.popular":"Eyebani mingi",
+      "catalog.k2.title":"K2 · Koteya botángi na contexte ya RDC",
+      "catalog.k2.body":"Phonétique, fluidité, ka-comprendre : techniques mpo na bakelasi na bayekoli 60+.",
+      "catalog.k3.title":"K3 · Boyebi ya mituya mpe calcul ya motó",
+      "catalog.k3.body":"Salisá bayekoli na yo bázwa boyebi ya mathématiques liboso ya operations ya kokoma.",
+      "catalog.k3.new":"Ya sika",
+      "catalog.level1":"Niveau 1 · Mobandi","catalog.level2":"Niveau 2 · Confirmé","catalog.duration":"Pɔsɔ 3",
+      "catalog.signup":"Komikomisa","catalog.viewAll":"Talá catalogue mobimba",
+      // self
+      "self.chip":"Auto-évaluation","self.h2":"Ozali wapi na boyekoli na yo ya mosala ?",
+      "self.body":"Cadre na biso ezali kotala bisika 15 na Boyebi · Bizaleli · Pratique. Na miniti 10, zwa profil na yo mpe nzela ya mateya.",
+      "self.s1":"Tángá maloba mpe poná niveau na yo ya sika.",
+      "self.s2":"Zwa graphique radar ya compétences na yo 15.",
+      "self.s3":"Landa bokoli na yo sanza 6 nyonso.",
+      "self.cta":"Sala auto-évaluation",
+      "self.profileTitle":"Profil ya compétences na yo",
+      "self.skill1":"Boyebi ya thème","self.skill2":"Planification ya mateya","self.skill3":"Évaluation formative","self.skill4":"Bokambi ya kelasi","self.skill5":"Identité ya mosala",
+      "self.recLabel":"Mateya ya kondimama",
+      "self.recBody":"Na profil na yo, tozali kondima K2 (Koteya botángi) mpo na kokomisa makasi compétences na yo na littératie.",
+      // founder
+      "founder.chip":"Mokeli na biso","founder.h2":"Kutaná na Assina.",
+      "founder.bio.label":"Bio ekoya.",
+      "founder.bio.body":"Assina azali kobongisa texte na ye. Na ntango wana, interview na ye na nse ezali kolimbola nzela oyo ememaki ye uta na RDC ti na Harvard, mpe mpo na nini akelaki Koyekola.",
+      "founder.video.title":"Lisolo na ye na vidéo","founder.video.cta":"Talá na YouTube","founder.video.play":"Tálá na YouTube",
+      "founder.info.origin.label":"Eútá","founder.info.origin.body":"Repubilíka Demokratíki ya Kongó",
+      "founder.info.path.label":"Nzela","founder.info.path.body":"Mokonzi ya kelasi → Harvard",
+      "founder.info.mission.label":"Mokano","founder.info.mission.body":"Kobongisa boteyi na RDC",
+      "founder.badge":"Diplômée ya Harvard",
+      // community
+      "community.chip":"Lisangá","community.h2":"Ozali koyekola yo moko te.",
+      "community.body":"Forum ya kondimama, koséka balongi, classements, mpe tirage ya pɔsɔ moko na moko. Likambo nyonso etángama.",
+      "community.stat1.label":"Pɔsɔ oyo","community.stat1.body":"contributions na forum",
+      "community.stat2.label":"Sik'oyo","community.stat2.body":"bateyi bazali connectés",
+      "community.raffle.chip":"Tirage ya pɔsɔ na pɔsɔ","community.raffle.h3":"20 $ ya crédit ya téléphone mokolo ya mitano nyonso.",
+      "community.raffle.body":"Sangana na ko-completer ba-sessions na yo, kokabola ba-réflexions, mpe kosunga baninga. Ti na ba-entrées 6 na pɔsɔ.",
+      "community.raffle.p1":"Mbano monene 20 $","community.raffle.p2":"10 $ moko moko","community.raffle.p3":"Points 50",
+      "community.raffle.winnerLabel":"Molongi ya nsuka :","community.raffle.rules":"Talá mibeko",
+      "community.tag.wins":"Balongi",
+      "community.forum1.time":"liboso ya 2h","community.forum1.body":"« Bayekoli na ngai ya 3ème basosoli sik'oyo ba-fractions. Méthode visuelle ebongolaki nyonso ! »",
+      "community.forum2.time":"liboso ya 5h","community.forum2.body":"« Ndenge nini kobongisa ko-tanga na mongongo na bayekoli 70 ? Moto akoki kopesa ngai conseil ? »",
+      // directors
+      "directors.chip":"Bakonzi & Bayángi","directors.h2":"Formation ya bokambi mpo na bakonzi ya kelasi",
+      "directors.body":"Ba-sessions intensives 2 mpe ba-sessions ya coaching 3. Bóza na plan ya mosala ya pédagogique mpo na kelasi na bino.",
+      "directors.cohort1.label":"Cohorte 1","directors.cohort2.label":"Cohorte 2",
+      "directors.spots":"bisika","directors.spots20":"20","directors.spots15":"15",
+      "directors.investLabel":"Mbongo","directors.investUnit":"/ mokonzi","directors.cta":"Bombá esika",
+      // schools
+      "schools.chip":"Bakelasi","schools.h2":"Diagnostic ya ofele mpo na kelasi na yo",
+      "schools.body":"Évaluation mobimba : niveau ya botángi ya bayekoli, profil ya bateyi, infrastructure. Ozali kozwa rapport mpe ba-recommandations.",
+      "schools.b1":"Évaluation ya bayekoli na botángi mpe na mathématiques",
+      "schools.b2":"Profil ya compétence ya bateyi",
+      "schools.b3":"Komeka na bakelasi mosusu na Kinshasa",
+      "schools.b4":"Plan ya mosala ya sanza 4 (option)",
+      "schools.priceLabel":"Mbano","schools.priceValue":"Ya ofele","schools.cta":"Senga diagnostic",
+      // pricing
+      "pricing.chip":"Mitama","pricing.h2":"Mitama ya pɛtɛɛ, ebongisami mpo na RDC.",
+      "pricing.body":"Kofuta na Mobile Money (Mpesa, Airtel Money, Moov Africa) to virement bancaire mpo na bakelasi.",
+      "pricing.p1.label":"Cours moko","pricing.p1.unit":"na moteyi moko","pricing.p1.body":"Cycle mobimba ya pɔsɔ 3, certificat numérique ekokɔtá.",
+      "pricing.p2.label":"Formation bakonzi","pricing.p2.unit":"na mokonzi moko","pricing.p2.body":"Sessions 2 + sessions ya coaching 3.","pricing.p2.popular":"Eponami mingi",
+      "pricing.p3.label":"Diagnostic ya kelasi","pricing.p3.unit":"na établissement","pricing.p3.body":"Évaluation mobimba ya bayekoli, bateyi, infrastructure.",
+      "pricing.p4.label":"Coaching K1 et K2","pricing.p4.unit":"na kelasi / mbula","pricing.p4.body":"Formation mpe coaching na esika ya mosala mpo na sanza 4.",
+      "pricing.methodsLabel":"Lolenge ya kofuta :","pricing.methodBank":"Virement bancaire",
+      // FAQ
+      "faq.chip":"Mituna oyo eyebani mingi","faq.h2":"Ozali na mituna ?","faq.body":"Équipe na biso ezali kozongisa eyano na ngonga 24 na nzela ya WhatsApp to email.","faq.cta":"Bénga support",
+      "faq.q1":"Cycle ya pɔsɔ 3 esalaka ndenge nini ?","faq.a1":"Pɔsɔ 1 : ozali koyekola technique. Pɔsɔ 2 : ozali kosalela yango na bayekoli na yo. Pɔsɔ 3 : ozali kokabola observations na lisangá.",
+      "faq.q2":"Soki nazángi session live ?","faq.a2":"Ba-sessions nyonso ezali kobombama. Okoki kotala yango ntango nyonso, ata sans internet na téléphone na yo.",
+      "faq.q3":"Nakofuta ndenge nini uta na Kinshasa ?","faq.a3":"Mobile Money (Mpesa, Airtel Money, Moov Africa) to virement bancaire mpo na bakelasi. Paiement endimami sik'oyo.",
+      "faq.q4":"Tirage ya pɔsɔ esalaka ndenge nini ?","faq.a4":"Ozali kozwa ba-entrées na ko-participer : sessions, réflexions, contributions na forum. Tirage mokolo ya mitano nyonso, balongi bayebani na SMS mpe WhatsApp.",
+      "faq.q5":"Certificat ezali ya kondimama ?","faq.a5":"Ɛɛ. Certificat moko na moko ezali na code QR ya yango moko oyo bakoki ko-vérifier na site ya Koyekola. Inspecteurs mpe bakonzi bakoki ko-vérifier bokoli na yo.",
+      // final
+      "final.h2":"Pɔsɔ na yo ya kelasi oyo elandi ekoki kozala ndenge mosusu.","final.body":"Sangana na cohorte oyo elandi mpe banda ko-transformer pratique na yo banda mokolo ya mibale.",
+      "final.cta1":"Komikomisa na cours","final.cta2":"Senga diagnostic ya ofele",
+      // footer
+      "footer.tagline":"Boyekoli ya mosala mpo na bateyi na RDC. Formations ya pratique, lisangá, mpe bondimi ya mosala.",
+      "footer.platform":"Plateforme","footer.contact":"Contact","footer.location":"Kinshasa, RDC",
+      "footer.linkDirectors":"Formation bakonzi","footer.linkSchools":"Diagnostic ya kelasi",
+      "footer.copyright":"© 2026 Koyekola Academy. Mibeko nyonso ebatelami.","footer.privacy":"Confidentialité","footer.terms":"Conditions",
+    }
+  };
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang === 'ln' ? 'ln' : (lang === 'en' ? 'en' : 'fr');
+    const dict = i18n[lang]; // undefined for 'fr' (source)
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      // Store original FR content once
+      if (!el.dataset.origFr) el.dataset.origFr = el.innerHTML;
+      if (lang === 'fr') {
+        el.innerHTML = el.dataset.origFr;
+      } else if (dict && dict[key]) {
+        el.textContent = dict[key];
+      } else {
+        // Missing translation: keep FR
+        el.innerHTML = el.dataset.origFr;
+      }
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (!el.dataset.origFr) el.dataset.origFr = el.innerHTML;
+      if (lang === 'fr') {
+        el.innerHTML = el.dataset.origFr;
+      } else if (dict && dict[key]) {
+        el.innerHTML = dict[key];
+      } else {
+        el.innerHTML = el.dataset.origFr;
+      }
+    });
+    // Update active pills (in nav and footer)
+    document.querySelectorAll('[data-lang]').forEach(b => {
+      b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('koyekola.lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('[data-lang]').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  // Restore preferred language on load
+  let saved = 'fr';
+  try { saved = localStorage.getItem('koyekola.lang') || 'fr'; } catch (e) {}
+  if (['fr','en','ln'].includes(saved) && saved !== 'fr') applyLang(saved);
+
+  // ===== Live activity ticker =====
+  const tickerMessages = {
+    fr: [
+      "Marie de Kinshasa vient de s'inscrire au cours K1.",
+      "Jean de Goma a complété la Semaine 2 de K2.",
+      "Aimée de Lubumbashi est devenue Maître Enseignant.",
+      "32 enseignants ont rejoint cette semaine.",
+      "Patrick de Mbuji-Mayi a obtenu son certificat K1.",
+      "Sarah de Bukavu a partagé une victoire dans la communauté.",
+      "L'école Saint-Joseph vient de demander un diagnostic gratuit.",
+      "Joseph de Matadi a remporté le tirage de la semaine.",
+      "Bénédicte de Kinshasa a complété son auto-évaluation."
+    ],
+    en: [
+      "Marie from Kinshasa just signed up for course K1.",
+      "Jean from Goma completed Week 2 of K2.",
+      "Aimée from Lubumbashi became a Master Teacher.",
+      "32 teachers joined this week.",
+      "Patrick from Mbuji-Mayi earned his K1 certificate.",
+      "Sarah from Bukavu shared a win in the community.",
+      "Saint-Joseph School just requested a free diagnostic.",
+      "Joseph from Matadi won this week's raffle.",
+      "Bénédicte from Kinshasa completed her self-assessment."
+    ],
+    ln: [
+      "Marie ya Kinshasa awuti komikomisa na cours K1.",
+      "Jean ya Goma asilisi Pɔsɔ 2 ya K2.",
+      "Aimée ya Lubumbashi akómi Moteyi Monene.",
+      "Bateyi 32 bayingeli na pɔsɔ oyo.",
+      "Patrick ya Mbuji-Mayi azwi certificat na ye ya K1.",
+      "Sarah ya Bukavu akabolaki elonga moko na lisangá.",
+      "Kelasi ya Saint-Joseph asengi diagnostic ya ofele.",
+      "Joseph ya Matadi alongi tirage ya pɔsɔ oyo.",
+      "Bénédicte ya Kinshasa asilisi auto-évaluation na ye."
+    ]
+  };
+  const tickerEl = document.getElementById('activity-ticker');
+  if (tickerEl) {
+    let idx = 0;
+    function rotate() {
+      const lang = (document.documentElement.lang === 'ln' || document.documentElement.lang === 'en') ? document.documentElement.lang : 'fr';
+      const messages = tickerMessages[lang] || tickerMessages.fr;
+      const line = tickerEl.querySelector('.ticker-line');
+      if (!line) return;
+      line.classList.remove('ticker-enter');
+      line.classList.add('ticker-exit');
+      setTimeout(() => {
+        idx = (idx + 1) % messages.length;
+        line.textContent = messages[idx];
+        line.classList.remove('ticker-exit');
+        line.classList.add('ticker-enter');
+      }, 350);
+    }
+    setInterval(rotate, 3500);
+  }
+
+  // ===== Image fade-in on load (smoother on slow connections) =====
+  document.querySelectorAll('img').forEach(img => {
+    if (img.complete) img.classList.add('loaded');
+    else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+  });
+</script>
+
+</body>
+</html>
