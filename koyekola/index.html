@@ -136,16 +136,16 @@
       <!-- Hero photo + floating cohort card -->
       <div class="lg:col-span-5">
         <div class="relative">
-          <div class="rounded-3xl overflow-hidden shadow-card ring-1 ring-slate-100">
+          <div class="rounded-3xl overflow-hidden shadow-card ring-1 ring-slate-100 bg-slate-100">
             <img src="assets/photos/assina-at-harvard.jpg"
                  alt="Assina Kahamba présente Koyekola à Harvard, devant la diapositive « The Solution » avec ses trois piliers"
                  loading="eager" decoding="async" fetchpriority="high"
                  width="676" height="1200"
-                 class="w-full h-[460px] sm:h-[560px] object-cover object-top" />
+                 class="w-full h-auto block" />
           </div>
 
-          <!-- Floating cohort card -->
-          <div class="absolute -bottom-6 left-4 right-4 sm:-bottom-8 sm:left-6 sm:right-12 rounded-2xl bg-brand-deep text-white p-5 sm:p-6 shadow-card overflow-hidden">
+          <!-- Cohort card (sits BELOW the image, not over her shoes) -->
+          <div class="mt-5 rounded-2xl bg-brand-deep text-white p-5 sm:p-6 shadow-card overflow-hidden relative">
             <div class="absolute -top-12 -right-12 h-40 w-40 rounded-full bg-accent/30 blur-2xl"></div>
             <div class="relative">
               <div class="flex items-center justify-between">
@@ -166,7 +166,7 @@
         </div>
 
         <!-- Live activity ticker -->
-        <div class="mt-12 sm:mt-14">
+        <div class="mt-5">
           <div class="inline-flex items-center gap-3 rounded-full bg-white border border-slate-200 shadow-card px-4 py-2.5 text-sm text-slate-600">
             <span class="relative flex h-2.5 w-2.5">
               <span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-60"></span>
