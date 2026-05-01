@@ -72,6 +72,21 @@ img.loaded { background-color: transparent; }
 }
 .cta-pulse { animation: soft-pulse 2.6s ease-in-out infinite; }
 
+/* Heartbeat: lub-dub scale rhythm for the cohort S'inscrire CTA */
+@keyframes heartbeat {
+  0%, 40%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(220,20,60,.25); }
+  10% { transform: scale(1.12); box-shadow: 0 14px 36px rgba(220,20,60,.55), 0 0 0 6px rgba(220,20,60,.12); }
+  18% { transform: scale(1); }
+  26% { transform: scale(1.07); box-shadow: 0 12px 28px rgba(220,20,60,.4); }
+  34% { transform: scale(1); }
+}
+.heartbeat { animation: heartbeat 1.6s ease-in-out infinite; transform-origin: center; }
+.heartbeat:hover, .heartbeat:focus, .heartbeat:active { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .heartbeat { animation: none; } }
+
+/* Animated progress bars (self-assessment) */
+.bar-anim { transition: width 1.4s cubic-bezier(.25,1,.5,1); }
+
 /* Floating chip lift on hover */
 .chip { transition: transform .2s ease, background-color .2s ease; }
 
