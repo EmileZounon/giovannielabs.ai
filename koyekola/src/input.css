@@ -87,6 +87,17 @@ img.loaded { background-color: transparent; }
 /* Animated progress bars (self-assessment) */
 .bar-anim { transition: width 1.4s cubic-bezier(.25,1,.5,1); }
 
+/* Course card image zoom on hover (Ken Burns) */
+.course-card { overflow: hidden; }
+.course-card .photo-zoom { transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+.course-card:hover .photo-zoom { transform: scale(1.06); }
+
+/* FAQ smooth open */
+details summary { transition: color .2s ease; }
+details[open] summary > span:first-child { color: #1E3A8A; }
+details > p { overflow: hidden; max-height: 0; opacity: 0; transition: max-height .35s ease, opacity .35s ease, margin-top .35s ease; margin-top: 0; }
+details[open] > p { max-height: 400px; opacity: 1; margin-top: .75rem; }
+
 /* Floating chip lift on hover */
 .chip { transition: transform .2s ease, background-color .2s ease; }
 
