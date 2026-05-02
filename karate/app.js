@@ -98,6 +98,8 @@
   const modalRanks = document.getElementById('modal-ranks');
   const modalOtherStyles = document.getElementById('modal-other-styles');
   const modalOtherStylesSection = document.getElementById('modal-other-styles-section');
+  const modalAccolades = document.getElementById('modal-accolades');
+  const modalAccoladesSection = document.getElementById('modal-accolades-section');
 
   const state = {
     activeOrg: 'all',
@@ -665,6 +667,28 @@
       .join('');
     modalRanks.innerHTML = rows;
 
+    // Accolades — non-rank recognitions (awards, honors). Click opens the
+    // image in the same lightbox the rank certificates use.
+    if (person.accolades && person.accolades.length) {
+      modalAccolades.innerHTML = person.accolades
+        .map(a => {
+          const caption = `${person.name} — ${a.title}${a.subtitle ? ' · ' + a.subtitle : ''}`;
+          return `
+            <li class="accolade-item" data-cert="${a.image}" data-cert-caption="${caption}" tabindex="0" role="button" title="View full image">
+              <img class="accolade-thumb" src="${a.image}" alt="${a.title}" loading="lazy">
+              <div class="accolade-text">
+                <span class="accolade-title">${a.title}</span>
+                ${a.subtitle ? `<span class="accolade-meta">${a.subtitle}</span>` : ''}
+              </div>
+            </li>`;
+        })
+        .join('');
+      modalAccoladesSection.hidden = false;
+    } else {
+      modalAccolades.innerHTML = '';
+      modalAccoladesSection.hidden = true;
+    }
+
     // Other styles (e.g. Kyokushin) — shown separately so they don't influence
     // the ball ring color or the org filter (this page is Shotokan-first).
     if (person.otherStyles && person.otherStyles.length) {
@@ -723,14 +747,14 @@
   // both the main Ranks list and the Other Styles list (none have certs today
   // but the handler is generic so future ones just work).
   modalBackdrop.addEventListener('click', (e) => {
-    const row = e.target.closest('li.has-cert[data-cert]');
+    const row = e.target.closest('li[data-cert]');
     if (!row) return;
     e.stopPropagation();
     openCertificate(row.dataset.cert, row.dataset.certCaption);
   });
   modalBackdrop.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter' && e.key !== ' ') return;
-    const row = e.target.closest('li.has-cert[data-cert]');
+    const row = e.target.closest('li[data-cert]');
     if (!row) return;
     e.preventDefault();
     openCertificate(row.dataset.cert, row.dataset.certCaption);

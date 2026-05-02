@@ -121,6 +121,14 @@ const BLACK_BELTS = [
       { rank: 'Shodan', year: 2019, org: 'jka',    certificate: 'certificates/vazrik-jka-shodan.jpeg' },
       { rank: 'Shodan', year: 2011, org: 'tabata' },
     ],
+    accolades: [
+      {
+        image: 'accolades/vazrik-presidential-volunteer-service-award.jpeg',
+        title: "President's Volunteer Service Award",
+        subtitle: 'Bronze · AmeriCorps · 2021',
+        year: 2021,
+      },
+    ],
   },
   {
     id: 'cassiano',

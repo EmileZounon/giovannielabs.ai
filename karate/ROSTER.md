@@ -59,6 +59,8 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Nidan, ISKF (2019)
   - Shodan, JKA (2019) [cert]
   - Shodan, Tabata Sensei (2011)
+- **Accolades:**
+  - President's Volunteer Service Award · Bronze · AmeriCorps · 2021
 
 ### 2. Anselmo Cassiano Alves
 - **Country:** Brazil 🇧🇷

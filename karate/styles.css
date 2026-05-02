@@ -620,6 +620,66 @@ a { color: inherit; }
   text-transform: uppercase;
 }
 
+/* Accolades — non-rank recognitions (awards, honors). Visual: a small
+   landscape thumbnail on the left and stacked text on the right. Click
+   opens the full image in the existing certificate lightbox. */
+.modal-accolades {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-accolades li.accolade-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #F5C518;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.modal-accolades li.accolade-item:hover,
+.modal-accolades li.accolade-item:focus-visible {
+  background: rgba(245, 197, 24, 0.06);
+  border-color: rgba(245, 197, 24, 0.45);
+  outline: none;
+}
+.accolade-thumb {
+  width: 88px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+  background: #1a1a1a;
+}
+.accolade-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.accolade-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.accolade-meta {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim);
+}
+@media (max-width: 480px) {
+  .accolade-thumb { width: 72px; height: 54px; }
+  .accolade-title { font-size: 1rem; }
+}
+
 /* Certificate lightbox — sits above the person modal at z-index 1100.
    Backdrop is darker/heavier than the person modal so the cert reads as the
    foreground subject. The image scales to viewport with a small caption. */
