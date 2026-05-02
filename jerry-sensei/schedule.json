@@ -7,7 +7,7 @@
       "date": "2026-05-08",
       "time": "14:52",
       "title": "Arrival at Boston Logan",
-      "location": "Boston Logan International Airport (JetBlue 400 from MSY, dep 10:32 AM)",
+      "location": "Boston Logan International Airport",
       "maps_url": null
     },
     {
@@ -135,7 +135,7 @@
       "date": "2026-05-10",
       "time": "18:15",
       "title": "Flight Departure",
-      "location": "JetBlue 1301 BOS → MSY (arrives 9:03 PM MSY)",
+      "location": "Boston Logan International Airport",
       "maps_url": null
     }
   ]
