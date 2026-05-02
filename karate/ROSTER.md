@@ -207,7 +207,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Nidan, JKA (2025)
   - Shodan, HDKI (2026)
-  - Shodan, JUKF (2024)
+  - Shodan, JUKF (2024) [cert]
 
 ### 20. Iyit Benusia
 - **Country:** Indonesia 🇮🇩
@@ -231,17 +231,17 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/munawwar.jpg
 - **Ranks:**
   - Shodan, JKA (2024)
-  - Shodan, JUKF (2024)
+  - Shodan, JUKF (2024) [cert]
 - **Other styles:**
   - Nidan, Kyokushin
 
-### 23. Jules Van
+### 23. Julia Van
 - **Country:** Russia 🇷🇺
 - **University:** Boston University
 - **Photo:** photos/jules.jpeg
 - **Ranks:**
   - Shodan, JKA (2024)
-  - Shodan, JUKF (2024)
+  - Shodan, JUKF (2024) [cert]
 
 ### 24. Sasiru Pathiranage
 - **Country:** Sri Lanka 🇱🇰
@@ -250,7 +250,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Nidan, JKA (2025)
   - Shodan, JKA (2024)
-  - Shodan, JUKF (2024)
+  - Shodan, JUKF (2024) [cert]
 
 ### 25. Emile Zounon
 - **Country:** Benin 🇧🇯
@@ -259,7 +259,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Shodan, JKA (2025)
   - Shodan, HDKI (2026)
-  - Shodan, JUKF (2024)
+  - Shodan, JUKF (2024) [cert]
 
 ### 26. Bruce Chang-Hung Hou
 - **Country:** Taiwan 🇹🇼
@@ -267,7 +267,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/bruce.jpg
 - **Ranks:**
   - Shodan, HDKI (2026)
-  - Shodan, JUKF (2024)
+  - Shodan, JUKF (2024) [cert]
 
 ### 27. Renata Costa
 - **Country:** Brazil 🇧🇷

@@ -354,7 +354,7 @@ const BLACK_BELTS = [
     ranks: [
       { rank: 'Nidan',  year: 2025, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
-      { rank: 'Shodan', year: 2024, org: 'jukf' },
+      { rank: 'Shodan', year: 2024, org: 'jukf', certificate: 'certificates/angel-jukf-shodan.jpeg' },
     ],
   },
   {
@@ -396,7 +396,7 @@ const BLACK_BELTS = [
     photoFocus: 'center 22%',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jka'  },
-      { rank: 'Shodan', year: 2024, org: 'jukf' },
+      { rank: 'Shodan', year: 2024, org: 'jukf', certificate: 'certificates/munawwar-jukf-shodan.jpeg' },
     ],
     otherStyles: [
       { style: 'Kyokushin', rank: 'Nidan', year: null },
@@ -404,7 +404,7 @@ const BLACK_BELTS = [
   },
   {
     id: 'jules',
-    name: 'Jules Van',
+    name: 'Julia Van',
     universities: ['Boston University'],
     country: 'Russia',
     flag: '🇷🇺',
@@ -412,7 +412,7 @@ const BLACK_BELTS = [
     photoFocus: 'center 30%',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jka'  },
-      { rank: 'Shodan', year: 2024, org: 'jukf' },
+      { rank: 'Shodan', year: 2024, org: 'jukf', certificate: 'certificates/jules-jukf-shodan.jpeg' },
     ],
   },
   {
@@ -425,7 +425,7 @@ const BLACK_BELTS = [
     ranks: [
       { rank: 'Nidan',  year: 2025, org: 'jka'  },
       { rank: 'Shodan', year: 2024, org: 'jka'  }, // earlier JKA progression
-      { rank: 'Shodan', year: 2024, org: 'jukf' },
+      { rank: 'Shodan', year: 2024, org: 'jukf', certificate: 'certificates/sasiru-jukf-shodan.jpeg' },
     ],
   },
   {
@@ -439,7 +439,7 @@ const BLACK_BELTS = [
     ranks: [
       { rank: 'Shodan', year: 2025, org: 'jka'  },
       { rank: 'Shodan', year: 2026, org: 'hdki' },
-      { rank: 'Shodan', year: 2024, org: 'jukf' },
+      { rank: 'Shodan', year: 2024, org: 'jukf', certificate: 'certificates/emile-jukf-shodan.jpeg' },
     ],
   },
   {
@@ -452,7 +452,7 @@ const BLACK_BELTS = [
     photoFocus: 'center 18%',
     ranks: [
       { rank: 'Shodan', year: 2026, org: 'hdki' },
-      { rank: 'Shodan', year: 2024, org: 'jukf' },
+      { rank: 'Shodan', year: 2024, org: 'jukf', certificate: 'certificates/bruce-jukf-shodan.jpeg' },
     ],
   },
   {
