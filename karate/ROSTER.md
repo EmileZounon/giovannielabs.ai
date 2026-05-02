@@ -75,7 +75,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Universities:** Boston University, Lesley University
 - **Photo:** photos/lorraine.jpeg
 - **Ranks:**
-  - Nidan, JKA (2023)
+  - Nidan, JKA (2023) [cert]
   - Nidan, HDKI (2022)
   - Nidan, JUKF (2022)
   - Shodan, Tabata Sensei (2017)
@@ -87,6 +87,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/amandine.jpg
 - **Ranks:**
   - Sandan, JKA (2025)
+  - Nidan, JKA (2022) [cert]
   - Nidan, HDKI (2026)
   - Shodan, HDKI (2021)
   - Nidan, JUKF (2022)
@@ -120,7 +121,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/qiu.jpeg
 - **Ranks:**
   - Nidan, JKA (2025)
-  - Shodan, JKA (2022)
+  - Shodan, JKA (2022) [cert]
   - Shodan, JUKF (2022)
 
 ### 9. Amy Liu
@@ -150,7 +151,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** Wellesley College
 - **Photo:** photos/hanamei.jpeg
 - **Ranks:**
-  - Shodan, JKA (2022)
+  - Shodan, JKA (2022) [cert]
   - Shodan, HDKI (2022)
   - Shodan, JUKF (2022)
 
@@ -160,7 +161,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/nikita.jpg
 - **Ranks:**
   - Nidan, JKA (2024)
-  - Shodan, JKA (2023)
+  - Shodan, JKA (2023) [cert]
   - Shodan, JUKF (2022)
 
 ### 14. Savannah Wu
