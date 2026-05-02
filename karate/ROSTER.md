@@ -183,7 +183,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** Boston University
 - **Photo:** photos/hiro.jpeg
 - **Ranks:**
-  - Shodan, JKA (2023)
+  - Shodan, JKA (2023) [cert]
   - Shodan, ISKF (2019)
 
 ### 17. Ricardo Harripaul
@@ -303,13 +303,6 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/peiqi.jpg
 - **Ranks:**
   - Shodan, HDKI (2026)
-
-### 32. Hiro Fuji
-- **Country:** USA 🇺🇸
-- **Universities:** _(pending)_
-- **Photo:** _(placeholder orb)_
-- **Ranks:**
-  - Shodan, JKA (2023) [cert]
 
 ---
 

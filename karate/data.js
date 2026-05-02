@@ -312,7 +312,7 @@ const BLACK_BELTS = [
     flag: '🇺🇸',
     photo: 'photos/hiro.jpeg',
     ranks: [
-      { rank: 'Shodan', year: 2023, org: 'jka'  },
+      { rank: 'Shodan', year: 2023, org: 'jka',  certificate: 'certificates/hiro-jka-shodan.jpeg' },
       { rank: 'Shodan', year: 2019, org: 'iskf' },
     ],
   },
@@ -381,17 +381,6 @@ const BLACK_BELTS = [
     photo: 'photos/alina.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jka' },
-    ],
-  },
-  {
-    id: 'hiro',
-    name: 'Hiro Fuji',
-    universities: [],
-    country: 'USA',
-    flag: '🇺🇸',
-    photo: null,
-    ranks: [
-      { rank: 'Shodan', year: 2023, org: 'jka', certificate: 'certificates/hiro-jka-shodan.jpeg' },
     ],
   },
   {
