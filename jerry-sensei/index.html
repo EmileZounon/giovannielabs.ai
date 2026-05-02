@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensei Jerry Kattawar in Boston · May 8–10, 2026</title>
+    <meta name="description" content="A weekend in Boston with Sensei Jerry Kattawar (JKA). Three trainings at MIT, golf, sailing on the Charles, and dinners across Cambridge. May 8–10, 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-navy: #0c1a2e;
+            --color-navy-light: #152238;
+            --color-cream: #f8f5f0;
+            --color-cream-dark: #ede8e0;
+            --color-gold: #c4a265;
+            --color-gold-light: #d4b87a;
+            --color-red: #c41e3a;
+            --color-text: #1a1a1a;
+            --color-text-secondary: #5a5a5a;
+            --color-text-light: #f8f5f0;
+            --font-display: 'Playfair Display', 'Georgia', serif;
+            --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+            --space-2xl: 8rem;
+            --max-width: 1200px;
+            --nav-height: 64px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { font-family: var(--font-body); font-weight: 400; color: var(--color-text); background-color: var(--color-cream); line-height: 1.7; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        .heading-xl { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1.05; letter-spacing: -0.02em; }
+        .heading-lg { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -0.01em; }
+        .heading-md { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.2; }
+        .heading-sm { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.3; }
+        .label { font-family: var(--font-body); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; }
+        .body-lg { font-size: 1.125rem; line-height: 1.8; }
+
+        .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--space-md); transition: background-color 0.4s ease, box-shadow 0.4s ease; }
+        .nav.scrolled { background-color: rgba(248, 245, 240, 0.97); box-shadow: 0 1px 30px rgba(0, 0, 0, 0.06); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .nav__brand { font-family: var(--font-body); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text-light); transition: color 0.4s ease; display: flex; align-items: center; gap: 0.5rem; }
+        .nav__brand img { height: 30px; width: auto; }
+        .nav.scrolled .nav__brand { color: var(--color-text); }
+        .nav__links { display: flex; gap: var(--space-md); list-style: none; }
+        .nav__link { font-family: var(--font-body); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248, 245, 240, 0.7); transition: color 0.3s ease; position: relative; padding-bottom: 4px; }
+        .nav.scrolled .nav__link { color: var(--color-text-secondary); }
+        .nav__link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--color-gold); transition: width 0.3s ease; }
+        .nav__link:hover, .nav__link.active { color: var(--color-text-light); }
+        .nav.scrolled .nav__link:hover, .nav.scrolled .nav__link.active { color: var(--color-text); }
+        .nav__link.active::after { width: 100%; }
+        .nav__progress { position: absolute; bottom: 0; left: 0; height: 2px; background: var(--color-gold); transition: width 0.1s linear; width: 0%; }
+
+        .hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: flex-end; justify-content: flex-start; overflow: hidden; }
+        .hero__bg { position: absolute; inset: 0; background-image: url('images/boston-hero.jpg'); background-size: cover; background-position: center 45%; background-attachment: fixed; }
+        .hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.5) 40%, rgba(10,22,40,0.15) 70%, transparent 100%); }
+        .hero__content { position: relative; z-index: 2; padding: var(--space-xl) var(--space-md) var(--space-lg); max-width: var(--max-width); width: 100%; margin: 0 auto; }
+        .hero__logo { height: 80px; width: auto; margin-bottom: var(--space-sm); border-radius: 6px; background: rgba(255,255,255,0.92); padding: 6px; }
+        .hero__label { color: var(--color-gold); margin-bottom: var(--space-sm); display: inline-block; }
+        .hero__title { color: var(--color-text-light); margin-bottom: var(--space-sm); }
+        .hero__subtitle { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: clamp(1.1rem, 2.5vw, 1.6rem); color: rgba(248, 245, 240, 0.78); margin-bottom: var(--space-md); }
+        .hero__meta { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+        .hero__meta-item { font-size: 0.85rem; font-weight: 400; color: rgba(248, 245, 240, 0.6); display: flex; align-items: center; gap: 0.4rem; }
+        .hero__meta-item svg { width: 16px; height: 16px; fill: var(--color-gold); flex-shrink: 0; }
+        .hero__scroll { position: absolute; bottom: var(--space-md); left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(248, 245, 240, 0.4); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; animation: pulse-down 2s ease-in-out infinite; }
+        .hero__scroll svg { width: 20px; height: 20px; fill: rgba(248, 245, 240, 0.4); }
+        @keyframes pulse-down { 0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.4; } 50% { transform: translateX(-50%) translateY(6px); opacity: 0.8; } }
+
+        .instructors { background: var(--color-cream-dark); padding: var(--space-xl) var(--space-md); text-align: center; }
+        .instructors__grid { display: flex; justify-content: center; gap: var(--space-lg); flex-wrap: wrap; margin-top: var(--space-md); align-items: flex-start; }
+        .instructor { text-align: center; max-width: 300px; }
+        .instructor__photo { border-radius: 50%; object-fit: cover; border: 3px solid var(--color-gold); margin-bottom: var(--space-sm); }
+        .instructor__photo--lead { width: 220px; height: 220px; }
+        .instructor__photo--secondary { width: 180px; height: 180px; }
+        .instructor__name { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; }
+        .instructor__role { font-size: 0.85rem; color: var(--color-text-secondary); }
+        .instructor__logo { height: 90px; width: auto; object-fit: contain; margin: var(--space-md) auto 0; opacity: 0.7; }
+
+        .day-divider { background-color: var(--color-navy); padding: var(--space-xl) var(--space-md); text-align: center; position: relative; overflow: hidden; }
+        .day-divider::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; border: 1px solid rgba(196, 162, 101, 0.08); border-radius: 50%; }
+        .day-divider__number { font-family: var(--font-display); font-weight: 800; font-size: clamp(5rem, 12vw, 10rem); color: rgba(196, 162, 101, 0.08); line-height: 1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); user-select: none; }
+        .day-divider__label { color: var(--color-gold); margin-bottom: var(--space-xs); position: relative; }
+        .day-divider__date { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 3.5vw, 2.8rem); color: var(--color-text-light); margin-bottom: var(--space-xs); position: relative; }
+        .day-divider__theme { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: clamp(1rem, 2vw, 1.3rem); color: rgba(248, 245, 240, 0.5); position: relative; }
+
+        .section-hero { position: relative; width: 100%; height: 75vh; min-height: 500px; overflow: hidden; display: flex; align-items: flex-end; }
+        .section-hero--short { height: 55vh; min-height: 400px; }
+        .section-hero--medium { height: 65vh; min-height: 450px; }
+        .section-hero__img { position: absolute; inset: 0; background-size: cover; background-position: center; background-attachment: fixed; }
+        .section-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.88) 0%, rgba(10,22,40,0.3) 50%, transparent 100%); }
+        .section-hero__content { position: relative; z-index: 2; padding: var(--space-lg) var(--space-md); max-width: var(--max-width); width: 100%; margin: 0 auto; }
+        .section-hero__time { color: var(--color-gold); margin-bottom: var(--space-xs); }
+        .section-hero__title { color: var(--color-text-light); margin-bottom: var(--space-sm); }
+        .section-hero__desc { color: rgba(248, 245, 240, 0.78); max-width: 600px; font-size: 1.05rem; line-height: 1.7; }
+
+        .section-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
+        .section-split--reverse { direction: rtl; }
+        .section-split--reverse > * { direction: ltr; }
+        .section-split__image { position: relative; overflow: hidden; min-height: 400px; }
+        .section-split__image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .section-split__content { display: flex; flex-direction: column; justify-content: center; padding: var(--space-lg) var(--space-lg); }
+        .section-split__time { color: var(--color-gold); margin-bottom: var(--space-sm); }
+        .section-split__title { margin-bottom: var(--space-sm); }
+        .section-split__desc { color: var(--color-text-secondary); margin-bottom: var(--space-md); max-width: 480px; }
+        .section-split__detail { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.6rem; font-size: 0.9rem; color: var(--color-text-secondary); }
+        .section-split__detail svg { width: 16px; height: 16px; fill: var(--color-gold); flex-shrink: 0; margin-top: 3px; }
+        .flag { font-size: 0.85em; vertical-align: middle; }
+
+        .dual-image { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+        .dual-image__item { position: relative; overflow: hidden; height: 45vh; min-height: 300px; }
+        .dual-image__item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .dual-image__item:hover img { transform: scale(1.03); }
+        .dual-image__caption { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-md); background: linear-gradient(to top, rgba(10,22,40,0.8), transparent); z-index: 2; }
+        .dual-image__caption-text { color: var(--color-text-light); font-size: 0.85rem; font-weight: 500; }
+
+        .dining-interlude { display: grid; grid-template-columns: 1fr 1fr; min-height: 350px; }
+        .dining-interlude__image { position: relative; overflow: hidden; min-height: 300px; }
+        .dining-interlude__image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .dining-interlude__content { background: var(--color-navy); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: var(--space-lg); }
+        .dining-interlude__icon { width: 32px; height: 32px; fill: var(--color-gold); margin-bottom: var(--space-sm); }
+        .dining-interlude__label { color: var(--color-gold); margin-bottom: var(--space-xs); }
+        .dining-interlude__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--color-text-light); margin-bottom: var(--space-xs); }
+        .dining-interlude__desc { color: rgba(248,245,240,0.65); font-size: 0.95rem; max-width: 400px; margin-bottom: var(--space-sm); }
+        .dining-interlude__address { display: flex; align-items: center; gap: 0.4rem; color: rgba(248,245,240,0.45); font-size: 0.8rem; }
+        .dining-interlude__address svg { width: 14px; height: 14px; fill: var(--color-gold); flex-shrink: 0; }
+
+        .closing { background: var(--color-navy); padding: var(--space-2xl) var(--space-md); text-align: center; }
+        .closing__icon { width: 60px; height: 60px; border: 2px solid var(--color-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); }
+        .closing__icon svg { width: 24px; height: 24px; fill: var(--color-gold); }
+        .closing__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--color-text-light); margin-bottom: var(--space-sm); }
+        .closing__subtitle { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: rgba(248, 245, 240, 0.5); max-width: 500px; margin: 0 auto; }
+
+        .footer { background: #080f1b; padding: var(--space-lg) var(--space-md); text-align: center; }
+        .footer__brand { font-family: var(--font-body); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(248, 245, 240, 0.3); margin-bottom: var(--space-xs); }
+        .footer__info { font-size: 0.8rem; color: rgba(248, 245, 240, 0.2); }
+
+        .separator { width: 60px; height: 2px; background: var(--color-gold); margin: var(--space-sm) 0; }
+        .separator--center { margin: var(--space-sm) auto; }
+
+        .reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        .bg-dark { background-color: var(--color-navy); }
+        .bg-dark .section-split__content { color: var(--color-text-light); }
+        .bg-dark .section-split__time { color: var(--color-gold-light); }
+        .bg-dark .section-split__desc { color: rgba(248, 245, 240, 0.65); }
+        .bg-dark .section-split__detail { color: rgba(248, 245, 240, 0.65); }
+        .bg-cream { background-color: var(--color-cream); }
+        .bg-cream-dark { background-color: var(--color-cream-dark); }
+
+        .back-to-top { position: fixed; bottom: var(--space-md); right: var(--space-md); width: 44px; height: 44px; border-radius: 50%; background: var(--color-navy); border: 1px solid rgba(196, 162, 101, 0.3); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s; z-index: 999; }
+        .back-to-top.visible { opacity: 1; transform: translateY(0); }
+        .back-to-top svg { width: 20px; height: 20px; fill: var(--color-gold); }
+
+        @media (max-width: 768px) {
+            .hero__bg, .section-hero__img { background-attachment: scroll; }
+            .hero { min-height: 500px; }
+            .hero__content { padding: var(--space-lg) var(--space-sm) var(--space-md); }
+            .hero__meta { flex-direction: column; gap: var(--space-xs); }
+            .section-split { grid-template-columns: 1fr; }
+            .section-split--reverse { direction: ltr; }
+            .section-split__image { min-height: 250px; }
+            .section-split__content { padding: var(--space-md); }
+            .section-hero { height: 55vh; min-height: 350px; }
+            .section-hero--short { height: 40vh; min-height: 280px; }
+            .section-hero--medium { height: 50vh; min-height: 320px; }
+            .dual-image { grid-template-columns: 1fr; }
+            .dual-image__item { height: 35vh; min-height: 220px; }
+            .dining-interlude { grid-template-columns: 1fr; }
+            .dining-interlude__content { padding: var(--space-md); order: 1; }
+            .dining-interlude__image { min-height: 220px; order: 2; }
+            .section-split__content { order: 1; }
+            .section-split__image { order: 2; }
+            .section-split + .section-hero { margin-top: 2rem; }
+            .dining-interlude + .section-hero { margin-top: 2rem; }
+            .dual-image + .section-hero { margin-top: 2rem; }
+            .nav__brand { font-size: 0.6rem; letter-spacing: 0.12em; }
+            .nav__brand img { height: 22px; }
+            .nav__links { gap: var(--space-xs); }
+            .nav__link { font-size: 0.6rem; letter-spacing: 0.08em; }
+            .instructors { padding: var(--space-lg) var(--space-sm); }
+            .instructors__grid { gap: var(--space-md); flex-direction: column; align-items: center; }
+            .hero__logo { height: 55px !important; }
+            .instructor { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
+            .instructor__photo { margin-left: auto; margin-right: auto; }
+            .instructor__photo--lead { width: 180px; height: 180px; }
+            .instructor__photo--secondary { width: 160px; height: 160px; }
+            .day-divider { padding: var(--space-lg) var(--space-sm); }
+            .closing { padding: var(--space-xl) var(--space-sm); }
+        }
+
+        @media (max-width: 480px) {
+            .nav__brand span { display: none; }
+            .hero__title { font-size: clamp(2.2rem, 10vw, 3rem); }
+            .hero__subtitle { font-size: 1rem; }
+            .heading-lg { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+            .heading-md { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+            .section-split__desc { font-size: 0.9rem; }
+            .dining-interlude__title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+            .dining-interlude__desc { font-size: 0.85rem; }
+            .hero__logo { height: 45px !important; }
+            .instructor__photo--lead { width: 140px; height: 140px; }
+            .instructor__photo--secondary { width: 110px; height: 110px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav" id="nav">
+        <a href="#hero" class="nav__brand">
+            <img src="images/jka-logo.jpeg" alt="JKA" style="height: 28px; width: auto; border-radius: 3px; background: #fff; padding: 2px;">
+            <span>Jerry Sensei in Boston · May 2026</span>
+        </a>
+        <ul class="nav__links">
+            <li><a href="#day1" class="nav__link" data-day="1">Day 1</a></li>
+            <li><a href="#day2" class="nav__link" data-day="2">Day 2</a></li>
+            <li><a href="#day3" class="nav__link" data-day="3">Day 3</a></li>
+        </ul>
+        <div class="nav__progress" id="navProgress"></div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero__bg" role="img" aria-label="Boston skyline at dusk over the Charles River"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <img src="images/jka-logo.jpeg" alt="JKA" class="hero__logo reveal">
+            <span class="label hero__label reveal reveal-delay-1">Japan Karate Association</span>
+            <h1 class="heading-xl hero__title reveal reveal-delay-2">Sensei Jerry Kattawar<br>in Boston</h1>
+            <p class="hero__subtitle reveal reveal-delay-3">Three trainings at MIT, the Charles River, and a city to share with him.</p>
+            <div class="hero__meta reveal reveal-delay-4">
+                <span class="hero__meta-item">
+                    <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                    May 8 – 10, 2026
+                </span>
+                <span class="hero__meta-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Cambridge &amp; Boston, MA
+                </span>
+            </div>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </div>
+    </section>
+
+    <!-- VISITING SENSEI -->
+    <section class="instructors">
+        <span class="label reveal" style="color: var(--color-gold); letter-spacing: 0.2em;">Visiting Sensei</span>
+        <div class="separator separator--center reveal reveal-delay-1"></div>
+        <div class="instructors__grid">
+            <div class="instructor reveal reveal-delay-2">
+                <img src="images/jerry-kattawar.webp" alt="Sensei Jerry Kattawar" class="instructor__photo instructor__photo--lead" style="object-position: center 18%;">
+                <p class="instructor__name">Sensei Jerry Kattawar</p>
+                <p class="instructor__role">President of JKA-AF USA</p>
+            </div>
+        </div>
+
+        <div class="separator separator--center reveal" style="margin-top: var(--space-lg);"></div>
+        <span class="label reveal" style="color: var(--color-gold); letter-spacing: 0.2em; margin-top: var(--space-sm); display: block;">Boston Hosts</span>
+        <div class="instructors__grid" style="margin-top: var(--space-sm);">
+            <div class="instructor reveal reveal-delay-2">
+                <img src="images/vazrik-new.jpg" alt="Vazrik Chiloyan" class="instructor__photo instructor__photo--secondary" style="object-position: center 15%;">
+                <p class="instructor__name">Sensei Vazrik Chiloyan</p>
+                <p class="instructor__role">Host</p>
+            </div>
+            <div class="instructor reveal reveal-delay-3">
+                <img src="images/cassiano-organizer.jpg" alt="Anselmo Cassiano" class="instructor__photo instructor__photo--secondary">
+                <p class="instructor__name">Anselmo Cassiano</p>
+                <p class="instructor__role">Host</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         DAY 1 — FRIDAY, MAY 8, 2026
+         ========================================== -->
+    <section class="day-divider" id="day1">
+        <span class="day-divider__number" aria-hidden="true">01</span>
+        <span class="label day-divider__label reveal">Day 1</span>
+        <h2 class="day-divider__date reveal reveal-delay-1">Friday, May 8, 2026</h2>
+        <p class="day-divider__theme reveal reveal-delay-2">Arrival, First Training &amp; Welcome Dinner</p>
+    </section>
+
+    <!-- ARRIVAL -->
+    <section class="section-hero section-hero--short" id="arrival">
+        <div class="section-hero__img" style="background-image: url('images/boston-logan.jpg'); background-position: center 60%;" role="img" aria-label="Boston Logan International Airport"></div>
+        <div class="section-hero__overlay"></div>
+        <div class="section-hero__content">
+            <span class="label section-hero__time reveal">2:52 PM · Arrival</span>
+            <h3 class="heading-lg section-hero__title reveal reveal-delay-1">Boston Logan</h3>
+            <p class="section-hero__desc reveal reveal-delay-2">JetBlue 400 from New Orleans (MSY), departing 10:32 AM, arriving Boston Logan at 2:52 PM.</p>
+        </div>
+    </section>
+
+    <!-- HOTEL CHECK-IN -->
+    <div class="section-split bg-cream" id="hotel-checkin">
+        <div class="section-split__image">
+            <img src="images/la-quinta-hotel.jpg" alt="La Quinta Inn — Somerville" loading="lazy">
+        </div>
+        <div class="section-split__content">
+            <span class="label section-split__time reveal">4:00 PM</span>
+            <h3 class="heading-md section-split__title reveal reveal-delay-1">Hotel Check-in</h3>
+            <div class="separator reveal reveal-delay-1"></div>
+            <p class="section-split__desc reveal reveal-delay-2">Check in at La Quinta by Wyndham in Somerville &mdash; the same hotel as last year, two nights, easy ride into Cambridge for training.</p>
+            <div class="section-split__detail reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span><a href="https://maps.google.com/?q=23+Cummings+St,+Somerville,+MA+02145" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">23 Cummings St, Somerville, MA 02145</a></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MIT TRAINING 1 -->
+    <section class="section-hero" id="training-1">
+        <div class="section-hero__img" style="background-image: url('images/training-mit.jpg'); background-position: center;" role="img" aria-label="MIT — first training session"></div>
+        <div class="section-hero__overlay"></div>
+        <div class="section-hero__content">
+            <span class="label section-hero__time reveal">7:00 – 8:30 PM</span>
+            <h3 class="heading-lg section-hero__title reveal reveal-delay-1">Training 1<br>at MIT</h3>
+            <p class="section-hero__desc reveal reveal-delay-2">First session of the weekend on the MIT mat, led by Sensei Jerry Kattawar.</p>
+        </div>
+    </section>
+
+    <div class="section-split section-split--reverse bg-cream-dark">
+        <div class="section-split__image">
+            <img src="images/jka-training-group.jpg" alt="Training at MIT" loading="lazy">
+        </div>
+        <div class="section-split__content">
+            <span class="label section-split__time reveal">Evening · MIT Z Center</span>
+            <h3 class="heading-md section-split__title reveal reveal-delay-1">Welcome to the Mat</h3>
+            <div class="separator reveal reveal-delay-1"></div>
+            <p class="section-split__desc reveal reveal-delay-2">An opening session to set the rhythm for the weekend &mdash; kihon, kata, and the chance to train under Jerry Sensei before sitting down to dinner.</p>
+            <div class="section-split__detail reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span><a href="https://maps.google.com/?q=MIT+Z+Center,+120+Vassar+St,+Cambridge,+MA+02139" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">MIT Z Center, 120 Vassar St, Cambridge, MA 02139</a></span>
+            </div>
+            <div class="section-split__detail reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <span>Sensei Jerry Kattawar</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- WELCOME DINNER — MESTIZO 🇲🇽 -->
+    <div class="dining-interlude" id="mestizo">
+        <div class="dining-interlude__image">
+            <img src="images/mestizo-bar.jpg" alt="Mestizo &mdash; bar" loading="lazy">
+        </div>
+        <div class="dining-interlude__content">
+            <svg class="dining-interlude__icon" viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-4.07-5.03-3.99-7.52-3.99C6.02 11 1 11.02 1 14.99V17h15.03v-2.01zM1.02 19h15v1h-15v-1z"/></svg>
+            <span class="label dining-interlude__label reveal">8:30 PM · Welcome Dinner <span class="flag">🇲🇽 [Mexico]</span></span>
+            <h3 class="dining-interlude__title reveal reveal-delay-1">Mestizo</h3>
+            <p class="dining-interlude__desc reveal reveal-delay-2">Welcome dinner with the team at Mestizo. Authentic Mexican cuisine with bold, traditional flavors from Oaxaca to Mexico City. The right way to start the weekend.</p>
+            <span class="dining-interlude__address reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <a href="https://maps.google.com/?q=Mestizo+Modern+Mexican,+10+Broad+Canal+Way,+Cambridge,+MA+02142" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">10 Broad Canal Way, Cambridge, MA 02142</a>
+            </span>
+        </div>
+    </div>
+
+    <div class="dual-image">
+        <div class="dual-image__item">
+            <img src="images/mestizo-interior.jpg" alt="Mestizo &mdash; interior" loading="lazy">
+            <div class="dual-image__caption">
+                <p class="dual-image__caption-text">🇲🇽 Modern Oaxacan cuisine in Kendall Square</p>
+            </div>
+        </div>
+        <div class="dual-image__item">
+            <img src="images/mestizo-patio.jpg" alt="Mestizo &mdash; patio" loading="lazy">
+            <div class="dual-image__caption">
+                <p class="dual-image__caption-text">Welcome dinner with the team</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RETURN TO HOTEL -->
+    <div class="section-split bg-dark">
+        <div class="section-split__content" style="text-align: center; justify-content: center; align-items: center;">
+            <span class="label reveal" style="color: var(--color-gold);">10:30 PM</span>
+            <h3 class="heading-md reveal reveal-delay-1" style="color: var(--color-text-light); margin-top: var(--space-xs);">Return to Hotel</h3>
+            <p class="reveal reveal-delay-2" style="color: rgba(248,245,240,0.55); font-style: italic; margin-top: var(--space-xs);">Rest up. A full day on the Charles tomorrow.</p>
+            <a href="https://maps.google.com/?q=23+Cummings+St,+Somerville,+MA+02145" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-3" style="color: rgba(248,245,240,0.45); font-size: 0.85rem; text-decoration: underline; margin-top: var(--space-xs); display: inline-block;">23 Cummings St, Somerville, MA 02145</a>
+        </div>
+        <div class="section-split__image">
+            <img src="images/la-quinta-hotel-2.jpg" alt="La Quinta Inn &mdash; exterior" loading="lazy">
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         DAY 2 — SATURDAY, MAY 9, 2026
+         ========================================== -->
+    <section class="day-divider" id="day2">
+        <span class="day-divider__number" aria-hidden="true">02</span>
+        <span class="label day-divider__label reveal">Day 2</span>
+        <h2 class="day-divider__date reveal reveal-delay-1">Saturday, May 9, 2026</h2>
+        <p class="day-divider__theme reveal reveal-delay-2">Golf, the View, the Charles &amp; the Mat</p>
+    </section>
+
+    <!-- BREAKFAST AT HOTEL -->
+    <section style="background: var(--color-cream); padding: var(--space-md) var(--space-md); text-align: center;">
+        <div class="reveal" style="display: flex; align-items: flex-start; justify-content: center; gap: 0.5rem; font-size: 1rem; color: var(--color-text); max-width: 500px; margin: 0 auto;">
+            <svg viewBox="0 0 24 24" style="width: 18px; min-width: 18px; height: 18px; fill: var(--color-gold); flex-shrink: 0; margin-top: 3px;"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span><strong style="color: var(--color-gold);">8:00 AM</strong> · Breakfast at La Quinta before heading out</span>
+        </div>
+    </section>
+
+    <!-- MIT GOLF -->
+    <section class="section-hero section-hero--medium" id="mit-golf">
+        <div class="section-hero__img" style="background-image: url('images/mit-z-center.jpg'); background-position: center;" role="img" aria-label="MIT Z Center &mdash; Golf Simulator"></div>
+        <div class="section-hero__overlay"></div>
+        <div class="section-hero__content">
+            <span class="label section-hero__time reveal">9:00 AM</span>
+            <h3 class="heading-lg section-hero__title reveal reveal-delay-1">MIT Golf<br>with Coach Joe Rocha</h3>
+            <p class="section-hero__desc reveal reveal-delay-2">A personal lesson with PGA Coach Joe Rocha on MIT's advanced golf simulator, inside the Z Center.</p>
+        </div>
+    </section>
+
+    <div class="section-split bg-cream">
+        <div class="section-split__image">
+            <img src="images/mit-z-center.jpg" alt="MIT Z Center" loading="lazy">
+        </div>
+        <div class="section-split__content">
+            <span class="label section-split__time reveal">Morning · MIT Z Center</span>
+            <h3 class="heading-md section-split__title reveal reveal-delay-1">PGA Coaching, MIT Tech</h3>
+            <div class="separator reveal reveal-delay-1"></div>
+            <p class="section-split__desc reveal reveal-delay-2">Personal class with PGA Coach Joe Rocha using the MIT Golf Simulator &mdash; one of the most advanced indoor swing-analysis setups in the country.</p>
+            <div class="section-split__detail reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <span>Coach Joe Rocha · PGA</span>
+            </div>
+            <div class="section-split__detail reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span><a href="https://maps.google.com/?q=MIT+Z+Center,+120+Vassar+St,+Cambridge,+MA+02139" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">MIT Z Center, 120 Vassar St, Cambridge, MA 02139</a></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW BOSTON -->
+    <section class="section-hero" id="view-boston">
+        <div class="section-hero__img" style="background-image: url('images/boston-skyline.webp'); background-position: center;" role="img" aria-label="View Boston at Prudential Center"></div>
+        <div class="section-hero__overlay"></div>
+        <div class="section-hero__content">
+            <span class="label section-hero__time reveal">11:00 AM</span>
+            <h3 class="heading-lg section-hero__title reveal reveal-delay-1">View Boston</h3>
+            <p class="section-hero__desc reveal reveal-delay-2">The full city from 750 feet up, atop the Prudential Center. Boston, the Charles, the harbor, and on a clear day, all the way to the coast.</p>
+        </div>
+    </section>
+
+    <div class="dual-image">
+        <div class="dual-image__item">
+            <img src="images/boston-skyline.webp" alt="Boston skyline" loading="lazy">
+            <div class="dual-image__caption">
+                <p class="dual-image__caption-text">View Boston · 800 Boylston St</p>
+            </div>
+        </div>
+        <div class="dual-image__item">
+            <img src="images/boston-night.webp" alt="Boston at night" loading="lazy">
+            <div class="dual-image__caption">
+                <p class="dual-image__caption-text">The city Jerry Sensei is here to see</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOGO DE CHAO LUNCH -->
+    <div class="dining-interlude" id="fogo-de-chao">
+        <div class="dining-interlude__image">
+            <img src="images/fogo-de-chao-photo.jpg" alt="Fogo de Chão &mdash; Brazilian churrascaria" loading="lazy">
+        </div>
+        <div class="dining-interlude__content">
+            <svg class="dining-interlude__icon" viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-4.07-5.03-3.99-7.52-3.99C6.02 11 1 11.02 1 14.99V17h15.03v-2.01zM1.02 19h15v1h-15v-1z"/></svg>
+            <span class="label dining-interlude__label reveal">12:30 PM · Lunch <span class="flag">🇧🇷 [Brazil]</span></span>
+            <h3 class="dining-interlude__title reveal reveal-delay-1">Fogo de Chão</h3>
+            <p class="dining-interlude__desc reveal reveal-delay-2">Brazilian churrascaria in Back Bay. Gaucho chefs carve premium cuts tableside in the Southern Brazilian tradition. A feast of fire-roasted meats and warm hospitality.</p>
+            <span class="dining-interlude__address reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <a href="https://maps.google.com/?q=Fogo+de+Chao,+200+Dartmouth+St,+Boston,+MA+02116" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">200 Dartmouth St, Boston, MA 02116</a>
+            </span>
+        </div>
+    </div>
+
+    <div class="dual-image">
+        <div class="dual-image__item" style="background: #000; display: flex; align-items: center; justify-content: center;">
+            <img src="images/fogo-de-chao.jpg" alt="Fogo de Chão logo" loading="lazy" style="position: static; width: 80%; max-width: 400px; height: auto; object-fit: contain;">
+        </div>
+        <div class="dual-image__item">
+            <img src="images/fogo-de-chao-2.jpg" alt="Fogo de Chão &mdash; churrasco" loading="lazy">
+            <div class="dual-image__caption">
+                <p class="dual-image__caption-text">🇧🇷 Fire-roasted churrasco in the gaucho tradition</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MIT SAILING -->
+    <section class="section-hero" id="mit-sailing">
+        <div class="section-hero__img" style="background-image: url('images/mit-pavilion-night.jpg'); background-position: center;" role="img" aria-label="MIT Sailing Pavilion &mdash; Charles River"></div>
+        <div class="section-hero__overlay"></div>
+        <div class="section-hero__content">
+            <span class="label section-hero__time reveal">2:00 PM</span>
+            <h3 class="heading-lg section-hero__title reveal reveal-delay-1">Sailing on<br>the Charles</h3>
+            <p class="section-hero__desc reveal reveal-delay-2">An afternoon at the MIT Sailing Pavilion &mdash; one of the largest community sailing programs in the world.</p>
+        </div>
+    </section>
+
+    <div class="section-split bg-cream">
+        <div class="section-split__image">
+            <img src="images/mit-sailing.jpg" alt="Sailing on the Charles River" loading="lazy">
+        </div>
+        <div class="section-split__content">
+            <span class="label section-split__time reveal">Afternoon · Charles River</span>
+            <h3 class="heading-md section-split__title reveal reveal-delay-1">Out on the Water</h3>
+            <div class="separator reveal reveal-delay-1"></div>
+            <p class="section-split__desc reveal reveal-delay-2">Sailing on the Charles with the Boston skyline as backdrop. The birthplace of collegiate sailing in the USA, 1935.</p>
+            <div class="section-split__detail reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span><a href="https://maps.google.com/?q=MIT+Sailing+Pavilion,+134+Memorial+Dr,+Cambridge,+MA+02139" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">134 Memorial Dr, Cambridge, MA 02139</a></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOTEL BREAK -->
+    <section style="background: var(--color-cream); padding: var(--space-md) var(--space-md); text-align: center;">
+        <div class="reveal" style="display: flex; align-items: flex-start; justify-content: center; gap: 0.5rem; font-size: 1rem; color: var(--color-text); max-width: 500px; margin: 0 auto;">
+            <svg viewBox="0 0 24 24" style="width: 18px; min-width: 18px; height: 18px; fill: var(--color-gold); flex-shrink: 0; margin-top: 3px;"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span><strong style="color: var(--color-gold);">3:30 PM</strong> · Back to the hotel to rest before the evening session</span>
+        </div>
+    </section>
+
+    <!-- TRAINING 2 AT MIT -->
+    <section class="section-hero" id="training-2">
+        <div class="section-hero__img" style="background-image: url('images/training-mit.jpg'); background-position: center;" role="img" aria-label="MIT &mdash; second training session"></div>
+        <div class="section-hero__overlay"></div>
+        <div class="section-hero__content">
+            <span class="label section-hero__time reveal">6:00 PM</span>
+            <h3 class="heading-lg section-hero__title reveal reveal-delay-1">Training 2<br>at MIT</h3>
+            <p class="section-hero__desc reveal reveal-delay-2">Evening session with Sensei Jerry Kattawar at the MIT Z Center.</p>
+        </div>
+    </section>
+
+    <!-- DINNER AT MAD MONKFISH -->
+    <div class="dining-interlude" id="mad-monkfish">
+        <div class="dining-interlude__content">
+            <svg class="dining-interlude__icon" viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-4.07-5.03-3.99-7.52-3.99C6.02 11 1 11.02 1 14.99V17h15.03v-2.01zM1.02 19h15v1h-15v-1z"/></svg>
+            <span class="label dining-interlude__label reveal">8:00 PM · Dinner <span class="flag">🇹🇭 [Thailand]</span></span>
+            <h3 class="dining-interlude__title reveal reveal-delay-1">Mad Monkfish</h3>
+            <p class="dining-interlude__desc reveal reveal-delay-2">Thai-inspired cuisine in Cambridge, with a vibrant atmosphere fueled by live jazz performances 🎷. A fusion of bold Southeast Asian flavors and the intimate energy of a jazz club &mdash; the perfect after-training wind-down.</p>
+            <span class="dining-interlude__address reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <a href="https://maps.google.com/?q=The+Mad+Monkfish,+524+Massachusetts+Ave,+Cambridge,+MA+02139" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">524 Massachusetts Ave, Cambridge, MA 02139</a>
+            </span>
+        </div>
+        <div class="dining-interlude__image">
+            <img src="images/madmonkfish-photo.jpg" alt="The Mad Monkfish &mdash; Thai cuisine and live jazz" loading="lazy">
+        </div>
+    </div>
+
+    <div class="dual-image">
+        <div class="dual-image__item">
+            <img src="images/madmonkfish-food.jpg" alt="Sushi at Mad Monkfish" loading="lazy">
+            <div class="dual-image__caption">
+                <p class="dual-image__caption-text">🇹🇭 Sushi &amp; Asian fusion</p>
+            </div>
+        </div>
+        <div class="dual-image__item">
+            <img src="images/madmonkfish-jazz.jpg" alt="Live jazz at Mad Monkfish" loading="lazy">
+            <div class="dual-image__caption">
+                <p class="dual-image__caption-text">🎷 Live jazz performances nightly</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RETURN TO HOTEL DAY 2 -->
+    <div class="section-split bg-dark">
+        <div class="section-split__content" style="text-align: center; justify-content: center; align-items: center;">
+            <span class="label reveal" style="color: var(--color-gold);">10:30 PM</span>
+            <h3 class="heading-md reveal reveal-delay-1" style="color: var(--color-text-light); margin-top: var(--space-xs);">Return to Hotel</h3>
+            <p class="reveal reveal-delay-2" style="color: rgba(248,245,240,0.55); font-style: italic; margin-top: var(--space-xs);">One more morning on the mat tomorrow.</p>
+            <a href="https://maps.google.com/?q=23+Cummings+St,+Somerville,+MA+02145" target="_blank" rel="noopener noreferrer" class="reveal reveal-delay-3" style="color: rgba(248,245,240,0.45); font-size: 0.85rem; text-decoration: underline; margin-top: var(--space-xs); display: inline-block;">23 Cummings St, Somerville, MA 02145</a>
+        </div>
+        <div class="section-split__image">
+            <img src="images/la-quinta-hotel-3.jpg" alt="La Quinta Inn &mdash; room" loading="lazy">
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         DAY 3 — SUNDAY, MAY 10, 2026
+         ========================================== -->
+    <section class="day-divider" id="day3">
+        <span class="day-divider__number" aria-hidden="true">03</span>
+        <span class="label day-divider__label reveal">Day 3</span>
+        <h2 class="day-divider__date reveal reveal-delay-1">Sunday, May 10, 2026</h2>
+        <p class="day-divider__theme reveal reveal-delay-2">Final Training, Lunch &amp; Departure</p>
+    </section>
+
+    <!-- BREAKFAST -->
+    <section style="background: var(--color-cream); padding: var(--space-md) var(--space-md); text-align: center;">
+        <div class="reveal" style="display: flex; align-items: flex-start; justify-content: center; gap: 0.5rem; font-size: 1rem; color: var(--color-text); max-width: 500px; margin: 0 auto;">
+            <svg viewBox="0 0 24 24" style="width: 18px; min-width: 18px; height: 18px; fill: var(--color-gold); flex-shrink: 0; margin-top: 3px;"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span><strong style="color: var(--color-gold);">8:00 AM</strong> · Breakfast at La Quinta</span>
+        </div>
+    </section>
+
+    <!-- TRAINING 3 AT MIT -->
+    <section class="section-hero" id="training-3">
+        <div class="section-hero__img" style="background-image: url('images/training-mit.jpg'); background-position: center;" role="img" aria-label="MIT &mdash; final training session"></div>
+        <div class="section-hero__overlay"></div>
+        <div class="section-hero__content">
+            <span class="label section-hero__time reveal">10:00 AM – 12:00 PM</span>
+            <h3 class="heading-lg section-hero__title reveal reveal-delay-1">Training 3<br>at MIT</h3>
+            <p class="section-hero__desc reveal reveal-delay-2">Final session of the weekend &mdash; two hours on the mat with Jerry Sensei before lunch.</p>
+        </div>
+    </section>
+
+    <div class="section-split bg-cream">
+        <div class="section-split__image">
+            <img src="images/jka-training-group.jpg" alt="Group training at MIT" loading="lazy">
+        </div>
+        <div class="section-split__content">
+            <span class="label section-split__time reveal">Morning · MIT Z Center</span>
+            <h3 class="heading-md section-split__title reveal reveal-delay-1">The Last Hour on the Mat</h3>
+            <div class="separator reveal reveal-delay-1"></div>
+            <p class="section-split__desc reveal reveal-delay-2">Two hours of training to close the weekend, before a relaxed lunch and the ride to the airport.</p>
+            <div class="section-split__detail reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span><a href="https://maps.google.com/?q=MIT+Z+Center,+120+Vassar+St,+Cambridge,+MA+02139" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">MIT Z Center, 120 Vassar St, Cambridge, MA 02139</a></span>
+            </div>
+            <div class="section-split__detail reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <span>Sensei Jerry Kattawar</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LUNCH (TBD) -->
+    <div class="dining-interlude" id="lunch-tbd">
+        <div class="dining-interlude__image">
+            <img src="images/saloniki-food.jpg" alt="Cambridge lunch options" loading="lazy">
+        </div>
+        <div class="dining-interlude__content">
+            <svg class="dining-interlude__icon" viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1zm15.03-7c0-4.07-5.03-3.99-7.52-3.99C6.02 11 1 11.02 1 14.99V17h15.03v-2.01zM1.02 19h15v1h-15v-1z"/></svg>
+            <span class="label dining-interlude__label reveal">12:30 PM · Lunch &mdash; Choose on the day</span>
+            <h3 class="dining-interlude__title reveal reveal-delay-1">Saloniki · BBC · Life Alive</h3>
+            <p class="dining-interlude__desc reveal reveal-delay-2">Three Cambridge favorites, decided on the day depending on the mood: Greek at Saloniki, classic burgers at Boston Burger Company, or a clean plant-based lift at Life Alive.</p>
+            <span class="dining-interlude__address reveal reveal-delay-3">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Cambridge, MA</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- DEPARTURE -->
+    <section class="section-hero section-hero--short" id="departure">
+        <div class="section-hero__img" style="background-image: url('images/airplane-departure.jpg'); background-position: center;" role="img" aria-label="Airplane departure"></div>
+        <div class="section-hero__overlay"></div>
+        <div class="section-hero__content">
+            <span class="label section-hero__time reveal">4:00 PM · Depart for Logan</span>
+            <h3 class="heading-lg section-hero__title reveal reveal-delay-1">Boston → New Orleans</h3>
+            <p class="section-hero__desc reveal reveal-delay-2">JetBlue 1301 · BOS 6:15 PM &rarr; MSY 9:03 PM. See you next time, Sensei.</p>
+        </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing" id="closing">
+        <div class="closing__icon reveal">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <h2 class="closing__title reveal reveal-delay-1">Osu!</h2>
+        <div class="separator separator--center reveal reveal-delay-2"></div>
+        <p class="closing__subtitle reveal reveal-delay-3">Sensei Jerry Kattawar in Boston · May 8 – 10, 2026</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="footer__brand">JKA · Boston Weekend 2026</p>
+        <p class="footer__info">May 8 – 10, 2026 · Cambridge &amp; Boston, Massachusetts</p>
+        <p class="footer__info" style="margin-top: 1rem; opacity: 0.6;">Built by <a href="https://giovannielabs.ai/" target="_blank" rel="noopener" style="color: var(--color-gold); text-decoration: none; border-bottom: 1px solid rgba(196,162,101,0.3);">GiovannieLabs LLC</a></p>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script>
+        (function() {
+            'use strict';
+            var revealEls = document.querySelectorAll('.reveal');
+            var revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+            var nav = document.getElementById('nav');
+            var hero = document.getElementById('hero');
+            var navProgress = document.getElementById('navProgress');
+
+            function updateNav() {
+                var scrollY = window.scrollY || window.pageYOffset;
+                var heroBottom = hero.offsetHeight - 100;
+                if (scrollY > heroBottom) { nav.classList.add('scrolled'); }
+                else { nav.classList.remove('scrolled'); }
+                var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                var progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+                navProgress.style.width = Math.min(progress, 100) + '%';
+            }
+
+            var dayDividers = document.querySelectorAll('.day-divider');
+            var navLinks = document.querySelectorAll('.nav__link');
+            function updateActiveDay() {
+                var scrollY = window.scrollY || window.pageYOffset;
+                var windowH = window.innerHeight;
+                var activeDay = null;
+                dayDividers.forEach(function(divider) {
+                    if (divider.offsetTop - windowH * 0.5 <= scrollY) { activeDay = divider.id; }
+                });
+                navLinks.forEach(function(link) {
+                    var href = link.getAttribute('href').replace('#', '');
+                    if (href === activeDay) { link.classList.add('active'); }
+                    else { link.classList.remove('active'); }
+                });
+            }
+
+            var backToTop = document.getElementById('backToTop');
+            function updateBackToTop() {
+                var scrollY = window.scrollY || window.pageYOffset;
+                if (scrollY > window.innerHeight) { backToTop.classList.add('visible'); }
+                else { backToTop.classList.remove('visible'); }
+            }
+            backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+            var ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        updateNav();
+                        updateActiveDay();
+                        updateBackToTop();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            updateNav();
+            updateActiveDay();
+            updateBackToTop();
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+{
+  "event": "Sensei Jerry Kattawar in Boston",
+  "timezone": "America/New_York",
+  "sessions": [
+    {
+      "day": 1,
+      "date": "2026-05-08",
+      "time": "14:52",
+      "title": "Arrival at Boston Logan",
+      "location": "Boston Logan International Airport (JetBlue 400 from MSY, dep 10:32 AM)",
+      "maps_url": null
+    },
+    {
+      "day": 1,
+      "date": "2026-05-08",
+      "time": "16:00",
+      "title": "Hotel Check-in",
+      "location": "La Quinta, 23 Cummings St, Somerville, MA 02145",
+      "maps_url": "https://maps.google.com/?q=23+Cummings+St,+Somerville,+MA+02145"
+    },
+    {
+      "day": 1,
+      "date": "2026-05-08",
+      "time": "19:00",
+      "title": "Training 1 at MIT",
+      "location": "MIT Z Center, 120 Vassar St, Cambridge, MA 02139",
+      "maps_url": "https://maps.google.com/?q=MIT+Z+Center,+120+Vassar+St,+Cambridge,+MA+02139"
+    },
+    {
+      "day": 1,
+      "date": "2026-05-08",
+      "time": "20:30",
+      "title": "Welcome Dinner at Mestizo",
+      "location": "10 Broad Canal Way, Cambridge, MA 02142",
+      "maps_url": "https://maps.google.com/?q=Mestizo+Modern+Mexican,+10+Broad+Canal+Way,+Cambridge,+MA+02142"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "08:00",
+      "title": "Breakfast at La Quinta",
+      "location": "La Quinta, 23 Cummings St, Somerville, MA 02145",
+      "maps_url": "https://maps.google.com/?q=23+Cummings+St,+Somerville,+MA+02145"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "09:00",
+      "title": "MIT Golf with PGA Coach Joe Rocha",
+      "location": "MIT Golf Simulator, MIT Z Center, 120 Vassar St, Cambridge, MA 02139",
+      "maps_url": "https://maps.google.com/?q=MIT+Z+Center,+120+Vassar+St,+Cambridge,+MA+02139"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "11:00",
+      "title": "View Boston at Prudential Center",
+      "location": "View Boston, 800 Boylston St, Boston, MA 02199",
+      "maps_url": "https://maps.google.com/?q=View+Boston+Prudential+Center,+800+Boylston+St,+Boston,+MA+02199"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "12:30",
+      "title": "Lunch at Fogo de Chão",
+      "location": "200 Dartmouth St, Boston, MA 02116",
+      "maps_url": "https://maps.google.com/?q=Fogo+de+Chao,+200+Dartmouth+St,+Boston,+MA+02116"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "14:00",
+      "title": "Sailing at MIT",
+      "location": "MIT Sailing Pavilion, 134 Memorial Dr, Cambridge, MA 02139",
+      "maps_url": "https://maps.google.com/?q=MIT+Sailing+Pavilion,+134+Memorial+Dr,+Cambridge,+MA+02139"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "15:30",
+      "title": "Return to Hotel",
+      "location": "La Quinta, 23 Cummings St, Somerville, MA 02145",
+      "maps_url": "https://maps.google.com/?q=23+Cummings+St,+Somerville,+MA+02145"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "18:00",
+      "title": "Training 2 at MIT",
+      "location": "MIT Z Center, 120 Vassar St, Cambridge, MA 02139",
+      "maps_url": "https://maps.google.com/?q=MIT+Z+Center,+120+Vassar+St,+Cambridge,+MA+02139"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "20:00",
+      "title": "Dinner at Mad Monkfish",
+      "location": "524 Massachusetts Ave, Cambridge, MA 02139",
+      "maps_url": "https://maps.google.com/?q=The+Mad+Monkfish,+524+Massachusetts+Ave,+Cambridge,+MA+02139"
+    },
+    {
+      "day": 3,
+      "date": "2026-05-10",
+      "time": "08:00",
+      "title": "Breakfast at La Quinta",
+      "location": "La Quinta, 23 Cummings St, Somerville, MA 02145",
+      "maps_url": "https://maps.google.com/?q=23+Cummings+St,+Somerville,+MA+02145"
+    },
+    {
+      "day": 3,
+      "date": "2026-05-10",
+      "time": "10:00",
+      "title": "Training 3 at MIT",
+      "location": "MIT Z Center, 120 Vassar St, Cambridge, MA 02139",
+      "maps_url": "https://maps.google.com/?q=MIT+Z+Center,+120+Vassar+St,+Cambridge,+MA+02139"
+    },
+    {
+      "day": 3,
+      "date": "2026-05-10",
+      "time": "12:30",
+      "title": "Lunch (Saloniki / Boston Burger Co. / Life Alive — TBD)",
+      "location": "Cambridge, MA",
+      "maps_url": null
+    },
+    {
+      "day": 3,
+      "date": "2026-05-10",
+      "time": "16:00",
+      "title": "Departure for Logan",
+      "location": "Boston Logan International Airport",
+      "maps_url": null
+    },
+    {
+      "day": 3,
+      "date": "2026-05-10",
+      "time": "18:15",
+      "title": "Flight Departure",
+      "location": "JetBlue 1301 BOS → MSY (arrives 9:03 PM MSY)",
+      "maps_url": null
+    }
+  ]
+}
