@@ -53,11 +53,11 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/vazrik.jpeg
 - **Ranks:**
   - Yondan, JKA (2025)
-  - Sandan, HDKI (2022)
+  - Sandan, HDKI (2022) [cert]
   - Sandan, JUKF (2022)
-  - Nidan, JKA (2019)
+  - Nidan, JKA (2019) [cert]
   - Nidan, ISKF (2019)
-  - Shodan, JKA (2019)
+  - Shodan, JKA (2019) [cert]
   - Shodan, Tabata Sensei (2011)
 
 ### 2. Anselmo Cassiano Alves
@@ -66,8 +66,8 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/cassiano.jpeg
 - **Ranks:**
   - Nidan, JUKF (2022)
-  - Shodan, HDKI (2022)
-  - Shodan, JKA (2021)
+  - Shodan, HDKI (2022) [cert]
+  - Shodan, JKA (2021) [cert]
   - Shodan, Tabata Sensei (2018)
 
 ### 3. Lorraine Sin
@@ -76,10 +76,10 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/lorraine.jpeg
 - **Ranks:**
   - Nidan, JKA (2023) [cert]
-  - Nidan, HDKI (2022)
+  - Nidan, HDKI (2022) [cert]
   - Nidan, JUKF (2022)
-  - Shodan, Tabata Sensei (2017)
-  - Shodan, ISKF (2019)
+  - Shodan, Tabata Sensei (2017) [cert]
+  - Shodan, ISKF (2019) [cert]
 
 ### 4. Amandine Fromont
 - **Country:** France 🇫🇷
@@ -99,7 +99,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Ranks:**
   - Nidan, JKA (2024)
   - Shodan, JKA (2022)
-  - Shodan, HDKI (2022)
+  - Shodan, HDKI (2022) [cert]
 
 ### 6. Anna Barnacka
 - **Country:** Poland 🇵🇱
@@ -129,7 +129,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Universities:** Wellesley College, Johns Hopkins University
 - **Photo:** photos/amy.jpeg
 - **Ranks:**
-  - Shodan, HDKI (2022)
+  - Shodan, HDKI (2022) [cert]
   - Shodan, JUKF (2023)
 
 ### 10. Ann Xu
@@ -144,7 +144,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Universities:** Wellesley College, Yale University
 - **Photo:** photos/ayusha.jpeg
 - **Ranks:**
-  - Shodan, HDKI (2022)
+  - Shodan, HDKI (2022) [cert]
 
 ### 12. Hanamei Shao
 - **Country:** USA 🇺🇸
@@ -152,7 +152,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/hanamei.jpeg
 - **Ranks:**
   - Shodan, JKA (2022) [cert]
-  - Shodan, HDKI (2022)
+  - Shodan, HDKI (2022) [cert]
   - Shodan, JUKF (2022)
 
 ### 13. Nikita Patil
@@ -303,6 +303,13 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/peiqi.jpg
 - **Ranks:**
   - Shodan, HDKI (2026)
+
+### 32. Hiro Fuji
+- **Country:** USA 🇺🇸
+- **Universities:** _(pending)_
+- **Photo:** _(placeholder orb)_
+- **Ranks:**
+  - Shodan, JKA (2023) [cert]
 
 ---
 

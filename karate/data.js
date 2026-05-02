@@ -114,7 +114,7 @@ const BLACK_BELTS = [
     photoFocus: 'center 22%',
     ranks: [
       { rank: 'Yondan', year: 2025, org: 'jka'    },
-      { rank: 'Sandan', year: 2022, org: 'hdki'   },
+      { rank: 'Sandan', year: 2022, org: 'hdki',   certificate: 'certificates/vazrik-hdki-sandan.jpeg' },
       { rank: 'Sandan', year: 2022, org: 'jukf'   },
       { rank: 'Nidan',  year: 2019, org: 'jka',    certificate: 'certificates/vazrik-jka-nidan.jpeg'  },
       { rank: 'Nidan',  year: 2019, org: 'iskf'   },
@@ -132,7 +132,7 @@ const BLACK_BELTS = [
     photoFocus: 'center 38%',
     ranks: [
       { rank: 'Nidan',  year: 2022, org: 'jukf'   },
-      { rank: 'Shodan', year: 2022, org: 'hdki'   },
+      { rank: 'Shodan', year: 2022, org: 'hdki',   certificate: 'certificates/cassiano-hdki-shodan.jpeg' },
       { rank: 'Shodan', year: 2021, org: 'jka', certificate: 'certificates/cassiano-jka-shodan.jpeg' },
       { rank: 'Shodan', year: 2018, org: 'tabata' },
     ],
@@ -146,9 +146,9 @@ const BLACK_BELTS = [
     photo: 'photos/lorraine.jpeg',
     ranks: [
       { rank: 'Nidan',  year: 2023, org: 'jka',    certificate: 'certificates/lorraine-jka-nidan.jpeg' },
-      { rank: 'Nidan',  year: 2022, org: 'hdki'   },
+      { rank: 'Nidan',  year: 2022, org: 'hdki',   certificate: 'certificates/lorraine-hdki-nidan.jpeg' },
       { rank: 'Nidan',  year: 2022, org: 'jukf'   },
-      { rank: 'Shodan', year: 2017, org: 'tabata' },
+      { rank: 'Shodan', year: 2017, org: 'tabata', certificate: 'certificates/lorraine-tabata-shodan.jpeg' },
       { rank: 'Shodan', year: 2019, org: 'iskf', certificate: 'certificates/lorraine-iskf-shodan.jpeg' },
     ],
   },
@@ -179,7 +179,7 @@ const BLACK_BELTS = [
     ranks: [
       { rank: 'Nidan',  year: 2024, org: 'jka'  },
       { rank: 'Shodan', year: 2022, org: 'jka'  },
-      { rank: 'Shodan', year: 2022, org: 'hdki' },
+      { rank: 'Shodan', year: 2022, org: 'hdki', certificate: 'certificates/steven-hdki-shodan.jpeg' },
     ],
   },
   {
@@ -227,7 +227,7 @@ const BLACK_BELTS = [
     flag: '🇺🇸',
     photo: 'photos/amy.jpeg',
     ranks: [
-      { rank: 'Shodan', year: 2022, org: 'hdki' },
+      { rank: 'Shodan', year: 2022, org: 'hdki', certificate: 'certificates/amy-hdki-shodan.jpeg' },
       { rank: 'Shodan', year: 2023, org: 'jukf' },
     ],
   },
@@ -250,7 +250,7 @@ const BLACK_BELTS = [
     flag: '🇧🇩',
     photo: 'photos/ayusha.jpeg',
     ranks: [
-      { rank: 'Shodan', year: 2022, org: 'hdki' },
+      { rank: 'Shodan', year: 2022, org: 'hdki', certificate: 'certificates/ayusha-hdki-shodan.jpeg' },
     ],
   },
   {
@@ -263,7 +263,7 @@ const BLACK_BELTS = [
     photoFocus: 'center 30%',
     ranks: [
       { rank: 'Shodan', year: 2022, org: 'jka',  certificate: 'certificates/hanamei-jka-shodan.jpeg' },
-      { rank: 'Shodan', year: 2022, org: 'hdki' },
+      { rank: 'Shodan', year: 2022, org: 'hdki', certificate: 'certificates/hanamei-hdki-shodan.jpeg' },
       { rank: 'Shodan', year: 2022, org: 'jukf' },
     ],
   },
@@ -381,6 +381,17 @@ const BLACK_BELTS = [
     photo: 'photos/alina.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2024, org: 'jka' },
+    ],
+  },
+  {
+    id: 'hiro',
+    name: 'Hiro Fuji',
+    universities: [],
+    country: 'USA',
+    flag: '🇺🇸',
+    photo: null,
+    ranks: [
+      { rank: 'Shodan', year: 2023, org: 'jka', certificate: 'certificates/hiro-jka-shodan.jpeg' },
     ],
   },
   {
