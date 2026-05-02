@@ -639,13 +639,21 @@
           ? `<img class="rank-logo" src="${o.logo}" alt="${o.name}" title="${o.name}">`
           : `<span class="rank-crest" style="color:${o.color}" title="${o.name}">${o.short}</span>`;
         const danBadge = ri ? `<span class="rank-dan" style="color:${ri.color}">${ri.dan}・段</span>` : '';
+        const hasCert = !!r.certificate;
+        const certAttrs = hasCert
+          ? ` data-cert="${r.certificate}" data-cert-caption="${person.name} — ${r.rank}, ${o.name}${yearStr}" tabindex="0" role="button" title="View certificate"`
+          : '';
+        const certCue = hasCert
+          ? `<span class="rank-cert-cue" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h4"/></svg><span class="rank-cert-label">Certificate</span></span>`
+          : '';
         return `
-          <li style="border-left-color:${ri ? ri.color : '#F5C518'}">
+          <li class="${hasCert ? 'has-cert' : ''}" style="border-left-color:${ri ? ri.color : '#F5C518'}"${certAttrs}>
             ${orgVisual}
             <div class="rank-text">
               <span class="rank-headline">${r.rank}${danBadge}</span>
               <span class="rank-meta">${o.name}${yearStr}</span>
             </div>
+            ${certCue}
           </li>`;
       })
       .join('');
@@ -681,8 +689,52 @@
   modalBackdrop.addEventListener('click', (e) => {
     if (e.target === modalBackdrop) closeModal();
   });
+
+  /* ---------- certificate lightbox ---------- */
+  // A second layer over the person modal. Opening it leaves the modal in place
+  // so closing the cert returns the user to the same person, same rank ladder.
+  const certLightbox   = document.getElementById('cert-lightbox');
+  const certImage      = document.getElementById('cert-image');
+  const certCaption    = document.getElementById('cert-caption');
+  const certCloseBtn   = document.getElementById('cert-close');
+
+  function openCertificate(src, caption) {
+    certImage.src = src;
+    certImage.alt = caption || 'Rank certificate';
+    certCaption.textContent = caption || '';
+    certLightbox.hidden = false;
+  }
+  function closeCertificate() {
+    certLightbox.hidden = true;
+    certImage.removeAttribute('src');
+  }
+  certCloseBtn.addEventListener('click', closeCertificate);
+  certLightbox.addEventListener('click', (e) => {
+    if (e.target === certLightbox) closeCertificate();
+  });
+
+  // Delegated click on rank rows that carry a data-cert attribute. Works for
+  // both the main Ranks list and the Other Styles list (none have certs today
+  // but the handler is generic so future ones just work).
+  modalBackdrop.addEventListener('click', (e) => {
+    const row = e.target.closest('li.has-cert[data-cert]');
+    if (!row) return;
+    e.stopPropagation();
+    openCertificate(row.dataset.cert, row.dataset.certCaption);
+  });
+  modalBackdrop.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const row = e.target.closest('li.has-cert[data-cert]');
+    if (!row) return;
+    e.preventDefault();
+    openCertificate(row.dataset.cert, row.dataset.certCaption);
+  });
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key !== 'Escape') return;
+    // Esc closes the cert first if it's open, otherwise the person modal.
+    if (!certLightbox.hidden) { closeCertificate(); return; }
+    closeModal();
   });
 
   /* ---------- mouse tracking ---------- */

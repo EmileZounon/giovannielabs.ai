@@ -136,7 +136,7 @@ const BLACK_BELTS = [
     ranks: [
       { rank: 'Nidan',  year: 2022, org: 'jukf'   },
       { rank: 'Shodan', year: 2022, org: 'hdki'   },
-      { rank: 'Shodan', year: 2021, org: 'jka'    },
+      { rank: 'Shodan', year: 2021, org: 'jka', certificate: 'certificates/cassiano-jka-shodan.jpeg' },
       { rank: 'Shodan', year: 2018, org: 'tabata' },
     ],
   },

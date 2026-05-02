@@ -585,6 +585,107 @@ a { color: inherit; }
   letter-spacing: 0.02em;
 }
 
+/* Rank rows that have a scanned certificate get a pointer cursor, a soft
+   hover lift, and a small document icon on the right. The icon is the only
+   affordance — clicking anywhere on the row opens the certificate lightbox. */
+.modal-ranks li.has-cert {
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.modal-ranks li.has-cert:hover,
+.modal-ranks li.has-cert:focus-visible {
+  background: rgba(245, 197, 24, 0.06);
+  border-color: rgba(245, 197, 24, 0.45);
+  outline: none;
+}
+.rank-cert-cue {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-dim);
+  opacity: 0.7;
+  flex-shrink: 0;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+.modal-ranks li.has-cert:hover .rank-cert-cue,
+.modal-ranks li.has-cert:focus-visible .rank-cert-cue {
+  color: #F5C518;
+  opacity: 1;
+}
+.rank-cert-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Certificate lightbox — sits above the person modal at z-index 1100.
+   Backdrop is darker/heavier than the person modal so the cert reads as the
+   foreground subject. The image scales to viewport with a small caption. */
+.cert-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  animation: certFadeIn 0.18s ease;
+}
+.cert-lightbox[hidden] { display: none; }
+@keyframes certFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.cert-figure {
+  margin: 0;
+  max-width: min(900px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.cert-figure img {
+  max-width: 100%;
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(245, 197, 24, 0.15);
+  background: #1a1a1a;
+}
+.cert-caption {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.cert-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.cert-close:hover {
+  background: rgba(245, 197, 24, 0.15);
+  border-color: #F5C518;
+}
+
 /* University logos inline with the modal university field. A person can
    have multiple universities, so each one is wrapped in .uni-item and
    rendered as logo + name; multiple items wrap on small screens. */
@@ -681,4 +782,7 @@ a { color: inherit; }
   .rank-headline { font-size: 1.1rem; gap: 8px; }
   .rank-meta { font-size: 0.8rem; }
   .uni-logo { height: 20px; max-width: 60px; }
+  /* Hide the "Certificate" label on mobile — the icon alone is the cue. */
+  .rank-cert-label { display: none; }
+  .cert-close { top: 12px; right: 12px; width: 40px; height: 40px; }
 }
