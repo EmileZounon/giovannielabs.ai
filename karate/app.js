@@ -482,8 +482,14 @@
   // satisfies it (e.g. Vazrik passes "JKA" because one of his three ranks is
   // a JKA Yondan). Country and university stay person-level.
   function matchesFilters(person) {
-    if (state.activeOrg !== 'all' && !person.ranks.some(r => r.org === state.activeOrg)) return false;
-    if (state.year && !person.ranks.some(r => String(r.year) === state.year)) return false;
+    // Org and year, when both set, must match the SAME rank entry — otherwise
+    // someone with (JUKF, 2022) and (JKA, 2023) would falsely pass JUKF+2023.
+    if (state.activeOrg !== 'all' && state.year) {
+      if (!person.ranks.some(r => r.org === state.activeOrg && String(r.year) === state.year)) return false;
+    } else {
+      if (state.activeOrg !== 'all' && !person.ranks.some(r => r.org === state.activeOrg)) return false;
+      if (state.year && !person.ranks.some(r => String(r.year) === state.year)) return false;
+    }
     // Rank filter compares against the person's HIGHEST rank in the active org
     // (or overall if no org chip is active). This prevents double-counting:
     // someone who is Shodan AND Nidan in JKA only appears under "Nidan".
