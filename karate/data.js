@@ -227,7 +227,7 @@ const BLACK_BELTS = [
     photo: 'photos/amy.jpeg',
     ranks: [
       { rank: 'Shodan', year: 2022, org: 'hdki' },
-      { rank: 'Shodan', year: 2022, org: 'jukf' },
+      { rank: 'Shodan', year: 2023, org: 'jukf' },
     ],
   },
   {

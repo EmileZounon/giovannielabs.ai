@@ -129,7 +129,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Photo:** photos/amy.jpeg
 - **Ranks:**
   - Shodan, HDKI (2022)
-  - Shodan, JUKF (2022)
+  - Shodan, JUKF (2023)
 
 ### 10. Ann Xu
 - **Country:** USA 🇺🇸
