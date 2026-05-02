@@ -125,11 +125,6 @@ const BLACK_BELTS = [
   {
     id: 'cassiano',
     name: 'Anselmo Cassiano Alves',
-    title: [
-      'The Blah Blah Blah Master',
-      'The Negotiator and Diplomat',
-      'The Master Sailor',
-    ],
     universities: ['Harvard University'],
     country: 'Brazil',
     flag: '🇧🇷',
@@ -436,7 +431,6 @@ const BLACK_BELTS = [
   {
     id: 'emile',
     name: 'Emile Zounon',
-    title: 'The son of Funakoshi',
     universities: ['Harvard University'],
     country: 'Benin',
     flag: '🇧🇯',
@@ -512,7 +506,6 @@ const BLACK_BELTS = [
   {
     id: 'peiqi',
     name: 'Peiqi Chen',
-    title: 'The Dragon of Zhuhai',
     universities: ['Boston University'],
     country: 'China',
     flag: '🇨🇳',

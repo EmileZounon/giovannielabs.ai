@@ -61,7 +61,6 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, Tabata Sensei (2011)
 
 ### 2. Anselmo Cassiano Alves
-*The Blah Blah Blah Master · The Negotiator and Diplomat · The Master Sailor*
 - **Country:** Brazil 🇧🇷
 - **University:** Harvard University
 - **Photo:** photos/cassiano.jpeg
@@ -254,7 +253,6 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, JUKF (2024)
 
 ### 25. Emile Zounon
-*The son of Funakoshi*
 - **Country:** Benin 🇧🇯
 - **University:** Harvard University
 - **Photo:** photos/emile.png
@@ -299,7 +297,6 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, HDKI (2026)
 
 ### 31. Peiqi Chen
-*The Dragon of Zhuhai*
 - **Country:** China 🇨🇳
 - **University:** Boston University
 - **Photo:** photos/peiqi.jpg
