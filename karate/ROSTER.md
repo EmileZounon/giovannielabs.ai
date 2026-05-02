@@ -55,7 +55,9 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Yondan, JKA (2025)
   - Sandan, HDKI (2022)
   - Sandan, JUKF (2022)
+  - Nidan, JKA (2019)
   - Nidan, ISKF (2019)
+  - Shodan, JKA (2019)
   - Shodan, Tabata Sensei (2011)
 
 ### 2. Anselmo Cassiano Alves
