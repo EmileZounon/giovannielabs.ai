@@ -12,6 +12,53 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
 </head>
 <body>
+  <!-- Soft password gate (mirrors /karate/ index — sessionStorage shared across same origin). -->
+  <style>
+    html.locked body > *:not(#lock-gate) { display: none !important; }
+    html:not(.locked) #lock-gate { display: none; }
+    #lock-gate { position: fixed; inset: 0; background: #0a0a0a; display: flex; align-items: center; justify-content: center; z-index: 99999; font-family: 'Outfit', system-ui, sans-serif; color: #f5f5f5; }
+    #lock-gate .lock-card { text-align: center; padding: 2.5rem 2.25rem; max-width: 360px; width: 88%; }
+    #lock-gate .lock-title { font-family: 'Bebas Neue', system-ui, sans-serif; font-size: 2.75rem; letter-spacing: 0.06em; color: #F5C518; margin: 0 0 0.4rem; }
+    #lock-gate .lock-sub { color: #999; font-size: 0.95rem; margin: 0 0 1.6rem; line-height: 1.5; }
+    #lock-gate form { display: flex; gap: 0.5rem; }
+    #lock-gate input { flex: 1; padding: 0.7rem 0.95rem; background: #1a1a1a; border: 1px solid #333; color: #f5f5f5; border-radius: 4px; font: inherit; }
+    #lock-gate input:focus { outline: none; border-color: #F5C518; }
+    #lock-gate button { padding: 0.7rem 1.2rem; background: #F5C518; color: #0a0a0a; border: 0; border-radius: 4px; font: inherit; font-weight: 600; cursor: pointer; }
+    #lock-gate .lock-error { color: #EF4444; font-size: 0.85rem; margin: 0.75rem 0 0; min-height: 1.2em; }
+  </style>
+  <script>
+    if (sessionStorage.getItem('karate-auth') !== '1') document.documentElement.classList.add('locked');
+  </script>
+  <div id="lock-gate" role="dialog" aria-modal="true" aria-labelledby="lock-title">
+    <div class="lock-card">
+      <h1 id="lock-title" class="lock-title">Black Belt Lineage</h1>
+      <p class="lock-sub">This page is currently private.</p>
+      <form id="lock-form" autocomplete="off">
+        <input type="password" id="lock-pw" autocomplete="off" autofocus aria-label="Password" placeholder="Password" />
+        <button type="submit">Enter</button>
+      </form>
+      <p id="lock-error" class="lock-error"></p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var form = document.getElementById('lock-form');
+      var input = document.getElementById('lock-pw');
+      var err = document.getElementById('lock-error');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (input.value === 'EmileZounon') {
+          sessionStorage.setItem('karate-auth', '1');
+          document.documentElement.classList.remove('locked');
+        } else {
+          err.textContent = 'Incorrect password.';
+          input.value = '';
+          input.focus();
+        }
+      });
+    })();
+  </script>
+
   <nav class="navbar">
     <div class="nav-container">
       <a href="/" class="nav-logo">Giovannie Labs<span>.</span></a>
