@@ -35,8 +35,8 @@
   </script>
   <div id="lock-gate" role="dialog" aria-modal="true" aria-labelledby="lock-title">
     <div class="lock-card">
-      <h1 id="lock-title" class="lock-title">Black Belt Lineage</h1>
-      <p class="lock-sub">This page is currently private.</p>
+      <h1 id="lock-title" class="lock-title">Cassiano,</h1>
+      <p class="lock-sub">I blocked you out because you are too much on the website.<br>The password is your name.</p>
       <form id="lock-form" autocomplete="off">
         <input type="password" id="lock-pw" autocomplete="off" autofocus aria-label="Password" placeholder="Password" />
         <button type="submit">Enter</button>
@@ -51,7 +51,7 @@
       var err = document.getElementById('lock-error');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        if (input.value === 'EmileZounon') {
+        if (input.value === 'Cassiano') {
           document.documentElement.classList.remove('locked');
         } else {
           err.textContent = 'Incorrect password.';
