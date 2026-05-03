@@ -77,6 +77,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Universities:** Boston University, Lesley University
 - **Photo:** photos/lorraine.jpeg
 - **Ranks:**
+  - Nidan, SKIF (2025) [cert]
   - Nidan, JKA (2023) [cert]
   - Nidan, HDKI (2022) [cert]
   - Nidan, JUKF (2022)
@@ -297,14 +298,14 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **University:** UMass Amherst
 - **Photo:** photos/varak.jpg
 - **Ranks:**
-  - Shodan, HDKI (2026)
+  - Shodan, HDKI (2026) [cert: belt-tying photo placeholder]
 
 ### 31. Peiqi Chen
 - **Country:** China 🇨🇳
 - **University:** Boston University
 - **Photo:** photos/peiqi.jpg
 - **Ranks:**
-  - Shodan, HDKI (2026)
+  - Shodan, HDKI (2026) [cert: belt-tying photo placeholder]
 
 ---
 
