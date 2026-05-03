@@ -165,11 +165,9 @@
 
  @media (max-width: 768px) {
  .hero__bg, .section-hero__img { background-attachment: scroll; }
- /* Mobile recenter for Training 1 hero — group sits slightly left-of-center
-    in the source photo, and on portrait viewports the default center crop
-    pushes them off-frame. Bias horizontal focal point left + slight upward
-    bias so faces clear the title overlay at the bottom. */
- #training-1 .section-hero__img { background-position: 42% 38% !important; }
+ /* Mobile recenter for Training 1 hero — keep group centered horizontally
+    on portrait crop. */
+ #training-1 .section-hero__img { background-position: 50% 50% !important; }
  .hero { min-height: 500px; }
  .hero__content { padding: var(--space-lg) var(--space-sm) var(--space-md); }
  .hero__meta { flex-direction: column; gap: var(--space-xs); }
