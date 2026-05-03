@@ -77,12 +77,13 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
 - **Universities:** Boston University, Lesley University
 - **Photo:** photos/lorraine.jpeg
 - **Ranks:**
-  - Nidan, SKIF (2025) [cert]
   - Nidan, JKA (2023) [cert]
   - Nidan, HDKI (2022) [cert]
   - Nidan, JUKF (2022)
   - Shodan, Tabata Sensei (2017) [cert]
   - Shodan, ISKF (2019) [cert]
+- **Other Styles:**
+  - Nidan, SKIF (2025) — cert on file but not yet wired
 
 ### 4. Amandine Fromont
 - **Country:** France 🇫🇷

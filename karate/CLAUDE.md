@@ -10,13 +10,13 @@ You are maintaining the infographic at **giovannielabs.ai/karate/**. The repo is
 
 ## Project rules (locked)
 
-- **6 organizations** (slug → display, color):
+- **5 organizations** (slug → display, color):
   - `tabata` → Tabata Sensei, gold `#F5C518`
   - `jka` → JKA, blue `#2A6FDB`
   - `jukf` → JUKF, red `#E63946`
   - `hdki` → HDKI, purple `#8B5CF6`
   - `iskf` → ISKF, deep red `#991B1B`
-  - `skif` → SKIF (Kanazawa's Shotokan Karate-Do International Federation), midnight navy `#1E3A8A`
+- **SKIF** (Kanazawa's federation) is intentionally NOT a top-level org — only Lorraine has it, so it lives in her `otherStyles` array instead of cluttering the global org filter.
 - **10 dan ranks**: Shodan, Nidan, Sandan, Yondan, Godan, Rokudan, Shichidan, Hachidan, Kudan, Judan
 - **Person schema**:
   ```js

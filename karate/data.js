@@ -9,7 +9,6 @@ const ORGANIZATIONS = {
   jukf:   { name: 'JUKF',          short: 'JUKF',   color: '#E63946', logo: 'logos/jukf.jpeg' },
   hdki:   { name: 'HDKI',          short: 'HDKI',   color: '#8B5CF6', logo: 'logos/hdki.jpeg' },
   iskf:   { name: 'ISKF',          short: 'ISKF',   color: '#991B1B', logo: null },
-  skif:   { name: 'SKIF',          short: 'SKIF',   color: '#1E3A8A', logo: null },
 };
 
 // Universities represented in the dojo. Pre-populated so the dropdown
@@ -154,12 +153,14 @@ const BLACK_BELTS = [
     flag: '🇭🇰',
     photo: 'photos/lorraine.jpeg',
     ranks: [
-      { rank: 'Nidan',  year: 2025, org: 'skif',   certificate: 'certificates/lorraine-skif-nidan.jpeg' },
       { rank: 'Nidan',  year: 2023, org: 'jka',    certificate: 'certificates/lorraine-jka-nidan.jpeg' },
       { rank: 'Nidan',  year: 2022, org: 'hdki',   certificate: 'certificates/lorraine-hdki-nidan.jpeg' },
       { rank: 'Nidan',  year: 2022, org: 'jukf'   },
       { rank: 'Shodan', year: 2017, org: 'tabata', certificate: 'certificates/lorraine-tabata-shodan.jpeg' },
       { rank: 'Shodan', year: 2019, org: 'iskf', certificate: 'certificates/lorraine-iskf-shodan.jpeg' },
+    ],
+    otherStyles: [
+      { style: 'SKIF', rank: 'Nidan', year: 2025 },
     ],
   },
   {
