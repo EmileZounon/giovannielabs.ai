@@ -53,7 +53,15 @@
     {
       "day": 2,
       "date": "2026-05-09",
-      "time": "11:00",
+      "time": "10:45",
+      "title": "MIT Sloan School of Management",
+      "location": "MIT Sloan, 100 Main St, Cambridge, MA 02142",
+      "maps_url": "https://maps.google.com/?q=MIT+Sloan+School+of+Management,+100+Main+St,+Cambridge,+MA+02142"
+    },
+    {
+      "day": 2,
+      "date": "2026-05-09",
+      "time": "11:45",
       "title": "View Boston at Prudential Center",
       "location": "View Boston, 800 Boylston St, Boston, MA 02199",
       "maps_url": "https://maps.google.com/?q=View+Boston+Prudential+Center,+800+Boylston+St,+Boston,+MA+02199"
