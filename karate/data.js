@@ -125,7 +125,7 @@ const BLACK_BELTS = [
       {
         image: 'accolades/vazrik-presidential-volunteer-service-award.jpeg',
         title: "President's Volunteer Service Award",
-        subtitle: 'Bronze · AmeriCorps · 2021',
+        subtitle: 'Bronze · White House · AmeriCorps · 2021',
         year: 2021,
       },
     ],

@@ -60,7 +60,7 @@ Algeria · Armenia · Australia · Bangladesh · Benin · Brazil · Canada · Ch
   - Shodan, JKA (2019) [cert]
   - Shodan, Tabata Sensei (2011)
 - **Accolades:**
-  - President's Volunteer Service Award · Bronze · AmeriCorps · 2021
+  - President's Volunteer Service Award · Bronze · White House · AmeriCorps · 2021
 
 ### 2. Anselmo Cassiano Alves
 - **Country:** Brazil 🇧🇷
